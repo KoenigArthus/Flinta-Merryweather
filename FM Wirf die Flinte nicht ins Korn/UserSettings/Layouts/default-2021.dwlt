@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 39
+  controlID: 95
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 40
+  controlID: 96
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -360,9 +360,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 42650000
-    m_LastClickedID: 25922
-    m_ExpandedIDs: 000000003a65000000ca9a3b
+    m_SelectedIDs: 585e0000
+    m_LastClickedID: 24152
+    m_ExpandedIDs: 00000000505e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -390,7 +390,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000505e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -417,7 +417,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -520,7 +520,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1cfbffff
+      m_ExpandedIDs: 28fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 1.1829506, y: 0.38225067, z: 0.16623062}
     speed: 2
-    m_Value: {x: 1.1754923, y: 0.32390052, z: 0.16852511}
+    m_Value: {x: 1.1829506, y: 0.38225067, z: 0.16623062}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 5.3283887
     speed: 2
-    m_Value: 5.0989366
+    m_Value: 5.3283887
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -956,7 +956,7 @@ MonoBehaviour:
       width: 529.5
       height: 264
     m_MinimalGUI: 1
-  m_defaultScale: 1
+  m_defaultScale: 2
   m_LastWindowPixelSize: {x: 1059, y: 549}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
