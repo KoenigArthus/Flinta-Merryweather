@@ -4,6 +4,3 @@
 
 > Sole programmer's comment:
 idk what I'm doing  ♪┏(・o･)┛♪
-
-
-IM A HOMOSEXUAL
