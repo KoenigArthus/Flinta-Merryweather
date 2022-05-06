@@ -1,7 +1,0 @@
-# Integration with Issue Tracker
-#
-# (note that '\' need to be escaped).
-
-[issuetracker "Issuetracker"]
-  regex = "#(\\d+)"
-  url = "https://github.com/KoenigArthus/Flinta-Merryweather/issues/$1"
