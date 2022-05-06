@@ -8,7 +8,9 @@ public class Player_Movement : MonoBehaviour
     public float speed = 10f;
     //goal position after moving
     private Vector2 targetPos;
-
+/// <summary>
+/// this line is just a test for fork client
+/// </summary>
     private void Update()
     {
         //determining the mouse position
