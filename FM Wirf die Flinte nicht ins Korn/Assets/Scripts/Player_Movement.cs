@@ -9,6 +9,11 @@ public class Player_Movement : MonoBehaviour
     //goal position after moving
     private Vector2 targetPos;
 
+    //setting up the current position of the player_Character so that it wont skip to 0,0 when later called in the Update function
+    private void Start()
+    {
+        targetPos = new Vector2(transform.position.x, transform.position.y);
+    }
     private void Update()
     {
         //determining the mouse position
@@ -18,7 +23,7 @@ public class Player_Movement : MonoBehaviour
         {
             targetPos = new Vector2(mousePos.x, transform.position.y);
         }
-        // the maincharacter adjusts its position to the targetPos and moves to it with the set speed
+        // the player_character adjusts its position to the targetPos and moves to it with the set speed
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, targetPos, step);
     }
