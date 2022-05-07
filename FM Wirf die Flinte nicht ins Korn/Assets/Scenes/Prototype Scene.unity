@@ -389,7 +389,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d32a46b1f1ca3d41b38a93cacb83318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.8
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.7
+      value: 2
+      inSlope: 0.08312653
+      outSlope: 0.08312653
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.3024039
+    - serializedVersion: 3
+      time: 1
+      value: 1.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  isMoving: 0
 --- !u!50 &684726188
 Rigidbody2D:
   serializedVersion: 4
