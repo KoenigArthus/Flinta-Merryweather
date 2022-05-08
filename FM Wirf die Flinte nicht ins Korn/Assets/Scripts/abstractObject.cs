@@ -6,17 +6,21 @@ public abstract class abstractObject : MonoBehaviour
 {
     // variables for actions with Objects - the ingame ones obviously
     public bool isViewable;
+    public bool isPlacable;
     public bool canBePickedUp;
     public bool canBeCombined;
-    public bool isPlacable;
 
-    // to talk to the Player_Movement Script of the player_Chacarter / later disabling the movement
+    public GameObject UIObject;
+
+    // to talk to the Player_Movement & Inventory Script of the player_Chacarter 
     private Player_Movement player_movement;
+    private Inventory inventory;
 
     private void Awake()
     {
-        //referencing the Player_Movement Script of the PLayer_Character
-        player_movement = GameObject.FindWithTag("Player").GetComponent<Player_Movement>();
+        //referencing the Player_Movement & Inventory Script of the PLayer_Character
+        player_movement = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>();
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
 
@@ -31,5 +35,30 @@ public abstract class abstractObject : MonoBehaviour
     {
         //endabling the player_Character movement
         player_movement.movementIsEnabled = true;
+    }
+
+    private void OnMouseDown()
+    {
+        if (canBePickedUp && Input.GetMouseButtonDown(0))
+        {
+            this.pickUp();
+        }
+    }
+
+
+    private void pickUp()
+    {
+        for (int i = 0; i < inventory.slots.Length; i++)
+        {
+            //checking if a slot is free and if so then it gets filled with the Object & the player_Character movement enabled
+            if(inventory.isFull[i] == false)
+            {
+                inventory.isFull[i] = true;
+                Instantiate(UIObject, inventory.slots[i].transform, false);
+                Destroy(gameObject);
+                player_movement.movementIsEnabled = true;
+                break;
+            }
+        }
     }
 }

@@ -222,9 +222,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isViewable: 0
+  isPlacable: 0
   canBePickedUp: 1
   canBeCombined: 0
-  isPlacable: 0
+  UIObject: {fileID: 7566771996993942061, guid: 38843e6f51c947f4c879e616ea35466d, type: 3}
 --- !u!61 &347321354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -462,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7169812, g: 0.09807763, b: 0.09807763, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -499,6 +500,7 @@ GameObject:
   - component: {fileID: 684726185}
   - component: {fileID: 684726188}
   - component: {fileID: 684726187}
+  - component: {fileID: 684726189}
   m_Layer: 0
   m_Name: Player_Character
   m_TagString: Player
@@ -641,6 +643,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &684726189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684726184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b33920f14075844a4b5db4a7bfc911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 00
+  slots:
+  - {fileID: 582597179}
 --- !u!1 &1204835751
 GameObject:
   m_ObjectHideFlags: 0
