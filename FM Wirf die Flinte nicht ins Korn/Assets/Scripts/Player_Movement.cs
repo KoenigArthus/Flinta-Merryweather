@@ -6,10 +6,12 @@ public class Player_Movement : MonoBehaviour
 {
     //speed of the maincharacter movement
     public AnimationCurve speed;
-    //goal position after moving
-    private Vector2 targetPos;
     //if the character moves: isMoving = true
     public bool isMoving;
+    //disabling movement if needed (when clicking on for an Object for example)
+    public bool movementIsEnabled = true;
+    //goal position after moving
+    private Vector2 targetPos;
 
 
     //setting up the current position of the player_Character so that it wont skip to 0,0 when later called in the Update function
@@ -22,7 +24,7 @@ public class Player_Movement : MonoBehaviour
     private void Update()
     {
         // checking if the left mouse button is pressed
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && movementIsEnabled)
         {
             //determining the mouse position
             Vector2 lmousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
