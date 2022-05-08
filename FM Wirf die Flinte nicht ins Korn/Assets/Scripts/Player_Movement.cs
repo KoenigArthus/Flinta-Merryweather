@@ -10,6 +10,8 @@ public class Player_Movement : MonoBehaviour
     private Vector2 targetPos;
     //if the character moves: isMoving = true
     public bool isMoving;
+
+
     //setting up the current position of the player_Character so that it wont skip to 0,0 when later called in the Update function
     private void Start()
     {
@@ -24,7 +26,17 @@ public class Player_Movement : MonoBehaviour
         {
             //determining the mouse position
             Vector2 lmousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // flipping the player_character if needed
+            if (lmousePos.x < transform.position.x)
+            {
+                this.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+            }
+            else
+            {
+                this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+            }
             //when the player presses the left mouse button the target position gets updated along its x axis
+            //isMoving is set to true
             targetPos = new Vector2(lmousePos.x, transform.position.y);
             isMoving = true;
         }
@@ -39,7 +51,8 @@ public class Player_Movement : MonoBehaviour
             float ldistanceToTargetPos = Vector2.Distance(transform.position, targetPos);
             float lstep = this.speed.Evaluate(1 / ldistanceToTargetPos) * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, targetPos, lstep);
-            if (transform.position.x == targetPos.x && transform.position.y == targetPos.y)
+            //checking if the player_character reachet targetPos and if true sets isMoving to false
+            if (transform.position.x == targetPos.x)
             {
                 isMoving = false;
             }
