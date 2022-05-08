@@ -9,7 +9,7 @@ public class Player_Movement : MonoBehaviour
     //if the character moves: isMoving = true
     public bool isMoving;
     //disabling movement if needed (when clicking on for an Object for example)
-    public bool movementIsEnabled = true;
+    public  bool movementIsEnabled = true;
     //goal position after moving
     private Vector2 targetPos;
 
