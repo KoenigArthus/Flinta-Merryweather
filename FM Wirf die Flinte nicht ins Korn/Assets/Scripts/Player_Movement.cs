@@ -23,14 +23,13 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         // checking if the left mouse button is pressed, movement enabled & The MousePos not on the UI
-        if (Input.GetMouseButtonDown(0) && movementIsEnabled && mousePos.y > -2.65)
+        if (Input.GetMouseButtonDown(0) && movementIsEnabled && MousePosIsNotOverInventory())
         {
             //determining the mouse position
-            Vector2 lmousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             // flipping the player_character if needed
-            if (lmousePos.x < transform.position.x)
+            if (mousePos.x < transform.position.x)
             {
                 this.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
             }
@@ -40,7 +39,7 @@ public class Player_Movement : MonoBehaviour
             }
             //when the player presses the left mouse button the target position gets updated along its x axis
             //isMoving is set to true
-            targetPos = new Vector2(lmousePos.x, transform.position.y);
+            targetPos = new Vector2(mousePos.x, transform.position.y);
             isMoving = true;
         }
     }
@@ -61,4 +60,20 @@ public class Player_Movement : MonoBehaviour
             }
         }
     }
+
+    bool MousePosIsNotOverInventory()
+    {
+        Vector2 lmousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (lmousePos.y > -2.65)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+
 }
