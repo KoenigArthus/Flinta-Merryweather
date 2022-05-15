@@ -10,8 +10,9 @@ public abstract class abstractObject : MonoBehaviour
     public bool canBePickedUp;
     public bool canBeCombined;
 
-    public GameObject UIObject;
+    public ScriptableThing thing;
 
+    private GameObject UIObject;
     // to talk to the Player_Movement & Inventory Script of the player_Chacarter 
     private Player_Movement player_movement;
     private Inventory inventory;
@@ -22,7 +23,14 @@ public abstract class abstractObject : MonoBehaviour
         player_movement = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
-
+    private void Start()
+    {
+        isViewable = thing.isViewable;
+        isPlacable = thing.isPlacable;
+        canBePickedUp = thing.canBePickedUp;
+        canBeCombined = thing.canBeCombined;
+        UIObject = thing.UIObject;
+    }
 
 
     private void OnMouseEnter()

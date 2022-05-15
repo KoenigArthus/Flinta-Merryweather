@@ -12,6 +12,7 @@ public class Player_Movement : MonoBehaviour
     public  bool movementIsEnabled = true;
     //goal position after moving
     private Vector2 targetPos;
+    private Vector2 mousePos;
 
 
     //setting up the current position of the player_Character so that it wont skip to 0,0 when later called in the Update function
@@ -20,11 +21,11 @@ public class Player_Movement : MonoBehaviour
         targetPos = new Vector2(transform.position.x, transform.position.y);
     }
 
-
     private void Update()
     {
-        // checking if the left mouse button is pressed
-        if (Input.GetMouseButtonDown(0) && movementIsEnabled)
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // checking if the left mouse button is pressed, movement enabled & The MousePos not on the UI
+        if (Input.GetMouseButtonDown(0) && movementIsEnabled && mousePos.y > -2.65)
         {
             //determining the mouse position
             Vector2 lmousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

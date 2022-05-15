@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &347321351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   isPlacable: 0
   canBePickedUp: 1
   canBeCombined: 0
-  UIObject: {fileID: 7566771996993942061, guid: 38843e6f51c947f4c879e616ea35466d, type: 3}
+  thing: {fileID: 0}
 --- !u!61 &347321354
 BoxCollider2D:
   m_ObjectHideFlags: 0
