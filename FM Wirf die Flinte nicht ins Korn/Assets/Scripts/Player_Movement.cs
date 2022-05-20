@@ -2,46 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Player_Movement : MonoBehaviour
 {
     //speed of the maincharacter movement
     public AnimationCurve speed;
     //if the character moves: isMoving = true
-    public bool isMoving;
-    //disabling movement if needed (when clicking on for an Object for example)
-    public  bool movementIsEnabled = true;
+    [SerializeField] private bool isMoving;
     //goal position after moving
     private Vector2 targetPos;
-    private Vector2 mousePos;
 
 
     //setting up the current position of the player_Character so that it wont skip to 0,0 when later called in the Update function
     private void Start()
     {
         targetPos = new Vector2(transform.position.x, transform.position.y);
-    }
-
-    private void Update()
-    {
-        // checking if the left mouse button is pressed, movement enabled & The MousePos not on the UI
-        if (Input.GetMouseButtonDown(0) && movementIsEnabled && MousePosIsNotOverInventory())
-        {
-            //determining the mouse position
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            // flipping the player_character if needed
-            if (mousePos.x < transform.position.x)
-            {
-                this.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
-            }
-            else
-            {
-                this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
-            }
-            //when the player presses the left mouse button the target position gets updated along its x axis
-            //isMoving is set to true
-            targetPos = new Vector2(mousePos.x, transform.position.y);
-            isMoving = true;
-        }
     }
 
     private void FixedUpdate()
@@ -61,20 +36,23 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-    bool MousePosIsNotOverInventory()
+    public void Move(Vector2 pmousePos)
     {
-        Vector2 lmousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (lmousePos.y > -2.65)
+        if (Input.GetMouseButtonDown(0))
         {
-            return true;
-        }
-        else
-        {
-            return false;
+            // flipping the player_character if needed
+            if (pmousePos.x < transform.position.x)
+            {
+                this.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+            }
+            else
+            {
+                this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+            }
+            //when the player presses the left mouse button the target position gets updated along its x axis
+            //isMoving is set to true
+            targetPos = new Vector2(pmousePos.x, transform.position.y);
+            isMoving = true;
         }
     }
-
-    
-
-
 }

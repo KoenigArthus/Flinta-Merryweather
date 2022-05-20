@@ -30,27 +30,7 @@ public abstract class abstractObject : MonoBehaviour
         canBePickedUp = thing.canBePickedUp;
         canBeCombined = thing.canBeCombined;
         UIObject = thing.UIObject;
-    }
-
-
-    private void OnMouseEnter()
-    {
-        //disabling the player_Character movement
-        player_movement.movementIsEnabled = false;
-    }
-
-    private void OnMouseExit()
-    {
-        //endabling the player_Character movement
-        player_movement.movementIsEnabled = true;
-    }
-
-   /* private void OnMouseDown()
-    {
-        if (canBePickedUp && Input.GetMouseButtonDown(0))
-        {
-            this.pickUp();
-        }
+        this.B();
     }
 
 
@@ -64,14 +44,28 @@ public abstract class abstractObject : MonoBehaviour
                 inventory.isFull[i] = true;
                 Instantiate(UIObject, inventory.slots[i].transform, false);
                 Destroy(gameObject);
-                player_movement.movementIsEnabled = true;
                 break;
             }
         }
-    }*/
+    }
 
-    private void SayHello()
+    private void ReactToClick()
     {
+        if (canBePickedUp && Input.GetMouseButtonDown(0))
+        {
+            this.pickUp();
+        }
         Debug.Log("Hello");
     }
+    public abstract void I();
+
+
+    public virtual void B()
+    {
+        Debug.Log("Uff");
+    }
 }
+
+
+
+
