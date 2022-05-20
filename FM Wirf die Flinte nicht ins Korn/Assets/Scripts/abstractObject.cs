@@ -45,7 +45,7 @@ public abstract class abstractObject : MonoBehaviour
         player_movement.movementIsEnabled = true;
     }
 
-    private void OnMouseDown()
+   /* private void OnMouseDown()
     {
         if (canBePickedUp && Input.GetMouseButtonDown(0))
         {
@@ -59,7 +59,7 @@ public abstract class abstractObject : MonoBehaviour
         for (int i = 0; i < inventory.slots.Length; i++)
         {
             //checking if a slot is free and if so then it gets filled with the Object & the player_Character movement enabled
-            if(inventory.isFull[i] == false)
+            if (inventory.isFull[i] == false)
             {
                 inventory.isFull[i] = true;
                 Instantiate(UIObject, inventory.slots[i].transform, false);
@@ -68,5 +68,10 @@ public abstract class abstractObject : MonoBehaviour
                 break;
             }
         }
+    }*/
+
+    private void SayHello()
+    {
+        Debug.Log("Hello");
     }
 }
