@@ -9,9 +9,9 @@ public class GeneralSettings : MonoBehaviour
     {
         Application.targetFrameRate = 120;
     }
-    private void FixedUpdate()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.LeftAlt) && Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Return) && Input.GetKeyDown(KeyCode.P))
         {
             Application.Quit();
         }
