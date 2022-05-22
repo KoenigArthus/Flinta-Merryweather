@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class Controller : MonoBehaviour
 {
     public GameObject player;
-    
+
     private Vector2 mousePos;
     private RaycastHit2D hit;
 
