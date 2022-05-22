@@ -22,6 +22,6 @@ public abstract class Interactable : MonoBehaviour
 
     public virtual void ReactToClick()
     {
-
+        Debug.LogError("no override defined pls create a + ReactToClick: override void");
     }
 }
