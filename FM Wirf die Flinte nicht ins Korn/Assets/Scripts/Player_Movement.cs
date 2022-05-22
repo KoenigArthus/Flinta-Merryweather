@@ -38,6 +38,8 @@ public class Player_Movement : MonoBehaviour
 
     public void Move(Vector2 pmousePos)
     {
+        /*when the player presses the left mouse button the target position gets updated along its x axis
+        isMoving is set to true*/
         if (Input.GetMouseButtonDown(0))
         {
             // flipping the player_character if needed
@@ -49,8 +51,6 @@ public class Player_Movement : MonoBehaviour
             {
                 this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
             }
-            //when the player presses the left mouse button the target position gets updated along its x axis
-            //isMoving is set to true
             targetPos = new Vector2(pmousePos.x, transform.position.y);
             isMoving = true;
         }

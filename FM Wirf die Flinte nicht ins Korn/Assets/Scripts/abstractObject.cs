@@ -30,7 +30,6 @@ public abstract class abstractObject : MonoBehaviour
         canBePickedUp = thing.canBePickedUp;
         canBeCombined = thing.canBeCombined;
         UIObject = thing.UIObject;
-        this.B();
     }
 
 
@@ -56,13 +55,6 @@ public abstract class abstractObject : MonoBehaviour
             this.pickUp();
         }
         Debug.Log("Hello");
-    }
-    public abstract void I();
-
-
-    public virtual void B()
-    {
-        Debug.Log("Uff");
     }
 }
 
