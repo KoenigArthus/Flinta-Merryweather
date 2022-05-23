@@ -37,10 +37,9 @@ public class Item : Interactable
                 Destroy(gameObject);
                 break;
             }
-            else
+            if(i == inventory.slots.Length - 1)
             {
-                //Here Should pop up a text above Flinta, that says something like "I cannot pick up" + Item.Name 
-                Debug.Log("Inventory full");
+                Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
             }
         }
     }
