@@ -21,6 +21,7 @@ public abstract class Interactable : MonoBehaviour
         OnHoverPreFab.SetActive(false);
     }
 
+    //this function defines, what it should do when it is clicked on 
     public virtual void ReactToClick()
     {
         Debug.LogError("no override defined pls create a + ReactToClick: override void");

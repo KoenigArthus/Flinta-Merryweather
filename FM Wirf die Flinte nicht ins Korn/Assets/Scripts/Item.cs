@@ -13,12 +13,17 @@ public class Item : Interactable
 
     private Inventory inventory;
 
+    //initiating the inventory
     private void Awake()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
+
+
+    //this function defines, what it should do when it is clicked on 
     public override void ReactToClick()
     {
+        //pressing the left mouse button will pick up the Item
         if (Input.GetMouseButtonDown(0) && canBePickedUp)
         {
             this.pickUp();
