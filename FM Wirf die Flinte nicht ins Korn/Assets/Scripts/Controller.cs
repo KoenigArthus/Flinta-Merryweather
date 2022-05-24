@@ -21,7 +21,7 @@ public class Controller : MonoBehaviour
               the collider is attached to to call the method "ReactToClick".
               If no collider was hit the Player_Character will move. */
             hit = Physics2D.Raycast(mousePos, Vector2.zero);
-            if (hit.collider != null & IsInReach() && hit.collider.gameObject.CompareTag("Item"))
+            if (hit.collider != null && IsInReach() && hit.collider.gameObject.CompareTag("Item"))
             {
                 hit.collider.gameObject.SendMessage("ReactToClick", SendMessageOptions.DontRequireReceiver);
             }
@@ -46,20 +46,10 @@ public class Controller : MonoBehaviour
     {
         // calculating the distance of Player to Item: P(x1,y1), I(y2,y1),  distance = √((y2-y1)^2 + (x2-x1)^2)
         // and seeing if the distance is smaller than the defined radius
-        if (Mathf.Sqrt
-            (Mathf.Pow
-             (hit.collider.gameObject.transform.position.y - player.transform.position.y, 2)
-            + Mathf.Pow
-               (hit.collider.gameObject.transform.position.x - player.transform.position.x, 2)
-            ) < reachRadius)
-
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return Mathf.Sqrt(
+               Mathf.Pow(hit.collider.gameObject.transform.position.y - player.transform.position.y, 2)
+             + Mathf.Pow(hit.collider.gameObject.transform.position.x - player.transform.position.x, 2))
+            <= reachRadius;
 
     }
 
