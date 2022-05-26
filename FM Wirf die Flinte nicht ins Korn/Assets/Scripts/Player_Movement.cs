@@ -7,6 +7,8 @@ public class Player_Movement : MonoBehaviour
 {
     //speed of the maincharacter movement
     public AnimationCurve speed;
+
+    public float MinimumXBoundary, MaximumXBoundary;
     //if the character moves: isMoving = true
     [SerializeField] private bool isMoving;
     //goal position after moving
@@ -36,6 +38,13 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(new Vector3(MinimumXBoundary, -6, 0), new Vector3(MinimumXBoundary, 6, 0));
+        Gizmos.DrawLine(new Vector3(MaximumXBoundary, -6, 0), new Vector3(MaximumXBoundary, 6, 0));
+        Gizmos.DrawLine(new Vector3(MinimumXBoundary, transform.position.y - 0.5f, 0), new Vector3(MaximumXBoundary, transform.position.y - 0.5f, 0));
+    }
+
     public void Move(Vector2 pmousePos)
     {
         /*when the player presses the left mouse button the target position gets updated along its x axis
@@ -51,8 +60,18 @@ public class Player_Movement : MonoBehaviour
             {
                 this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
             }
+            
             targetPos = new Vector2(pmousePos.x, transform.position.y);
+
+            if (targetPos.x < MinimumXBoundary)
+            {
+                targetPos.x = MinimumXBoundary;
+            }
+            else if (targetPos.x > MaximumXBoundary)
+            {
+                targetPos.x = MaximumXBoundary;
+            }
             isMoving = true;
         }
-    }
+    }                                                                   
 }

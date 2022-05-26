@@ -21,7 +21,7 @@ public class Controller : MonoBehaviour
               the collider is attached to to call the method "ReactToClick".
               If no collider was hit the Player_Character will move. */
             hit = Physics2D.Raycast(mousePos, Vector2.zero);
-            if (hit.collider != null && IsInReach() && hit.collider.gameObject.CompareTag("Item"))
+            if (hit.collider != null && IsInReach() && hit.collider.gameObject.CompareTag("Interactable"))
             {
                 hit.collider.gameObject.SendMessage("ReactToClick", SendMessageOptions.DontRequireReceiver);
             }
