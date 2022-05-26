@@ -6,7 +6,7 @@ public class GeneralSettings : MonoBehaviour
 {
     void Start()
     {
-        //limit the framerate to 120 fps
+        //limits the framerate to a maximum of 120 fps
         Application.targetFrameRate = 120;
     }
     private void Update()

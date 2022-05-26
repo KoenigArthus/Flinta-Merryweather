@@ -13,7 +13,7 @@ public class Item : Interactable
 
     private Inventory inventory;
 
-    //initiating the inventory
+    //initialising the inventory
     private void Awake()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();

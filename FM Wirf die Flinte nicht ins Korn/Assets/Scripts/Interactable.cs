@@ -7,6 +7,7 @@ public abstract class Interactable : MonoBehaviour
     public GameObject OnHoverPreFab;
     public float yOffset, xOffset;
 
+    //when entering and hovering over an Interactable a picture with the Controll Options should pop up
     private void OnMouseEnter()
     {
         OnHoverPreFab.SetActive(true);
@@ -21,7 +22,7 @@ public abstract class Interactable : MonoBehaviour
         OnHoverPreFab.SetActive(false);
     }
 
-    //this function defines, what it should do when it is clicked on 
+    //this function defines, what the Interactable should do when it is clicked on 
     public virtual void ReactToClick()
     {
         Debug.LogError("no override defined pls create a + ReactToClick: override void");

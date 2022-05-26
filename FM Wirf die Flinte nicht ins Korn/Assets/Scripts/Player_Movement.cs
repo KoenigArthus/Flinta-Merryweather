@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    //speed of the maincharacter movement
+    //speed of the Player_Character movement
     public AnimationCurve speed;
-
+    //x Boundaries of where the Player_Character can move
     public float MinimumXBoundary, MaximumXBoundary;
     //if the character moves: isMoving = true
     [SerializeField] private bool isMoving;
@@ -38,10 +38,13 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    //Gizmo Drawing for x Boundaries
     private void OnDrawGizmos()
     {
+        //the two Boundary Lines
         Gizmos.DrawLine(new Vector3(MinimumXBoundary, -6, 0), new Vector3(MinimumXBoundary, 6, 0));
         Gizmos.DrawLine(new Vector3(MaximumXBoundary, -6, 0), new Vector3(MaximumXBoundary, 6, 0));
+        //The HelpLine Laying on the x Axis
         Gizmos.DrawLine(new Vector3(MinimumXBoundary, transform.position.y - 0.5f, 0), new Vector3(MaximumXBoundary, transform.position.y - 0.5f, 0));
     }
 
@@ -63,6 +66,7 @@ public class Player_Movement : MonoBehaviour
             
             targetPos = new Vector2(pmousePos.x, transform.position.y);
 
+            //Updating The targetPos to be inside the Boundarys if needed
             if (targetPos.x < MinimumXBoundary)
             {
                 targetPos.x = MinimumXBoundary;
@@ -71,6 +75,7 @@ public class Player_Movement : MonoBehaviour
             {
                 targetPos.x = MaximumXBoundary;
             }
+
             isMoving = true;
         }
     }                                                                   
