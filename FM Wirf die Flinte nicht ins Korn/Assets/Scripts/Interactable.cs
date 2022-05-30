@@ -7,7 +7,8 @@ public abstract class Interactable : MonoBehaviour
     public GameObject OnHoverPreFab;
     public float yOffset, xOffset;
 
-    private GameObject OnHoverPreFabInstance;
+    [HideInInspector]
+    public GameObject OnHoverPreFabInstance;
 
     //when entering and hovering over an Interactable a picture with the Controll Options should pop up
     private void OnMouseEnter()

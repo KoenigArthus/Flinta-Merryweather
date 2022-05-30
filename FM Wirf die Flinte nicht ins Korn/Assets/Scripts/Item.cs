@@ -38,7 +38,7 @@ public class Item : Interactable
             {
                 inventory.isFull[i] = true;
                 Instantiate(UIObject, inventory.slots[i].transform, false);
-                OnHoverPreFab.SetActive(false);
+                Destroy(OnHoverPreFabInstance);
                 Destroy(gameObject);
                 break;
             }

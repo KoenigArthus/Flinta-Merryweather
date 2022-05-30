@@ -17,4 +17,5 @@ public class GeneralSettings : MonoBehaviour
             Application.Quit();
         }
     }
+
 }

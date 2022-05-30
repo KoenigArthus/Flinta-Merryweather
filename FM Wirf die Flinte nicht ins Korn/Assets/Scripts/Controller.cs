@@ -24,11 +24,11 @@ public class Controller : MonoBehaviour
             if (hit.collider != null && IsInReach() && hit.collider.gameObject.CompareTag("Interactable"))
             {
                 hit.collider.gameObject.SendMessage("ReactToClick", SendMessageOptions.DontRequireReceiver);
-            }
+            }/* For Debugging Only
             else if (hit.collider != null)
             {
                 Debug.Log(hit.collider.name);
-            }
+            }*/
             else
             {
                 player.SendMessage("Move", mousePos, SendMessageOptions.DontRequireReceiver);
