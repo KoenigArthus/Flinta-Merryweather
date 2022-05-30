@@ -7,19 +7,21 @@ public abstract class Interactable : MonoBehaviour
     public GameObject OnHoverPreFab;
     public float yOffset, xOffset;
 
+    private GameObject OnHoverPreFabInstance;
+
     //when entering and hovering over an Interactable a picture with the Controll Options should pop up
     private void OnMouseEnter()
     {
-        OnHoverPreFab.SetActive(true);
+        OnHoverPreFabInstance =  Instantiate(OnHoverPreFab);
     }
     private void OnMouseOver()
     {
-        OnHoverPreFab.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x + xOffset, Camera.main.ScreenToWorldPoint(Input.mousePosition).y + yOffset, 0);
+        OnHoverPreFabInstance.transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x + xOffset, Camera.main.ScreenToWorldPoint(Input.mousePosition).y + yOffset, 0);
     }
 
     private void OnMouseExit()
     {
-        OnHoverPreFab.SetActive(false);
+        Destroy(OnHoverPreFabInstance);
     }
 
     //this function defines, what the Interactable should do when it is clicked on 

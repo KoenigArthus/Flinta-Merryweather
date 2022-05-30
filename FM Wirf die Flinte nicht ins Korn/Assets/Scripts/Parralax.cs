@@ -7,13 +7,12 @@ public class Parralax : MonoBehaviour
     public float parralaxAmmount;
 
     private GameObject cam;
-    private float length, startpos;
+    private float startpos;
 
     private void Start()
     {
         startpos = transform.position.x;
         cam = GameObject.FindGameObjectWithTag("MainCamera");
-        length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     private void FixedUpdate()

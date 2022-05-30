@@ -38,15 +38,7 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-    //Gizmo Drawing for x Boundaries
-    private void OnDrawGizmos()
-    {
-        //the two Boundary Lines
-        Gizmos.DrawLine(new Vector3(MinimumXBoundary, -6, 0), new Vector3(MinimumXBoundary, 6, 0));
-        Gizmos.DrawLine(new Vector3(MaximumXBoundary, -6, 0), new Vector3(MaximumXBoundary, 6, 0));
-        //The HelpLine Laying on the x Axis
-        Gizmos.DrawLine(new Vector3(MinimumXBoundary, transform.position.y - 0.5f, 0), new Vector3(MaximumXBoundary, transform.position.y - 0.5f, 0));
-    }
+   
 
     public void Move(Vector2 pmousePos)
     {
@@ -78,5 +70,15 @@ public class Player_Movement : MonoBehaviour
 
             isMoving = true;
         }
-    }                                                                   
+    }
+
+    //Gizmo Drawing for x Boundaries
+    private void OnDrawGizmos()
+    {
+        //the two Boundary Lines
+        Gizmos.DrawLine(new Vector3(MinimumXBoundary, -6, 0), new Vector3(MinimumXBoundary, 6, 0));
+        Gizmos.DrawLine(new Vector3(MaximumXBoundary, -6, 0), new Vector3(MaximumXBoundary, 6, 0));
+        //The HelpLine Laying on the x Axis
+        Gizmos.DrawLine(new Vector3(MinimumXBoundary, transform.position.y - 0.5f, 0), new Vector3(MaximumXBoundary, transform.position.y - 0.5f, 0));
+    }
 }

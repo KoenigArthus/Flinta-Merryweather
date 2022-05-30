@@ -26,10 +26,10 @@ public class Item : Interactable
         //pressing the left mouse button will pick up the Item
         if (Input.GetMouseButtonDown(0) && canBePickedUp)
         {
-            this.pickUp();
+            this.PickUp();
         }
     }
-    private void pickUp()
+    private void PickUp()
     {
         for (int i = 0; i < inventory.slots.Length; i++)
         {

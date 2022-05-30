@@ -25,6 +25,10 @@ public class Controller : MonoBehaviour
             {
                 hit.collider.gameObject.SendMessage("ReactToClick", SendMessageOptions.DontRequireReceiver);
             }
+            else if (hit.collider != null)
+            {
+                Debug.Log(hit.collider.name);
+            }
             else
             {
                 player.SendMessage("Move", mousePos, SendMessageOptions.DontRequireReceiver);
