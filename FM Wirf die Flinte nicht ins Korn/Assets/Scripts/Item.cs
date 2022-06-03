@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class Item : Interactable
 {
-    public bool isViewable;
-    public bool isPlacable;
-    public bool canBePickedUp;
-    public bool canBeCombined;
+    public ScrItem item;
 
-    public GameObject UIObject;
+    private bool isViewable;
+    private bool canBePickedUp;
+    private bool canBeCombined;
 
+    private GameObject UIObject;
     private Inventory inventory;
 
     //initialising the inventory
     private void Awake()
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = item.sprite;
     }
 
-
+    private void Start()
+    {
+        isViewable = item.isViewable;
+        canBePickedUp = item.canBePickedUp;
+        canBeCombined = item.canBeCombined;
+        UIObject = item.UIObject;
+}
     //this function defines, what it should do when it is clicked on 
     public override void ReactToClick()
     {
@@ -38,7 +45,6 @@ public class Item : Interactable
             {
                 inventory.isFull[i] = true;
                 Instantiate(UIObject, inventory.slots[i].transform, false);
-                Destroy(OnHoverPreFabInstance);
                 Destroy(gameObject);
                 break;
             }

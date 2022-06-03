@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3052350560022857264}
   - component: {fileID: -2643888058549151629}
   m_Layer: 5
-  m_Name: UIBrotPrefab
+  m_Name: UIBrotPrefab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
