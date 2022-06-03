@@ -18,15 +18,11 @@ public class Item : Interactable
     {
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = item.sprite;
-    }
-
-    private void Start()
-    {
         isViewable = item.isViewable;
         canBePickedUp = item.canBePickedUp;
         canBeCombined = item.canBeCombined;
         UIObject = item.UIObject;
-}
+    }
     //this function defines, what it should do when it is clicked on 
     public override void ReactToClick()
     {
