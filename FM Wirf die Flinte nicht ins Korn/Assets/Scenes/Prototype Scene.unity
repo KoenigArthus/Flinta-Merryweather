@@ -1798,7 +1798,7 @@ GameObject:
   - component: {fileID: 1056191019}
   - component: {fileID: 1056191018}
   m_Layer: 0
-  m_Name: ExampleItem (2)
+  m_Name: Bleikugeln
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1832,7 +1832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e045fe5f11e584cbd807e0a31e103c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 77248118d0f25af43b64dd691f0bb972, type: 2}
+  item: {fileID: 11400000, guid: eccfd16516864064181512a58fd115a7, type: 2}
 --- !u!212 &1056191020
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3388,7 +3388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 5693179581723445665}
-  yOffset: 0.66
+  yOffset: 0.8
 --- !u!1 &1982093853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4095,7 +4095,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 190
-    m_Alignment: 1
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -4120,7 +4120,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -3.55, y: -33.76}
-  m_SizeDelta: {x: 118, y: 12}
+  m_SizeDelta: {x: 118, y: 13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5693179581723445667
 GameObject:

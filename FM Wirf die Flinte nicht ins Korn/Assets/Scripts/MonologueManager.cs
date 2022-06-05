@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SmalDialogueManager : MonoBehaviour
+public class MonologueManager : MonoBehaviour
 {
     public Text dialogueText;
 
@@ -13,12 +13,14 @@ public class SmalDialogueManager : MonoBehaviour
     private Queue<string> sentences;
     private GameObject player;
 
+    // Initializing the Queue & the player_Character
     private void Start()
     {
         sentences = new Queue<string>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
+    //this defines what should happen at the start of a monologue
     public void StartDialogue(string[] psentences)
     {
         player.GetComponent<Player_Movement>().isMoving = false;

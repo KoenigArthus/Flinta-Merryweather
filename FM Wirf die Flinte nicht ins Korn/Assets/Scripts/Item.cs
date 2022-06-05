@@ -30,22 +30,25 @@ public class Item : Interactable
     //this function defines, what it should do when it is clicked on 
     public override void ReactToClick()
     {
-        //pressing the left mouse button will pick up the Item
+        //pressing the left mouse button will pick up the Item if it !canBePickedUp a monologue will appear
         if (Input.GetMouseButtonDown(0) && canBePickedUp)
         {
             this.PickUp();
         }
         else if (Input.GetMouseButtonDown(0) && !canBePickedUp)
         {
-            // Flinta schould say something like "Ich kann" + this.name "nicht aufheben."
+            string[] lsentence = new string[] { "ich kann das nicht aufheben." };
+            FindObjectOfType<MonologueManager>().StartDialogue(lsentence);
         }
+        //pressing the right mouse button will view the Item if it is !isViewable be a monologue will appear
         else if (Input.GetMouseButtonDown(1) && isViewable)
         {
             this.View();
         }
         else if (Input.GetMouseButtonDown(1) && !isViewable)
         {
-            // Flinta schould say something like "Ich kann" + this.name "nicht angucken."
+            string[] lsentence = new string[]{name + " ?", "Ich kann es mir nicht anschauen."};
+            FindObjectOfType<MonologueManager>().StartDialogue(lsentence);
         }
     }
 
@@ -73,6 +76,6 @@ public class Item : Interactable
     //Viewing an Item
     private void View()
     {
-        FindObjectOfType<SmalDialogueManager>().StartDialogue(sentences);
+        FindObjectOfType<MonologueManager>().StartDialogue(sentences);
     }
 }
