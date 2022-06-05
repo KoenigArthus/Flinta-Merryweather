@@ -9,12 +9,14 @@ public class Parralax : MonoBehaviour
     private GameObject cam;
     private float startpos;
 
+    //Initializing Position & Camera
     private void Start()
     {
         startpos = transform.position.x;
         cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
+    //moving the Object relative to the camera pos by the parralaxAmmount
     private void FixedUpdate()
     {
         float distance = cam.transform.position.x * parralaxAmmount;

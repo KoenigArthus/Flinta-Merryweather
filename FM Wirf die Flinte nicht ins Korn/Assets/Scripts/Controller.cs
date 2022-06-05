@@ -1,16 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class Controller : MonoBehaviour
 {
-    public GameObject player;
     public float reachRadius = 2f;
 
+    private SmalDialogueManager smalDialogueManager;
+    private GameObject player;
     private Vector2 mousePos;
     private RaycastHit2D hit;
 
+    //Intitializing the Player
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        smalDialogueManager = this.GameObject().GetComponent<SmalDialogueManager>();
+    }
+
+    //Analysing the players actions
     private void Update()
     {
         //Checking if left or right mouse button was clicked & was not over an UI Element
@@ -32,7 +42,10 @@ public class Controller : MonoBehaviour
             else
             {
                 player.SendMessage("Move", mousePos, SendMessageOptions.DontRequireReceiver);
+                smalDialogueManager.DisplayNextSentence();
             }
+
+            
         }
 
     }
@@ -40,7 +53,7 @@ public class Controller : MonoBehaviour
     // Debug Method to See the reachRadius
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(player.transform.position, reachRadius);
+        Gizmos.DrawWireSphere(GameObject.FindGameObjectWithTag("Player").transform.position, reachRadius);
     }
 
 
