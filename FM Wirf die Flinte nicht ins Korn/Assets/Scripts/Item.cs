@@ -74,6 +74,6 @@ public class Item : Interactable
     //Viewing an Item
     private void View()
     {
-        FindObjectOfType<SmalDialogueManager>().StartDialogue(name, sentences);
+        FindObjectOfType<SmalDialogueManager>().StartDialogue(sentences);
     }
 }

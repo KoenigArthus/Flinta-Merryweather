@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class SmalDialogueManager : MonoBehaviour
 {
-
-    public Text nametext;
     public Text dialoguetext;
+
     private Queue<string> sentences;
 
     private void Start()
@@ -15,9 +14,8 @@ public class SmalDialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(string pname, string[] psentences)
+    public void StartDialogue(string[] psentences)
     {
-        nametext.text = pname;
 
         sentences.Clear();
 
