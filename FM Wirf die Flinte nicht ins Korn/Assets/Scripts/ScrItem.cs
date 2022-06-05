@@ -6,8 +6,7 @@ using UnityEngine;
 public class ScrItem : ScriptableObject
 {
     [Header("Description")]
-    [TextArea]
-    public string viewText;
+    [TextArea] public string viewText;
     [Header("Interaction Variables")]
     public bool isViewable;
     public bool canBePickedUp;

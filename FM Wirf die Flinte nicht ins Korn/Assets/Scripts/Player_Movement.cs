@@ -10,7 +10,7 @@ public class Player_Movement : MonoBehaviour
     //x Boundaries of where the Player_Character can move
     public float MinimumXBoundary, MaximumXBoundary;
     //if the character moves: isMoving = true
-    [SerializeField] private bool isMoving;
+    [HideInInspector] public bool isMoving;
     //goal position after moving
     private Vector2 targetPos;
 

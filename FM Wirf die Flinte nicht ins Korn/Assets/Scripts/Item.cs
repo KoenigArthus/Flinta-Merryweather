@@ -41,7 +41,6 @@ public class Item : Interactable
         }
         else if (Input.GetMouseButtonDown(1) && isViewable)
         {
-            Debug.Log("asdasdasdasda");
             this.View();
         }
         else if (Input.GetMouseButtonDown(1) && !isViewable)
