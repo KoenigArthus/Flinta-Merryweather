@@ -58,7 +58,7 @@ public class MonologueManager : MonoBehaviour
     // For Debugging only
 
     //shows the speech text at the player_Character Pos every FixedUpdate
-    /*private void FixedUpdate()
+   /* private void FixedUpdate()
     {
         Vector3 lnewTextPosition = new Vector3(player.transform.position.x, player.transform.position.y + yOffset, 0);
         dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPosition);

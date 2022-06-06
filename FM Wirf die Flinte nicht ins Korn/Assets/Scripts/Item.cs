@@ -33,6 +33,7 @@ public class Item : Interactable
         //pressing the left mouse button will pick up the Item if it !canBePickedUp a monologue will appear
         if (Input.GetMouseButtonDown(0) && canBePickedUp)
         {
+
             this.PickUp();
         }
         else if (Input.GetMouseButtonDown(0) && !canBePickedUp)
@@ -55,6 +56,7 @@ public class Item : Interactable
     //Picking up an Item
     private void PickUp()
     {
+        inventory.gameObject.GetComponent<Player_Movement>().isMoving = false;
         for (int i = 0; i < inventory.slots.Length; i++)
         {
             //checking if a slot is free and if so then it gets filled with the Object & the player_Character movement enabled
