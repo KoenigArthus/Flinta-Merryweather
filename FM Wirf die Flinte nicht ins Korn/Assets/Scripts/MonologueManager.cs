@@ -7,7 +7,7 @@ public class MonologueManager : MonoBehaviour
 {
     public Text dialogueText;
 
-    [SerializeField] private float yOffset;
+    [SerializeField] private float yOffset = 0.8f;
     
 
     private Queue<string> sentences;
