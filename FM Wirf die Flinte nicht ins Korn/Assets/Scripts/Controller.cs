@@ -35,21 +35,21 @@ public class Controller : MonoBehaviour
               the collider is attached to to call the method "ReactToClick".
               If no collider was hit the Player_Character will move. */
             hit = Physics2D.Raycast(mousePos, Vector2.zero);
-            if (!isTalking & hit.collider != null && IsInReach() && hit.collider.gameObject.CompareTag("Interactable"))
+            if (!isTalking && !dialogueManager.dialogueIsPlaying && hit.collider != null && IsInReach() && hit.collider.gameObject.CompareTag("Interactable"))
             {
                 hit.collider.gameObject.SendMessage("ReactToClick", SendMessageOptions.DontRequireReceiver);
             }
             //For Debugging Only
-            else if (hit.collider != null)
+            /*else if (hit.collider != null)
             {
                 Debug.Log(hit.collider.name);
-            }
+            }*/
             // if the player is currently in a Dialogue every click anywhere should result in displayin the next Sentence
-            else if (isTalking)
+            else if (isTalking && !dialogueManager.dialogueIsPlaying)
             {
                 monologueManager.DisplayNextSentence();
             }
-            else if (dialogueManager.dialogueIsPlaying)
+            else if (dialogueManager.dialogueIsPlaying && !isTalking)
             {
                 dialogueManager.ContinueStory();
             }

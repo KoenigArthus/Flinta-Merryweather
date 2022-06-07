@@ -180,7 +180,7 @@ public class DialogueManager : MonoBehaviour
             switch (tagKey)
             {
                 case SPEAKER_TAG:
-                    Debug.Log(tagValue + "is talking");
+                    ChangeSpeechTextToSpeakerPos(tagValue);
                     break;   
                 case LAYOUT_TAG:
                     Debug.Log(tagValue);
@@ -193,12 +193,29 @@ public class DialogueManager : MonoBehaviour
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
                     break;
             }
-
-
         }
-
-
-
-
     }
+
+    private void ChangeSpeechTextToSpeakerPos(string pspeaker)
+    {
+        switch (pspeaker)
+        {
+            case "f":
+                Debug.Log("Flinta");
+                break;
+            case "F":
+                Debug.Log("Flinta");
+                break;
+            case "c":
+                Debug.Log("character");
+                break;
+            case "C":
+                Debug.Log("character");
+                break;
+            default:
+                Debug.LogError("The case for this Speaker Tag is not defined");
+                break;
+        }
+    }
+
 }

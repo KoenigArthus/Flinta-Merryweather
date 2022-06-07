@@ -9,34 +9,34 @@ VAR defense = 0
 
 VAR score = false
 
-Give me your <color=green>green</color> #speaker:Flinta
+Give me your <color=green>grrrrr</color> #speaker:f
 
 ~insultattack = RANDOM(0,3)
 
-Let's play a Game #speaker:Regina
+Let's play a Game #speaker:c
 
 -> INSULT_REGINA
 
 
 == INSULT_REGINA == 
 
-My Turn! #speaker:Regina
+My Turn! #speaker:c
 
 {insultattack == 0: A} 
 {insultattack == 1: B} 
 {insultattack == 2: C} 
 {insultattack == 3: D} 
 
-+a                  
++a #speaker:F                 
     ~insultdefense = 0
     {insultattack == insultdefense: -> WON_INSULT | -> LOST_INSULT } 
-+b                  
++b #speaker:F                 
     ~insultdefense = 1
     {insultattack == insultdefense: -> WON_INSULT | -> LOST_INSULT } 
-+c                  
++c  #speaker:F                
     ~insultdefense = 2
     {insultattack == insultdefense: -> WON_INSULT | -> LOST_INSULT } 
-+d                 
++d  #speaker:F               
     ~insultdefense = 3
     {insultattack == insultdefense: -> WON_INSULT | -> LOST_INSULT } 
 
@@ -44,7 +44,7 @@ My Turn! #speaker:Regina
 
 == INSULT_FLINTA ==
 
-My Turn! #speaker:Flinta
+My Turn! #speaker:f
 
 +A
     ~attack = 0
@@ -65,7 +65,7 @@ My Turn! #speaker:Flinta
 
 == RESPONSE ==
 
-#speaker:Regina
+#speaker:c
 {defense == 0: a }
 {defense == 1: b }
 {defense == 2: c }
@@ -76,7 +76,7 @@ My Turn! #speaker:Flinta
 
 == WON_INSULT ==
 
-Drink up! #speaker:Flinta
+Drink up! #speaker:F
     ~win += 1
     
 {win == 5: -> WIN}
@@ -87,7 +87,7 @@ Drink up! #speaker:Flinta
 
 == LOST_INSULT ==
 
-Drink up! #speaker:Regina
+Drink up! #speaker:C
     ~drunk += 1
 
 {drunk == 5:  -> LOSE} 
