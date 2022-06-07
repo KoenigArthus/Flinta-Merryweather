@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     //[SerializeField] private GameObject dialoguePanel;
     [SerializeField] private Text dialogueText;
+    [SerializeField] private float yOffset = 0.8f;
     //[SerializeField] private Text displayNameText;
 
 
@@ -20,7 +21,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     [SerializeField] private Text[] choicesText;
 
-
+    private GameObject player;
+    private GameObject speakingCharacter;
     private Story currentStory;
 
     private static DialogueManager instance;
@@ -55,33 +57,23 @@ public class DialogueManager : MonoBehaviour
         //dialoguePanel.SetActive(false);
         choicesText = new Text[choices.Length];
 
-
         int index = 0;
         foreach (GameObject choice in choices)
         {
             choicesText[index] = choice.GetComponentInChildren<Text>();
             index++;
         }
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void Update()
-    {
-        if (!dialogueIsPlaying)
-        {
-            return;
-        }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ContinueStory();
-
-        }
-    }
-
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON, GameObject pcharacter)
     {
         
         if (dialogueIsPlaying == false)
         {
+            speakingCharacter = pcharacter;
+            player.GetComponent<Player_Movement>().isMoving = false;
             currentStory = new Story(inkJSON.text);
             //dialoguePanel.SetActive(true);
             ContinueStory();
@@ -198,19 +190,24 @@ public class DialogueManager : MonoBehaviour
 
     private void ChangeSpeechTextToSpeakerPos(string pspeaker)
     {
+        Vector3 lnewTextPos;
         switch (pspeaker)
         {
             case "f":
-                Debug.Log("Flinta");
+                lnewTextPos = new Vector3(player.transform.position.x, player.transform.position.y + yOffset, 0);
+                dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
                 break;
             case "F":
-                Debug.Log("Flinta");
+                lnewTextPos = new Vector3(player.transform.position.x, player.transform.position.y + yOffset, 0);
+                dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
                 break;
             case "c":
-                Debug.Log("character");
+                lnewTextPos = new Vector3(speakingCharacter.transform.position.x, speakingCharacter.transform.position.y + yOffset, 0);
+                dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
                 break;
             case "C":
-                Debug.Log("character");
+                lnewTextPos = new Vector3(speakingCharacter.transform.position.x, speakingCharacter.transform.position.y + yOffset, 0);
+                dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
                 break;
             default:
                 Debug.LogError("The case for this Speaker Tag is not defined");

@@ -11,7 +11,7 @@ public class Character : Interactable
         //pressing the right mouse button will view the Item if it is !isViewable be a monologue will appear
         if (Input.GetMouseButtonDown(1))
         {
-            FindObjectOfType<DialogueManager>().EnterDialogueMode(ink);
+            FindObjectOfType<DialogueManager>().EnterDialogueMode(ink, this.gameObject);
         }
     }
 }
