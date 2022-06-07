@@ -10,7 +10,8 @@ public class Controller : MonoBehaviour
 
     [HideInInspector] public bool isTalking;
 
-    private MonologueManager smalDialogueManager;
+    private MonologueManager monologueManager;
+    private DialogueManager dialogueManager;
     private GameObject player;
     private Vector2 mousePos;
     private RaycastHit2D hit;
@@ -19,7 +20,8 @@ public class Controller : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        smalDialogueManager = this.GameObject().GetComponent<MonologueManager>();
+        monologueManager = this.GameObject().GetComponent<MonologueManager>();
+        dialogueManager = this.GameObject().GetComponent<DialogueManager>();
     }
 
     //Analysing the players actions
@@ -36,15 +38,20 @@ public class Controller : MonoBehaviour
             if (!isTalking & hit.collider != null && IsInReach() && hit.collider.gameObject.CompareTag("Interactable"))
             {
                 hit.collider.gameObject.SendMessage("ReactToClick", SendMessageOptions.DontRequireReceiver);
-            }/*For Debugging Only
+            }
+            //For Debugging Only
             else if (hit.collider != null)
             {
                 Debug.Log(hit.collider.name);
-            }*/
+            }
             // if the player is currently in a Dialogue every click anywhere should result in displayin the next Sentence
             else if (isTalking)
             {
-                smalDialogueManager.DisplayNextSentence();
+                monologueManager.DisplayNextSentence();
+            }
+            else if (dialogueManager.dialogueIsPlaying)
+            {
+                dialogueManager.ContinueStory();
             }
             // if none of the above is true then the player moves to the mousePos
             else

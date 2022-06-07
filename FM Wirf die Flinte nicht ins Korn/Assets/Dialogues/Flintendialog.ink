@@ -9,7 +9,7 @@ VAR defense = 0
 
 VAR score = false
 
-Give me your Best #speaker:Flinta
+Give me your <color=green>green</color> #speaker:Flinta
 
 ~insultattack = RANDOM(0,3)
 
