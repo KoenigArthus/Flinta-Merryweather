@@ -44,11 +44,12 @@ public class Controller : MonoBehaviour
             {
                 Debug.Log(hit.collider.name);
             }*/
-            // if the player is currently in a Dialogue every click anywhere should result in displayin the next Sentence
+            // if the player is currently in a Monologue every click anywhere should result in displayin the next Sentence
             else if (isTalking && !dialogueManager.dialogueIsPlaying)
             {
                 monologueManager.DisplayNextSentence();
             }
+            // if the player is currently in a Dialogue every click anywhere should result in displayin the next Sentence
             else if (dialogueManager.dialogueIsPlaying && !isTalking)
             {
                 dialogueManager.ContinueStory();

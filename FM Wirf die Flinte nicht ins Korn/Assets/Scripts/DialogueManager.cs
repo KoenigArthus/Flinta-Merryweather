@@ -188,31 +188,36 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    //Sets the Speech Text to the positon of the given Ink Tag / string c is the speaking Character, f is the player_Character aka. Flinta
     private void ChangeSpeechTextToSpeakerPos(string pspeaker)
     {
-        Vector3 lnewTextPos;
         switch (pspeaker)
         {
             case "f":
-                lnewTextPos = new Vector3(player.transform.position.x, player.transform.position.y + yOffset, 0);
-                dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
+                this.ChangeSpeechTextPos(player, yOffset);
                 break;
             case "F":
-                lnewTextPos = new Vector3(player.transform.position.x, player.transform.position.y + yOffset, 0);
-                dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
+                this.ChangeSpeechTextPos(player, yOffset);
                 break;
             case "c":
-                lnewTextPos = new Vector3(speakingCharacter.transform.position.x, speakingCharacter.transform.position.y + yOffset, 0);
-                dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
+                this.ChangeSpeechTextPos(speakingCharacter, yOffset);
                 break;
             case "C":
-                lnewTextPos = new Vector3(speakingCharacter.transform.position.x, speakingCharacter.transform.position.y + yOffset, 0);
-                dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
+                this.ChangeSpeechTextPos(speakingCharacter, yOffset);
                 break;
             default:
                 Debug.LogError("The case for this Speaker Tag is not defined");
                 break;
         }
     }
+
+
+    //Changes the Speech Text position to that of an given GameObject with an float y Offset
+    private void ChangeSpeechTextPos(GameObject pobject, float pyOffset)
+    {
+        Vector3 lnewTextPos = new Vector3(pobject.transform.position.x, player.transform.position.y + pyOffset, 0);
+        dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
+    }
+
 
 }

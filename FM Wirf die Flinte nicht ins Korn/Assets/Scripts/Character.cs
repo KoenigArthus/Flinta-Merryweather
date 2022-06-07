@@ -8,7 +8,7 @@ public class Character : Interactable
 
     public override void ReactToClick()
     {
-        //pressing the right mouse button will view the Item if it is !isViewable be a monologue will appear
+        //pressing the right mouse button will start a Dialogue
         if (Input.GetMouseButtonDown(1))
         {
             FindObjectOfType<DialogueManager>().EnterDialogueMode(ink, this.gameObject);
