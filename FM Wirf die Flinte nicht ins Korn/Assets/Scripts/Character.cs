@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Character : Interactable
 {
-    //TO DO: Character still needs a Scriptable Object Version
+    public ScrCharacter character;
 
-    //this is where the character is given an Ink file
-    [SerializeField] private TextAsset ink;
+     private TextAsset ink;
 
+    //Initializing the Character
+    private void Start()
+    {
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = character.sprite;
+        ink = character.ink;
+    }
     public override void ReactToClick()
     {
         //pressing the right mouse button will start a Dialogue
