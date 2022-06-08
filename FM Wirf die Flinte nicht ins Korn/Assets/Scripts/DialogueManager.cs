@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     //[SerializeField] private GameObject dialoguePanel;
     [SerializeField] private Text dialogueText;
+    [SerializeField] private GameObject uiInventory;
     [SerializeField] private float yOffset = 0.8f;
     //[SerializeField] private Text displayNameText;
 
@@ -72,6 +73,7 @@ public class DialogueManager : MonoBehaviour
         
         if (dialogueIsPlaying == false)
         {
+            uiInventory.SetActive(false);
             speakingCharacter = pcharacter;
             player.GetComponent<Player_Movement>().isMoving = false;
             currentStory = new Story(inkJSON.text);
@@ -84,6 +86,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ExitDialogueMode()
     {
+        uiInventory.SetActive(true);
         dialogueIsPlaying = false;
         //dialoguePanel.SetActive(false);
         dialogueText.text = "";
