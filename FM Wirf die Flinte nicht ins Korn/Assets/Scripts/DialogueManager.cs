@@ -139,7 +139,7 @@ public class DialogueManager : MonoBehaviour
             choices[i].gameObject.SetActive(false);
         }
 
-        StartCoroutine(SelectFirstChoice());
+        //StartCoroutine(SelectFirstChoice());
     }
 
     public void MakeChoice(int choiceIndex)
@@ -215,7 +215,7 @@ public class DialogueManager : MonoBehaviour
     //Changes the Speech Text position to that of an given GameObject with an float y Offset
     private void ChangeSpeechTextPos(GameObject pobject, float pyOffset)
     {
-        Vector3 lnewTextPos = new Vector3(pobject.transform.position.x, player.transform.position.y + pyOffset, 0);
+        Vector3 lnewTextPos = new Vector3(pobject.transform.position.x, pobject.transform.position.y + pyOffset, 0);
         dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
     }
 
