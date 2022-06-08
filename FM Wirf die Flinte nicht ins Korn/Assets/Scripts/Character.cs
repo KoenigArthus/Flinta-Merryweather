@@ -6,7 +6,7 @@ public class Character : Interactable
 {
     public ScrCharacter character;
 
-     private TextAsset ink;
+    private TextAsset ink;
 
     //Initializing the Character
     private void Start()
@@ -19,7 +19,7 @@ public class Character : Interactable
         //pressing the right mouse button will start a Dialogue
         if (Input.GetMouseButtonDown(1))
         {
-            FindObjectOfType<DialogueManager>().EnterDialogueMode(ink, this.gameObject);
+            DialogueManager.GetInstance().EnterDialogueMode(ink, this.gameObject);
         }
     }
 }

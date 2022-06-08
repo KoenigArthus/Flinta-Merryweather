@@ -138,8 +138,6 @@ public class DialogueManager : MonoBehaviour
         {
             choices[i].gameObject.SetActive(false);
         }
-
-        //StartCoroutine(SelectFirstChoice());
     }
 
     public void MakeChoice(int choiceIndex)
@@ -147,16 +145,6 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choiceIndex);
         ContinueStory();
         choicesEnabled = false;
-
-    }
-
-    private IEnumerator SelectFirstChoice()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-        yield return new WaitForEndOfFrame();
-
-        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
-
     }
 
     public void TagHandler(List<string> currentTags)
