@@ -4,6 +4,7 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 
 
@@ -11,10 +12,8 @@ public class DialogueManager : MonoBehaviour
 {
 
     [Header("Dialogue UI")]
-    //[SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private Text dialogueText;
+    [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private float yOffset = 0.8f;
-    //[SerializeField] private Text displayNameText;
 
 
     [Header("Choices UI")]
@@ -54,7 +53,6 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         dialogueIsPlaying = false;
-        //dialoguePanel.SetActive(false);
         choicesText = new Text[choices.Length];
 
         int index = 0;
@@ -75,7 +73,6 @@ public class DialogueManager : MonoBehaviour
             speakingCharacter = pcharacter;
             player.GetComponent<Player_Movement>().isMoving = false;
             currentStory = new Story(inkJSON.text);
-            //dialoguePanel.SetActive(true);
             ContinueStory();
 
         }
@@ -85,7 +82,6 @@ public class DialogueManager : MonoBehaviour
     private void ExitDialogueMode()
     {
         dialogueIsPlaying = false;
-        //dialoguePanel.SetActive(false);
         dialogueText.text = "";
 
     }
@@ -112,7 +108,7 @@ public class DialogueManager : MonoBehaviour
     {
         List<Choice> currentChoices = currentStory.currentChoices;
 
-        if (!currentStory.canContinue)
+        if (currentChoices.Count > 0)
         {
             choicesEnabled = true;
         }
