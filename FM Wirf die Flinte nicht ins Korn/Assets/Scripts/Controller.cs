@@ -77,7 +77,6 @@ public class Controller : MonoBehaviour
     {
         // calculating the distance of Player to Item: P(x1,y1), I(y2,y1),  (distance = √((y2-y1)^2 + (x2-x1)^2)) <-outdated calculation new: (PointA - PointB).sqrMagnitude <= dist * dist
         // and seeing if the distance is smaller than the defined radius
-
         return (player.transform.position - hit.collider.gameObject.transform.position).sqrMagnitude <= reachRadius * reachRadius;
     }
 }
