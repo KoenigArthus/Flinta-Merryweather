@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using TMPro;
 
 
@@ -12,8 +11,7 @@ public class DialogueManager : MonoBehaviour
 {
 
     [Header("Dialogue UI")]
-    //[SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private Text dialogueText;
+    [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private GameObject uiInventory;
     [SerializeField] private float yOffset = 0.8f;
     private Animator ButtonPopUp;
@@ -22,7 +20,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     [SerializeField] private GameObject choicespanel;
-    [SerializeField] private Text[] choicesText;
+    [SerializeField] private TMP_Text[] choicesText;
 
     private GameObject player;
     private GameObject speakingCharacter;
@@ -59,15 +57,15 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         dialogueIsPlaying = false;
-        choicesText = new Text[choices.Length];
+        choicesText = new TMP_Text[choices.Length];
 
-        // hier pls
-        //ButtonPopUp = GetComponent
+
+        ButtonPopUp = choicespanel.GetComponent<Animator>();
 
         int index = 0;
         foreach (GameObject choice in choices)
         {
-            choicesText[index] = choice.GetComponentInChildren<Text>();
+            choicesText[index] = choice.GetComponentInChildren<TMP_Text>();
             index++;
         }
 
@@ -103,7 +101,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-
             dialogueText.text = currentStory.Continue();
             ButtonPopUp.Play("ChoiceButtonDefault");
             DisplayChoices();
