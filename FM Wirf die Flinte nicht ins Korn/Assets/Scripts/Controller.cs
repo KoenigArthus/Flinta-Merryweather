@@ -62,7 +62,6 @@ public class Controller : MonoBehaviour
 
 
         }
-
     }
 
     // Debug Method to See the reachRadius
@@ -76,12 +75,9 @@ public class Controller : MonoBehaviour
     //Checking if the Interactable of hit is in reach of the player
     private bool IsInReach()
     {
-        // calculating the distance of Player to Item: P(x1,y1), I(y2,y1),  distance = √((y2-y1)^2 + (x2-x1)^2)
+        // calculating the distance of Player to Item: P(x1,y1), I(y2,y1),  (distance = √((y2-y1)^2 + (x2-x1)^2)) <-outdated calculation new: (PointA - PointB).sqrMagnitude <= dist * dist
         // and seeing if the distance is smaller than the defined radius
-        return Mathf.Sqrt(
-               Mathf.Pow(hit.collider.gameObject.transform.position.y - player.transform.position.y, 2)
-             + Mathf.Pow(hit.collider.gameObject.transform.position.x - player.transform.position.x, 2))
-            <= reachRadius;
 
+        return (player.transform.position - hit.collider.gameObject.transform.position).sqrMagnitude <= reachRadius * reachRadius;
     }
 }
