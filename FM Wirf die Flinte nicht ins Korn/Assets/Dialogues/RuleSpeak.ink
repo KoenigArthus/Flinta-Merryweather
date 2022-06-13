@@ -36,7 +36,7 @@ Hascht dü vörstandön?
 
 +Narr, erklär nochmal!
     -> START
-+Narr, erklär nochmal! (Ohne Akzent)
++Narr, erklär nochmal! [(Ohne Akzent)]
     -> START2
 +Ayy, lass anfangen!
     -> ROUND_1R
@@ -54,7 +54,7 @@ Hascht dü vörstandön?
 
 +Narr, erklär nochmal!
     -> START
-+Narr, erklär nochmal! (Ohne Akzent)
++Narr, erklär nochmal! [(Ohne Akzent)]
     -> START2
 +Ayy, lass anfangen!
     -> ROUND_1R

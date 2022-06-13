@@ -14,10 +14,12 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private float yOffset = 0.8f;
+    private Animator ButtonPopUp;
 
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private GameObject choicespanel;
     [SerializeField] private Text[] choicesText;
 
     private GameObject player;
@@ -43,6 +45,8 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         }
         instance = this;
+
+        choicespanel.SetActive(false);
     }
 
     public static DialogueManager GetInstance()
@@ -54,6 +58,9 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         choicesText = new Text[choices.Length];
+
+
+        ButtonPopUp = choicespanel.GetComponentInChildren<Animator>();
 
         int index = 0;
         foreach (GameObject choice in choices)
@@ -70,6 +77,8 @@ public class DialogueManager : MonoBehaviour
         
         if (dialogueIsPlaying == false)
         {
+
+            choicespanel.SetActive(true);
             speakingCharacter = pcharacter;
             player.GetComponent<Player_Movement>().isMoving = false;
             currentStory = new Story(inkJSON.text);
@@ -92,7 +101,7 @@ public class DialogueManager : MonoBehaviour
         {
 
             dialogueText.text = currentStory.Continue();
-
+            ButtonPopUp.Play("ChoiceButtonDefault");
             DisplayChoices();
             TagHandler(currentStory.currentTags);
 
@@ -111,6 +120,7 @@ public class DialogueManager : MonoBehaviour
         if (currentChoices.Count > 0)
         {
             choicesEnabled = true;
+            ButtonPopUp.SetBool("choicesEnabled", true);
         }
 
         if (currentChoices.Count > choices.Length)
@@ -127,13 +137,15 @@ public class DialogueManager : MonoBehaviour
             choicesText[index].text = choice.text;
             index++;
         }
-
+        
 
 
         for (int i = index; i < choices.Length; i++)
         {
             choices[i].gameObject.SetActive(false);
         }
+
+        
     }
 
     public void MakeChoice(int choiceIndex)
@@ -141,6 +153,7 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choiceIndex);
         ContinueStory();
         choicesEnabled = false;
+        ButtonPopUp.SetBool("choicesEnabled", false);
     }
 
     public void TagHandler(List<string> currentTags)
