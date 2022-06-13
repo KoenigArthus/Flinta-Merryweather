@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c50a109d2b819ef4596114d6b2213352, type: 3}
+  m_Name: Bertold
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: c46376634a84bb141aa2d33cc38b2c9a, type: 3}
+  ink: {fileID: 4900000, guid: 362d19759a980b34abbe8e40429c2fc5, type: 3}

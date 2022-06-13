@@ -4,6 +4,7 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 
 
@@ -15,11 +16,12 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Text dialogueText;
     [SerializeField] private GameObject uiInventory;
     [SerializeField] private float yOffset = 0.8f;
-    //[SerializeField] private Text displayNameText;
+    private Animator ButtonPopUp;
 
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private GameObject choicespanel;
     [SerializeField] private Text[] choicesText;
 
     private GameObject player;
@@ -45,6 +47,8 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         }
         instance = this;
+
+        choicespanel.SetActive(false);
     }
 
     public static DialogueManager GetInstance()
@@ -55,8 +59,10 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         dialogueIsPlaying = false;
-        //dialoguePanel.SetActive(false);
         choicesText = new Text[choices.Length];
+
+
+        ButtonPopUp = choicespanel.GetComponentInChildren<Animator>();
 
         int index = 0;
         foreach (GameObject choice in choices)
@@ -73,11 +79,12 @@ public class DialogueManager : MonoBehaviour
         
         if (dialogueIsPlaying == false)
         {
+
+            choicespanel.SetActive(true);
             uiInventory.SetActive(false);
             speakingCharacter = pcharacter;
             player.GetComponent<Player_Movement>().isMoving = false;
             currentStory = new Story(inkJSON.text);
-            //dialoguePanel.SetActive(true);
             ContinueStory();
 
         }
@@ -88,7 +95,6 @@ public class DialogueManager : MonoBehaviour
     {
         uiInventory.SetActive(true);
         dialogueIsPlaying = false;
-        //dialoguePanel.SetActive(false);
         dialogueText.text = "";
 
     }
@@ -99,7 +105,7 @@ public class DialogueManager : MonoBehaviour
         {
 
             dialogueText.text = currentStory.Continue();
-
+            ButtonPopUp.Play("ChoiceButtonDefault");
             DisplayChoices();
             TagHandler(currentStory.currentTags);
 
@@ -115,9 +121,10 @@ public class DialogueManager : MonoBehaviour
     {
         List<Choice> currentChoices = currentStory.currentChoices;
 
-        if (!currentStory.canContinue)
+        if (currentChoices.Count > 0)
         {
             choicesEnabled = true;
+            ButtonPopUp.SetBool("choicesEnabled", true);
         }
 
         if (currentChoices.Count > choices.Length)
@@ -134,13 +141,15 @@ public class DialogueManager : MonoBehaviour
             choicesText[index].text = choice.text;
             index++;
         }
-
+        
 
 
         for (int i = index; i < choices.Length; i++)
         {
             choices[i].gameObject.SetActive(false);
         }
+
+        
     }
 
     public void MakeChoice(int choiceIndex)
@@ -148,6 +157,7 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choiceIndex);
         ContinueStory();
         choicesEnabled = false;
+        ButtonPopUp.SetBool("choicesEnabled", false);
     }
 
     public void TagHandler(List<string> currentTags)
