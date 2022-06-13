@@ -61,8 +61,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         choicesText = new Text[choices.Length];
 
-
-        ButtonPopUp = choicespanel.GetComponentInChildren<Animator>();
+        // hier pls
+        //ButtonPopUp = GetComponent
 
         int index = 0;
         foreach (GameObject choice in choices)
