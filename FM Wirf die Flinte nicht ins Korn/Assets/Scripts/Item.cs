@@ -33,7 +33,6 @@ public class Item : Interactable
         //pressing the left mouse button will pick up the Item if it !canBePickedUp a monologue will appear
         if (Input.GetMouseButtonDown(0) && canBePickedUp)
         {
-
             this.PickUp();
         }
         else if (Input.GetMouseButtonDown(0) && !canBePickedUp)

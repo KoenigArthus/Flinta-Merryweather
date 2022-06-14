@@ -37,6 +37,7 @@ public class Controller : MonoBehaviour
             hit = Physics2D.Raycast(mousePos, Vector2.zero);
             if (!isTalking && !dialogueManager.dialogueIsPlaying && hit.collider != null && IsInReach() && hit.collider.gameObject.CompareTag("Interactable"))
             {
+                Debug.Log("rrrrrrrr");
                 hit.collider.gameObject.SendMessage("ReactToClick", SendMessageOptions.DontRequireReceiver);
             }
             //For Debugging Only
@@ -75,8 +76,7 @@ public class Controller : MonoBehaviour
     //Checking if the Interactable of hit is in reach of the player
     private bool IsInReach()
     {
-        // calculating the distance of Player to Item: P(x1,y1), I(y2,y1),  (distance = √((y2-y1)^2 + (x2-x1)^2)) <-outdated calculation new: (PointA - PointB).sqrMagnitude <= dist * dist
-        // and seeing if the distance is smaller than the defined radius
+        // calculating the distance of Player to Interactable: new: (PointA - PointB).sqrMagnitude <= dist * dist // P(x1,y1), I(y2,y1), (distance = √((y2-y1)^2 + (x2-x1)^2)) <-outdated calculation 
         return (player.transform.position - hit.collider.gameObject.transform.position).sqrMagnitude <= reachRadius * reachRadius;
     }
 }

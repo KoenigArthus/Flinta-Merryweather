@@ -61,8 +61,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         choicesText = new Text[choices.Length];
 
-        // hier pls
-        //ButtonPopUp = GetComponent
+        ButtonPopUp = choicespanel.GetComponent<Animator>();
 
         int index = 0;
         foreach (GameObject choice in choices)
@@ -112,7 +111,6 @@ public class DialogueManager : MonoBehaviour
         }
         else if (!currentStory.canContinue && !choicesEnabled)
         {
-
             ExitDialogueMode();
         }
     }
@@ -130,7 +128,6 @@ public class DialogueManager : MonoBehaviour
         if (currentChoices.Count > choices.Length)
         {
             Debug.LogError("More choiches than possible");
-
         }
 
 
