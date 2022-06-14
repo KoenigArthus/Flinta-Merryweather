@@ -22,11 +22,16 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject choicespanel;
     [SerializeField] private TMP_Text[] choicesText;
 
+    [SerializeField] private SceneInfo sceneInfo;
+
+
     private GameObject player;
     private GameObject speakingCharacter;
     private Story currentStory;
 
     private static DialogueManager instance;
+
+
 
 
     public bool dialogueIsPlaying { get; private set; }
@@ -77,9 +82,8 @@ public class DialogueManager : MonoBehaviour
         
         if (dialogueIsPlaying == false)
         {
-
             choicespanel.SetActive(true);
-            uiInventory.SetActive(false);
+           // uiInventory.SetActive(false);
             speakingCharacter = pcharacter;
             player.GetComponent<Player_Movement>().isMoving = false;
             currentStory = new Story(inkJSON.text);
@@ -91,7 +95,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ExitDialogueMode()
     {
-        uiInventory.SetActive(true);
+       // uiInventory.SetActive(true);
         dialogueIsPlaying = false;
         dialogueText.text = "";
 
@@ -176,8 +180,10 @@ public class DialogueManager : MonoBehaviour
                     Debug.Log(tagValue);
                        break; 
                 case STATE_TAG:
-                    Debug.Log(tagValue);
-                    choicesEnabled = false;
+                    if (tagValue == "regina")
+                    {
+                        sceneInfo.Regina = true;
+                    }
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);

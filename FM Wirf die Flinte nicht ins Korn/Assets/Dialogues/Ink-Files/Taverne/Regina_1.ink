@@ -113,7 +113,7 @@ Mischä dän Ladän ‘ier rischtig auf ünd isch fölgä dir wö’in dü wills
 Warte nur, ich überzeuge dich schon noch 
 
 Bitte lassch dir nischt zü viel Zeit #speaker:c
-Äs ist sönst langweilig
+Äs ist sönst langweilig #state:regina
 
 -> END
 

@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: e85178404f0f5ad4aaed63749ebb2676, type: 3}
   ink: {fileID: 4900000, guid: 69662c3bbd865984bbe3cbf842bc8e9d, type: 3}
+  inkR: {fileID: 4900000, guid: 69662c3bbd865984bbe3cbf842bc8e9d, type: 3}
+  ink2: {fileID: 4900000, guid: b07d1aeb801d02f42b9a29c1db383271, type: 3}
+  ink2R: {fileID: 4900000, guid: b07d1aeb801d02f42b9a29c1db383271, type: 3}
+  inkI: {fileID: 0}
+  spokenTo: 1
