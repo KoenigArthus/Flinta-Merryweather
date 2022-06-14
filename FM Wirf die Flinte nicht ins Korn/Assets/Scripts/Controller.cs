@@ -6,26 +6,62 @@ using UnityEngine.EventSystems;
 
 public class Controller : MonoBehaviour
 {
-    public float reachRadius = 2f;
-
+    #region Variables
+    //Here are The Game States serialized
     [HideInInspector] public bool isTalking;
+    [HideInInspector] public ExploreState exploreState = new ExploreState();
+    [HideInInspector] public ShotgunState shotgunState = new ShotgunState();
+    [HideInInspector] public DialogueState dialogueState = new DialogueState();
+    [HideInInspector] public MonologueState monologueState = new MonologueState();
 
-    private MonologueManager monologueManager;
-    private DialogueManager dialogueManager;
-    private GameObject player;
-    private Vector2 mousePos;
-    private RaycastHit2D hit;
+    [HideInInspector] public IGameState currentGameState;
+    [SerializeField]  private string currentGameStateName;
 
-    //Intitializing the Player & Manager
-    private void Start()
+    //Here are the variables of the controller
+    public float reachRadius = 2f;
+    [HideInInspector] public MonologueManager monologueManager;
+    [HideInInspector] public DialogueManager dialogueManager;
+    [HideInInspector] public GameObject player;
+    [HideInInspector] public Vector2 mousePos;
+    [HideInInspector] public RaycastHit2D hit;
+    #endregion
+
+    #region Functions
+    //Intitializing
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         monologueManager = this.GameObject().GetComponent<MonologueManager>();
         dialogueManager = this.GameObject().GetComponent<DialogueManager>();
+        currentGameState = exploreState;
     }
+
 
     //Analysing the players actions
     private void Update()
+    {
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        currentGameState = currentGameState.RunState(this);
+        currentGameStateName = currentGameState.ToString();
+    }
+
+    // Debug Method to See the reachRadius
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(player.transform.position, reachRadius);
+    }
+
+
+
+    //Checking if the Interactable of hit is in reach of the player
+    public bool IsInReach()
+    {
+        // calculating the distance of Player to Interactable:
+        // (PointA - PointB).sqrMagnitude <= dist * dist       // P(x1,y1), I(y2,y1), (distance = √((y2-y1)^2 + (x2-x1)^2)) <-outdated calculation 
+        return (player.transform.position - hit.collider.gameObject.transform.position).sqrMagnitude <= reachRadius * reachRadius;
+    }
+
+    private void oldUpdateFunction()
     {
         //Checking if left or right mouse button was clicked & was not over an UI Element
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -37,7 +73,6 @@ public class Controller : MonoBehaviour
             hit = Physics2D.Raycast(mousePos, Vector2.zero);
             if (!isTalking && !dialogueManager.dialogueIsPlaying && hit.collider != null && IsInReach() && hit.collider.gameObject.CompareTag("Interactable"))
             {
-                Debug.Log("rrrrrrrr");
                 hit.collider.gameObject.SendMessage("ReactToClick", SendMessageOptions.DontRequireReceiver);
             }
             //For Debugging Only
@@ -58,25 +93,11 @@ public class Controller : MonoBehaviour
             // if none of the above is true then the player moves to the mousePos
             else
             {
-                player.SendMessage("Move", mousePos, SendMessageOptions.DontRequireReceiver);
+                player.SendMessage("MoveTo", mousePos, SendMessageOptions.DontRequireReceiver);
             }
 
 
         }
     }
-
-    // Debug Method to See the reachRadius
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(GameObject.FindGameObjectWithTag("Player").transform.position, reachRadius);
-    }
-
-
-
-    //Checking if the Interactable of hit is in reach of the player
-    private bool IsInReach()
-    {
-        // calculating the distance of Player to Interactable: new: (PointA - PointB).sqrMagnitude <= dist * dist // P(x1,y1), I(y2,y1), (distance = √((y2-y1)^2 + (x2-x1)^2)) <-outdated calculation 
-        return (player.transform.position - hit.collider.gameObject.transform.position).sqrMagnitude <= reachRadius * reachRadius;
-    }
+    #endregion
 }

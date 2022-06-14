@@ -14,7 +14,7 @@ public class Character : Interactable
         this.gameObject.GetComponent<SpriteRenderer>().sprite = character.sprite;
         ink = character.ink;
     }
-    public override void ReactToClick()
+    public override void ReactToClick(Controller pcon)
     {
         //pressing the right mouse button will start a Dialogue
         if (Input.GetMouseButtonDown(1))

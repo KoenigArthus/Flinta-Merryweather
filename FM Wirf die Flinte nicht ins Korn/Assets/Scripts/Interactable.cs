@@ -20,7 +20,7 @@ public abstract class Interactable : MonoBehaviour
     }
 
     //this function defines, what the Interactable should do when it is clicked on 
-    public virtual void ReactToClick()
+    public virtual void ReactToClick(Controller pcon)
     {
         Debug.LogError("no override defined pls create a + ReactToClick: override void");
     }

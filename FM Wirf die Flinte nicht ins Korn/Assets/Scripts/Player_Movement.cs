@@ -40,7 +40,7 @@ public class Player_Movement : MonoBehaviour
 
    
 
-    public void Move(Vector2 pmousePos)
+    public void MoveTo(Vector2 pmousePos)
     {
         /*when the player presses the left mouse button the target position gets updated along its x axis
         isMoving is set to true*/

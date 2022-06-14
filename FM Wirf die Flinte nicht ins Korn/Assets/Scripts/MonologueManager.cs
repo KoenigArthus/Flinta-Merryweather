@@ -21,7 +21,7 @@ public class MonologueManager : MonoBehaviour
     }
 
     //this defines what should happen at the start of a monologue
-    public void StartDialogue(string[] psentences)
+    public void StartMonologue(string[] psentences)
     {
         player.GetComponent<Player_Movement>().isMoving = false;
         gameObject.GetComponent<Controller>().isTalking = true;

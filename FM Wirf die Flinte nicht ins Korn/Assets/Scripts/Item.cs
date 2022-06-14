@@ -28,7 +28,7 @@ public class Item : Interactable
     }
 
     //this function defines, what it should do when it is clicked on 
-    public override void ReactToClick()
+    public override void ReactToClick(Controller pcon)
     {
         //pressing the left mouse button will pick up the Item if it !canBePickedUp a monologue will appear
         if (Input.GetMouseButtonDown(0) && canBePickedUp)
@@ -38,7 +38,8 @@ public class Item : Interactable
         else if (Input.GetMouseButtonDown(0) && !canBePickedUp)
         {
             string[] lsentence = new string[] { "ich kann das nicht aufheben." };
-            FindObjectOfType<MonologueManager>().StartDialogue(lsentence);
+            pcon.currentGameState = pcon.monologueState;
+            pcon.monologueManager.StartMonologue(lsentence);
         }
         //pressing the right mouse button will view the Item if it is !isViewable be a monologue will appear
         else if (Input.GetMouseButtonDown(1) && isViewable)
@@ -47,8 +48,9 @@ public class Item : Interactable
         }
         else if (Input.GetMouseButtonDown(1) && !isViewable)
         {
-            string[] lsentence = new string[]{name + " ?", "Ich kann es mir nicht anschauen."};
-            FindObjectOfType<MonologueManager>().StartDialogue(lsentence);
+            string[] lsentence = new string[] { name + " ?", "Ich kann es mir nicht anschauen." };
+            pcon.currentGameState = pcon.monologueState;
+            pcon.monologueManager.StartMonologue(lsentence);
         }
     }
 
@@ -77,6 +79,7 @@ public class Item : Interactable
     //Viewing an Item
     private void View()
     {
-        FindObjectOfType<MonologueManager>().StartDialogue(sentences);
+        pcon.currentGameState = pcon.monologueState;
+        FindObjectOfType<MonologueManager>().StartMonologue(sentences);
     }
 }
