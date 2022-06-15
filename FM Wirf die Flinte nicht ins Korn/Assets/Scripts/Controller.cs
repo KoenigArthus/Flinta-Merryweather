@@ -13,6 +13,7 @@ public class Controller : MonoBehaviour
     [SerializeField]  private string currentGameStateName;
 
     //Here are the variables of the controller
+    public SceneInfo sceneInfo;
     public float reachRadius = 2f;
     [HideInInspector] public MonologueManager monologueManager;
     [HideInInspector] public DialogueManager dialogueManager;
@@ -25,6 +26,7 @@ public class Controller : MonoBehaviour
 
     #region Functions
     //Intitializing
+    //resets sceneInfo arrays + instantiates items from inventory back into UI-Element
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -33,6 +35,20 @@ public class Controller : MonoBehaviour
         monologueManager = gameObject.GetComponent<MonologueManager>();
         dialogueManager = gameObject.GetComponent<DialogueManager>();
         currentGameState = exploreState;
+        //sets inventory arrays to SceneInfo Arrays
+        inventory.isFull = sceneInfo.isFull;
+        inventory.content = sceneInfo.content;
+
+        sceneInfo.isFull = new bool[13];
+        sceneInfo.content = new ScrItem[13];
+
+        for (int i = 0; i < inventory.isFull.Length; i++)
+        {
+            if (inventory.isFull[i] == true)
+            {
+                Instantiate(inventory.content[i].UIObject,inventory.slots[i].transform, false);
+            }
+        }
     }
 
 

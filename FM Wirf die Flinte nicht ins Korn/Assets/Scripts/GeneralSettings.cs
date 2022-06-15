@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GeneralSettings : MonoBehaviour
 {
+
     private void Start()
     {
         //limits the framerate to a maximum of 120 fps
@@ -15,5 +16,7 @@ public class GeneralSettings : MonoBehaviour
             Application.Quit();
         }
     }
+
+
 
 }

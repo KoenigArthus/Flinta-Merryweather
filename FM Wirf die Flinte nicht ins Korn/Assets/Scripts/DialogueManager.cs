@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
-using UnityEngine.EventSystems;
 using TMPro;
 
 
@@ -19,9 +18,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     [SerializeField] private GameObject choicespanel;
     [SerializeField] private TMP_Text[] choicesText;
-
-    [Header("Scriptable Objects")]
-    [SerializeField] private SceneInfo sceneInfo;
   
     private GameObject player;
     private Controller controller;
@@ -117,43 +113,6 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-   
-    //private void DisplayChoices()
-    //{
-    //    List<Choice> currentChoices = currentStory.currentChoices;
-    //
-    //    if (currentChoices.Count > 0)
-    //    {
-    //        choicesEnabled = true;
-    //        ButtonPopUp.SetBool("choicesEnabled", true);
-    //    }
-    //
-    //    if (currentChoices.Count > choices.Length)
-    //    {
-    //        Debug.LogError("More choices than possible");
-    //
-    //    }
-    //
-    //
-    //    int index = 0;
-    //    foreach (Choice choice in currentChoices)
-    //    {
-    //        choices[index].gameObject.SetActive(true);
-    //        choicesText[index].text = choice.text;
-    //        index++;
-    //    }
-    //    
-    //
-    //
-    //    for (int i = index; i < choices.Length; i++)
-    //    {
-    //        choices[i].gameObject.SetActive(false);
-    //    }
-    //
-    //    
-    //}
-
-
     //this is called through the choice-buttons and continues the story accordingly + stops the choice-button animation
     public void MakeChoice(int choiceIndex)
     {
@@ -186,7 +145,7 @@ public class DialogueManager : MonoBehaviour
                 case STATE_TAG:
                     if (tagValue == "regina")
                     {
-                        sceneInfo.Regina = true;
+                        controller.sceneInfo.Regina = true;
                     }
                     break;
                 default:
