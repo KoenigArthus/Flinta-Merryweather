@@ -6,6 +6,13 @@ public class ShotgunState : IGameState
 {
     public IGameState RunState(Controller pcon)
     {
-        return this;
+        if (Input.GetMouseButtonDown(2))
+        {
+            return pcon.exploreState;
+        }
+        else
+        {
+            return pcon.shotgunState;
+        }
     }
 }

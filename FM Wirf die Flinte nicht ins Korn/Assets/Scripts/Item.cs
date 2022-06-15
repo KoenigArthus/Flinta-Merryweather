@@ -13,12 +13,12 @@ public class Item : Interactable
 
     private GameObject UIObject;
 
-    private Inventory inventory;
+    private Controller controller;
 
     //initialising the inventory & the ScrItem
-    private void Awake()
+    private void Start()
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = item.sprite;
         isViewable = item.isViewable;
         canBePickedUp = item.canBePickedUp;
@@ -38,7 +38,6 @@ public class Item : Interactable
         else if (Input.GetMouseButtonDown(0) && !canBePickedUp)
         {
             string[] lsentence = new string[] { "ich kann das nicht aufheben." };
-            pcon.currentGameState = pcon.monologueState;
             pcon.monologueManager.StartMonologue(lsentence);
         }
         //pressing the right mouse button will view the Item if it is !isViewable be a monologue will appear
@@ -49,7 +48,6 @@ public class Item : Interactable
         else if (Input.GetMouseButtonDown(1) && !isViewable)
         {
             string[] lsentence = new string[] { name + " ?", "Ich kann es mir nicht anschauen." };
-            pcon.currentGameState = pcon.monologueState;
             pcon.monologueManager.StartMonologue(lsentence);
         }
     }
@@ -57,18 +55,18 @@ public class Item : Interactable
     //Picking up an Item
     private void PickUp()
     {
-        inventory.gameObject.GetComponent<Player_Movement>().isMoving = false;
-        for (int i = 0; i < inventory.slots.Length; i++)
+        controller.playerMovement.isMoving = false;
+        for (int i = 0; i < controller.inventory.slots.Length; i++)
         {
             //checking if a slot is free and if so then it gets filled with the Object & the player_Character movement enabled
-            if (inventory.isFull[i] == false)
+            if (controller.inventory.isFull[i] == false)
             {
-                inventory.isFull[i] = true;
-                Instantiate(UIObject, inventory.slots[i].transform, false);
+                controller.inventory.isFull[i] = true;
+                Instantiate(UIObject, controller.inventory.slots[i].transform, false);
                 Destroy(gameObject);
                 break;
             }
-            if(i == inventory.slots.Length - 1)
+            if(i == controller.inventory.slots.Length - 1)
             {
                 Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
             }
@@ -79,7 +77,6 @@ public class Item : Interactable
     //Viewing an Item
     private void View()
     {
-        pcon.currentGameState = pcon.monologueState;
-        FindObjectOfType<MonologueManager>().StartMonologue(sentences);
+       controller.monologueManager.StartMonologue(sentences);
     }
 }

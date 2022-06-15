@@ -24,21 +24,19 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject choicespanel;
     [SerializeField] private Text[] choicesText;
 
-    private GameObject player;
+    private Controller controller;
     private GameObject speakingCharacter;
     private Story currentStory;
 
     private static DialogueManager instance;
 
-
-    public bool dialogueIsPlaying { get; private set; }
     public bool choicesEnabled = false;
 
     private const string SPEAKER_TAG = "speaker";
     private const string LAYOUT_TAG = "layout";
     private const string STATE_TAG = "state";
 
- 
+    #region Initialization
 
     private void Awake()
     {
@@ -58,7 +56,6 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        dialogueIsPlaying = false;
         choicesText = new Text[choices.Length];
 
         ButtonPopUp = choicespanel.GetComponent<Animator>();
@@ -70,30 +67,27 @@ public class DialogueManager : MonoBehaviour
             index++;
         }
 
-        player = GameObject.FindGameObjectWithTag("Player");
+        controller = gameObject.GetComponent<Controller>();
     }
 
+    #endregion
+
+    #region manage Dialogue
     public void EnterDialogueMode(TextAsset inkJSON, GameObject pcharacter)
     {
-        
-        if (dialogueIsPlaying == false)
-        {
-
+            controller.talkingState.dialogueIsPlaying = true;
             choicespanel.SetActive(true);
             uiInventory.SetActive(false);
             speakingCharacter = pcharacter;
-            player.GetComponent<Player_Movement>().isMoving = false;
+            controller.playerMovement.isMoving = false;
             currentStory = new Story(inkJSON.text);
             ContinueStory();
-
-        }
-        dialogueIsPlaying = true;
     }
 
     private void ExitDialogueMode()
     {
         uiInventory.SetActive(true);
-        dialogueIsPlaying = false;
+        controller.talkingState.dialogueIsPlaying = false;
         dialogueText.text = "";
 
     }
@@ -115,39 +109,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void DisplayChoices()
-    {
-        List<Choice> currentChoices = currentStory.currentChoices;
-
-        if (currentChoices.Count > 0)
-        {
-            choicesEnabled = true;
-            ButtonPopUp.SetBool("choicesEnabled", true);
-        }
-
-        if (currentChoices.Count > choices.Length)
-        {
-            Debug.LogError("More choiches than possible");
-        }
-
-
-        int index = 0;
-        foreach (Choice choice in currentChoices)
-        {
-            choices[index].gameObject.SetActive(true);
-            choicesText[index].text = choice.text;
-            index++;
-        }
-        
-
-
-        for (int i = index; i < choices.Length; i++)
-        {
-            choices[i].gameObject.SetActive(false);
-        }
-
-        
-    }
+    
 
     public void MakeChoice(int choiceIndex)
     {
@@ -186,16 +148,49 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Custom Commands (private)
+
+    private void DisplayChoices()
+    {
+        List<Choice> currentChoices = currentStory.currentChoices;
+
+        if (currentChoices.Count > 0)
+        {
+            choicesEnabled = true;
+            ButtonPopUp.SetBool("choicesEnabled", true);
+        }
+
+        if (currentChoices.Count > choices.Length)
+        {
+            Debug.LogError("More choiches than possible");
+        }
+
+        int index = 0;
+        foreach (Choice choice in currentChoices)
+        {
+            choices[index].gameObject.SetActive(true);
+            choicesText[index].text = choice.text;
+            index++;
+        }
+
+        for (int i = index; i < choices.Length; i++)
+        {
+            choices[i].gameObject.SetActive(false);
+        }
+    }
+
     //Sets the Speech Text to the positon of the given Ink Tag / string c is the speaking Character, f is the player_Character aka. Flinta
     private void ChangeSpeechTextToSpeakerPos(string pspeaker)
     {
         switch (pspeaker)
         {
             case "f":
-                this.ChangeSpeechTextPos(player, yOffset);
+                this.ChangeSpeechTextPos(controller.player, yOffset);
                 break;
             case "F":
-                this.ChangeSpeechTextPos(player, yOffset);
+                this.ChangeSpeechTextPos(controller.player, yOffset);
                 break;
             case "c":
                 this.ChangeSpeechTextPos(speakingCharacter, yOffset);
@@ -217,5 +212,5 @@ public class DialogueManager : MonoBehaviour
         dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
     }
 
-
+#endregion
 }

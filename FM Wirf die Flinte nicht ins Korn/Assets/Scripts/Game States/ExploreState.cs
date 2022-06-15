@@ -14,17 +14,19 @@ public class ExploreState : IGameState
             if (pcon.hit.collider != null && pcon.IsInReach() && pcon.hit.collider.gameObject.CompareTag("Interactable"))
             {
                 pcon.hit.collider.gameObject.SendMessage("ReactToClick", pcon);
+                if(pcon.talkingState.monologueIsPlaying | pcon.talkingState.dialogueIsPlaying)
+                {
+                   return pcon.talkingState;
+                }
             }
             // if none of the above is true then the player moves to the mousePos
             else
             {
-                pcon.player.GetComponent<Player_Movement>().MoveTo(pcon.mousePos);
+                pcon.player.GetComponent<PlayerMovement>().MoveTo(pcon.mousePos);
             }
 
 
         }
-
-
 
 
         if (Input.GetMouseButtonDown(2))

@@ -3144,7 +3144,7 @@ GameObject:
   - component: {fileID: 1973559488}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3167,6 +3167,8 @@ MonoBehaviour:
   monologueManager: {fileID: 0}
   dialogueManager: {fileID: 0}
   player: {fileID: 684726184}
+  playerMovement: {fileID: 0}
+  inventory: {fileID: 0}
   mousePos: {x: 0, y: 0}
 --- !u!4 &1973559484
 Transform:

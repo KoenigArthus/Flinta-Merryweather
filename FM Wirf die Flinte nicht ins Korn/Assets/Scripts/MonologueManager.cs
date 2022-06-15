@@ -8,26 +8,24 @@ public class MonologueManager : MonoBehaviour
     public Text dialogueText;
 
     [SerializeField] private float yOffset = 0.8f;
-    
 
-    private Queue<string> sentences;
-    private GameObject player;
+    private Controller controller;
+    private Queue<string> sentences = new Queue<string>();
 
     // Initializing the Queue & the player_Character
     private void Start()
     {
-        sentences = new Queue<string>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        controller = gameObject.GetComponent<Controller>();
     }
 
     //this defines what should happen at the start of a monologue
     public void StartMonologue(string[] psentences)
     {
-        player.GetComponent<Player_Movement>().isMoving = false;
-        gameObject.GetComponent<Controller>().isTalking = true;
+        controller.playerMovement.isMoving = false;
+        controller.talkingState.monologueIsPlaying = true;
         sentences.Clear();
 
-        Vector3 lnewTextPosition = new Vector3(player.transform.position.x, player.transform.position.y + yOffset, 0);
+        Vector3 lnewTextPosition = new Vector3(controller.player.transform.position.x, controller.player.transform.position.y + yOffset, 0);
         dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPosition);
 
         foreach (string lsentence in psentences)
@@ -52,7 +50,7 @@ public class MonologueManager : MonoBehaviour
     public void EndDialogue()
     {
         dialogueText.text = "";
-        gameObject.GetComponent<Controller>().isTalking = false;
+        controller.talkingState.monologueIsPlaying = false;
     }
 
     // For Debugging only
