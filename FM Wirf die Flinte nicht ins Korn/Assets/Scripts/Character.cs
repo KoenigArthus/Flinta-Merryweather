@@ -16,9 +16,8 @@ public class Character : Interactable
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = character.sprite;
     }
-    public override void ReactToClick(Controller pcon)
 
-    public override void ReactToClick()
+    public override void ReactToClick(Controller pcon)
     {
         //checks what .json file has to be used and assigns it to the variable "ink"
         Regina = sceneInfo.Regina;

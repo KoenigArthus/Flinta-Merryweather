@@ -10,8 +10,6 @@ public class DialogueManager : MonoBehaviour
 {
     public bool choicesEnabled = false;
 
-    private static DialogueManager instance;
-
     [Header("Dialogue UI")]
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private GameObject uiInventory;
@@ -30,7 +28,6 @@ public class DialogueManager : MonoBehaviour
     private GameObject speakingCharacter;
     private Animator ButtonPopUp;
     private Story currentStory;
-    private Animator ButtonPopUp;
 
     private static DialogueManager instance;
 
@@ -62,7 +59,6 @@ public class DialogueManager : MonoBehaviour
     //accesess all choice-buttons + accesses the choice-button animator
     private void Start()
     {
-        dialogueIsPlaying = false;
         choicesText = new TMP_Text[choices.Length];
 
         ButtonPopUp = choicespanel.GetComponent<Animator>();
@@ -77,9 +73,7 @@ public class DialogueManager : MonoBehaviour
         controller = gameObject.GetComponent<Controller>();
     }
 
-    #endregion
 
-    #region manage Dialogue
     public void EnterDialogueMode(TextAsset inkJSON, GameObject pcharacter)
     {
             controller.talkingState.dialogueIsPlaying = true;
@@ -123,41 +117,41 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    //creates a list with all the current choices. If there are choices in the list, it will start up the choice-button animations + activate the buttons (+ deactivates all unused buttons)
-    private void DisplayChoices()
-    {
-        List<Choice> currentChoices = currentStory.currentChoices;
-
-        if (currentChoices.Count > 0)
-        {
-            choicesEnabled = true;
-            ButtonPopUp.SetBool("choicesEnabled", true);
-        }
-
-        if (currentChoices.Count > choices.Length)
-        {
-            Debug.LogError("More choices than possible");
-
-        }
-
-
-        int index = 0;
-        foreach (Choice choice in currentChoices)
-        {
-            choices[index].gameObject.SetActive(true);
-            choicesText[index].text = choice.text;
-            index++;
-        }
-        
-
-
-        for (int i = index; i < choices.Length; i++)
-        {
-            choices[i].gameObject.SetActive(false);
-        }
-
-        
-    }
+   
+    //private void DisplayChoices()
+    //{
+    //    List<Choice> currentChoices = currentStory.currentChoices;
+    //
+    //    if (currentChoices.Count > 0)
+    //    {
+    //        choicesEnabled = true;
+    //        ButtonPopUp.SetBool("choicesEnabled", true);
+    //    }
+    //
+    //    if (currentChoices.Count > choices.Length)
+    //    {
+    //        Debug.LogError("More choices than possible");
+    //
+    //    }
+    //
+    //
+    //    int index = 0;
+    //    foreach (Choice choice in currentChoices)
+    //    {
+    //        choices[index].gameObject.SetActive(true);
+    //        choicesText[index].text = choice.text;
+    //        index++;
+    //    }
+    //    
+    //
+    //
+    //    for (int i = index; i < choices.Length; i++)
+    //    {
+    //        choices[i].gameObject.SetActive(false);
+    //    }
+    //
+    //    
+    //}
 
 
     //this is called through the choice-buttons and continues the story accordingly + stops the choice-button animation
@@ -202,6 +196,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    //creates a list with all the current choices. If there are choices in the list, it will start up the choice-button animations + activate the buttons (+ deactivates all unused buttons)
     private void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;

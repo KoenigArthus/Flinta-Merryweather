@@ -19,11 +19,11 @@ public class Item : Interactable
     private Controller controller;
 
     //initialising the inventory & the ScrItem
+    //resets sceneInfo arrays + instantiates items from inventory back into UI-Element
     private void Start()
     {
         controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = item.sprite;
-
         isViewable = item.isViewable;
         canBePickedUp = item.canBePickedUp;
         canBeCombined = item.canBeCombined;
@@ -34,26 +34,17 @@ public class Item : Interactable
         //sets nventory arrays to SceneInfo Arrays
         inventory.isFull = sceneInfo.isFull;
         inventory.content = sceneInfo.content;
-
-
-    }
-
-    //resets sceneInfo arrays + instantiates items from inventory back into UI-Element
-    private void Start()
-    {
-         sceneInfo.isFull = new bool[13];
-         sceneInfo.content = new ScrItem[13];
+        
+        sceneInfo.isFull = new bool[13];
+        sceneInfo.content = new ScrItem[13];
 
         for(int i = 0; i < inventory.isFull.Length; i++)
         {
-
             if (inventory.isFull[i] == true)
             {
                 Instantiate(inventory.content[i].UIObject, inventory.slots[i].transform, false);
             }
-
         }
-
     }
 
 
