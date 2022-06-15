@@ -32,6 +32,8 @@ public class ExploreState : IGameState
         // pressing the middle Mouse Button will result in switching to the shotgunState
         if (Input.GetMouseButtonDown(2))
         {
+            pcon.playerMovement.isMoving = false;
+            pcon.shotgunFilter.SetActive(true);
             return pcon.shotgunState;
         }
         else

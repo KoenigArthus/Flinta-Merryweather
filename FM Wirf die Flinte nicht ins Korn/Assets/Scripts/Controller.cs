@@ -3,7 +3,7 @@
 public class Controller : MonoBehaviour
 {
     #region Variables
-    //Here are The Game States serialized
+    //Game State Stuff
     [HideInInspector] public bool isTalking;
     [HideInInspector] public ExploreState exploreState = new ExploreState();
     [HideInInspector] public ShotgunState shotgunState = new ShotgunState();
@@ -12,12 +12,13 @@ public class Controller : MonoBehaviour
     [HideInInspector] public IGameState currentGameState;
     [SerializeField]  private string currentGameStateName;
 
-    //Here are the variables of the controller
+    //General Variables
     public SceneInfo sceneInfo;
     public float reachRadius = 2f;
     [HideInInspector] public MonologueManager monologueManager;
     [HideInInspector] public DialogueManager dialogueManager;
     [HideInInspector] public GameObject player;
+    [HideInInspector] public GameObject shotgunFilter;
     [HideInInspector] public PlayerMovement playerMovement;
     [HideInInspector] public Inventory inventory;
     [HideInInspector] public Vector2 mousePos;
@@ -32,6 +33,8 @@ public class Controller : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         inventory = player.GetComponent<Inventory>();
+        shotgunFilter = GameObject.Find("ShotgunFilter");
+        shotgunFilter.SetActive(false);
         monologueManager = gameObject.GetComponent<MonologueManager>();
         dialogueManager = gameObject.GetComponent<DialogueManager>();
         currentGameState = exploreState;

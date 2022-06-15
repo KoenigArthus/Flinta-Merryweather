@@ -10,6 +10,7 @@ public class ShotgunState : IGameState
 
         if (Input.GetMouseButtonDown(2))
         {
+            pcon.shotgunFilter.SetActive(false);
             return pcon.exploreState;
         }
         else
