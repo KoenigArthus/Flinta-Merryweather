@@ -5,6 +5,7 @@ using TMPro;
 
 public class MonologueManager : MonoBehaviour
 {
+    //changed to TMP instead of Legacy Text
     public TMP_Text dialogueText;
 
     [SerializeField] private float yOffset = 0.8f;

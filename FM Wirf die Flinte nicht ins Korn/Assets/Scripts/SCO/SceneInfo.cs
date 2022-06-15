@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,10 +6,17 @@ using UnityEngine;
 public class SceneInfo : ScriptableObject
 {
 
+    //Characters
+
     public bool Regina = false;
 
-    public List<ScrCharacter> characters = new List<ScrCharacter>();    
+    public List<ScrCharacter> characters = new List<ScrCharacter>();
 
 
+    //Items
+
+    public bool[] isFull;
+
+    public ScrItem[] content;
 
 }

@@ -10,29 +10,25 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
 
+    private static DialogueManager instance;
+
     [Header("Dialogue UI")]
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private GameObject uiInventory;
     [SerializeField] private float yOffset = 0.8f;
-    private Animator ButtonPopUp;
-
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     [SerializeField] private GameObject choicespanel;
     [SerializeField] private TMP_Text[] choicesText;
 
+    [Header("Scriptable Objects")]
     [SerializeField] private SceneInfo sceneInfo;
-
-
+  
     private GameObject player;
     private GameObject speakingCharacter;
+    private Animator ButtonPopUp;
     private Story currentStory;
-
-    private static DialogueManager instance;
-
-
-
 
     public bool dialogueIsPlaying { get; private set; }
     public bool choicesEnabled = false;
@@ -41,8 +37,8 @@ public class DialogueManager : MonoBehaviour
     private const string LAYOUT_TAG = "layout";
     private const string STATE_TAG = "state";
 
- 
 
+    //checks if only one DialogueManager is in the scene + deactivates the UI-Assets that are only supposed to be active in DialogueMode
     private void Awake()
     {
         if (instance != null)
@@ -54,16 +50,19 @@ public class DialogueManager : MonoBehaviour
         choicespanel.SetActive(false);
     }
 
+
+    //Returns the instance (used to access the singleton in other scripts without using the Unity_Inspector
     public static DialogueManager GetInstance()
     {
         return instance;
     }
 
+
+    //accesess all choice-buttons + accesses the choice-button animator
     private void Start()
     {
         dialogueIsPlaying = false;
         choicesText = new TMP_Text[choices.Length];
-
 
         ButtonPopUp = choicespanel.GetComponent<Animator>();
 
@@ -77,32 +76,39 @@ public class DialogueManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
+
+    //Starts the DialogueMode (sets UI-elements active, accesses the current .json, calls ContinueStory())
     public void EnterDialogueMode(TextAsset inkJSON, GameObject pcharacter)
-    {
-        
+    {     
         if (dialogueIsPlaying == false)
         {
             choicespanel.SetActive(true);
-           // uiInventory.SetActive(false);
+            uiInventory.SetActive(false);
+
             speakingCharacter = pcharacter;
             player.GetComponent<Player_Movement>().isMoving = false;
+
             currentStory = new Story(inkJSON.text);
             ContinueStory();
-
         }
         dialogueIsPlaying = true;
     }
 
+
+    //Ends the DialogueMode (deactivates UI-elements + sets dialogueIsPlaying bool to false)
     private void ExitDialogueMode()
     {
-       // uiInventory.SetActive(true);
+        uiInventory.SetActive(true);
         dialogueIsPlaying = false;
         dialogueText.text = "";
 
     }
 
+
+    //checks if the story (in .json File) can continue 
     public void ContinueStory()
     {
+        //checks and reacts to them if there are choices or tags + sets animation to default state + continues the current story
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
@@ -118,6 +124,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+
+    //creates a list with all the current choices. If there are choices in the list, it will start up the choice-button animations + activate the buttons (+ deactivates all unused buttons)
     private void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;
@@ -130,7 +138,7 @@ public class DialogueManager : MonoBehaviour
 
         if (currentChoices.Count > choices.Length)
         {
-            Debug.LogError("More choiches than possible");
+            Debug.LogError("More choices than possible");
 
         }
 
@@ -153,6 +161,8 @@ public class DialogueManager : MonoBehaviour
         
     }
 
+
+    //this is called through the choice-buttons and continues the story accordingly + stops the choice-button animation
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
@@ -161,6 +171,8 @@ public class DialogueManager : MonoBehaviour
         ButtonPopUp.SetBool("choicesEnabled", false);
     }
 
+
+    //checks what tags are written in the .json file and reacts accordingly
     public void TagHandler(List<string> currentTags)
     {
 
@@ -191,6 +203,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
+
 
     //Sets the Speech Text to the positon of the given Ink Tag / string c is the speaking Character, f is the player_Character aka. Flinta
     private void ChangeSpeechTextToSpeakerPos(string pspeaker)

@@ -6,6 +6,7 @@ public class Character : Interactable
 {
     [SerializeField] private ScrCharacter character;
     [SerializeField] private SceneInfo sceneInfo;
+    [SerializeField] private Inventory inventory;
 
     private TextAsset ink;
 
@@ -20,9 +21,10 @@ public class Character : Interactable
 
     public override void ReactToClick()
     {
+        //checks what .json file has to be used and assigns it to the variable "ink"
         Regina = sceneInfo.Regina;
 
-        if (!sceneInfo.characters.Contains(character) && sceneInfo.Regina == false)      
+        if (!sceneInfo.characters.Contains(character)  && sceneInfo.Regina == false)      
         {
             ink = character.ink;
         }
