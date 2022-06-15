@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Parralax : MonoBehaviour
@@ -16,7 +14,7 @@ public class Parralax : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
-    //moving the Object relative to the camera pos by the parralaxAmmount
+    //moving the Object relative to the camera pos by the parralaxAmmount every Fixed Update
     private void FixedUpdate()
     {
         float distance = cam.transform.position.x * parralaxAmmount;

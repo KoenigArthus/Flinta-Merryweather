@@ -36,7 +36,7 @@ public class Controller : MonoBehaviour
     }
 
 
-    //Analysing the players actions
+    //Managing the MousePos & Game State
     private void Update()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
