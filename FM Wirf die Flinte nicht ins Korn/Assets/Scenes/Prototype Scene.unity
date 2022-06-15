@@ -3684,7 +3684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTalking: 0
   currentGameStateName: 
-  sceneInfo: {fileID: 11400000, guid: cd46953648d93d645815b5e13a08acad, type: 2}
+  sceneInfo: {fileID: 0}
   reachRadius: 2
   monologueManager: {fileID: 0}
   dialogueManager: {fileID: 0}
