@@ -9,9 +9,8 @@ public class Item : Interactable
     private bool canBePickedUp;
     private bool canBeCombined;
 
-    private GameObject UIObject;
-
     private Controller controller;
+    private GameObject UIObject;
 
     //initialising the inventory & the ScrItem
     private void Start()

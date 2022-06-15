@@ -7,15 +7,14 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public bool choicesEnabled = false;
 
     [Header("Dialogue UI")]
     //[SerializeField] private GameObject dialoguePanel;
     [SerializeField] private Text dialogueText;
     [SerializeField] private GameObject uiInventory;
     [SerializeField] private float yOffset = 0.8f;
-    private Animator ButtonPopUp;
-
-
+    
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     [SerializeField] private GameObject choicespanel;
@@ -24,10 +23,9 @@ public class DialogueManager : MonoBehaviour
     private Controller controller;
     private GameObject speakingCharacter;
     private Story currentStory;
+    private Animator ButtonPopUp;
 
     private static DialogueManager instance;
-
-    public bool choicesEnabled = false;
 
     private const string SPEAKER_TAG = "speaker";
     private const string LAYOUT_TAG = "layout";
