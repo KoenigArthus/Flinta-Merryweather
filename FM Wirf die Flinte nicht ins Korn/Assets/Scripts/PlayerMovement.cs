@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -39,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
    
-
+    // The Player_Character will move the given Vector2 Position
     public void MoveTo(Vector2 pmousePos)
     {
         /*when the player presses the left mouse button the target position gets updated along its x axis

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
@@ -34,8 +30,8 @@ public class Controller : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         inventory = player.GetComponent<Inventory>();
-        monologueManager = this.GameObject().GetComponent<MonologueManager>();
-        dialogueManager = this.GameObject().GetComponent<DialogueManager>();
+        monologueManager = gameObject.GetComponent<MonologueManager>();
+        dialogueManager = gameObject.GetComponent<DialogueManager>();
         currentGameState = exploreState;
     }
 
@@ -64,43 +60,5 @@ public class Controller : MonoBehaviour
         return (player.transform.position - hit.collider.gameObject.transform.position).sqrMagnitude <= reachRadius * reachRadius;
     }
 
-    //private void oldUpdateFunction()
-    //{
-    //    //Checking if left or right mouse button was clicked & was not over an UI Element
-    //    mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //    if ((Input.GetMouseButtonDown(0) | Input.GetMouseButtonDown(1) | Input.GetMouseButtonDown(2)) && !EventSystem.current.IsPointerOverGameObject())
-    //    {
-    //        /*if the Mouse hit a collider it tells the GameObject
-    //          the collider is attached to to call the method "ReactToClick".
-    //          If no collider was hit the Player_Character will move. */
-    //        hit = Physics2D.Raycast(mousePos, Vector2.zero);
-    //        if (!isTalking && !dialogueManager.dialogueIsPlaying && hit.collider != null && IsInReach() && hit.collider.gameObject.CompareTag("Interactable"))
-    //        {
-    //            hit.collider.gameObject.SendMessage("ReactToClick", SendMessageOptions.DontRequireReceiver);
-    //        }
-    //        //For Debugging Only
-    //        /*else if (hit.collider != null)
-    //        {
-    //            Debug.Log(hit.collider.name);
-    //        }*/
-    //        // if the player is currently in a Monologue every click anywhere should result in displayin the next Sentence
-    //        else if (isTalking && !dialogueManager.dialogueIsPlaying)
-    //        {
-    //            monologueManager.DisplayNextSentence();
-    //        }
-    //        // if the player is currently in a Dialogue every click anywhere should result in displayin the next Sentence
-    //        else if (dialogueManager.dialogueIsPlaying && !isTalking)
-    //        {
-    //            dialogueManager.ContinueStory();
-    //        }
-    //        // if none of the above is true then the player moves to the mousePos
-    //        else
-    //        {
-    //            player.SendMessage("MoveTo", mousePos, SendMessageOptions.DontRequireReceiver);
-    //        }
-    //
-    //
-    //    }
-    //}
     #endregion
 }

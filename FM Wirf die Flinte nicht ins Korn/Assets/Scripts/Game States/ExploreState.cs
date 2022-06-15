@@ -1,13 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ExploreState : IGameState
 {
+    //During the Explore State The PLAYER can walk around and interact with Character and Items
     public IGameState RunState(Controller pcon)
     {
+        /* when clicking left or riht mouse button on an Interactactable it will call its ReactToClick Funktion
+         * when the player ends up talking to a Character or through an Item descripion -> the State will be updated to talkingState
+         * when the player is not in reach of the Interactable or clicks anywhere else other than on an UIElement ...
+         * ... then will the Player_Character walk to the MousePos
+         */
         if ((Input.GetMouseButtonDown(0) | Input.GetMouseButtonDown(1)) && !EventSystem.current.IsPointerOverGameObject())
         {
             pcon.hit = Physics2D.Raycast(pcon.mousePos, Vector2.zero);
@@ -24,11 +27,9 @@ public class ExploreState : IGameState
             {
                 pcon.player.GetComponent<PlayerMovement>().MoveTo(pcon.mousePos);
             }
-
-
         }
 
-
+        // pressing the middle Mouse Button will result in switching to the shotgunState
         if (Input.GetMouseButtonDown(2))
         {
             return pcon.shotgunState;
@@ -38,10 +39,4 @@ public class ExploreState : IGameState
             return pcon.exploreState;
         }
     }
-
-
-
-
-
-
 }
