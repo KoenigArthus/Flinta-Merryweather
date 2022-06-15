@@ -2,27 +2,60 @@ using UnityEngine;
 
 public class Item : Interactable
 {
-    public ScrItem item;
+
+    [SerializeField] private ScrItem item;
+    [SerializeField] private SceneInfo sceneInfo;
 
     private string[] sentences;
+
+    private GameObject UIObject;
+    private Inventory inventory;
+
+    //  ScrItem
     private bool isViewable;
     private bool canBePickedUp;
     private bool canBeCombined;
 
     private Controller controller;
-    private GameObject UIObject;
 
     //initialising the inventory & the ScrItem
     private void Start()
     {
         controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = item.sprite;
+
         isViewable = item.isViewable;
         canBePickedUp = item.canBePickedUp;
         canBeCombined = item.canBeCombined;
+
         UIObject = item.UIObject;
         sentences = item.viewText.Split('|');
+
+        //sets nventory arrays to SceneInfo Arrays
+        inventory.isFull = sceneInfo.isFull;
+        inventory.content = sceneInfo.content;
+
+
     }
+
+    //resets sceneInfo arrays + instantiates items from inventory back into UI-Element
+    private void Start()
+    {
+         sceneInfo.isFull = new bool[13];
+         sceneInfo.content = new ScrItem[13];
+
+        for(int i = 0; i < inventory.isFull.Length; i++)
+        {
+
+            if (inventory.isFull[i] == true)
+            {
+                Instantiate(inventory.content[i].UIObject, inventory.slots[i].transform, false);
+            }
+
+        }
+
+    }
+
 
     //this function defines, what it should do when it is clicked on 
     public override void ReactToClick(Controller pcon)
@@ -49,6 +82,7 @@ public class Item : Interactable
         }
     }
 
+
     //Picking up an Item
     private void PickUp()
     {
@@ -59,7 +93,9 @@ public class Item : Interactable
             if (controller.inventory.isFull[i] == false)
             {
                 controller.inventory.isFull[i] = true;
+                //fills the content array with the ScrItems
                 Instantiate(UIObject, controller.inventory.slots[i].transform, false);
+                inventory.content[i] = item; 
                 Destroy(gameObject);
                 break;
             }
