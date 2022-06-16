@@ -19,4 +19,8 @@ public class SceneInfo : ScriptableObject
 
     public ScrItem[] content;
 
+    //SpawnPos
+    Vector3 spawnpoint;
+
+
 }
