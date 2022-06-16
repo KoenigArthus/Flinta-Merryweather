@@ -21,6 +21,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public GameObject shotgunFilter;
     [HideInInspector] public PlayerMovement playerMovement;
     [HideInInspector] public Inventory inventory;
+    [HideInInspector] public LineRenderer lineRenderer;
     [HideInInspector] public Vector2 mousePos;
     [HideInInspector] public RaycastHit2D hit;
     #endregion
@@ -37,6 +38,8 @@ public class Controller : MonoBehaviour
         shotgunFilter.SetActive(false);
         monologueManager = gameObject.GetComponent<MonologueManager>();
         dialogueManager = gameObject.GetComponent<DialogueManager>();
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
+        lineRenderer.enabled = false;
         currentGameState = exploreState;
         //sets inventory arrays to SceneInfo Arrays
         inventory.isFull = sceneInfo.isFull;

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
-  m_Name: Kokusnuss
+  m_Name: Kokosnuss
   m_EditorClassIdentifier: 
-  viewText: aaaaaaaaaaaaaaa
+  viewText: "Diese Kokosnuss k\xF6nnte ich gebrauchen."
   isViewable: 1
   canBePickedUp: 1
   canBeCombined: 0

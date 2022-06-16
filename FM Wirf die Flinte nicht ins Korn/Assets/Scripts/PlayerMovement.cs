@@ -10,13 +10,13 @@ public class PlayerMovement : MonoBehaviour
     //if the character moves: isMoving = true
     [HideInInspector] public bool isMoving;
     //goal position after moving
-    private Vector2 targetPos;
+    private Vector3 targetPos;
 
 
     //setting up the current position of the player_Character so that it wont skip to 0,0 when later called in the Update function
     private void Start()
     {
-        targetPos = new Vector2(transform.position.x, transform.position.y);
+        targetPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
     private void FixedUpdate()
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
             // the player_character adjusts its position to the targetPos and moves to it with the speed relative to the distance of targetPos
             float ldistanceToTargetPos = Vector2.Distance(transform.position, targetPos);
             float lstep = this.speed.Evaluate(1 / ldistanceToTargetPos) * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, targetPos, lstep);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, lstep);
             //checking if the player_character reachet targetPos and if true sets isMoving to false
             if (transform.position.x == targetPos.x)
             {
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
                 this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
             }
             
-            targetPos = new Vector2(pmousePos.x, transform.position.y);
+            targetPos = new Vector3(pmousePos.x, transform.position.y, transform.position.z);
 
             //Updating The targetPos to be inside the Boundarys if needed
             if (targetPos.x < MinimumXBoundary)
@@ -74,9 +74,9 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         //the two Boundary Lines
-        Gizmos.DrawLine(new Vector3(MinimumXBoundary, -6, 0), new Vector3(MinimumXBoundary, 6, 0));
-        Gizmos.DrawLine(new Vector3(MaximumXBoundary, -6, 0), new Vector3(MaximumXBoundary, 6, 0));
+        Gizmos.DrawLine(new Vector3(MinimumXBoundary, -6, transform.position.z), new Vector3(MinimumXBoundary, 6, transform.position.z));
+        Gizmos.DrawLine(new Vector3(MaximumXBoundary, -6, transform.position.z), new Vector3(MaximumXBoundary, 6, transform.position.z));
         //The HelpLine Laying on the x Axis
-        Gizmos.DrawLine(new Vector3(MinimumXBoundary, transform.position.y - 0.5f, 0), new Vector3(MaximumXBoundary, transform.position.y - 0.5f, 0));
+        Gizmos.DrawLine(new Vector3(MinimumXBoundary, transform.position.y - 0.5f, transform.position.z), new Vector3(MaximumXBoundary, transform.position.y - 0.5f, transform.position.z));
     }
 }

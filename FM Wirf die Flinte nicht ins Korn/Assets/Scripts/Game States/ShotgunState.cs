@@ -8,8 +8,11 @@ public class ShotgunState : IGameState
          *by pressing the middle Mouse Button switches the PLAYER back to the ExploreState
          */
 
+        pcon.lineRenderer.SetPosition(1, new Vector3(pcon.mousePos.x, pcon.mousePos.y, -1));
+
         if (Input.GetMouseButtonDown(2))
         {
+            pcon.lineRenderer.enabled = false;
             pcon.shotgunFilter.SetActive(false);
             return pcon.exploreState;
         }

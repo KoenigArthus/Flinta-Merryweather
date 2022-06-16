@@ -17,6 +17,10 @@ public class Item : Interactable
 
     private Controller controller;
 
+    private void Awake()
+    {
+        name = item.name;
+    }
     //initialising the inventory & the ScrItem
     private void Start()
     {

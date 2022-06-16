@@ -34,6 +34,9 @@ public class ExploreState : IGameState
         {
             pcon.playerMovement.isMoving = false;
             pcon.shotgunFilter.SetActive(true);
+            pcon.lineRenderer.SetPosition(0, pcon.player.transform.position);
+            pcon.lineRenderer.SetPosition(1, new Vector3(pcon.mousePos.x, pcon.mousePos.y, -1));
+            pcon.lineRenderer.enabled = true;
             return pcon.shotgunState;
         }
         else
