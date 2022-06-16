@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneDoor : Interactable
 {
+    public Vector3 spawnpointForNextScene;
+
     [SerializeField] private string scene;
     private Controller controller;
 
@@ -21,6 +23,8 @@ public class SceneDoor : Interactable
         //saves inventory arrays to SceneInfo-SCO
         controller.sceneInfo.isFull = controller.inventory.isFull;
         controller.sceneInfo.content = controller.inventory.content;
+
+        controller.sceneInfo.spawnpoint = spawnpointForNextScene;
 
         SceneManager.LoadScene(Scene);
     } 

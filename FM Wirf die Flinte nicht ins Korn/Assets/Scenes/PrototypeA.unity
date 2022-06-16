@@ -3686,6 +3686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a09df3e787b444f899c1bb21a8db9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnpointForNextScene: {x: 3.23, y: -2.03, z: 0}
   scene: Prototype Scene
 --- !u!4 &2116530598
 Transform:
@@ -3695,7 +3696,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116530595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.829, y: -1.957, z: 0}
+  m_LocalPosition: {x: 3.829, y: -1.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

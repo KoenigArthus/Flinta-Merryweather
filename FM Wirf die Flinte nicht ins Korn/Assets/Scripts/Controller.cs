@@ -34,6 +34,7 @@ public class Controller : MonoBehaviour
         inventory = player.GetComponent<Inventory>();
         monologueManager = gameObject.GetComponent<MonologueManager>();
         dialogueManager = gameObject.GetComponent<DialogueManager>();
+        player.transform.position = sceneInfo.spawnpoint;
         currentGameState = exploreState;
         //sets inventory arrays to SceneInfo Arrays
         inventory.isFull = sceneInfo.isFull;
