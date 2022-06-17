@@ -2,17 +2,19 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
+    public Controller controller;
+
     //when entering and hovering over an Interactable a picture with the Controll Options should pop up
-    private void OnMouseEnter()
+    public virtual void OnMouseEnter()
     {
         
     }
-    private void OnMouseOver()
+    public virtual void OnMouseOver()
     {
         
     }
 
-    private void OnMouseExit()
+    public virtual void OnMouseExit()
     {
         
     }

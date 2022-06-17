@@ -15,8 +15,6 @@ public class Item : Interactable
     private bool canBePickedUp;
     private bool canBeCombined;
 
-    private Controller controller;
-
     private void Awake()
     {
         name = item.name;

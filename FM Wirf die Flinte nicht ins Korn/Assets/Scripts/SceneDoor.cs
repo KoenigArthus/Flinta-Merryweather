@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class SceneDoor : Interactable
 {
     [SerializeField] private string scene;
-    private Controller controller;
 
     private void Start()
     {

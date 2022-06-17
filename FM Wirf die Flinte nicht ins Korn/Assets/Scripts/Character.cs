@@ -3,7 +3,6 @@ using UnityEngine;
 public class Character : Interactable
 {
     [SerializeField] private ScrCharacter character;
-    private Controller controller;
 
     private TextAsset ink;
 
