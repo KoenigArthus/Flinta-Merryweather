@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
-using TMPro;
 using UnityEngine.UI;
 
 
@@ -25,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     private GameObject speakingCharacter;
     private Animator ButtonPopUp;
     private Story currentStory;
+    private Color flintaColor;
 
     private static DialogueManager instance;
 
@@ -68,6 +68,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         controller = gameObject.GetComponent<Controller>();
+
+        
     }
 
 
@@ -101,6 +103,12 @@ public class DialogueManager : MonoBehaviour
         //checks and reacts to them if there are choices or tags + sets animation to default state + continues the current story
         if (currentStory.canContinue)
         {
+            ColorUtility.TryParseHtmlString("#EC8085", out flintaColor);
+            Debug.Log(dialogueText.color);
+            Debug.Log("flintaColour:" + flintaColor);
+
+
+
             dialogueText.text = currentStory.Continue();
             ButtonPopUp.Play("ChoiceButtonDefault");
             DisplayChoices();
@@ -193,12 +201,14 @@ public class DialogueManager : MonoBehaviour
         {
             case "f":
                 this.ChangeSpeechTextPos(controller.player, yOffset);
+                dialogueText.color = flintaColor;
                 break;
             case "F":
                 this.ChangeSpeechTextPos(controller.player, yOffset);
                 break;
             case "c":
                 this.ChangeSpeechTextPos(speakingCharacter, yOffset);
+                dialogueText.color = Color.white;
                 break;
             case "C":
                 this.ChangeSpeechTextPos(speakingCharacter, yOffset);

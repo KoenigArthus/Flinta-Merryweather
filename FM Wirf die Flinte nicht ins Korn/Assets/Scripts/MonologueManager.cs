@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class MonologueManager : MonoBehaviour
 {
     //changed to TMP instead of Legacy Text
-    public TMP_Text dialogueText;
+    public Text dialogueText;
 
     [SerializeField] private float yOffset = 0.8f;
 
