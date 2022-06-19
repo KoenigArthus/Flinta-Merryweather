@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using TMPro;
+using UnityEngine.UI;
 
 
 
@@ -10,14 +11,14 @@ public class DialogueManager : MonoBehaviour
     public bool choicesEnabled = false;
 
     [Header("Dialogue UI")]
-    [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private Text dialogueText;
     [SerializeField] private GameObject uiInventory;
     [SerializeField] private float yOffset = 0.8f;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     [SerializeField] private GameObject choicespanel;
-    [SerializeField] private TMP_Text[] choicesText;
+    [SerializeField] private Text[] choicesText;
   
     private GameObject player;
     private Controller controller;
@@ -55,14 +56,14 @@ public class DialogueManager : MonoBehaviour
     //accesess all choice-buttons + accesses the choice-button animator
     private void Start()
     {
-        choicesText = new TMP_Text[choices.Length];
+        choicesText = new Text[choices.Length];
 
         ButtonPopUp = choicespanel.GetComponent<Animator>();
 
         int index = 0;
         foreach (GameObject choice in choices)
         {
-            choicesText[index] = choice.GetComponentInChildren<TMP_Text>();
+            choicesText[index] = choice.GetComponentInChildren<Text>();
             index++;
         }
 
