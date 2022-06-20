@@ -9,12 +9,14 @@ public class MonologueManager : MonoBehaviour
 
     [SerializeField] private float yOffset = 0.8f;
 
+    private Color flintaColor;
     private Controller controller;
     private Queue<string> sentences = new Queue<string>();
 
     // Initializing the Queue & the player_Character
     private void Start()
     {
+        ColorUtility.TryParseHtmlString("#EC8085", out flintaColor);
         controller = gameObject.GetComponent<Controller>();
     }
 
@@ -44,7 +46,7 @@ public class MonologueManager : MonoBehaviour
             return;
         }
        string lsentence = sentences.Dequeue();
-        dialogueText.color = Color.white;
+       dialogueText.color = flintaColor;
        dialogueText.text = lsentence;
     }
 
