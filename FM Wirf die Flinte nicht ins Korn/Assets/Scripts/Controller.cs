@@ -25,7 +25,8 @@ public class Controller : MonoBehaviour
     [HideInInspector] public LineRenderer lineRenderer;
     [HideInInspector] public Vector2 mousePos;
     [HideInInspector] public RaycastHit2D hit;
-    public Texture2D cursor;
+    public Texture2D cursor0;
+    public Texture2D cursor1;
     public Texture2D crossair;
     #endregion
 
@@ -34,7 +35,7 @@ public class Controller : MonoBehaviour
     //resets sceneInfo arrays + instantiates items from inventory back into UI-Element
     private void Awake()
     {
-        Cursor.SetCursor(cursor, new Vector2(0,0) + new Vector2(8.5f,8.5f), CursorMode.ForceSoftware);
+        Cursor.SetCursor(cursor0, new Vector2(0,0) + new Vector2(8.5f,8.5f), CursorMode.ForceSoftware);
         shotgunFilter.enabled = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
