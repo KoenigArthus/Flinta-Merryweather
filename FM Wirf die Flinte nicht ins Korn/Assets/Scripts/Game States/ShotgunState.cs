@@ -14,6 +14,10 @@ public class ShotgunState : IGameState
             if (pcon.hit.collider != null && pcon.hit.collider.gameObject.CompareTag("Shootable"))
             {
                 pcon.hit.collider.gameObject.SendMessage("ReactToClick", pcon);
+                pcon.lineRenderer.enabled = false;
+                pcon.shotgunFilter.enabled = false;
+                Cursor.SetCursor(pcon.cursor0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+                return pcon.exploreState;
             }
         }
 
