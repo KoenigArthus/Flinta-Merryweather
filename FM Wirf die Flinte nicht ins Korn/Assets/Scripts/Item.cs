@@ -8,19 +8,16 @@ public class Item : Interactable
     private string[] sentences;
 
     private GameObject UIObject;
-    private Inventory inventory;
 
     //  ScrItem
     private bool isViewable;
     private bool canBePickedUp;
     private bool canBeCombined;
 
-    private Controller controller;
-
     //initialising the inventory & the ScrItem
     private void Start()
     {
-        controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
+        name = item.name;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = item.sprite;
         isViewable = item.isViewable;
         canBePickedUp = item.canBePickedUp;

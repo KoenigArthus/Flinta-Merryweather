@@ -1,6 +1,15 @@
 using UnityEngine;
 
-public class Shootable : MonoBehaviour
+public class Shootable : Interactable
 {
-   // YET TO DO
+
+    private void Start()
+    {
+        changesCursorInShotgunState = true;
+    }
+
+    public override void ReactToClick(Controller pcon)
+    {
+            Debug.Log("Get Shot");
+    }
 }

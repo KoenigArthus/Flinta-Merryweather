@@ -6,7 +6,6 @@ public class SceneDoor : Interactable
     public Vector3 spawnpointForNextScene;
 
     [SerializeField] private string scene;
-    private Controller controller;
 
     private void Start()
     {

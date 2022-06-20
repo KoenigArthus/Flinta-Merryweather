@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
     #region Variables
-    //Here are The Game States serialized
+    //Game State Stuff
     [HideInInspector] public bool isTalking;
     [HideInInspector] public ExploreState exploreState = new ExploreState();
     [HideInInspector] public ShotgunState shotgunState = new ShotgunState();
@@ -12,16 +13,22 @@ public class Controller : MonoBehaviour
     [HideInInspector] public IGameState currentGameState;
     [SerializeField]  private string currentGameStateName;
 
-    //Here are the variables of the controller
+    //General Variables
     public SceneInfo sceneInfo;
     public float reachRadius = 2f;
     [HideInInspector] public MonologueManager monologueManager;
     [HideInInspector] public DialogueManager dialogueManager;
     [HideInInspector] public GameObject player;
+     public Image shotgunFilter;
     [HideInInspector] public PlayerMovement playerMovement;
     [HideInInspector] public Inventory inventory;
+    [HideInInspector] public LineRenderer lineRenderer;
     [HideInInspector] public Vector2 mousePos;
     [HideInInspector] public RaycastHit2D hit;
+    public Texture2D cursor0;
+    public Texture2D cursor1;
+    public Texture2D crossair0;
+    public Texture2D crossair1;
     #endregion
 
     #region Functions
@@ -29,11 +36,15 @@ public class Controller : MonoBehaviour
     //resets sceneInfo arrays + instantiates items from inventory back into UI-Element
     private void Awake()
     {
+        Cursor.SetCursor(cursor0, new Vector2(0,0) + new Vector2(8.5f,8.5f), CursorMode.ForceSoftware);
+        shotgunFilter.enabled = false;
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         inventory = player.GetComponent<Inventory>();
         monologueManager = gameObject.GetComponent<MonologueManager>();
         dialogueManager = gameObject.GetComponent<DialogueManager>();
+        lineRenderer = gameObject.GetComponent<LineRenderer>();
+        lineRenderer.enabled = false;
         player.transform.position = sceneInfo.spawnpoint;
         currentGameState = exploreState;
         //sets inventory arrays to SceneInfo Arrays
