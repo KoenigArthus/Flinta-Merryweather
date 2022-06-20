@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public MonologueManager monologueManager;
     [HideInInspector] public DialogueManager dialogueManager;
     [HideInInspector] public GameObject player;
-    [HideInInspector] public GameObject shotgunFilter;
+     public Image shotgunFilter;
     [HideInInspector] public PlayerMovement playerMovement;
     [HideInInspector] public Inventory inventory;
     [HideInInspector] public LineRenderer lineRenderer;
@@ -34,8 +35,7 @@ public class Controller : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         inventory = player.GetComponent<Inventory>();
-        shotgunFilter = GameObject.Find("ShotgunFilter");
-        shotgunFilter.SetActive(false);
+        shotgunFilter.enabled = false;
         monologueManager = gameObject.GetComponent<MonologueManager>();
         dialogueManager = gameObject.GetComponent<DialogueManager>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();

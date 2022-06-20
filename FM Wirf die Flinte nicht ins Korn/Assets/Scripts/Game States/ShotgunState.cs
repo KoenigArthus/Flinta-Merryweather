@@ -13,7 +13,7 @@ public class ShotgunState : IGameState
         if (Input.GetMouseButtonDown(2))
         {
             pcon.lineRenderer.enabled = false;
-            pcon.shotgunFilter.SetActive(false);
+            pcon.shotgunFilter.enabled = false;
             return pcon.exploreState;
         }
         else
