@@ -10,7 +10,6 @@ public class Character : Interactable
     //Initializing the Character
     private void Start()
     {
-        controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = character.sprite;
     }
 

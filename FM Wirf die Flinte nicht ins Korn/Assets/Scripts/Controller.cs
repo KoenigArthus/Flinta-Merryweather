@@ -27,7 +27,8 @@ public class Controller : MonoBehaviour
     [HideInInspector] public RaycastHit2D hit;
     public Texture2D cursor0;
     public Texture2D cursor1;
-    public Texture2D crossair;
+    public Texture2D crossair0;
+    public Texture2D crossair1;
     #endregion
 
     #region Functions
