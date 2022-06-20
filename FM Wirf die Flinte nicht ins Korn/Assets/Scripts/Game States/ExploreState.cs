@@ -37,7 +37,7 @@ public class ExploreState : IGameState
             pcon.lineRenderer.SetPosition(0, pcon.player.transform.position);
             pcon.lineRenderer.SetPosition(1, new Vector3(pcon.mousePos.x, pcon.mousePos.y, -1));
             pcon.lineRenderer.enabled = true;
-            Cursor.SetCursor(pcon.crossair0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+            Cursor.SetCursor(pcon.crossair0, pcon.cursorHotspot,CursorMode.ForceSoftware);
             return pcon.shotgunState;
         }
         else

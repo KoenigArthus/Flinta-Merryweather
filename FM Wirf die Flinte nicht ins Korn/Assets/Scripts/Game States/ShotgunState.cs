@@ -16,7 +16,7 @@ public class ShotgunState : IGameState
                 pcon.hit.collider.gameObject.SendMessage("ReactToClick", pcon);
                 pcon.lineRenderer.enabled = false;
                 pcon.shotgunFilter.enabled = false;
-                Cursor.SetCursor(pcon.cursor0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+                Cursor.SetCursor(pcon.cursor0, pcon.cursorHotspot,CursorMode.ForceSoftware);
                 return pcon.exploreState;
             }
         }
@@ -25,7 +25,7 @@ public class ShotgunState : IGameState
         {
             pcon.lineRenderer.enabled = false;
             pcon.shotgunFilter.enabled = false;
-            Cursor.SetCursor(pcon.cursor0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+            Cursor.SetCursor(pcon.cursor0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f),CursorMode.ForceSoftware);
             return pcon.exploreState;
         }
         else

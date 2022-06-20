@@ -17,24 +17,24 @@ public abstract class Interactable : MonoBehaviour
     public virtual void OnMouseEnter()
     {
         if(changesCursorInShotgunState && controller.currentGameState == controller.shotgunState)
-        Cursor.SetCursor(controller.crossair1, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+        Cursor.SetCursor(controller.crossair1, controller.cursorHotspot,CursorMode.ForceSoftware);
         if (!changesCursorInShotgunState && controller.currentGameState != controller.shotgunState)
-            Cursor.SetCursor(controller.cursor1, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+            Cursor.SetCursor(controller.cursor1, controller.cursorHotspot,CursorMode.ForceSoftware);
     }
     public virtual void OnMouseOver()
     {
         if (changesCursorInShotgunState && controller.currentGameState == controller.shotgunState)
-            Cursor.SetCursor(controller.crossair1, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+            Cursor.SetCursor(controller.crossair1, controller.cursorHotspot,CursorMode.ForceSoftware);
         if (!changesCursorInShotgunState && controller.currentGameState != controller.shotgunState)
-            Cursor.SetCursor(controller.cursor1, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+            Cursor.SetCursor(controller.cursor1, controller.cursorHotspot,CursorMode.ForceSoftware);
     }
 
     public virtual void OnMouseExit()
     {
         if (changesCursorInShotgunState && controller.currentGameState == controller.shotgunState)
-            Cursor.SetCursor(controller.crossair0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+            Cursor.SetCursor(controller.crossair0, controller.cursorHotspot,CursorMode.ForceSoftware);
         if (!changesCursorInShotgunState && controller.currentGameState != controller.shotgunState)
-            Cursor.SetCursor(controller.cursor0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+            Cursor.SetCursor(controller.cursor0, controller.cursorHotspot,CursorMode.ForceSoftware);
     }
 
     //this function defines, what the Interactable should do when it is clicked on 

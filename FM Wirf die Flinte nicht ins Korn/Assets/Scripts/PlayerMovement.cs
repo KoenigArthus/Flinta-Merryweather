@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     //setting up the current position of the player_Character so that it wont skip to 0,0 when later called in the Update function
-    private void Start()
+    private void Awake()
     {
         targetPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
