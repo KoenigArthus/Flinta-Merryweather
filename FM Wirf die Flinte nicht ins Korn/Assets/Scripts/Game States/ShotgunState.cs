@@ -1,14 +1,21 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ShotgunState : IGameState
 {
     public IGameState RunState(Controller pcon)
     {
-        /*Here can GameObjects of Type Shootable be shot
-         *by pressing the middle Mouse Button switches the PLAYER back to the ExploreState
-         */
-
         pcon.lineRenderer.SetPosition(1, new Vector3(pcon.mousePos.x, pcon.mousePos.y, -1));
+
+
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        {
+            pcon.hit = Physics2D.Raycast(pcon.mousePos, Vector2.zero);
+            if (pcon.hit.collider != null && pcon.hit.collider.gameObject.CompareTag("Shootable"))
+            {
+                pcon.hit.collider.gameObject.SendMessage("ReactToClick", pcon);
+            }
+        }
 
         if (Input.GetMouseButtonDown(2))
         {

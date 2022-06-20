@@ -10,9 +10,6 @@ public class Shootable : Interactable
 
     public override void ReactToClick(Controller pcon)
     {
-        if (Input.GetMouseButtonDown(1))
-        {
             Debug.Log("Get Shot");
-        }
     }
 }
