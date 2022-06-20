@@ -3266,6 +3266,8 @@ MonoBehaviour:
   inventory: {fileID: 0}
   lineRenderer: {fileID: 0}
   mousePos: {x: 0, y: 0}
+  cursor: {fileID: 2800000, guid: 2b0965b5c18122245979e0bde28d99d1, type: 3}
+  crossair: {fileID: 2800000, guid: fa1115ccf73a3f148a11c148b02e351f, type: 3}
 --- !u!4 &1973559484
 Transform:
   m_ObjectHideFlags: 0

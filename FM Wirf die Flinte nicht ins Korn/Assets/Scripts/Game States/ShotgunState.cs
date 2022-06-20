@@ -14,6 +14,7 @@ public class ShotgunState : IGameState
         {
             pcon.lineRenderer.enabled = false;
             pcon.shotgunFilter.enabled = false;
+            Cursor.SetCursor(pcon.cursor, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
             return pcon.exploreState;
         }
         else
