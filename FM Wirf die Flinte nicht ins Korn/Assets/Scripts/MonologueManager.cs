@@ -44,6 +44,7 @@ public class MonologueManager : MonoBehaviour
             return;
         }
        string lsentence = sentences.Dequeue();
+        dialogueText.color = Color.white;
        dialogueText.text = lsentence;
     }
 
