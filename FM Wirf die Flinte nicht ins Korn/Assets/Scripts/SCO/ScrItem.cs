@@ -14,4 +14,7 @@ public class ScrItem : ScriptableObject
     [Header("Sprites")]
     public Sprite sprite;
     public GameObject UIObject;
+
+
+
 }

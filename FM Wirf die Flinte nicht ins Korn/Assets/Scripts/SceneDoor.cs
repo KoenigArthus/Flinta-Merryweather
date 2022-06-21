@@ -23,6 +23,8 @@ public class SceneDoor : Interactable
         controller.sceneInfo.isFull = controller.inventory.isFull;
         controller.sceneInfo.content = controller.inventory.content;
 
+        controller.sceneInfo.sceneSave = controller.sceneSave;
+
         controller.sceneInfo.spawnpoint = spawnpointForNextScene;
 
         SceneManager.LoadScene(Scene);
