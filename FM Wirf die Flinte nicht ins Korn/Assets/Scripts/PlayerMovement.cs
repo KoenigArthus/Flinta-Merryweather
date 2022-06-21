@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     public void MoveTo(Vector2 pmousePos)
     {
         /*when the player presses the left mouse button the target position gets updated along its x axis
-        isMoving is set to true*/
+        isMoving is set to true */
         if (Input.GetMouseButtonDown(0))
         {
             // flipping the player_character if needed
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 this.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
-            }
+            } 
             
             targetPos = new Vector3(pmousePos.x, transform.position.y, transform.position.z);
 
@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
             }
 
             isMoving = true;
-        }
+        } 
     }
 
     //Gizmo Drawing for x Boundaries

@@ -14,6 +14,7 @@ public class Item : Interactable
     private bool canBePickedUp;
     private bool canBeCombined;
 
+
     //initialising the inventory & the ScrItem
     private void Start()
     {
@@ -25,6 +26,7 @@ public class Item : Interactable
 
         UIObject = item.UIObject;
         sentences = item.viewText.Split('|');
+
     }
 
 
@@ -66,7 +68,8 @@ public class Item : Interactable
                 controller.inventory.isFull[i] = true;
                 //fills the content array with the ScrItems
                 Instantiate(UIObject, controller.inventory.slots[i].transform, false);
-                controller.inventory.content[i] = item; 
+                controller.inventory.content[i] = item;
+                controller.sceneSave[i] = item.name;
                 Destroy(gameObject);
                 break;
             }
