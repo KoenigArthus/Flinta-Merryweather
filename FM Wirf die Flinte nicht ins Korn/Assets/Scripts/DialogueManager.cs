@@ -104,10 +104,6 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             ColorUtility.TryParseHtmlString("#EC8085", out flintaColor);
-            Debug.Log(dialogueText.color);
-            Debug.Log("flintaColour:" + flintaColor);
-
-
 
             dialogueText.text = currentStory.Continue();
             ButtonPopUp.Play("ChoiceButtonDefault");
