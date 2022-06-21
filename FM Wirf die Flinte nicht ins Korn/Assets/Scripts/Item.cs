@@ -57,7 +57,7 @@ public class Item : Interactable
     //Picking up an Item
     private void PickUp()
     {
-        controller.playerMovement.isMoving = false;
+        controller.playerMovement.Stop();
         for (int i = 0; i < controller.inventory.slots.Length; i++)
         {
             //checking if a slot is free and if so then it gets filled with the Object & the player_Character movement enabled

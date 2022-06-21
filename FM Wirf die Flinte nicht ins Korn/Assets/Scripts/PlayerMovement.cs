@@ -11,12 +11,14 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector] public bool isMoving;
     //goal position after moving
     private Vector3 targetPos;
+    private Animator animator;
 
 
     //setting up the current position of the player_Character so that it wont skip to 0,0 when later called in the Update function
     private void Awake()
     {
         targetPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
             //checking if the player_character reachet targetPos and if true sets isMoving to false
             if (transform.position.x == targetPos.x)
             {
-                isMoving = false;
+                this.Stop();
             }
         }
     }
@@ -67,8 +69,18 @@ public class PlayerMovement : MonoBehaviour
             }
 
             isMoving = true;
+            animator.SetBool("isMoving", isMoving);
         }
     }
+
+    public void Stop()
+    {
+        isMoving = false;
+        animator.SetBool("isMoving", isMoving);
+    }
+
+
+
 
     //Gizmo Drawing for x Boundaries
     private void OnDrawGizmos()

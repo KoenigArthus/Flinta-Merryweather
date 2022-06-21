@@ -23,7 +23,7 @@ public class MonologueManager : MonoBehaviour
     //this defines what should happen at the start of a monologue
     public void StartMonologue(string[] psentences)
     {
-        controller.playerMovement.isMoving = false;
+        controller.playerMovement.Stop();
         controller.talkingState.monologueIsPlaying = true;
         sentences.Clear();
 
