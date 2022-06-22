@@ -4,7 +4,7 @@ Ahh, mein Fan Frita! #speaker:c
 
 Flinta #speaker:f
 
-Wo drückt der Schuh, Frieda? #speaker:c
+Wo drueckt der Schuh, Frieda? #speaker:c
 
 -> CHOICES
 
@@ -13,22 +13,22 @@ Wo drückt der Schuh, Frieda? #speaker:c
 + [Dartscheibe] #speaker:f
     -> DART
     
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
     
 == DART ==
 
 Triffst auch ins Schwarze?
 
-Oh, ich würde ja, aber… #speaker:c
+Oh, ich wuerde ja, aber… #speaker:c
 
 Aber? #speaker:f
 
 Ich hab meine Brille verloren.  #speaker:c
-Ohne sie kann ich ÜNMÖGLICH die Dartscheibe treffen
-Ich würde sonst ja natürlich jedes Mal ins schwarze Treffen
+Ohne sie kann ich ueNMoeGLICH die Dartscheibe treffen
+Ich wuerde sonst ja natuerlich jedes Mal ins schwarze Treffen
 
-Natürlich #speaker:f
+Natuerlich #speaker:f
 
 Siehst? Du verstehst mein Dilemma #speaker:c
 
@@ -39,11 +39,11 @@ Siehst? Du verstehst mein Dilemma #speaker:c
 
 Ich geh dann wieder #speaker:f
 
-Oh ,warte. Ich kann dir noch ein Autogramm geben #speaker:c
+Oh warte. Ich kann dir noch ein Autogramm geben #speaker:c
 
 ... #speaker:f
 
 Keine Feder dabei? #speaker:c
-Dann beim nächsten Mal
+Dann beim naechsten Mal
 
 -> END

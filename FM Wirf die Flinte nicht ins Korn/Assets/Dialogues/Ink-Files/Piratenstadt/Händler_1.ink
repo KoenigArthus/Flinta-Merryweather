@@ -1,13 +1,13 @@
 Ahoi, Kamerad #speaker:f
 
-Hast du Kokosnüssen? #speaker:c
+Hast du Kokosnuessen? #speaker:c
 
-Äh, wie? #speaker:f
+Harr, wie? #speaker:f
 
-Gib mir Kokosnüsse und ich geb dir was zurück #speaker:c
+Gib mir Kokosnuesse und ich geb dir was zurueck #speaker:c
 
-Warum Kokosnüsse? #speaker:f
+Warum Kokosnuesse? #speaker:f
 
-Gib mir meine Nüsse oder geh weg #speaker:c
+Gib mir meine Nuesse oder geh weg #speaker:c
 
 -> END

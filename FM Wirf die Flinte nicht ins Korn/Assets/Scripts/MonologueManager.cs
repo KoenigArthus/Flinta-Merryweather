@@ -23,6 +23,12 @@ public class MonologueManager : MonoBehaviour
     //this defines what should happen at the start of a monologue
     public void StartMonologue(string[] psentences)
     {
+
+        foreach (SpriteRenderer child in controller.childRenderer)
+        {
+            child.gameObject.GetComponentInChildren<SpriteRenderer>().color = controller.filterColor;
+        }
+
         controller.playerMovement.Stop();
         controller.talkingState.monologueIsPlaying = true;
         sentences.Clear();
@@ -52,6 +58,11 @@ public class MonologueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        foreach (SpriteRenderer child in controller.childRenderer)
+        {
+            child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        }
+
         dialogueText.text = "";
         controller.talkingState.monologueIsPlaying = false;
     }

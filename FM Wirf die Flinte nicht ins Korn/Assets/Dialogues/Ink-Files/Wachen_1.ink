@@ -1,13 +1,13 @@
-Arr! Seid gegrüßt ihr Diener! #speaker:f
+Arr! Seid gegrueßt ihr Diener! #speaker:f
 
-Ga vekk do Sprotte! Wän du nijt furt gähst, werst du met de Tauende värprügelt! #speaker:c
+Ga vekk do Sprotte! Waen du nijt furt gaehst, werst du met de Tauende vaerpruegelt! #speaker:c
 
-Gewährt mir Durchgang und ihr werdet mit Dublonen belohnt! #speaker:f
+Gewaehrt mir Durchgang und ihr werdet mit Dublonen belohnt! #speaker:f
 
-Säh dät du Lant gewennst,  #speaker:c
-sons besochst du Dävy Jones’ Keste för de Rest de Ewkeit! 
+Saeh daet du Lant gewennst,  #speaker:c
+sons besochst du Daevy Jones’ Keste foer de Rest de Ewkeit! 
 
-Kein Durchgang für mich?  #speaker:f
+Kein Durchgang fuer mich?  #speaker:f
 Dann muss ich wohl von hier verschwinden!
 
 Aber mit Schweinsgalopp!! #speaker:c

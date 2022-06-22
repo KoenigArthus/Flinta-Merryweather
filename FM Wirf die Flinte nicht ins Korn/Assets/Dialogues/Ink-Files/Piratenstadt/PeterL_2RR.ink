@@ -1,5 +1,5 @@
 Oi, Kamerad #speaker:f
-Was willst’? #speaker:c
+Was willst'? #speaker:c
 
 -> CHOICES
 
@@ -8,27 +8,27 @@ Was willst’? #speaker:c
 + [Regina Reitmich?] #speaker:f
     -> REGINA
  
-+ [Tschüss] #speaker:f
++ [Auf Wiedersehen] #speaker:f
     -> BYE
 
 
 == REGINA ==
 
-Was kannst du mir über Regina Reitmich erzählen? #speaker:f
+Was kannst du mir ueber Regina Reitmich erzaehlen? #speaker:f
 
-Woher kennst n’ du Regina? #speaker:c
+Woher kennst n' du Regina? #speaker:c
 
-Harr? Da hörst zu, was? Sie ist bald Teil meiner Crew #speaker:f
+Harr? Da hoerst zu, was? Sie ist bald Teil meiner Crew #speaker:f
 
-Wie willst n’ das machn, du olle Klugschwätzer #speaker:c
-Regina ist so stur, wie n fleischg’r Bulle
+Wie willst n' das machn, du olle Klugschwaetzer #speaker:c
+Regina ist so stur, wie n fleischg'r Bulle
 Die kriegst net so einfach
 
 Du scheinst sie ja gut zu kennen, was? #speaker:f
 
 
-Ayy, Regina is Familie. Regina hat so viel für mich tan #speaker:c
-… und du nich’. Also zieh Lein’
+Ayy, Regina is Familie. Regina hat so viel fuer mich tan #speaker:c
+… und du nich'. Also zieh Lein'
 
 -> CHOICES
 

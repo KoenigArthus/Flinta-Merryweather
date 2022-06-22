@@ -20,25 +20,30 @@ VAR rounds_lost = 0
 
 
 
-Ökay, lass trinkön!
+okay, lass trinkon!
 
 -> START
 
 === START ===
 
-Die Regäln sind einfasch: #speaker:c
+Die Regaln sind einfasch: #speaker:c
 
-1. Wir böleidigön üns. Erscht fünf Silbön, dann siebön, dann wiedör fünf. Dann wiedör vön vörnö.
-2. Nasch drei Zeilön, kömmt ein "Yö-'ö-'ö" (Yo-ho-ho) ünd dann nasch zwei Zeilön ein "Ünd nä Büdäl völl Rüm" (Und ne Budel voll Rum). Dann wiedör vön vörnö.
-3. Isch böginne ünd danasch immör die Göwinnörin.
+1. Wir beleidigon uns. 
+Erscht funf Silbon, dann siebon,
+dann wiedor funf. Dann wiedor von vorno.
+2. Nasch drei Zeilon, kommt ein "Yo-'o-'o" (Yo-ho-ho)
+und dann nasch zwei Zeilon 
+ein "und na Budal voll Rum" (Und ne Budel voll Rum).
+Dann wiedor von vorno.
+3. Isch boginne und danasch immor die Gowinnorin.
 
-Hascht dü vörstandön?
+Hascht du vorstandon?
 
-+Narr, erklär nochmal!
++Narr, erklar nochmal! #speaker:f
     -> START
-+Narr, erklär nochmal! [(Ohne Akzent)]
++Nochmal! [(Ohne Akzent)] #speaker:f
     -> START2
-+Ayy, lass anfangen!
++Ayy, lass anfangen! #speaker:f
     -> ROUND_1R
 
 
@@ -46,15 +51,21 @@ Hascht dü vörstandön?
 
 === START2 ===
 
-1. Es wird begonnen mit einer Beleidigungen mit 5 Silben, gefolgt wird mit einem Fluch
-    mit 7 Silben, darauf wieder eine mit 5 Silben. Dann wird wieder von vorne begonnen.
-2. Nachdem drei Runden vergangen sind (Jede Beleidigung gilt als eine Runde) muss man statt der Beleidigung "Yo-ho-ho" sagen. Zwei Runden nach dem "Yo-ho-ho" muss "Und ne Budel voll Rum gesagt werden.
-3. Die Gewinnerin fängt immer an.
+1. Es wird begonnen mit einer Beleidigungen mit 5 Silben,
+gefolgt wird mit einem Fluch mit 7 Silben,
+darauf wieder eine mit 5 Silben. 
+Dann wird wieder von vorne begonnen.
+2. Nachdem drei Runden vergangen sind
+(Jede Beleidigung gilt als eine Runde)
+muss man statt der Beleidigung "Yo-ho-ho" sagen.
+Zwei Runden nach dem "Yo-ho-ho" muss "Und ne Budel voll Rum
+gesagt werden.
+3. Die Gewinnerin fangt immer an.
 
 
-+Narr, erklär nochmal!
++Narr, erklar nochmal!
     -> START
-+Narr, erklär nochmal! [(Ohne Akzent)]
++Narr, erklar nochmal! [(Ohne Akzent)]
     -> START2
 +Ayy, lass anfangen!
     -> ROUND_1R
@@ -70,26 +81,26 @@ Hascht dü vörstandön?
 === REGINA_CHECKER ===
 
 {attack: 
-- 1: Spiegel 'assön disch! #speaker:c
-- 2: Die Schu'e stinkön! #speaker:c
-- 3: Die Schu'e stinkön!#speaker:c
+- 1: Spiegel 'asson disch! #speaker:c
+- 2: Die Schu'e stinkon! #speaker:c
+- 3: Disch polier isch noch!#speaker:c
 - 4: Et voilà la merde!#speaker:c
-- 5: Dü Leischtmatrösä!#speaker:c
-- 6: Dävy Jönäs' Kiste wartät schön! #speaker:c
-- 7: Dein 'ölzbein wird värfäuärt! #speaker:c
-- 8: Dü bischt ein räudigär 'ünd! #speaker:c
-- 9: Übär die Plankä mit dir! #speaker:c
+- 5: Du Leischtmatrosa!#speaker:c
+- 6: Davy Jones' Kiste wartat schon! #speaker:c
+- 7: Dein 'olzbein wird varfauart! #speaker:c
+- 8: Du bischt ein raudigar 'und! #speaker:c
+- 9: ubar die Planka mit dir! #speaker:c
 - 10: Tu as un sacré culot! #speaker:c
-- 11: Yö-'ö-'ö #speaker:c 
-- 12: Yö-'ö-'ö #speaker:c  
-- 13: Yö-'ö-'ö #speaker:c 
-- 14: Yö-'ö-'ö #speaker:c 
-- 15: Yö-'ö-'ö #speaker:c 
-- 16: Ünd nä Büdäl völl Rüm #speaker:c
-- 17: Ünd nä Büdäl völl Rüm #speaker:c
-- 18: Ünd nä Büdäl völl Rüm #speaker:c
-- 19: Ünd nä Büdäl völl Rüm #speaker:c
-- 20: Ünd nä Büdäl völl Rüm #speaker:c
+- 11: Yo-'o-'o #speaker:c 
+- 12: Yo-'o-'o #speaker:c  
+- 13: Yo-'o-'o #speaker:c 
+- 14: Yo-'o-'o #speaker:c 
+- 15: Yo-'o-'o #speaker:c 
+- 16: und na Budal voll Rum #speaker:c
+- 17: und na Budal voll Rum #speaker:c
+- 18: und na Budal voll Rum #speaker:c
+- 19: und na Budal voll Rum #speaker:c
+- 20: und na Budal voll Rum #speaker:c
 }
 
 {roundCount:
@@ -128,31 +139,36 @@ Hascht dü vörstandön?
 ~5syl = RANDOM(1,5)
 ~7syl = RANDOM(1,5)
 
-+ {5syl == 1} Beim Klabautermann! #speaker:f
++ {5syl == 1} [5 Silben]
+    Beim Klabautermann! #speaker:f
     ~defense = 1
     {Ycounter == 3: -> ROUND_LOST}
     {Ycounter == 5: -> ROUND_LOST}
     {roundCountF == defense: -> ROUND_1R | -> ROUND_LOST}
     
-+ {5syl == 2} Halt's Schandmaul, Sprotte! #speaker:f
++ {5syl == 2} [5 Silben]
+    Halt's Schandmaul, Sprotte! #speaker:f
     ~defense = 1
     {Ycounter == 3: -> ROUND_LOST}
     {Ycounter == 5: -> ROUND_LOST}
     {roundCountF == defense: -> ROUND_1R | -> ROUND_LOST}
     
-+ {5syl == 3} Versteck dich lieber! #speaker:f
++ {5syl == 3} [5 Silben]
+    Versteck dich lieber! #speaker:f
     ~defense = 1
     {Ycounter == 3: -> ROUND_LOST}
     {Ycounter == 5: -> ROUND_LOST}
     {roundCountF == defense: -> ROUND_1R | -> ROUND_LOST}
     
-+ {5syl == 4} Verflucht sei dein Blut! #speaker:f
++ {5syl == 4} [5 Silben]
+    Verflucht sei dein Blut! #speaker:f
     ~defense = 1
     {Ycounter == 3: -> ROUND_LOST}
     {Ycounter == 5: -> ROUND_LOST}
     {roundCountF == defense: -> ROUND_1R | -> ROUND_LOST}
     
-+ {5syl == 5} Das Vieh gehört hinaus! #speaker:f
++ {5syl == 5} [5 Silben]
+    Das Vieh gehort hinaus! #speaker:f
     ~defense = 1
     {Ycounter == 3: -> ROUND_LOST}
     {Ycounter == 5: -> ROUND_LOST}
@@ -161,31 +177,36 @@ Hascht dü vörstandön?
     
     
     
-+ {7syl == 1} Nimm den Stiefel aus dem Maul! #speaker:f
++ {7syl == 1} [7 Silben]
+    Nimm den Stiefel aus dem Maul! #speaker:f
     ~defense = 2
     {Ycounter == 3: -> ROUND_LOST}
     {Ycounter == 5: -> ROUND_LOST}
     {roundCountF  == defense: -> ROUND_1R | -> ROUND_LOST}
     
-+ {7syl == 2} Pockiger Bilgenaffe! #speaker:f
++ {7syl == 2} [7 Silben]
+    Pockiger Bilgenaffe! #speaker:f
     ~defense = 2
     {Ycounter == 3: -> ROUND_LOST}
     {Ycounter == 5: -> ROUND_LOST}
     {roundCountF  == defense: -> ROUND_1R | -> ROUND_LOST}  
     
-+ {7syl == 3} Dich werd ich kiel holn lassen! #speaker:f
++ {7syl == 3} [7 Silben]
+    Dich werd ich Kiel holn lassen! #speaker:f
     ~defense = 2
     {Ycounter == 3: -> ROUND_LOST}
     {Ycounter == 5: -> ROUND_LOST}
     {roundCountF  == defense: -> ROUND_1R | -> ROUND_LOST}
     
-+ {7syl == 4} Bist den Kugeln zu schade! #speaker:f
++ {7syl == 4} [7 Silben]
+    Bist den Kugeln zu schade! #speaker:f
     ~defense = 2
     {Ycounter == 3: -> ROUND_LOST}
     {Ycounter == 5: -> ROUND_LOST}
     {roundCountF  == defense: -> ROUND_1R | -> ROUND_LOST}
     
-+ {7syl == 5} Dei Visage schreckt nicht schlecht! #speaker:f
++ {7syl == 5} [7 Silben]
+    Dei Visage schreckt nicht schlecht! #speaker:f
     ~defense = 2
     {Ycounter == 3: -> ROUND_LOST}
     {Ycounter == 5: -> ROUND_LOST}
@@ -424,7 +445,8 @@ Hascht dü vörstandön?
 
 === ROUND_WON ===
 
-Haha, das war falsch! Musst trinken! #speaker:f
+Haha, das war falsch!
+Musst trinken! #speaker:f
 Jetzt bin ich dran!
 ~rounds_won += 1
 ~Ycounter = 0
@@ -438,8 +460,8 @@ Jetzt bin ich dran!
 
 === ROUND_LOST ===
 
-Ah oui, dü müsst trinkön! #speaker:c
-Alsö, vön vörn.
+Ah oui, du musst trinkon! #speaker:c
+Also, von vorn.
 ~rounds_lost += 1
 ~Ycounter = 0
 ~roundCount = 0

@@ -38,6 +38,7 @@ public class Character : Interactable
         //pressing the right mouse button will start a Dialogue
         if (Input.GetMouseButtonDown(1))
         {
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan; 
             if (!controller.sceneInfo.characters.Contains(character)) { controller.sceneInfo.characters.Add(character); }
             DialogueManager.GetInstance().EnterDialogueMode(ink, this.gameObject);
         }

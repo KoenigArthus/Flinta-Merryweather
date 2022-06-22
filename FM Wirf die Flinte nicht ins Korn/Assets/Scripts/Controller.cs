@@ -12,13 +12,16 @@ public class Controller : MonoBehaviour
 
     [HideInInspector] public IGameState currentGameState;
     [SerializeField] private string currentGameStateName;
+ 
 
     //General Variables
     public SceneInfo sceneInfo;
     public float reachRadius = 2f;
     [HideInInspector] public MonologueManager monologueManager;
     [HideInInspector] public DialogueManager dialogueManager;
-    [HideInInspector] public GameObject player;
+    [HideInInspector] public GameObject player; 
+    [HideInInspector] public SpriteRenderer[] childRenderer;
+
     public Image shotgunFilter;
     public string[] sceneSave;
     [HideInInspector] public PlayerMovement playerMovement;
@@ -27,6 +30,8 @@ public class Controller : MonoBehaviour
     [HideInInspector] public Vector2 mousePos;
     [HideInInspector] public Vector2 cursorHotspot;
     [HideInInspector] public RaycastHit2D hit;
+    [HideInInspector] public Color filterColor;
+    public GameObject talkingFilterParent;
     public Texture2D cursor0;
     public Texture2D cursor1;
     public Texture2D crossair0;
@@ -38,6 +43,8 @@ public class Controller : MonoBehaviour
     //resets sceneInfo arrays + instantiates items from inventory back into UI-Element
     private void Awake()
     {
+
+        ColorUtility.TryParseHtmlString("#4763FF", out filterColor);
         cursorHotspot = new Vector2(cursor0.width / 2, cursor0.height / 2);
         Cursor.SetCursor(cursor0, cursorHotspot, CursorMode.ForceSoftware);
         shotgunFilter.enabled = false;

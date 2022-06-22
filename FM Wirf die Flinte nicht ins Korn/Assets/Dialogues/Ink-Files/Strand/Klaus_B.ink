@@ -1,6 +1,6 @@
 Ay! #speaker:f
 
-Ik hejb nit mehr fü di. #speaker:c
+Ik hejb nit mehr fue di. #speaker:c
 
 Dann zieh ich lieber wieder Leine! #speaker:f
 

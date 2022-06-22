@@ -14,7 +14,7 @@ Brauchst du was?
 + [Regina Reitmich] #speaker:f
     -> REGINA
         
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
     
 == AUGENKLAPPE ==
@@ -35,7 +35,7 @@ Versenk mich doch! Dein Auge liegt draußen? #speaker:f
 
 == REGINA ==
 
-Was kannst du mir über Regina Reitmich erzählen? #speaker:f
+Was kannst du mir ueber Regina Reitmich erzaehlen? #speaker:f
 
 Rejgina? Ich bin leidejr nicht von hier #speaker:c  
 Ich kejnnej die Leutej nicht, tut mir leid

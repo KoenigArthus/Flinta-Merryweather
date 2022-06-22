@@ -9,32 +9,32 @@ Oui? #speaker:c
 + [Piratengilde] #speaker:f
     -> GILDE
 
-+ [Schlägerei] #speaker:f
++ [Schlaegerei] #speaker:f
     -> TS
 
 + [Trinkspiel] #speaker:f
     -> TRINKSPIEL
 
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
 
 == GILDE ==
 
-Du hast was über die Piratengilde gesagt… #speaker:f
+Du hast was ueber die Piratengilde gesagt… #speaker:f
 Weißt du wie ich ihr beitreten kann?
 
-Asch, dü weischt das nischt? #speaker:c
-Ünd dü willst Piratänkönigin wärdän?
+Asch, due weischt das nischt? #speaker:c
+uend due willst Pirataenkoenigin waerdaen?
 
 Wir fangen ja alle irgendwo an #speaker:f
 
-C’est frai #speaker:c
-Die Piratängildä kömmt auf disch zu, wänn dü einän Rüf aufgäbaut ‘ast
+C'est frai #speaker:c
+Die Pirataengildae koemmt auf disch zu, waenn due einaen Ruef aufgaebaut 'ast
 
-Einen Ruf als Piratenkapitän? #speaker:f
+Einen Ruf als Piratenkapitaen? #speaker:f
 
-Oui, där lätztä, wö ihnän beigäträtän ischt, ‘at einä ganzä  Flöttä där Navy ausgätrickt #speaker:c
-ünd ein Krönjüwäl diräkt üntär i’rär Nasä gäklaut
+Oui, daer laetztae, woe ihnaen beigaetraetaen ischt, 'at einae ganzae  Floettae daer Navy ausgaetrickt #speaker:c
+uend ein Kroenjuewael diraekt uentaer i'raer Nasae gaeklaut
 
 Das ist ja kinderleicht #speaker:f
 
@@ -44,25 +44,25 @@ Oui oui, bien sur #speaker:c
 
 == TS ==
 
-Wenn ich eine Schlägerei hier lostrete, dann kommst du in meine Crew?
+Wenn ich eine Schlaegerei hier lostrete, dann kommst du in meine Crew?
 
 Oui! #speaker:c
-Mischä dän Ladän ‘ier rischtig auf ünd isch fölgä dir wö’in dü willst
+Mischae daen Ladaen 'ier rischtig auf uend isch foelgae dir woe'in due willst
 
 -> CHOICES
 
 
 == TRINKSPIEL == 
 
-Ich hab gehört, du spielst gerne diese Spiel...
+Ich hab gehoert, du spielst gerne diese Spiel...
 
-Oh, non non non. Diesä Zeit ischt vöbei! #speaker:c
+Oh, non non non. Diesae Zeit ischt voebei! #speaker:c
 
-Hätte dich ja eh unter den Tisch getrunken #speaker:f
+Haette dich ja eh unter den Tisch getrunken #speaker:f
 
-'ör mal här kleinä... #speaker:c
+'oer mal haer kleinae... #speaker:c
 
-Ist schon okay. Bist ja schießlich nicht mehr die Jüngste! #speaker:f
+Ist schon okay. Bist ja schießlich nicht mehr die Juengste! #speaker:f
 
 Sacre Bleu. Dir zeig ischs! #speaker:c
 
@@ -74,10 +74,10 @@ Sacre Bleu. Dir zeig ischs! #speaker:c
 
 == WARNUNG ==
 
-> Der Flintendialog beendet das Kapitel. Es gibt kein zurück mehr. 
-> Wenn du anfängst bekommst du je nach deinen Entscheidungen einen anderen Ausgang des Dialogs
-> In diesem Kapitel gibt es 3 Gegenstände, die dich hierbei vorbereiten können:
-> Fischbrötchen, Riechsalz, Trinktechnik
+> Der Flintendialog beendet das Kapitel. Es gibt kein zurueck mehr. 
+> Wenn du anfaengst bekommst du je nach deinen Entscheidungen einen anderen Ausgang des Dialogs
+> In diesem Kapitel gibt es 3 Gegenstaende, die dich hierbei vorbereiten koennen:
+> Fischbroetchen, Riechsalz, Trinktechnik
 > Ohne die Items wird der Dialog deutlich schwerer!
 
 + [FLINTENDIALOG anfangen?] #state:flintendialog
@@ -89,10 +89,10 @@ Sacre Bleu. Dir zeig ischs! #speaker:c
     
 == BYE ==
 
-Warte nur, ich überzeuge dich schon noch 
+Warte nur, ich ueberzeuge dich schon noch 
 
-Bitte lassch dir nischt zü viel Zeit #speaker:c
-Äs ist sönst langweilig
+Bitte lassch dir nischt zue viel Zeit #speaker:c
+aes ist soenst langweilig
 
 -> END
 

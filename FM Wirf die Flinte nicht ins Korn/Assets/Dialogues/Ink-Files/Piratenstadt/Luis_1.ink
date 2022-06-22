@@ -1,12 +1,12 @@
 Ahoi? #speaker:f
 
-‘hoi, matey #speaker:c
-N’ ‘olles Gwehr ‘ast da
+'hoi, matey #speaker:c
+N' 'olles Gwehr 'ast da
 
 Danke? Hattest wohl einen zu viel, oder? #speaker:f
 
 Awa #speaker:c
-‘ie geht’s ‘ir?
+'ie geht's 'ir?
 
 -> BYE
 
@@ -14,7 +14,7 @@ Awa #speaker:c
 
 Ich geh dann besser mal #speaker:f
 
-‘ünfzschen ‘ann ‘uf ‘es toten Manns Kischte, #speaker:c
-ho ho ho und ‘ne ‘uddel mit Rum! 
+'ünfzschen 'ann 'uf 'es toten Manns Kischte, #speaker:c
+ho ho ho und 'ne 'uddel mit Rum! 
 
 -> END

@@ -4,9 +4,9 @@ Oi, Finta. Bist du ein Fan? #speaker:c
 
 Fan? Wovon? #speaker:f
 
-Von mir natürlich. Dem legendären Dieter #speaker:c
+Von mir natuerlich. Dem legendaeren Dieter #speaker:c
 
-Ähh, soll ich dich kennen? #speaker:f
+aehh, soll ich dich kennen? #speaker:f
 
 -> CHOICES
 
@@ -15,22 +15,22 @@ Von mir natürlich. Dem legendären Dieter #speaker:c
 + [Dartscheibe] #speaker:f
     -> DART
 
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
     
 == DART ==
 
 Triffst auch ins Schwarze?
 
-Oh, ich würde ja, aber… #speaker:c
+Oh, ich wuerde ja, aber… #speaker:c
 
 Aber? #speaker:f
 
 Ich hab meine Brille verloren.  #speaker:c
-Ohne sie kann ich ÜNMÖGLICH die Dartscheibe treffen
-Ich würde sonst ja natürlich jedes Mal ins schwarze Treffen
+Ohne sie kann ich üeNMoeGLICH die Dartscheibe treffen
+Ich wuerde sonst ja natuerlich jedes Mal ins schwarze Treffen
 
-Natürlich #speaker:f
+Natuerlich #speaker:f
 
 Siehst? Du verstehst mein Dilemma #speaker:c
 
@@ -41,11 +41,11 @@ Siehst? Du verstehst mein Dilemma #speaker:c
 
 Ich geh dann wieder #speaker:f
 
-Oh ,warte. Ich kann dir noch ein Autogramm geben #speaker:c
+Oh warte. Ich kann dir noch ein Autogramm geben #speaker:c
 
 ... #speaker:f
 
 Keine Feder dabei? #speaker:c
-Dann beim nächsten Mal
+Dann beim naechsten Mal
 
 -> END

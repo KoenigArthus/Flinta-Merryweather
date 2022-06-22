@@ -7,7 +7,7 @@ Worauf denn? #speaker:f
 PSSST, hab ich gesagt #speaker:c
 Wir spielen Grogkippen!
 
-Ist das ein Würfelspiel? #speaker:rfelspiel
+Ist das ein Wuerfelspiel? #speaker:rfelspiel
 
 ... #speaker:c
 
@@ -15,10 +15,10 @@ Ist das ein Würfelspiel? #speaker:rfelspiel
 
 == CHOICES ==
 
-+ [Würfelspiel] #speaker:f
++ [Wuerfelspiel] #speaker:f
     -> GEWINNEN
     
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
     
 == GEWINNEN ==

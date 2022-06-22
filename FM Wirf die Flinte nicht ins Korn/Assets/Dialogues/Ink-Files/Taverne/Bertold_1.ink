@@ -13,33 +13,33 @@ Hast mir mal eine ausgegeben
 Gern doch. Bist mir gut in Erinnerung geblieben #speaker:c
 
 Darauf kannst du verzinken! #speaker:c
-Ich bin übrigens Bertold
+Ich bin uebrigens Bertold
 
 -> CHOICES
 
 == CHOICES ==
 
-+ [Würfelspiel] #speaker:f
++ [Wuerfelspiel] #speaker:f
     -> GEWINNEN
     
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
     
 == GEWINNEN ==
 
-Wie läuft das Spiel?
+Wie laeuft das Spiel?
 
 Ayy, echt gut. Klopf mir auf Holz #speaker:c
-Hab eine Gewinnsträhne
+Hab eine Gewinnstraehne
 
-Ist es ein Glücksspiel? #speaker:f
+Ist es ein Gluecksspiel? #speaker:f
 
 Ay, kann man so sagen. #speaker:c
-Ich glaub aber, die junge Sprosse hier ist noch etwas grün hinter den Ohren
-Gewinnen lass ich ihn aber nicht, beim Neunschwänzigen, das kann ich dir sagen
+Ich glaub aber, die junge Sprosse hier ist noch etwas gruen hinter den Ohren
+Gewinnen lass ich ihn aber nicht, beim Neunschwaenzigen, das kann ich dir sagen
 
 
-Er sieht ziemlich wütend aus #speaker:f
+Er sieht ziemlich wuetend aus #speaker:f
 
 Er ist n guter Kamerad #speaker:c
 Hat’s faustig hinter den Ohren
@@ -51,7 +51,7 @@ Hat’s faustig hinter den Ohren
 
 Ich geh dann mal wieder #speaker:f
 
-Wir sprechen uns später #speaker:c
-Lass mal wieder von dir hören, ja?
+Wir sprechen uns spaeter #speaker:c
+Lass mal wieder von dir hoeren, ja?
 
 -> END

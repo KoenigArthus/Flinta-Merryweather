@@ -15,7 +15,7 @@ Womit kann ich helfen?
 + [Regina Reitmich] #speaker:f
     -> REGINA
 
-+ [Würfelspiel] #speaker:f
++ [Wuerfelspiel] #speaker:f
     -> SPIEL
     
 + [Dartscheibe] #speaker:f
@@ -24,18 +24,18 @@ Womit kann ich helfen?
 + [Kronleuchter] #speaker:f
     -> KRONLEUCHTER
 
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
   
 == REGINA ==
 
-Was kannst du mir über Regina da drüben erzählen? 
+Was kannst du mir ueber Regina da drueben erzaehlen? 
 
 Regina Reitmich? Ohho, ich weiß nicht recht #speaker:c
 
-Oh? Erzähl mir mehr #speaker:f
+Oh? Erzaehl mir mehr #speaker:f
   
-Die hatte früher ein echtes Trinkproblem #speaker:c
+Die hatte frueher ein echtes Trinkproblem #speaker:c
 Hat nie viel gefehlt, dass sie mitgemacht hat
 Alleine hat sie aber nie getrunken
 
@@ -46,23 +46,23 @@ Aber manchmal macht sie noch so ein Trinkspiel
 Ist ein bisschen zu sehr auf der Gewinn-Schiene,
 wenn du mich fragst
 
-Oho, danke für die Info #speaker:f
+Oho, danke fuer die Info #speaker:f
 
 Das weißt du aber nicht von mir #speaker:c
 
 -> CHOICES
 == SPIEL ==
-Die zwei da mit den Würfelspiel sehen ganz schön hitzig aus, #speaker:f
+Die zwei da mit den Wuerfelspiel sehen ganz schoen hitzig aus, #speaker:f
 findest du nicht?
 
-Arnold und Bertold? Die zwei streiten sich ständig #speaker:c
+Arnold und Bertold? Die zwei streiten sich staendig #speaker:c
 Ich weiß gar nicht, warum die immer noch miteinander spielen
 
 Ist das Spiel denn fair? #speaker:f
 
-Arnold hat einfach so eine Pechsträhne. Es ist unglaublich #speaker:c
-Wenn der rausfinden würde, 
-dass Bertold schummelt, dann wäre die Hölle los
+Arnold hat einfach so eine Pechstraehne. Es ist unglaublich #speaker:c
+Wenn der rausfinden wuerde, 
+dass Bertold schummelt, dann waere die Hoelle los
 
 Oh? So angespannt zwischen denen? #speaker:f
 
@@ -78,16 +78,16 @@ Wirft der Typ eigentlich jemals auch auf die Dartscheibe? #speaker:f
 Oh, ich hoffe nicht #speaker:c
 Der kann zum verrecken nicht zielen
 
-Und das so nah bei den Bierfässern? #speaker:f
+Und das so nah bei den Bierfaessern? #speaker:f
 
 
-Vielleicht muss ich einmal die Fässer umstellen #speaker:c
+Vielleicht muss ich einmal die Faesser umstellen #speaker:c
 
 Sehr vorrausschauend  #speaker:f
 
 Aber nicht heute #speaker:c
 
-Natürlich #speaker:f
+Natuerlich #speaker:f
 
 -> CHOICES
 
@@ -100,12 +100,12 @@ Danke, hat mir Musketa von einem Raubzug mitgebrach #speaker:c
 
 Musketa? Wer ist das? #speaker:f
 
-Oh, das findest du noch früh genug heraus,  #speaker:c
-wenn du länger hier bist
-Musketa mag es nicht, wenn man über sie redet 
+Oh, das findest du noch frueh genug heraus,  #speaker:c
+wenn du laenger hier bist
+Musketa mag es nicht, wenn man ueber sie redet 
 und ich riskiere nichts
 
-Aber wofür der Kronleuchter? #speaker:f
+Aber wofuer der Kronleuchter? #speaker:f
 
 Flinta, ich mag dich. Du bist schwer in Ordnung,  #speaker:c
 aber ein paar Sachen, bleiben lieber ein Geheimnis
@@ -114,7 +114,7 @@ Verstanden. Aber schick ist er #speaker:f
 
 Das ist wohl wahr. Ist mein ganzer stolz  #speaker:c
 Nur die Halterung ist etwas gepfuscht 
-Muss ich mal neu machen, bevor der noch runterstürzt
+Muss ich mal neu machen, bevor der noch runterstuerzt
 
 Aber nicht mehr heute, was? #speaker:f
 
@@ -127,6 +127,6 @@ Du sagst es #speaker:c
 Ich geh dann mal Kiel holen #speaker:f
 
 Wir sehen uns. Du bist hier immer willkommen. #speaker:c
-Könntest aber ruhig auch mal was kaufen
+Koenntest aber ruhig auch mal was kaufen
 
 -> END

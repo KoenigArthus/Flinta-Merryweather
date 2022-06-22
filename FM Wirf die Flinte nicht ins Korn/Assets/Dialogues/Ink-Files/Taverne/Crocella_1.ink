@@ -4,9 +4,9 @@ Ahoi, Frejmdej #speaker:c
 Odejr… kejnne wir uns?
 
 Ich bin Flinta vom Festland  #speaker:f
-Mir gehört eine Taverne
+Mir gehoert eine Taverne
 
-Noch nie von dir hejhört, tut mir leid #speaker:c
+Noch nie von dir hejhoert, tut mir leid #speaker:c
 
 -> CHOICES
 
@@ -15,14 +15,14 @@ Noch nie von dir hejhört, tut mir leid #speaker:c
 + [Augenklappe] #speaker:f
     -> AUGENKLAPPE
     
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
     
 == AUGENKLAPPE ==
 
 Was ist mit deinem Auge passiert?
 
-Bin’s verlore #speaker:c
+Bin's verlore #speaker:c
 
 Oh,du bist verl-? #speaker:f
 

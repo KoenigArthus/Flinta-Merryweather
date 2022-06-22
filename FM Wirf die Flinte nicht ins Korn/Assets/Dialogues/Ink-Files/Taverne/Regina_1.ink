@@ -1,63 +1,63 @@
 Ahoi, ... #speaker:f
 
-Na? Wän ‘abän wir dänn da? #speaker:c
-Disch känn ich gar nischt?
-Wär ‘at disch dänn an Land gelasschän so wie dü aussiescht?
+Na? Waen 'abaen wir daenn da? #speaker:c
+Disch kaenn ich gar nischt?
+Waer 'at disch daenn an Land gelasschaen so wie due aussiescht?
 
-Derselbe wo dich geangelt und nicht zurückgeworfen hat, #speaker:f
+Derselbe wo dich geangelt und nicht zurueckgeworfen hat, #speaker:f
 aus Mitleid mit der See
 
-Ahahah, isch mag disch kleinä #speaker:c
-Där Namä isch Rägina Reitmisch
-Was bringt disch ‘är?
+Ahahah, isch mag disch kleinae #speaker:c
+Daer Namae isch Raegina Reitmisch
+Was bringt disch 'aer?
 
 Ich suche … jemanden #speaker:f
 
-Öhö, dasch wird ja interrsant ‘eir #speaker:c
-Wän süschst dü dänn? Isch kännä jädän Jack Tar auf Nassika
+oehoe, dasch wird ja interrsant 'eir #speaker:c
+Waen sueschst due daenn? Isch kaennae jaedaen Jack Tar auf Nassika
 
-Da pfeift mir ja einer. Bist hier wohl schon länger? #speaker:f
+Da pfeift mir ja einer. Bist hier wohl schon laenger? #speaker:f
 
-Oui, kann man saschän #speaker:c
-Isch kömmä ünd ge’e. ‘abä untär vielän Kapitänän gäsesgält
+Oui, kann man saschaen #speaker:c
+Isch koemmae uend ge'e. 'abae untaer vielaen Kapitaenaen gaesesgaelt
 
-Loyalität ist dann wohl nicht gerade deine Stärke, oder? #speaker:f
+Loyalitaet ist dann wohl nicht gerade deine Staerke, oder? #speaker:f
 
-Sacre Bleu! Ces’t ne pas mon faux! #speaker:c
-All dieschä Kapitänän zielän sö klein
-Isch will nisch mä’r auf kleinä Raubzüschä!
+Sacre Bleu! Ces't ne pas mon faux! #speaker:c
+All dieschae Kapitaenaen zielaen soe klein
+Isch will nisch mae'r auf kleinae Raubzueschae!
 
 Warum dann darauf warten, dass es wer anderes macht? #speaker:f
-Du könntest selber zur Kapitänin werden
+Du koenntest selber zur Kapitaenin werden
 
-Non non, isch mag das nischt mä’r.  #speaker:c
-Isch war Capitaine pour vielä Ja’re
-Mais, die Piratängildä ‘at misch nie aufgänömmän
-Nisch das Zeusch dafür söll isch habän 
-Mais, c’est la vie
-Isch ‘abä nischt mä’r das Altär
+Non non, isch mag das nischt mae'r.  #speaker:c
+Isch war Capitaine pour vielae Ja're
+Mais, die Pirataengildae 'at misch nie aufgaenoemmaen
+Nisch das Zeusch dafuer soell isch habaen 
+Mais, c'est la vie
+Isch 'abae nischt mae'r das Altaer
 
-Wie klingt Jack o’ Cups der nächsten Piratenkönigin für dich? #speaker:f
+Wie klingt Jack o' Cups der naechsten Piratenkoenigin fuer dich? #speaker:f
 
-Oui, c’est was isch möschte #speaker:c
-Isch möschte jemanden folschen, wo ausch was drauf ‘at
+Oui, c'est was isch moeschte #speaker:c
+Isch moeschte jemanden folschen, wo ausch was drauf 'at
 Aber wen meinscht du. Toi?
 
 Darauf kannst du deinen Anker lichten! #speaker:f
-Ich werde Piratenkönigin und damit hat sich es!
-Jemand mit deiner Erfahrung könnte ich gut gebrauchen
+Ich werde Piratenkoenigin und damit hat sich es!
+Jemand mit deiner Erfahrung koennte ich gut gebrauchen
 
 Isch mag disch #speaker:c
-Abär isch muss schön ätwas mä’r sä’än
+Abaer isch muss schoen aetwas mae'r sae'aen
 Isch weisch!
-Misch dän Ladän einmal rischtig auf
-Zeig mir, dass dü grösch zielst
+Misch daen Ladaen einmal rischtig auf
+Zeig mir, dass due groesch zielst
 
 Den Laden aufmischen? #speaker:f
-Arr, du willst, dass ich eine gute alte Tavernenschlägerei starte?
+Arr, du willst, dass ich eine gute alte Tavernenschlaegerei starte?
 
-Oui! C’est manifique! Isch mag wie dü dänkst! #speaker:c
-Masch Chaös ‘ier drinnän ünd isch fölgä dir auf Sää
+Oui! C'est manifique! Isch mag wie due daenkst! #speaker:c
+Masch Chaoes 'ier drinnaen uend isch foelgae dir auf Saeae
 
 Versenk mir doch einen! Abegemacht!
 
@@ -68,29 +68,29 @@ Versenk mir doch einen! Abegemacht!
 + [Piratengilde] #speaker:f
     -> GILDE
 
-+ [Schlägerei] #speaker:f
++ [Schlaegerei] #speaker:f
     -> TS
 
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
 
 == GILDE ==
 
-Du hast was über die Piratengilde gesagt… #speaker:f
+Du hast was ueber die Piratengilde gesagt… #speaker:f
 Weißt du wie ich ihr beitreten kann?
 
-Asch, dü weischt das nischt? #speaker:c
-Ünd dü willst Piratänkönigin wärdän?
+Asch, due weischt das nischt? #speaker:c
+uend due willst Pirataenkoenigin waerdaen?
 
 Wir fangen ja alle irgendwo an #speaker:f
 
-C’est frai #speaker:c
-Die Piratängildä kömmt auf disch zu, wänn dü einän Rüf aufgäbaut ‘ast
+C'est frai #speaker:c
+Die Pirataengildae koemmt auf disch zu, waenn due einaen Ruef aufgaebaut 'ast
 
-Einen Ruf als Piratenkapitän? #speaker:f
+Einen Ruf als Piratenkapitaen? #speaker:f
 
-Oui, där lätztä, wö ihnän beigäträtän ischt, ‘at einä ganzä  Flöttä där Navy ausgätrickt #speaker:c
-ünd ein Krönjüwäl diräkt üntär i’rär Nasä gäklaut
+Oui, daer laetztae, woe ihnaen beigaetraetaen ischt, 'at einae ganzae  Floettae daer Navy ausgaetrickt #speaker:c
+uend ein Kroenjuewael diraekt uentaer i'raer Nasae gaeklaut
 
 Das ist ja kinderleicht #speaker:f
 
@@ -100,20 +100,20 @@ Oui oui, bien sur #speaker:c
 
 == TS ==
 
-Wenn ich eine Schlägerei hier lostrete, dann kommst du in meine Crew?
+Wenn ich eine Schlaegerei hier lostrete, dann kommst du in meine Crew?
 
 Oui! #speaker:c
-Mischä dän Ladän ‘ier rischtig auf ünd isch fölgä dir wö’in dü willst
+Mischae daen Ladaen 'ier rischtig auf uend isch foelgae dir woe'in due willst
 
 -> CHOICES
 
 
 == BYE ==
 
-Warte nur, ich überzeuge dich schon noch 
+Warte nur, ich ueberzeuge dich schon noch 
 
-Bitte lassch dir nischt zü viel Zeit #speaker:c
-Äs ist sönst langweilig #state:regina
+Bitte lassch dir nischt zue viel Zeit #speaker:c
+aes ist soenst langweilig #state:regina
 
 -> END
 

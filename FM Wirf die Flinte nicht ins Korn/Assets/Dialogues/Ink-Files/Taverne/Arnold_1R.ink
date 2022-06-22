@@ -7,7 +7,7 @@ Worauf denn? #speaker:f
 PSSST, hab ich gesagt #speaker:c
 Wir spielen Grogkippen!
 
-Ist das ein Würfelspiel? #speaker:rfelspiel
+Ist das ein Wuerfelspiel? #speaker:rfelspiel
 
 ... #speaker:c
 
@@ -15,13 +15,13 @@ Ist das ein Würfelspiel? #speaker:rfelspiel
 
 == CHOICES ==
 
-+ [Würfelspiel] #speaker:f
++ [Wuerfelspiel] #speaker:f
     -> GEWINNEN
     
 + [Regina Reitmich]
     -> REGINA
     
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
     
 == GEWINNEN ==
@@ -44,7 +44,7 @@ Ach, du bist immer noch da? #speaker:c
 
 == REGINA ==
 
-Kannst du mir etwas über die Regina erzählen? #speaker:f
+Kannst du mir etwas ueber die Regina erzaehlen? #speaker:f
 
 Wen? #speaker:c
  

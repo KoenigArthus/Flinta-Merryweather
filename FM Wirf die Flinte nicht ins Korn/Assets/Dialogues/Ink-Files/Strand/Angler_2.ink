@@ -1,10 +1,10 @@
 Ahoi, dachte ich schwimm nochmal vorbei! #speaker:f
 
-Ahoi, jünges Mädel, #speaker:c
-Häst miee ä haken besörgt?
+Ahoi, juenges Maedel, #speaker:c
+Haest miee ae Haken besoergt?
 
 Noch nicht, aber ich mach mich im Schweinsgalopp auf die Suche! #speaker:f
 
-Höb donk Mädle! #speaker:c
+Hoeb donk Maedle! #speaker:c
 
 -> END

@@ -1,13 +1,13 @@
- Ahoi, was beschäftigt dich an solch einem Tag? #speaker:f
+ Ahoi, was beschaeftigt dich an solch einem Tag? #speaker:f
  
- Ahoi jünges Mädle, #speaker:c
- i füsche gärne un miet was bies dun so  beschäftikt?
+ Ahoi juenges Maedle, #speaker:c
+ i fuesche gaerne un miet was bies dun so  beschaeftikt?
  
  Versenk mich doch! Kann ich mir einen Fisch von dir erbeuten? #speaker:f
  
- Gästern ies mäy ankel kapuut gangen, #speaker:c
- besörg miee ä haken und dann gäb iee diee öins.
+ Gaestern ies maey ankel kapuut gangen, #speaker:c
+ besoerg miee ae haken und dann gaeb iee diee oeins.
 
 Ich mach mich im Schweinsgalopp auf die Suche! #speaker:f
 
-Höb donk Mädle! #speaker:c
+Hoeb donk Maedle! #speaker:c

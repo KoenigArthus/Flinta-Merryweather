@@ -11,14 +11,14 @@ Brauchst du was?
 + [Augenklappe] #speaker:f
     -> AUGENKLAPPE
     
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
     
 == AUGENKLAPPE ==
 
 Was ist mit deinem Auge passiert?
 
-Bin’s verlore #speaker:c
+Bin's verlore #speaker:c
 
 Oh,du bist verl-? #speaker:f
 

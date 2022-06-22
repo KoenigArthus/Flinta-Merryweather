@@ -6,7 +6,7 @@ Bin die Tavernenbesitzerin Kamerad #speaker:f
 
 Da heb ju veel Geld? #speaker:c
 
-Halte mich über Wasser  #speaker:f
+Halte mich ueber Wasser  #speaker:f
 Und wie sieht es bei dir mit Beute aus?
 
 Ik hejb nu ded Brout su verkaufa. Willejst du kaufa ded Brod? #speaker:c
@@ -18,19 +18,19 @@ Ik hejb nu ded Brout su verkaufa. Willejst du kaufa ded Brod? #speaker:c
 + [Brot] #speaker:f
     -> BROT
     
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
     
 
 
 == BROT ==
 
-Du verkaufst das Brot für eine Dublone?
+Du verkaufst das Brot fuer eine Dublone?
 
-Ayy, dejd wid a guts Gschäft do, hejr mit de Duplon! #speaker:c
+Ayy, dejd wid a guts Gschaeft do, hejr mit de Duplon! #speaker:c
 
 Beim Klabautermann! #speaker:f
-Du siehst aus als würdest du bald die Kiste von Davy Jones besuchen. 
+Du siehst aus als wuerdest du bald die Kiste von Davy Jones besuchen. 
 Ich besorg dir dein Gold! 
 
 Yo-ho-ho, dankjewel Tavernenbasjee! #speaker:c

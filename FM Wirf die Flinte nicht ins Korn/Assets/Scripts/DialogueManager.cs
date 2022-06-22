@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
-
-
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -22,7 +21,8 @@ public class DialogueManager : MonoBehaviour
     private GameObject player;
     private Controller controller;
     private GameObject speakingCharacter;
-    private Animator ButtonPopUp;
+    private Animator buttonPopUp;
+    public Animator talkingFilter;
     private Story currentStory;
     private Color flintaColor;
 
@@ -43,6 +43,9 @@ public class DialogueManager : MonoBehaviour
         instance = this;
 
         choicespanel.SetActive(false);
+
+        ColorUtility.TryParseHtmlString("#EC8085", out flintaColor);
+        
     }
 
 
@@ -58,7 +61,7 @@ public class DialogueManager : MonoBehaviour
     {
         choicesText = new Text[choices.Length];
 
-        ButtonPopUp = choicespanel.GetComponent<Animator>();
+        buttonPopUp = choicespanel.GetComponent<Animator>();
 
         int index = 0;
         foreach (GameObject choice in choices)
@@ -75,6 +78,27 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON, GameObject pcharacter)
     {
+        controller.childRenderer = controller.talkingFilterParent.GetComponentsInChildren<SpriteRenderer>();
+
+        
+        foreach (SpriteRenderer child in controller.childRenderer)
+        {
+  
+            if (child.gameObject.GetComponentInChildren<SpriteRenderer>().color == Color.cyan)
+            {
+                child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+   
+            }
+            else
+            {
+                StartCoroutine(FadeIn(child));
+            }
+            
+        }
+
+        
+
+
             controller.talkingState.dialogueIsPlaying = true;
     //Starts the DialogueMode (sets UI-elements active, accesses the current .json, calls ContinueStory())
             choicespanel.SetActive(true);
@@ -86,10 +110,18 @@ public class DialogueManager : MonoBehaviour
             ContinueStory();
     }
 
+   
+
 
     //Ends the DialogueMode (deactivates UI-elements + sets dialogueIsPlaying bool to false)
     private void ExitDialogueMode()
     {
+        foreach (SpriteRenderer child in controller.childRenderer)
+        {
+            StartCoroutine(FadeOut(child));
+        }
+       
+
         uiInventory.SetActive(true);
         controller.talkingState.dialogueIsPlaying = false;
         dialogueText.text = "";
@@ -103,10 +135,9 @@ public class DialogueManager : MonoBehaviour
         //checks and reacts to them if there are choices or tags + sets animation to default state + continues the current story
         if (currentStory.canContinue)
         {
-            ColorUtility.TryParseHtmlString("#EC8085", out flintaColor);
 
             dialogueText.text = currentStory.Continue();
-            ButtonPopUp.Play("ChoiceButtonDefault");
+            buttonPopUp.Play("ChoiceButtonDefault");
             DisplayChoices();
             TagHandler(currentStory.currentTags);
 
@@ -124,7 +155,7 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choiceIndex);
         ContinueStory();
         choicesEnabled = false;
-        ButtonPopUp.SetBool("choicesEnabled", false);
+        buttonPopUp.SetBool("choicesEnabled", false);
     }
 
 
@@ -168,7 +199,7 @@ public class DialogueManager : MonoBehaviour
         if (currentChoices.Count > 0)
         {
             choicesEnabled = true;
-            ButtonPopUp.SetBool("choicesEnabled", true);
+            buttonPopUp.SetBool("choicesEnabled", true);
         }
 
         if (currentChoices.Count > choices.Length)
@@ -221,6 +252,53 @@ public class DialogueManager : MonoBehaviour
     {
         Vector3 lnewTextPos = new Vector3(pobject.transform.position.x, pobject.transform.position.y + pyOffset, 0);
         dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
+    }
+
+    IEnumerator FadeIn(SpriteRenderer child)
+    {
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.1f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.2f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.3f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.4f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.5f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.6f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.7f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.8f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.9f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 1f);
+        yield return null;
+    }
+    IEnumerator FadeOut(SpriteRenderer child)
+    {
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.1f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.2f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.3f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.4f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.5f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.6f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.7f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.8f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.9f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 1f);
+        yield return null;
     }
 
 }

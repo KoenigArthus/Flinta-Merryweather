@@ -2,36 +2,36 @@ Ahoi, Bertold #speaker:f
 
 Arrrh, Flinta. Bei Davy Jones Kiste, #speaker:c
 mit dir rede ich immer wieder gerne
-Wo drückt’s denn?
+Wo drueckt’s denn?
 
 -> CHOICES
 
 == CHOICES ==
 
-+ [Würfelspiel] #speaker:f
++ [Wuerfelspiel] #speaker:f
     -> GEWINNEN
     
 + [Regina Reitmich] #speaker:f
     -> REGINA
     
-+ [Tschüss] #speaker:f
++ [Tschuess] #speaker:f
     -> BYE
     
 == GEWINNEN ==
 
-Wie läuft das Spiel?
+Wie laeuft das Spiel?
 
 Ayy, echt gut. Klopf mir auf Holz #speaker:c
-Hab eine Gewinnsträhne
+Hab eine Gewinnstraehne
 
-Ist es ein Glücksspiel? #speaker:f
+Ist es ein Gluecksspiel? #speaker:f
 
 Ay, kann man so sagen. #speaker:c
-Ich glaub aber, die junge Sprosse hier ist noch etwas grün hinter den Ohren
-Gewinnen lass ich ihn aber nicht, beim Neunschwänzigen, das kann ich dir sagen
+Ich glaub aber, die junge Sprosse hier ist noch etwas gruen hinter den Ohren
+Gewinnen lass ich ihn aber nicht, beim Neunschwaenzigen, das kann ich dir sagen
 
 
-Er sieht ziemlich wütend aus #speaker:f
+Er sieht ziemlich wuetend aus #speaker:f
 
 Er ist n guter Kamerad #speaker:c
 Hat’s faustig hinter den Ohren
@@ -40,7 +40,7 @@ Hat’s faustig hinter den Ohren
 
 == REGINA ==
 
-Kennst du die Regina? Kannst mir was über sie erzählen? #speaker:f
+Kennst du die Regina? Kannst mir was ueber sie erzaehlen? #speaker:f
 
 
 Regina Reitmich?  Ayy, die kenn ich #speaker:c
@@ -48,18 +48,18 @@ Bleiharte Piratin
 Hat ihr Herz am rechten Fleck
 Klingt manchmal wie n schlecht trainierter Papagei?
 
-Oh, warum das? Krächzt sie? #speaker:f
+Oh, warum das? Kraechzt sie? #speaker:f
 
 Ne, sie klappert nur immer dasselbe #speaker:c
-‘Schwächlinge, mag sie nich’ hat se gesagt
+Schwaechlinge, mag sie nich hat se gesagt
 
 So verklemmt kommt mir Regina gar nicht vor #speaker:f
 
 
 Eigentlich ist sie’s auch nicht #speaker:c
-Ich glaub, die mochte ihren letzten Kapitän bloß nicht
+Ich glaub, die mochte ihren letzten Kapitaen bloß nicht
 
-Ay, das ändert sich im Schweinsgalopp, das kann ich dir sagen #speaker:f
+Ay, das aendert sich im Schweinsgalopp, das kann ich dir sagen #speaker:f
 
 Da bin ich ja mal gespannt. Brauchst du sonst noch was? #speaker:c
 
@@ -70,7 +70,7 @@ Da bin ich ja mal gespannt. Brauchst du sonst noch was? #speaker:c
 
 Ich geh dann mal wieder #speaker:f
 
-Wir sprechen uns später #speaker:c
-Lass mal wieder von dir hören, ja?
+Wir sprechen uns spaeter #speaker:c
+Lass mal wieder von dir hoeren, ja?
 
 -> END
