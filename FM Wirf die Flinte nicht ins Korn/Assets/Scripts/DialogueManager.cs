@@ -254,6 +254,7 @@ public class DialogueManager : MonoBehaviour
         dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPos);
     }
 
+    //Fades the talkingFilter in/out
     IEnumerator FadeIn(SpriteRenderer child)
     {
         child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.1f);

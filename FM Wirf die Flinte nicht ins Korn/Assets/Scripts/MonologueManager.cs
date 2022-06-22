@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,7 +27,7 @@ public class MonologueManager : MonoBehaviour
 
         foreach (SpriteRenderer child in controller.childRenderer)
         {
-            child.gameObject.GetComponentInChildren<SpriteRenderer>().color = controller.filterColor;
+            StartCoroutine(FadeIn(child));
         }
 
         controller.playerMovement.Stop();
@@ -60,21 +61,69 @@ public class MonologueManager : MonoBehaviour
     {
         foreach (SpriteRenderer child in controller.childRenderer)
         {
-            child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            StartCoroutine(FadeOut(child));
         }
 
         dialogueText.text = "";
         controller.talkingState.monologueIsPlaying = false;
     }
 
+    //Fades the talkingFilter in/out
+    IEnumerator FadeIn(SpriteRenderer child)
+    {
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.1f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.2f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.3f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.4f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.5f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.6f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.7f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.8f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 0.9f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(Color.white, controller.filterColor, 1f);
+        yield return null;
+    }
+    IEnumerator FadeOut(SpriteRenderer child)
+    {
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.1f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.2f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.3f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.4f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.5f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.6f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.7f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.8f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 0.9f);
+        yield return new WaitForSeconds(0.05f);
+        child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.Lerp(controller.filterColor, Color.white, 1f);
+        yield return null;
+    }
+
     // For Debugging only
 
     //shows the speech text at the player_Character Pos every FixedUpdate
-   /* private void FixedUpdate()
-    {
-        Vector3 lnewTextPosition = new Vector3(player.transform.position.x, player.transform.position.y + yOffset, 0);
-        dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPosition);
-    }*/
+    /* private void FixedUpdate()
+     {
+         Vector3 lnewTextPosition = new Vector3(player.transform.position.x, player.transform.position.y + yOffset, 0);
+         dialogueText.transform.position = Camera.main.WorldToScreenPoint(lnewTextPosition);
+     }*/
 
 
 

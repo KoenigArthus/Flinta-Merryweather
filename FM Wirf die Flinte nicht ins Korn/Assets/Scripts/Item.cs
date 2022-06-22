@@ -70,7 +70,7 @@ public class Item : Interactable
                 Instantiate(UIObject, controller.inventory.slots[i].transform, false);
                 controller.inventory.content[i] = item;
                 controller.sceneSave[i] = item.name;
-                Destroy(gameObject);
+                gameObject.SetActive(false);
                 break;
             }
             if(i == controller.inventory.slots.Length - 1)
