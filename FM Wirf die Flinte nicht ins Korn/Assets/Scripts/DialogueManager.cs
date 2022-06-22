@@ -22,7 +22,6 @@ public class DialogueManager : MonoBehaviour
     private Controller controller;
     private GameObject speakingCharacter;
     private Animator buttonPopUp;
-    public Animator talkingFilter;
     private Story currentStory;
     private Color flintaColor;
 
@@ -78,9 +77,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON, GameObject pcharacter)
     {
-        controller.childRenderer = controller.talkingFilterParent.GetComponentsInChildren<SpriteRenderer>();
-
-        
+   
         foreach (SpriteRenderer child in controller.childRenderer)
         {
   

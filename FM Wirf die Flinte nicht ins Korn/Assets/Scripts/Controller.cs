@@ -43,7 +43,7 @@ public class Controller : MonoBehaviour
     //resets sceneInfo arrays + instantiates items from inventory back into UI-Element
     private void Awake()
     {
-
+        childRenderer = talkingFilterParent.GetComponentsInChildren<SpriteRenderer>();
         ColorUtility.TryParseHtmlString("#4763FF", out filterColor);
         cursorHotspot = new Vector2(cursor0.width / 2, cursor0.height / 2);
         Cursor.SetCursor(cursor0, cursorHotspot, CursorMode.ForceSoftware);

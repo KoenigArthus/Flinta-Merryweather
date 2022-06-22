@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "SceneInfo", menuName = "Persistence")]
+[CreateAssetMenu(fileName = "SceneInfo", menuName = "SceneInfo")]
 public class SceneInfo : ScriptableObject
 {
 
