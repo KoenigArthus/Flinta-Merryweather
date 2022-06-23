@@ -84,7 +84,6 @@ public class DialogueManager : MonoBehaviour
             if (child.gameObject.GetComponentInChildren<SpriteRenderer>().color == Color.cyan)
             {
                 child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-   
             }
             else
             {

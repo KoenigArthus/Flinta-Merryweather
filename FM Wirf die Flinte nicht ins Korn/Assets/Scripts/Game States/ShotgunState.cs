@@ -1,22 +1,36 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class ShotgunState : IGameState
 {
     public IGameState RunState(Controller pcon)
     {
+        // reseting is shooting animation
         if(pcon.animator.GetBool("isShooting"))
         pcon.animator.SetBool("isShooting", false);
 
+        //activating line renderer & the aiming animation when first clicked
         if (Input.GetMouseButtonDown(1))
         {
             pcon.lineRenderer.enabled = true;
             pcon.animator.SetBool("isAiming", true);
         }
 
+        //when holding right mouse button
         if (Input.GetKey(KeyCode.Mouse1))    
         {
-            pcon.lineRenderer.SetPosition(1, new Vector3(pcon.mousePos.x, pcon.mousePos.y, -1));
+            //line renderer pos gets updated
+            pcon.lineRenderer.SetPosition(1, new Vector3(pcon.mousePos.x, pcon.mousePos.y, -3));
+            if (pcon.mousePos.x < pcon.transform.position.x)
+            {
+                pcon.player.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
+            }
+            else
+            {
+                pcon.player.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+            }
+            //shooting when also clicking the left mouse button 
             if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
             {
                 pcon.animator.SetBool("isShooting", true);
@@ -25,7 +39,6 @@ public class ShotgunState : IGameState
                 {
                     pcon.animator.SetBool("didHitSomething", true);
                     pcon.animator.SetBool("isAiming", false);
-                    //pcon.animator.SetBool("isShooting", false);
                     pcon.hit.collider.gameObject.SendMessage("ReactToClick", pcon);
                     pcon.lineRenderer.enabled = false;
                     pcon.shotgunFilter.enabled = false;
@@ -35,7 +48,6 @@ public class ShotgunState : IGameState
                 else
                 {
                     pcon.animator.SetBool("didHitSomething", false);
-                    //pcon.animator.SetBool("isShooting", false);
                     Debug.Log("nothing hit");
                     return pcon.shotgunState;
                 }
@@ -43,6 +55,7 @@ public class ShotgunState : IGameState
             }
         }
 
+        //resetting line renderer and aiming animation when letting go left mouse button
         if (Input.GetMouseButtonUp(1))
         {
             pcon.lineRenderer.enabled = false;
