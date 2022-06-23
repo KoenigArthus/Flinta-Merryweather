@@ -7,6 +7,7 @@ public class FallConsequences : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        //layerAbfrage
         collision.gameObject.SetActive(false);
         StartCoroutine(DespawnBlinking());
     }

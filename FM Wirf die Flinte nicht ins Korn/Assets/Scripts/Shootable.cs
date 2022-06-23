@@ -24,27 +24,22 @@ public class Shootable : Interactable
     public void BeingShot()
     {
 
-        if (target.despawns)
+        if (target.despawns && !target.falls)
         {
 
             StartCoroutine(DespawnBlinking());
 
         }
-        else if (target.falls)
+        else if (target.falls && !target.despawns)
         {
             this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            //this.gameObject.transform.position = new Vector3(0, 0, 0);
+
+
             fallItem.SetActive(true);
             StartCoroutine(Falling());
             
         }
-
-
-
-
-
-
 
     }
 
@@ -64,6 +59,9 @@ public class Shootable : Interactable
         this.gameObject.SetActive(false);
         StopCoroutine(DespawnBlinking());
     }
+
+
+
 
     IEnumerator Falling()
     {
