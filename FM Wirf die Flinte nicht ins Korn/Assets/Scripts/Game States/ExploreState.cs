@@ -6,6 +6,8 @@ public class ExploreState : IGameState
     //During the Explore State The PLAYER can walk around and interact with Character and Items
     public IGameState RunState(Controller pcon)
     {
+        if (pcon.animator.GetBool("isShooting"))
+            pcon.animator.SetBool("isShooting", false);
         /* when clicking left or riht mouse button on an Interactactable it will call its ReactToClick Funktion
          * when the player ends up talking to a Character or through an Item descripion -> the State will be updated to talkingState
          * when the player is not in reach of the Interactable or clicks anywhere else other than on an UIElement ...
@@ -36,7 +38,6 @@ public class ExploreState : IGameState
             pcon.shotgunFilter.enabled = true;
             pcon.lineRenderer.SetPosition(0, pcon.player.transform.position);
             pcon.lineRenderer.SetPosition(1, new Vector3(pcon.mousePos.x, pcon.mousePos.y, -1));
-            pcon.lineRenderer.enabled = true;
             Cursor.SetCursor(pcon.crossair0, pcon.cursorHotspot,CursorMode.ForceSoftware);
             return pcon.shotgunState;
         }

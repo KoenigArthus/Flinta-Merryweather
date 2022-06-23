@@ -21,16 +21,16 @@ public class Controller : MonoBehaviour
     [HideInInspector] public DialogueManager dialogueManager;
     [HideInInspector] public GameObject player; 
     [HideInInspector] public SpriteRenderer[] childRenderer;
-
-    public Image shotgunFilter;
-    public string[] sceneSave;
     [HideInInspector] public PlayerMovement playerMovement;
     [HideInInspector] public Inventory inventory;
     [HideInInspector] public LineRenderer lineRenderer;
+    [HideInInspector] public Animator animator;
     [HideInInspector] public Vector2 mousePos;
     [HideInInspector] public Vector2 cursorHotspot;
     [HideInInspector] public RaycastHit2D hit;
     [HideInInspector] public Color filterColor;
+    public Image shotgunFilter;
+    public string[] sceneSave;
     public GameObject talkingFilterParent;
     public Texture2D cursor0;
     public Texture2D cursor1;
@@ -52,6 +52,7 @@ public class Controller : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         inventory = player.GetComponent<Inventory>();
+        animator = player.GetComponent<Animator>();
         monologueManager = gameObject.GetComponent<MonologueManager>();
         dialogueManager = gameObject.GetComponent<DialogueManager>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
