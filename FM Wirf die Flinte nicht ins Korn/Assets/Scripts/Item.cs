@@ -34,21 +34,21 @@ public class Item : Interactable
     public override void ReactToClick(Controller pcon)
     {
         //pressing the left mouse button will pick up the Item if it !canBePickedUp a monologue will appear
-        if (Input.GetMouseButtonDown(0) && canBePickedUp)
+        if (Input.GetMouseButtonDown(1) && canBePickedUp)
         {
             this.PickUp();
         }
-        else if (Input.GetMouseButtonDown(0) && !canBePickedUp)
+        else if (Input.GetMouseButtonDown(1) && !canBePickedUp)
         {
             string[] lsentence = new string[] { "ich kann das nicht aufheben." };
             pcon.monologueManager.StartMonologue(lsentence);
         }
         //pressing the right mouse button will view the Item if it is !isViewable be a monologue will appear
-        else if (Input.GetMouseButtonDown(1) && isViewable)
+        else if (Input.GetMouseButtonDown(0) && isViewable)
         {
             this.View();
         }
-        else if (Input.GetMouseButtonDown(1) && !isViewable)
+        else if (Input.GetMouseButtonDown(0) && !isViewable)
         {
             string[] lsentence = new string[] { name + " ?", "Ich kann es mir nicht anschauen." };
             pcon.monologueManager.StartMonologue(lsentence);

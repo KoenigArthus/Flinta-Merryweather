@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Felsen
   m_EditorClassIdentifier: 
   viewText: 
-  isViewable: 1
-  canBeCombined: 0
+  falls: 1
+  despawns: 0
+  remains: 0
+  fallHight: 1
+  fallItem: {fileID: 2628572795087084671, guid: e5bd3a1fa3472c548821230a8db1c99c, type: 3}
+  Spawn: {x: 1, y: 1, z: 1}
   sprite: {fileID: 21300000, guid: c502c23dae661c5438695d5f700ee274, type: 3}
