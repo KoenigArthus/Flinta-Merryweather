@@ -48,7 +48,7 @@ public class Dragger : MonoBehaviour, /*IPointerDownHandler,*/ IBeginDragHandler
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
+        if (leftMouseButtonWasReleased())
         {
             Debug.Log("End Drag");
             controller.hit = Physics2D.Raycast(controller.mousePos, Vector2.zero);
@@ -70,4 +70,15 @@ public class Dragger : MonoBehaviour, /*IPointerDownHandler,*/ IBeginDragHandler
     {
         eventData.useDragThreshold = false;
     }
+
+    private bool leftMouseButtonWasReleased()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            return true;
+        }
+        return false;
+    }
+
+
 }
