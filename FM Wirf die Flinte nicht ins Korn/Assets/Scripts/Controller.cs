@@ -84,15 +84,12 @@ public class Controller : MonoBehaviour
     }
     private void Start()
     {
-
-
         for (int a = 0; a < sceneSave.Length; a++)
         {
             if (GameObject.Find(sceneSave[a]))
             {
                 GameObject.Find(sceneSave[a]).gameObject.SetActive(false);
             }
-
         }
     }
 

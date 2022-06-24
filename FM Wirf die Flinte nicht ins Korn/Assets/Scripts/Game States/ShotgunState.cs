@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class ShotgunState : IGameState
 {
@@ -48,7 +47,6 @@ public class ShotgunState : IGameState
                 else
                 {
                     pcon.animator.SetBool("didHitSomething", false);
-                    Debug.Log("nothing hit");
                     return pcon.shotgunState;
                 }
 

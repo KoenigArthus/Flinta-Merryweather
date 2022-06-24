@@ -18,7 +18,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject choicespanel;
     [SerializeField] private Text[] choicesText;
   
-    private GameObject player;
     private Controller controller;
     private GameObject speakingCharacter;
     private Animator buttonPopUp;
