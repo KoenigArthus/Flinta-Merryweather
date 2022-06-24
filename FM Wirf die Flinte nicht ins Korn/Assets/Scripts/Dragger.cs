@@ -7,33 +7,26 @@ public class Dragger : MonoBehaviour, /*IPointerDownHandler,*/ IBeginDragHandler
 {
     private Controller controller;
     private RectTransform rectTransform;
-    private Canvas canvas;
     private Vector3 pos;
 
+    //initializing
     void Awake()
     {
         controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
         rectTransform = GetComponent<RectTransform>();
-        canvas = FindObjectOfType<Canvas>();
     }
 
-
-    /*public void OnPointerDown(PointerEventData eventData)
-    {
-        // pos = rectTransform.anchoredPosition;
-        //Cursor.SetCursor(controller.cursor1, controller.cursorHotspot, CursorMode.ForceSoftware);
-    }*/
-
+    //at the beginning of a drag. The current pos gets saved and controller.isDragging is set to true, to go over to the draggingState
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
         {
-            Debug.Log("Begin Drag");
             controller.isDragging = true;
             pos = rectTransform.anchoredPosition;
         }
     }
 
+    //while dragging
     public void OnDrag(PointerEventData eventData)
     {
         if (Input.GetMouseButton(0))
@@ -45,16 +38,16 @@ public class Dragger : MonoBehaviour, /*IPointerDownHandler,*/ IBeginDragHandler
         }
     }
 
-
+    //when releasing the drag
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (leftMouseButtonWasReleased())
+        if (Input.GetMouseButtonUp(0))
         {
-            Debug.Log("End Drag");
             controller.hit = Physics2D.Raycast(controller.mousePos, Vector2.zero);
             if (controller.hit.collider != null)
             {
                 Debug.Log(controller.hit.collider.gameObject.name);
+                rectTransform.anchoredPosition = pos;
             }
             else
             {
@@ -70,15 +63,4 @@ public class Dragger : MonoBehaviour, /*IPointerDownHandler,*/ IBeginDragHandler
     {
         eventData.useDragThreshold = false;
     }
-
-    private bool leftMouseButtonWasReleased()
-    {
-        if (Input.GetMouseButtonUp(0))
-        {
-            return true;
-        }
-        return false;
-    }
-
-
 }

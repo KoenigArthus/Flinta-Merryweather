@@ -19,14 +19,20 @@ public class TalkingState : IGameState
             {
                 pcon.dialogueManager.ContinueStory();
                 if (!dialogueIsPlaying)
+                {
+                    Cursor.SetCursor(pcon.cursor0, pcon.cursorHotspot, CursorMode.ForceSoftware);
                     return pcon.exploreState;
+                }
             }
                 
             if (monologueIsPlaying)
             {
                 pcon.monologueManager.DisplayNextSentence();
                 if (!monologueIsPlaying)
+                {
+                    Cursor.SetCursor(pcon.cursor0, pcon.cursorHotspot, CursorMode.ForceSoftware);
                     return pcon.exploreState;
+                }
             }
                
         }

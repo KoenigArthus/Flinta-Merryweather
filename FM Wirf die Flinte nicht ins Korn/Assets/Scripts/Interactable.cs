@@ -18,14 +18,14 @@ public abstract class Interactable : MonoBehaviour
     {
         if(changesCursorInShotgunState && controller.currentGameState == controller.shotgunState)
         Cursor.SetCursor(controller.crossair1, controller.cursorHotspot,CursorMode.ForceSoftware);
-        if (!changesCursorInShotgunState && controller.currentGameState != controller.shotgunState)
+        if (!changesCursorInShotgunState && controller.currentGameState == controller.exploreState)
             Cursor.SetCursor(controller.cursor1, controller.cursorHotspot,CursorMode.ForceSoftware);
     }
     public virtual void OnMouseOver()
     {
         if (changesCursorInShotgunState && controller.currentGameState == controller.shotgunState)
             Cursor.SetCursor(controller.crossair1, controller.cursorHotspot,CursorMode.ForceSoftware);
-        if (!changesCursorInShotgunState && controller.currentGameState != controller.shotgunState)
+        if (!changesCursorInShotgunState && controller.currentGameState == controller.exploreState)
             Cursor.SetCursor(controller.cursor1, controller.cursorHotspot,CursorMode.ForceSoftware);
     }
 
@@ -33,7 +33,7 @@ public abstract class Interactable : MonoBehaviour
     {
         if (changesCursorInShotgunState && controller.currentGameState == controller.shotgunState)
             Cursor.SetCursor(controller.crossair0, controller.cursorHotspot,CursorMode.ForceSoftware);
-        if (!changesCursorInShotgunState && controller.currentGameState != controller.shotgunState)
+        if (!changesCursorInShotgunState && controller.currentGameState == controller.exploreState)
             Cursor.SetCursor(controller.cursor0, controller.cursorHotspot,CursorMode.ForceSoftware);
     }
 

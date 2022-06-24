@@ -10,7 +10,10 @@ public class ExploreState : IGameState
             pcon.animator.SetBool("isShooting", false);
 
         if (pcon.isDragging)
+        {
+            pcon.playerMovement.Stop();
             return pcon.draggingState;
+        }
         /* when clicking left or riht mouse button on an Interactactable it will call its ReactToClick Funktion
          * when the player ends up talking to a Character or through an Item descripion -> the State will be updated to talkingState
          * when the player is not in reach of the Interactable or clicks anywhere else other than on an UIElement ...
