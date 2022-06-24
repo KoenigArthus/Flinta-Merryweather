@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
@@ -9,7 +9,8 @@ public class Controller : MonoBehaviour
     [HideInInspector] public ExploreState exploreState = new ExploreState();
     [HideInInspector] public ShotgunState shotgunState = new ShotgunState();
     [HideInInspector] public TalkingState talkingState = new TalkingState();
-
+    [HideInInspector] public DraggingState draggingState = new DraggingState();
+     public bool isDragging;
     [HideInInspector] public IGameState currentGameState;
     [SerializeField] private string currentGameStateName;
  

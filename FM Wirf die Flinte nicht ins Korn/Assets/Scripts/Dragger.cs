@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Dragger : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IInitializePotentialDragHandler
+public class Dragger : MonoBehaviour, /*IPointerDownHandler,*/ IBeginDragHandler, IEndDragHandler, IDragHandler, IInitializePotentialDragHandler
 {
     private Controller controller;
     private RectTransform rectTransform;
@@ -18,30 +18,52 @@ public class Dragger : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IE
     }
 
 
-    public void OnPointerDown(PointerEventData eventData)
+    /*public void OnPointerDown(PointerEventData eventData)
     {
-        pos = rectTransform.anchoredPosition;
+        // pos = rectTransform.anchoredPosition;
         //Cursor.SetCursor(controller.cursor1, controller.cursorHotspot, CursorMode.ForceSoftware);
-    }
+    }*/
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        //pos = rectTransform.anchoredPosition;
+        if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
+        {
+            Debug.Log("Begin Drag");
+            controller.isDragging = true;
+            pos = rectTransform.anchoredPosition;
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if(controller.currentGameState == controller.exploreState)
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (Input.GetMouseButton(0))
+        {
+            if (controller.currentGameState == controller.draggingState)
+            {
+                transform.position = Input.mousePosition;
+            }
+        }
     }
 
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition = pos;
-        //Cursor.SetCursor(controller.cursor0, controller.cursorHotspot, CursorMode.ForceSoftware);
-    }
+        if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
+        {
+            Debug.Log("End Drag");
+            controller.hit = Physics2D.Raycast(controller.mousePos, Vector2.zero);
+            if (controller.hit.collider != null)
+            {
+                Debug.Log(controller.hit.collider.gameObject.name);
+            }
+            else
+            {
+                rectTransform.anchoredPosition = pos;
+            }
 
+            controller.isDragging = false;
+        }
+    }
 
     //deactivates Drag Theshold (the drag reacts now imediatly)
     public void OnInitializePotentialDrag(PointerEventData eventData)
