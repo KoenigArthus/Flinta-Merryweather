@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 100720947}
   - component: {fileID: 100720946}
   m_Layer: 5
-  m_Name: Slot (11)
+  m_Name: Slot (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 106997409}
   - component: {fileID: 106997408}
   m_Layer: 5
-  m_Name: Slot (10)
+  m_Name: Slot (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 142124902}
   - component: {fileID: 142124901}
   m_Layer: 5
-  m_Name: Slot (2)
+  m_Name: Slot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1097,7 +1097,7 @@ GameObject:
   - component: {fileID: 433262999}
   - component: {fileID: 433262998}
   m_Layer: 5
-  m_Name: Slot (9)
+  m_Name: Slot (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1295,7 +1295,7 @@ GameObject:
   - component: {fileID: 518109633}
   - component: {fileID: 518109632}
   m_Layer: 5
-  m_Name: Slot (4)
+  m_Name: Slot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1451,7 +1451,7 @@ GameObject:
   - component: {fileID: 582597182}
   - component: {fileID: 582597181}
   m_Layer: 5
-  m_Name: Slot (1)
+  m_Name: Slot (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1752,7 +1752,7 @@ GameObject:
   - component: {fileID: 674685776}
   - component: {fileID: 674685775}
   m_Layer: 5
-  m_Name: Slot (13)
+  m_Name: Slot (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2697,7 +2697,7 @@ GameObject:
   - component: {fileID: 980543862}
   - component: {fileID: 980543861}
   m_Layer: 5
-  m_Name: Slot (3)
+  m_Name: Slot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3417,14 +3417,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059cb2d52da85a44fa44e62f68116f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipe:
-  - BrotKokosnuss
-  - KokosnussBrot
-  - Brotpirat6
+  recipes:
+  - Brot(Clone)Kokosnuss(Clone)
+  - idgaf
+  - Brot(Clone)pirate6
+  - Kokosnuss(Clone)Brot(Clone)
   results:
   - {fileID: 11400000, guid: eccfd16516864064181512a58fd115a7, type: 2}
-  - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
   - {fileID: 11400000, guid: 77248118d0f25af43b64dd691f0bb972, type: 2}
+  - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
+  - {fileID: 11400000, guid: d32605ea7c455f34e9d7ebba836aad1c, type: 2}
 --- !u!1 &1248216503
 GameObject:
   m_ObjectHideFlags: 3
@@ -3614,7 +3616,7 @@ GameObject:
   - component: {fileID: 1291180268}
   - component: {fileID: 1291180267}
   m_Layer: 5
-  m_Name: Slot (12)
+  m_Name: Slot (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5055,7 +5057,7 @@ GameObject:
   - component: {fileID: 2021800820}
   - component: {fileID: 2021800819}
   m_Layer: 5
-  m_Name: Slot (5)
+  m_Name: Slot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5215,7 +5217,7 @@ GameObject:
   - component: {fileID: 2036124290}
   - component: {fileID: 2036124289}
   m_Layer: 5
-  m_Name: Slot (6)
+  m_Name: Slot (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5408,7 +5410,7 @@ GameObject:
   - component: {fileID: 2055981033}
   - component: {fileID: 2055981032}
   m_Layer: 5
-  m_Name: Slot (7)
+  m_Name: Slot (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5484,7 +5486,7 @@ GameObject:
   - component: {fileID: 2063839450}
   - component: {fileID: 2063839449}
   m_Layer: 5
-  m_Name: Slot (8)
+  m_Name: Slot (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

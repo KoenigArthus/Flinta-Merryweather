@@ -47,7 +47,12 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
             if (controller.hit.collider != null)
             {
                 string lrecipe = this.name + controller.hit.collider.gameObject.name;
-                controller.craftingManager.Craft(lrecipe);
+                string[] lslotNameParts = transform.parent.name.Split('(', ')');
+                int lintSlotThisIsIn = int.Parse(lslotNameParts[1]);
+                if (controller.craftingManager.Craft(lrecipe, lintSlotThisIsIn))
+                {
+                    Destroy(this.gameObject);
+                }
                 rectTransform.anchoredPosition = pos;
             }
             else
