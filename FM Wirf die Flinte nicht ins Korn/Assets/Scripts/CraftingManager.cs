@@ -7,4 +7,12 @@ public class CraftingManager : MonoBehaviour
 {
     public string[] recipe;
     public ScrItem[] results;
+
+    public void Craft(string precipe)
+    {
+        Debug.Log(precipe);
+    }
+
+
+
 }

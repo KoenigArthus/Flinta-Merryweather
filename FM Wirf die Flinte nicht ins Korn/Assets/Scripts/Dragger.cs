@@ -47,7 +47,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
             if (controller.hit.collider != null)
             {
                 string lrecipe = this.name + controller.hit.collider.gameObject.name;
-                
+                controller.craftingManager.Craft(lrecipe);
                 rectTransform.anchoredPosition = pos;
             }
             else
