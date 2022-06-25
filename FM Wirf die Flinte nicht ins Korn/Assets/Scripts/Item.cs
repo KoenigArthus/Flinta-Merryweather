@@ -70,6 +70,7 @@ public class Item : Interactable
                 controller.inventory.content[i] = item;
                 controller.sceneSave[i] = item.name;
                 gameObject.SetActive(false);
+                Cursor.SetCursor(controller.cursor0, controller.cursorHotspot, CursorMode.ForceSoftware);
                 break;
             }
             if(i == controller.inventory.slots.Length - 1)
