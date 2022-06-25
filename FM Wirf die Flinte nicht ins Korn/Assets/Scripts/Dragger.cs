@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Dragger : MonoBehaviour, /*IPointerDownHandler,*/ IBeginDragHandler, IEndDragHandler, IDragHandler, IInitializePotentialDragHandler
+public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IInitializePotentialDragHandler
 {
     private Controller controller;
     private RectTransform rectTransform;
@@ -26,7 +26,7 @@ public class Dragger : MonoBehaviour, /*IPointerDownHandler,*/ IBeginDragHandler
         }
     }
 
-    //while dragging
+    //while dragging with Mouse0 the item stays at the mouse position
     public void OnDrag(PointerEventData eventData)
     {
         if (Input.GetMouseButton(0))
@@ -38,7 +38,7 @@ public class Dragger : MonoBehaviour, /*IPointerDownHandler,*/ IBeginDragHandler
         }
     }
 
-    //when releasing the drag
+    //when releasing the drag the item either snaps back to its original pos or gets combined
     public void OnEndDrag(PointerEventData eventData)
     {
         if (Input.GetMouseButtonUp(0))

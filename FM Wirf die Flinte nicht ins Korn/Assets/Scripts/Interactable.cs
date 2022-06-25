@@ -13,7 +13,8 @@ public abstract class Interactable : MonoBehaviour
 
 
 
-    //when entering and hovering over an Interactable a picture with the Controll Options should pop up
+    //when entering and hovering over an Interactable The Cursor color changes
+    //when in the shotgun state a crossair is displayed & colored instead
     public virtual void OnMouseEnter()
     {
         if(changesCursorInShotgunState && controller.currentGameState == controller.shotgunState)

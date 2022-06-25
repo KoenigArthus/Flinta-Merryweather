@@ -5,7 +5,7 @@ public class ShotgunState : IGameState
 {
     public IGameState RunState(Controller pcon)
     {
-        // reseting is shooting animation
+        // reseting shooting animation
         if(pcon.animator.GetBool("isShooting"))
         pcon.animator.SetBool("isShooting", false);
 
