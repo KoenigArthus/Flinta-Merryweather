@@ -17,16 +17,21 @@ public class CraftingManager : MonoBehaviour
 
 
 
-    public bool Craft(string precipe, int pslot)
+    public bool Craft(string precipe, GameObject pdragItem)
     {
         Debug.Log(precipe);
-        Debug.Log(pslot);
         for (int r = 0; r < recipes.Length; r++)
         {
+            // if the given item combination matches the recipe...
+            // ... the pdragItem gets removed and the matching results Item put into the Inventory
             if(recipes[r] == precipe)
             {
-                controller.inventory.isFull[pslot] = false;
-                controller.inventory.content[pslot] = null;
+                //removes the initial combination item
+                string[] lslotNameParts = pdragItem.transform.parent.name.Split('(', ')');
+                int ldragItemSlot = int.Parse(lslotNameParts[1]);
+                Destroy(pdragItem);
+                controller.inventory.isFull[ldragItemSlot] = false;
+                controller.inventory.content[ldragItemSlot] = null;
                 for (int i = 0; i < controller.inventory.slots.Length; i++)
                 {
                     if (controller.inventory.isFull[i] == false)
