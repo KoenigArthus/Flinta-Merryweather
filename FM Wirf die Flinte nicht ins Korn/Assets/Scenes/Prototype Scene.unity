@@ -3369,22 +3369,23 @@ MonoBehaviour:
   isTalking: 0
   isDragging: 0
   currentGameStateName: 
-  sceneInfo: {fileID: 11400000, guid: cd46953648d93d645815b5e13a08acad, type: 2}
-  reachRadius: 2
-  monologueManager: {fileID: 0}
-  dialogueManager: {fileID: 0}
   player: {fileID: 0}
-  childRenderer: []
   playerMovement: {fileID: 0}
   inventory: {fileID: 0}
-  lineRenderer: {fileID: 0}
   animator: {fileID: 0}
+  childRenderer: []
+  shotgunFilter: {fileID: 425171481}
+  lineRenderer: {fileID: 0}
+  dialogueManager: {fileID: 0}
+  monologueManager: {fileID: 0}
+  craftingManager: {fileID: 0}
+  talkingFilterParent: {fileID: 1427783536}
+  filterColor: {r: 0, g: 0, b: 0, a: 0}
   mousePos: {x: 0, y: 0}
   cursorHotspot: {x: 0, y: 0}
-  filterColor: {r: 0, g: 0, b: 0, a: 0}
-  shotgunFilter: {fileID: 425171481}
+  sceneInfo: {fileID: 11400000, guid: cd46953648d93d645815b5e13a08acad, type: 2}
+  reachRadius: 2
   sceneSave: []
-  talkingFilterParent: {fileID: 1427783536}
   cursor0: {fileID: 2800000, guid: 2b0965b5c18122245979e0bde28d99d1, type: 3}
   cursor1: {fileID: 2800000, guid: 22e9a340f62752042ae8cedf0bf754f3, type: 3}
   crossair0: {fileID: 2800000, guid: fa1115ccf73a3f148a11c148b02e351f, type: 3}
@@ -3416,6 +3417,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059cb2d52da85a44fa44e62f68116f62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recipe: []
+  results:
+  - {fileID: 11400000, guid: eccfd16516864064181512a58fd115a7, type: 2}
+  - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
+  - {fileID: 11400000, guid: 77248118d0f25af43b64dd691f0bb972, type: 2}
 --- !u!1 &1248216503
 GameObject:
   m_ObjectHideFlags: 3

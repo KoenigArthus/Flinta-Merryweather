@@ -46,7 +46,8 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
             controller.hit = Physics2D.Raycast(controller.mousePos, Vector2.zero);
             if (controller.hit.collider != null)
             {
-                Debug.Log(controller.hit.collider.gameObject.name);
+                string lrecipe = this.name + controller.hit.collider.gameObject.name;
+                
                 rectTransform.anchoredPosition = pos;
             }
             else

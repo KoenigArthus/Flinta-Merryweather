@@ -5,5 +5,6 @@ using UnityEngine;
 
 public class CraftingManager : MonoBehaviour
 {
-    
+    public string[] recipe;
+    public ScrItem[] results;
 }
