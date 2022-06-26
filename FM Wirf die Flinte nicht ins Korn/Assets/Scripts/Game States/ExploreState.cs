@@ -1,14 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ExploreState : IGameState
 {
+   
+
     //During the Explore State The PLAYER can walk around and interact with Character and Items
     public IGameState RunState(Controller pcon)
     {
         //adjustment for Flinta animations
         if (pcon.animator.GetBool("isShooting"))
             pcon.animator.SetBool("isShooting", false);
+
 
         //if isDragging was set to true then switch to the draggingState and the Flinta stops
         if (pcon.isDragging)
@@ -38,6 +42,25 @@ public class ExploreState : IGameState
                 pcon.player.GetComponent<PlayerMovement>().MoveTo(pcon.mousePos);
             }
         }
+
+        List<RaycastResult> lraycastResults = new();
+
+        if (Input.GetMouseButtonDown(1) && EventSystem.current.IsPointerOverGameObject())
+        {
+            pcon.raycaster.Raycast(pcon.pointerEvent, lraycastResults);
+            if (lraycastResults != null)
+            {
+                for (int i = 0; i < lraycastResults.Count; i++)
+                {
+                    if (lraycastResults[i].gameObject.GetComponent<Dragger>() != null)
+                    {
+                        pcon.monologueManager.StartMonologue(lraycastResults[i].gameObject.GetComponent<Dragger>().scrItem.viewText.Split('|'));
+                        return pcon.talkingState;
+                    }
+                }
+            }
+        }
+
 
         // pressing the middle Mouse Button will result in switching to the shotgunState
         if (Input.GetMouseButtonDown(2))

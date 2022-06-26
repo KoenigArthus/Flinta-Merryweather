@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,9 +7,12 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     private RectTransform rectTransform;
     private Vector3 pos;
 
+    [HideInInspector] public ScrItem scrItem;
+
     //initializing
     void Awake()
     {
+
         controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
         rectTransform = GetComponent<RectTransform>();
     }
@@ -38,11 +39,19 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
         }
     }
 
-    //when releasing the drag the item either snaps back to its original pos or gets combined
+    //when releasing the drag the item either snaps back to its original pos or gets crafted
     public void OnEndDrag(PointerEventData eventData)
     {
         if (Input.GetMouseButtonUp(0))
         {
+            /*
+             * Does a Raycast
+             * if it hits nothing thenn will this snaps back to its origin pos
+             * if it hits something it tries to Craft
+             *    if it crafts successfully this.gameObject will be destroyed (the result Item given into to inventory)
+             *    if Craft is not successful it snaps back to its origin pos
+             */
+             
             controller.hit = Physics2D.Raycast(controller.mousePos, Vector2.zero);
             if (controller.hit.collider != null)
             {

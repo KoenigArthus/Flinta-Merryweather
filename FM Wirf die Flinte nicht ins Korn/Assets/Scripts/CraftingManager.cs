@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class CraftingManager : MonoBehaviour
 {
@@ -38,6 +34,7 @@ public class CraftingManager : MonoBehaviour
                     {
                         //fills the content array with the ScrItem
                         controller.inventory.isFull[i] = true;
+                        results[r].UIObject.GetComponent<Dragger>().scrItem = results[r];
                         Instantiate(results[r].UIObject, controller.inventory.slots[i].transform, false);
                         controller.inventory.content[i] = results[r];
                         return true;

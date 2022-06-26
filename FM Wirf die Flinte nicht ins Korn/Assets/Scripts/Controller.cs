@@ -1,4 +1,7 @@
-﻿ using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
@@ -31,6 +34,8 @@ public class Controller : MonoBehaviour
     [HideInInspector] public Vector2 mousePos;
     [HideInInspector] public Vector2 cursorHotspot;
     [HideInInspector] public RaycastHit2D hit;
+    [HideInInspector] public PointerEventData pointerEvent;
+    [HideInInspector] public GraphicRaycaster raycaster;
     public SceneInfo sceneInfo;
     public string[] sceneSave;
     public float reachRadius = 2f;
@@ -50,6 +55,8 @@ public class Controller : MonoBehaviour
         ColorUtility.TryParseHtmlString("#4763FF", out filterColor);
 
         //cursor
+        raycaster = FindObjectOfType<Canvas>().GetComponent<GraphicRaycaster>();
+        pointerEvent = new PointerEventData(EventSystem.current);
         cursorHotspot = new Vector2(cursor0.width / 2, cursor0.height / 2);
         Cursor.SetCursor(cursor0, cursorHotspot, CursorMode.ForceSoftware);
 
@@ -105,6 +112,7 @@ public class Controller : MonoBehaviour
     //Managing the MousePos & Game State
     private void Update()
     {
+        pointerEvent.position = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         currentGameState = currentGameState.RunState(this);
         currentGameStateName = currentGameState.ToString();

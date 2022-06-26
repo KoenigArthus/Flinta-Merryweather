@@ -66,6 +66,7 @@ public class Item : Interactable
             {
                 //fills the content array with the ScrItems
                 controller.inventory.isFull[i] = true;
+                item.UIObject.GetComponent<Dragger>().scrItem = item;
                 Instantiate(UIObject, controller.inventory.slots[i].transform, false);
                 controller.inventory.content[i] = item;
                 controller.sceneSave[i] = item.name;

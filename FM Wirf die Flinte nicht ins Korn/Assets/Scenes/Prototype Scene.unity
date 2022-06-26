@@ -3177,7 +3177,7 @@ RectTransform:
   - {fileID: 425171480}
   - {fileID: 1942905188}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3383,6 +3383,7 @@ MonoBehaviour:
   filterColor: {r: 0, g: 0, b: 0, a: 0}
   mousePos: {x: 0, y: 0}
   cursorHotspot: {x: 0, y: 0}
+  raycaster: {fileID: 0}
   sceneInfo: {fileID: 11400000, guid: cd46953648d93d645815b5e13a08acad, type: 2}
   sceneSave: []
   reachRadius: 2
@@ -3403,7 +3404,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1220723761
 MonoBehaviour:
@@ -3967,7 +3968,7 @@ Transform:
   - {fileID: 1611963858}
   - {fileID: 1726947638}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1518941511
 GameObject:
@@ -4108,7 +4109,7 @@ Transform:
   m_Children:
   - {fileID: 1617263286}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1553671185
 GameObject:
@@ -4700,7 +4701,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1904165090
 GameObject:
@@ -4925,6 +4926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95cd63dbd3f3634da3831bcbb7c2dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrItem: {fileID: 0}
 --- !u!1 &1978835789
 GameObject:
   m_ObjectHideFlags: 0
