@@ -7,10 +7,6 @@ public class SceneDoor : Interactable
 
     [SerializeField] private string scene;
 
-    private void Start()
-    {
-        controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
-    }
     public override void ReactToClick(Controller pcon)
     {
         ChangeToScene(scene);

@@ -17,21 +17,21 @@ public class Character : Interactable
 
     public override void ReactToClick(Controller pcon)
     {
-        //checks what .json file has to be used and assigns it to the variable "ink"
 
-        if (!controller.sceneInfo.characters.Contains(character)  && controller.sceneInfo.Regina == false)      
+        //checks what .json file has to be used and assigns it to the variable "ink"
+        if (!pcon.sceneInfo.characters.Contains(character)  && pcon.sceneInfo.Regina == false)      
         {
             ink = character.ink;
         }
-        else if (!controller.sceneInfo.characters.Contains(character) && controller.sceneInfo.Regina == true)
+        else if (!pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true)
         {
             ink = character.inkR;
         }
-        else if (controller.sceneInfo.characters.Contains(character) && controller.sceneInfo.Regina == false)
+        else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == false)
         {
             ink = character.ink2;
         }
-        else if (controller.sceneInfo.characters.Contains(character) && controller.sceneInfo.Regina == true)
+        else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true)
         {
             ink = character.ink2R;
         }
@@ -40,8 +40,8 @@ public class Character : Interactable
         //pressing the right mouse button will start a Dialogue
         if (Input.GetMouseButtonDown(1))
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan; 
-            if (!controller.sceneInfo.characters.Contains(character)) { controller.sceneInfo.characters.Add(character); }
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+            if (!pcon.sceneInfo.characters.Contains(character)) { pcon.sceneInfo.characters.Add(character); }
             DialogueManager.GetInstance().EnterDialogueMode(ink, this.gameObject);
         }
         else if (Input.GetMouseButtonDown(0))
@@ -54,4 +54,11 @@ public class Character : Interactable
     {
         controller.monologueManager.StartMonologue(sentences);
     }
+
+    public void ReactToClick(Controller pcon,GameObject pgivenItem)
+    {
+        Debug.Log(pgivenItem.name);
+        // put in here what dialogue should be started when givven the pgivenItem
+    }
+
 }

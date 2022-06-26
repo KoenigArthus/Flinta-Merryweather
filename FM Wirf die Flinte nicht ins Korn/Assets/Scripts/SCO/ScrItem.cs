@@ -15,6 +15,4 @@ public class ScrItem : ScriptableObject
     public Sprite sprite;
     public GameObject UIObject;
 
-
-
 }

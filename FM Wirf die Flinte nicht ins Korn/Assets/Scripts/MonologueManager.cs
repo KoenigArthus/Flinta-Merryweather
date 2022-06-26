@@ -40,7 +40,6 @@ public class MonologueManager : MonoBehaviour
 
         }
 
-        controller.playerMovement.Stop();
         controller.talkingState.monologueIsPlaying = true;
         sentences.Clear();
 

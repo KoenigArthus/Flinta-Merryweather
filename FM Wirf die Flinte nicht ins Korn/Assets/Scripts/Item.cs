@@ -23,7 +23,6 @@ public class Item : Interactable
         isViewable = item.isViewable;
         canBePickedUp = item.canBePickedUp;
         canBeCombined = item.canBeCombined;
-
         UIObject = item.UIObject;
         sentences = item.viewText.Split('|');
 
@@ -59,18 +58,20 @@ public class Item : Interactable
     //Picking up an Item
     private void PickUp()
     {
+        //checking if a slot is free and if so then it gets filled with the Object & the player_Character movement disabled
         controller.playerMovement.Stop();
         for (int i = 0; i < controller.inventory.slots.Length; i++)
         {
-            //checking if a slot is free and if so then it gets filled with the Object & the player_Character movement enabled
             if (controller.inventory.isFull[i] == false)
             {
-                controller.inventory.isFull[i] = true;
                 //fills the content array with the ScrItems
+                controller.inventory.isFull[i] = true;
+                item.UIObject.GetComponent<Dragger>().scrItem = item;
                 Instantiate(UIObject, controller.inventory.slots[i].transform, false);
                 controller.inventory.content[i] = item;
                 controller.sceneSave[i] = item.name;
                 gameObject.SetActive(false);
+                Cursor.SetCursor(controller.cursor0, controller.cursorHotspot, CursorMode.ForceSoftware);
                 break;
             }
             if(i == controller.inventory.slots.Length - 1)
@@ -83,7 +84,7 @@ public class Item : Interactable
     //Viewing an Item
     private void View()
     {
-       controller.monologueManager.StartMonologue(sentences);
+        controller.monologueManager.StartMonologue(sentences);
     }
 
     public void FallItemSpawn(GameObject lgameObject, Vector2 lposition)
