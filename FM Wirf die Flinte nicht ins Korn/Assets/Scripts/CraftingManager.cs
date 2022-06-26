@@ -45,25 +45,35 @@ public class CraftingManager : MonoBehaviour
                   pcombineElement.GetComponent<Character>().ReactToClick(controller,pdragElement);
                 }
 
-
-
+                if (pcombineElement.GetComponent<Character>() != null)
+                {
+                    //insert start here
+                }
 
                 //fillst inventory with results Item
-                for (int i = 0; i < controller.inventory.slots.Length; i++)
+                if (pcombineElement.GetComponent<NoReturn>() == null)
                 {
-                    if (controller.inventory.isFull[i] == false)
+                    for (int i = 0; i < controller.inventory.slots.Length; i++)
                     {
-                        results[r].UIObject.GetComponent<Dragger>().scrItem = results[r];
-                        Instantiate(results[r].UIObject, controller.inventory.slots[i].transform, false);
-                        controller.inventory.isFull[i] = true;
-                        controller.inventory.content[i] = results[r];
-                        break;
-                    }
-                    if (i == controller.inventory.slots.Length - 1)
-                    {
-                        Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
+                        if (controller.inventory.isFull[i] == false)
+                        {
+                            results[r].UIObject.GetComponent<Dragger>().scrItem = results[r];
+                            Instantiate(results[r].UIObject, controller.inventory.slots[i].transform, false);
+                            controller.inventory.isFull[i] = true;
+                            controller.inventory.content[i] = results[r];
+                            break;
+                        }
+                        if (i == controller.inventory.slots.Length - 1)
+                        {
+                            Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
+                        }
                     }
                 }
+                else
+                {
+                    //nichts
+                }
+                
                 break;
             }
         }

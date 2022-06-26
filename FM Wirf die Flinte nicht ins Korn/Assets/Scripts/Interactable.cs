@@ -2,8 +2,8 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public Controller controller;
-    public bool changesCursorInShotgunState = false;
+    [HideInInspector] public Controller controller;
+    [HideInInspector] public bool changesCursorInShotgunState = false;
 
 
     public void Awake()
