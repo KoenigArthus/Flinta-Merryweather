@@ -20,17 +20,25 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     //at the beginning of a drag. The current pos gets saved and controller.isDragging is set to true, to go over to the draggingState
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
+        if (controller.currentGameState != controller.draggingState)
         {
-            controller.isDragging = true;
-            pos = rectTransform.anchoredPosition;
+            if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
+            {
+                controller.isDragging = true;
+                pos = rectTransform.anchoredPosition;
+            }
         }
+        else
+        {
+            eventData.pointerDrag = null;
+        }
+        
     }
 
     //while dragging with Mouse0 the item stays at the mouse position
     public void OnDrag(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
+        if (Input.GetMouseButton(0))
         {
             if (controller.currentGameState == controller.draggingState)
             {
