@@ -7,10 +7,6 @@ public class SceneDoor : Interactable
 
     [SerializeField] private string scene;
 
-    private void Start()
-    {
-        pcon = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
-    }
     public override void ReactToClick(Controller pcon)
     {
         ChangeToScene(scene);
@@ -20,12 +16,12 @@ public class SceneDoor : Interactable
     public void ChangeToScene(string Scene)
     {
         //saves inventory arrays to SceneInfo-SCO
-        pcon.sceneInfo.isFull = pcon.inventory.isFull;
-        pcon.sceneInfo.content = pcon.inventory.content;
+        controller.sceneInfo.isFull = controller.inventory.isFull;
+        controller.sceneInfo.content = controller.inventory.content;
 
-        pcon.sceneInfo.sceneSave = pcon.sceneSave;
+        controller.sceneInfo.sceneSave = controller.sceneSave;
 
-        pcon.sceneInfo.spawnpoint = spawnpointForNextScene;
+        controller.sceneInfo.spawnpoint = spawnpointForNextScene;
 
         SceneManager.LoadScene(Scene);
     } 

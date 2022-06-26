@@ -11,8 +11,6 @@ public abstract class Interactable : MonoBehaviour
         controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
     }
 
-
-
     //when entering and hovering over an Interactable The Cursor color changes
     //when in the shotgun state a crossair is displayed & colored instead
     public virtual void OnMouseEnter()

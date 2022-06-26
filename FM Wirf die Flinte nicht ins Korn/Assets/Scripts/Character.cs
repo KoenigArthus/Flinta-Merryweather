@@ -47,10 +47,7 @@ public class Character : Interactable
     public void ReactToClick(Controller pcon,GameObject pgivenItem)
     {
         Debug.Log(pgivenItem.name);
-        ink = character.ink;
-        this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
-        if (!base.pcon.sceneInfo.characters.Contains(character)) { base.pcon.sceneInfo.characters.Add(character); }
-        DialogueManager.GetInstance().EnterDialogueMode(ink, this.gameObject);
+        // put in here what dialogue should be started when givven the pgivenItem
     }
 
 }

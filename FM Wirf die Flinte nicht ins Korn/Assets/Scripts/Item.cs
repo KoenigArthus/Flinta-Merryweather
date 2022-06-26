@@ -59,22 +59,22 @@ public class Item : Interactable
     private void PickUp()
     {
         //checking if a slot is free and if so then it gets filled with the Object & the player_Character movement disabled
-        pcon.playerMovement.Stop();
-        for (int i = 0; i < pcon.inventory.slots.Length; i++)
+        controller.playerMovement.Stop();
+        for (int i = 0; i < controller.inventory.slots.Length; i++)
         {
-            if (pcon.inventory.isFull[i] == false)
+            if (controller.inventory.isFull[i] == false)
             {
                 //fills the content array with the ScrItems
-                pcon.inventory.isFull[i] = true;
+                controller.inventory.isFull[i] = true;
                 item.UIObject.GetComponent<Dragger>().scrItem = item;
-                Instantiate(UIObject, pcon.inventory.slots[i].transform, false);
-                pcon.inventory.content[i] = item;
-                pcon.sceneSave[i] = item.name;
+                Instantiate(UIObject, controller.inventory.slots[i].transform, false);
+                controller.inventory.content[i] = item;
+                controller.sceneSave[i] = item.name;
                 gameObject.SetActive(false);
-                Cursor.SetCursor(pcon.cursor0, pcon.cursorHotspot, CursorMode.ForceSoftware);
+                Cursor.SetCursor(controller.cursor0, controller.cursorHotspot, CursorMode.ForceSoftware);
                 break;
             }
-            if(i == pcon.inventory.slots.Length - 1)
+            if(i == controller.inventory.slots.Length - 1)
             {
                 Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
             }
@@ -85,6 +85,6 @@ public class Item : Interactable
     //Viewing an Item
     private void View()
     {
-       pcon.monologueManager.StartMonologue(sentences);
+        controller.monologueManager.StartMonologue(sentences);
     }
 }
