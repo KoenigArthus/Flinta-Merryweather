@@ -30,7 +30,6 @@ public class MonologueManager : MonoBehaviour
             StartCoroutine(FadeIn(child));
         }
 
-        controller.playerMovement.Stop();
         controller.talkingState.monologueIsPlaying = true;
         sentences.Clear();
 

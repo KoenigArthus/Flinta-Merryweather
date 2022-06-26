@@ -23,7 +23,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     {
         if (controller.currentGameState != controller.draggingState)
         {
-            if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
+            if (Input.GetMouseButton(1) && !Input.GetMouseButton(0) && !Input.GetMouseButton(2))
             {
                 controller.isDragging = true;
                 pos = rectTransform.anchoredPosition;
@@ -31,7 +31,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
         }
         else
         {
-           // eventData.pointerDrag = null;
+           eventData.pointerDrag = null;
         }
         
     }
@@ -39,7 +39,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     //while dragging with Mouse0 the item stays at the mouse position
     public void OnDrag(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             if (controller.currentGameState == controller.draggingState)
             {
@@ -52,30 +52,38 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("drag ended");
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(1))
         {
+            rectTransform.anchoredPosition = pos;
+            controller.isDragging = false;
             /*
              * Does a Raycast
              * if it hits nothing thenn will this snaps back to its origin pos
              * if it hits something it tries to Craft
              *    if it crafts successfully this.gameObject will be destroyed (the result Item given into to inventory)
              *    if Craft is not successful it snaps back to its origin pos
+             *    *******outdated comment
              */
 
             List<RaycastResult> lraycastResults = new();
             controller.raycaster.Raycast(controller.pointerEvent, lraycastResults);
             controller.hit = Physics2D.Raycast(controller.mousePos, Vector2.zero);
-            if (controller.hit.collider != null)
+            if (controller.hit.collider != null && controller.IsInReach())
             {
                 string lrecipe = this.name + controller.hit.collider.gameObject.name;
-                controller.craftingManager.Craft(lrecipe, gameObject);
+                controller.craftingManager.Craft(lrecipe, gameObject, controller.hit.collider.gameObject);
                 rectTransform.anchoredPosition = pos;
+            }
+            else if (controller.hit.collider != null && !controller.IsInReach())
+            {
+                string[] lsentence = new string[] { "Ich bin zu weit weg" };
+                controller.monologueManager.StartMonologue(lsentence);
             }
             else if (lraycastResults != null)
             {
                 for (int i = 0; i < lraycastResults.Count; i++)
                 {
-                    if (lraycastResults[i].gameObject.GetComponent<Dragger>() != null && lraycastResults[i].gameObject.name != name)
+                    if (lraycastResults[i].gameObject.name != name && lraycastResults[i].gameObject.GetComponent<Dragger>() != null)
                     {
                         string lrecipe = this.name + lraycastResults[i].gameObject.name;
                         controller.craftingManager.Craft(lrecipe, gameObject, lraycastResults[i].gameObject);
@@ -83,12 +91,6 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
                     }
                 }
             }
-            else
-            {
-                rectTransform.anchoredPosition = pos;
-            }
-
-            controller.isDragging = false;
         }
     }
 

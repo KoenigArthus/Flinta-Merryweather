@@ -14,7 +14,7 @@ public class CraftingManager : MonoBehaviour
 
     // if the given item combination matches the recipe...
     // ... the pdragItem gets removed and the matching results Item put into the Inventory
-    public bool Craft(string precipe, GameObject pdragElement, GameObject pcombineElement)
+    public void Craft(string precipe, GameObject pdragElement, GameObject pcombineElement)
     {
         Debug.Log(precipe);
         for (int r = 0; r < recipes.Length; r++)
@@ -28,8 +28,8 @@ public class CraftingManager : MonoBehaviour
                 controller.inventory.isFull[lslotInt] = false;
                 controller.inventory.content[lslotInt] = null;
 
-                //if true removes the combine Element item from the inventory & destroys it
-                if(pcombineElement.transform.parent.GetComponent<Dragger>() != null)
+                //if the combine element is an UIItem then it will be removed from the inventory & destroyed
+                if (pcombineElement.GetComponent<Dragger>() != null)
                 {
                     lslotNameParts = pcombineElement.transform.parent.name.Split('(', ')');
                     lslotInt = int.Parse(lslotNameParts[1]);
@@ -37,10 +37,17 @@ public class CraftingManager : MonoBehaviour
                     controller.inventory.isFull[lslotInt] = false;
                     controller.inventory.content[lslotInt] = null;
                 }
-                else
+
+
+                if(pcombineElement.GetComponent<Character>() != null)
                 {
-                    Destroy(pcombineElement);
+                  controller.isDragging = false;
+                  pcombineElement.GetComponent<Character>().ReactToClick(controller,pdragElement);
                 }
+
+
+
+
                 //fillst inventory with results Item
                 for (int i = 0; i < controller.inventory.slots.Length; i++)
                 {
@@ -50,22 +57,21 @@ public class CraftingManager : MonoBehaviour
                         Instantiate(results[r].UIObject, controller.inventory.slots[i].transform, false);
                         controller.inventory.isFull[i] = true;
                         controller.inventory.content[i] = results[r];
-                        return true;
+                        break;
                     }
                     if (i == controller.inventory.slots.Length - 1)
                     {
                         Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
-                        return false;
                     }
                 }
+                break;
             }
         }
-        return false;
     }
 
-    // if the given item combination matches the recipe...
+  /*  // if the given item combination matches the recipe...
     // ... the pdragItem gets removed and the matching results Item put into the Inventory
-    public bool Craft(string precipe, GameObject pdragElement)
+    public void Craft(string precipe, GameObject pdragElement)
     {
         Debug.Log(precipe);
         for (int r = 0; r < recipes.Length; r++)
@@ -79,7 +85,7 @@ public class CraftingManager : MonoBehaviour
                 controller.inventory.isFull[lslotInt] = false;
                 controller.inventory.content[lslotInt] = null;
 
-                //fillst inventory with results Item
+                //fills inventory with results Item
                 for (int i = 0; i < controller.inventory.slots.Length; i++)
                 {
                     if (controller.inventory.isFull[i] == false)
@@ -88,18 +94,16 @@ public class CraftingManager : MonoBehaviour
                         Instantiate(results[r].UIObject, controller.inventory.slots[i].transform, false);
                         controller.inventory.isFull[i] = true;
                         controller.inventory.content[i] = results[r];
-                        return true;
+                        break;
                     }
                     if (i == controller.inventory.slots.Length - 1)
                     {
                         Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
-                        return false;
                     }
                 }
             }
         }
-        return false;
     }
 
-
+*/
 }

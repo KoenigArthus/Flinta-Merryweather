@@ -100,7 +100,6 @@ public class DialogueManager : MonoBehaviour
             uiInventory.SetActive(false);
 
             speakingCharacter = pcharacter;
-            controller.playerMovement.Stop();
             currentStory = new Story(inkJSON.text);
             ContinueStory();
     }

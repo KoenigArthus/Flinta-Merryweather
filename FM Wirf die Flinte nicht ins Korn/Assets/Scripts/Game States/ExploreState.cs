@@ -20,6 +20,12 @@ public class ExploreState : IGameState
             pcon.playerMovement.Stop();
             return pcon.draggingState;
         }
+        //if any of the dialogueIsPlaying bools was set to true switch to the talking State and Flinta stops
+        if (pcon.talkingState.monologueIsPlaying | pcon.talkingState.dialogueIsPlaying)
+        {
+            pcon.playerMovement.Stop();
+            return pcon.talkingState;
+        }
         /* when clicking left or riht mouse button on an Interactactable it will call its ReactToClick Funktion
          * when the player ends up talking to a Character or through an Item descripion -> the State will be updated to talkingState
          * when the player is not in reach of the Interactable or clicks anywhere else other than on an UIElement ...
@@ -30,12 +36,7 @@ public class ExploreState : IGameState
             pcon.hit = Physics2D.Raycast(pcon.mousePos, Vector2.zero);
             if (pcon.hit.collider != null && pcon.IsInReach() && pcon.hit.collider.gameObject.CompareTag("Interactable"))
             {
-                pcon.hit.collider.gameObject.SendMessage("ReactToClick", pcon);
-                if(pcon.talkingState.monologueIsPlaying | pcon.talkingState.dialogueIsPlaying)
-                {
-                   return pcon.talkingState;
-                }
-            }
+                pcon.hit.collider.gameObject.SendMessage("ReactToClick", pcon);            }
             // if none of the above is true then the player moves to the mousePos
             else
             {
@@ -43,10 +44,9 @@ public class ExploreState : IGameState
             }
         }
 
-        List<RaycastResult> lraycastResults = new();
-
-        if (Input.GetMouseButtonDown(1) && EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject())
         {
+            List<RaycastResult> lraycastResults = new();
             pcon.raycaster.Raycast(pcon.pointerEvent, lraycastResults);
             if (lraycastResults != null)
             {
@@ -55,6 +55,7 @@ public class ExploreState : IGameState
                     if (lraycastResults[i].gameObject.GetComponent<Dragger>() != null)
                     {
                         pcon.monologueManager.StartMonologue(lraycastResults[i].gameObject.GetComponent<Dragger>().scrItem.viewText.Split('|'));
+                        pcon.playerMovement.Stop();
                         return pcon.talkingState;
                     }
                 }

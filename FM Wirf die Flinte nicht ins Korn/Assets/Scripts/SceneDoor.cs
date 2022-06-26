@@ -9,7 +9,7 @@ public class SceneDoor : Interactable
 
     private void Start()
     {
-        controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
+        pcon = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
     }
     public override void ReactToClick(Controller pcon)
     {
@@ -20,12 +20,12 @@ public class SceneDoor : Interactable
     public void ChangeToScene(string Scene)
     {
         //saves inventory arrays to SceneInfo-SCO
-        controller.sceneInfo.isFull = controller.inventory.isFull;
-        controller.sceneInfo.content = controller.inventory.content;
+        pcon.sceneInfo.isFull = pcon.inventory.isFull;
+        pcon.sceneInfo.content = pcon.inventory.content;
 
-        controller.sceneInfo.sceneSave = controller.sceneSave;
+        pcon.sceneInfo.sceneSave = pcon.sceneSave;
 
-        controller.sceneInfo.spawnpoint = spawnpointForNextScene;
+        pcon.sceneInfo.spawnpoint = spawnpointForNextScene;
 
         SceneManager.LoadScene(Scene);
     } 

@@ -2,13 +2,13 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public Controller controller;
+    public Controller pcon;
     public bool changesCursorInShotgunState = false;
 
 
     public void Awake()
     {
-        controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
+        pcon = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
     }
 
 
@@ -17,25 +17,25 @@ public abstract class Interactable : MonoBehaviour
     //when in the shotgun state a crossair is displayed & colored instead
     public virtual void OnMouseEnter()
     {
-        if(changesCursorInShotgunState && controller.currentGameState == controller.shotgunState)
-        Cursor.SetCursor(controller.crossair1, controller.cursorHotspot,CursorMode.ForceSoftware);
-        if (!changesCursorInShotgunState && controller.currentGameState == controller.exploreState)
-            Cursor.SetCursor(controller.cursor1, controller.cursorHotspot,CursorMode.ForceSoftware);
+        if(changesCursorInShotgunState && pcon.currentGameState == pcon.shotgunState)
+        Cursor.SetCursor(pcon.crossair1, pcon.cursorHotspot,CursorMode.ForceSoftware);
+        if (!changesCursorInShotgunState && pcon.currentGameState == pcon.exploreState)
+            Cursor.SetCursor(pcon.cursor1, pcon.cursorHotspot,CursorMode.ForceSoftware);
     }
     public virtual void OnMouseOver()
     {
-        if (changesCursorInShotgunState && controller.currentGameState == controller.shotgunState)
-            Cursor.SetCursor(controller.crossair1, controller.cursorHotspot,CursorMode.ForceSoftware);
-        if (!changesCursorInShotgunState && controller.currentGameState == controller.exploreState)
-            Cursor.SetCursor(controller.cursor1, controller.cursorHotspot,CursorMode.ForceSoftware);
+        if (changesCursorInShotgunState && pcon.currentGameState == pcon.shotgunState)
+            Cursor.SetCursor(pcon.crossair1, pcon.cursorHotspot,CursorMode.ForceSoftware);
+        if (!changesCursorInShotgunState && pcon.currentGameState == pcon.exploreState)
+            Cursor.SetCursor(pcon.cursor1, pcon.cursorHotspot,CursorMode.ForceSoftware);
     }
 
     public virtual void OnMouseExit()
     {
-        if (changesCursorInShotgunState && controller.currentGameState == controller.shotgunState)
-            Cursor.SetCursor(controller.crossair0, controller.cursorHotspot,CursorMode.ForceSoftware);
-        if (!changesCursorInShotgunState && controller.currentGameState == controller.exploreState)
-            Cursor.SetCursor(controller.cursor0, controller.cursorHotspot,CursorMode.ForceSoftware);
+        if (changesCursorInShotgunState && pcon.currentGameState == pcon.shotgunState)
+            Cursor.SetCursor(pcon.crossair0, pcon.cursorHotspot,CursorMode.ForceSoftware);
+        if (!changesCursorInShotgunState && pcon.currentGameState == pcon.exploreState)
+            Cursor.SetCursor(pcon.cursor0, pcon.cursorHotspot,CursorMode.ForceSoftware);
     }
 
     //this function defines, what the Interactable should do when it is clicked on 
