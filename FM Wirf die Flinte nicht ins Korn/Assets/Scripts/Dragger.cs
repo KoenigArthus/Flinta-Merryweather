@@ -30,7 +30,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     //while dragging with Mouse0 the item stays at the mouse position
     public void OnDrag(PointerEventData eventData)
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2))
         {
             if (controller.currentGameState == controller.draggingState)
             {
@@ -42,6 +42,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     //when releasing the drag the item either snaps back to its original pos or gets crafted
     public void OnEndDrag(PointerEventData eventData)
     {
+        Debug.Log("Drag ended");
         if (Input.GetMouseButtonUp(0))
         {
             /*
