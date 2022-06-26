@@ -38,8 +38,8 @@ public class Character : Interactable
         //pressing the right mouse button will start a Dialogue
         if (Input.GetMouseButtonDown(1))
         {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan; 
-            if (pcon.sceneInfo.characters.Contains(character)) { pcon.sceneInfo.characters.Add(character); }
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+            if (!pcon.sceneInfo.characters.Contains(character)) { pcon.sceneInfo.characters.Add(character); }
             DialogueManager.GetInstance().EnterDialogueMode(ink, this.gameObject);
         }
     }
@@ -52,13 +52,5 @@ public class Character : Interactable
         if (!base.pcon.sceneInfo.characters.Contains(character)) { base.pcon.sceneInfo.characters.Add(character); }
         DialogueManager.GetInstance().EnterDialogueMode(ink, this.gameObject);
     }
-
-
-    public void idk()
-    {
-        if (pcon.sceneInfo.characters.Contains(character)) { pcon.sceneInfo.characters.Add(character); }
-
-        if (!base.pcon.sceneInfo.characters.Contains(character)) { base.controller.sceneInfo.characters.Add(character); }
-    
 
 }
