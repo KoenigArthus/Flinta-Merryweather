@@ -21,34 +21,44 @@ public class CraftingManager : MonoBehaviour
         {
             if(recipes[r] == precipe)
             {
-                //removes the pdragItem item from the inventory & destroys it
+                //instantiating local variables
                 string[] lslotNameParts = pdragElement.transform.parent.name.Split('(', ')');
-                int lslotInt = int.Parse(lslotNameParts[1]);
-                Destroy(pdragElement);
-                controller.inventory.isFull[lslotInt] = false;
-                controller.inventory.content[lslotInt] = null;
+                int lslotInt = new();
+
+                ///Start of Section for Special Combines
 
                 //if the combine element is an UIItem then it will be removed from the inventory & destroyed
                 if (pcombineElement.GetComponent<Dragger>() != null)
                 {
                     lslotNameParts = pcombineElement.transform.parent.name.Split('(', ')');
                     lslotInt = int.Parse(lslotNameParts[1]);
-                    Destroy(pcombineElement);
                     controller.inventory.isFull[lslotInt] = false;
                     controller.inventory.content[lslotInt] = null;
+                    Destroy(pcombineElement);
                 }
 
-
+                //giving a Character an Item
                 if(pcombineElement.GetComponent<Character>() != null)
                 {
                   controller.isDragging = false;
                   pcombineElement.GetComponent<Character>().ReactToClick(controller,pdragElement);
                 }
 
-                if (pcombineElement.GetComponent<Character>() != null)
+                //combining an Item on Scene
+                if (pcombineElement.GetComponent<Item>() != null)
                 {
-                    //insert start here
+                    Debug.Log(precipe);
+                    //insert here
                 }
+
+                ///End of Section for Special Combines
+
+                //removes the pdragItem item from the inventory & destroys it
+                lslotNameParts = pdragElement.transform.parent.name.Split('(', ')');
+                lslotInt = int.Parse(lslotNameParts[1]);
+                controller.inventory.isFull[lslotInt] = false;
+                controller.inventory.content[lslotInt] = null;
+                Destroy(pdragElement);
 
                 //fillst inventory with results Item
                 if (pcombineElement.GetComponent<NoReturn>() == null)
@@ -73,7 +83,6 @@ public class CraftingManager : MonoBehaviour
                 {
                     //nichts
                 }
-                
                 break;
             }
         }

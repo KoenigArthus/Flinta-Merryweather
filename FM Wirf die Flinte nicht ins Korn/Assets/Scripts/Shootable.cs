@@ -30,16 +30,11 @@ public class Shootable : Interactable
 
         if (target.despawns && !target.falls)
         {
-
             StartCoroutine(DespawnBlinking());
-
         }
         else if (target.falls && !target.despawns)
         {
-
-
             StartCoroutine(Falling());
-            
         }
 
     }
@@ -51,13 +46,11 @@ public class Shootable : Interactable
         for (int i = 0; i < 3; i++)
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-
             yield return new WaitForSeconds(0.2f);
-
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-
             yield return new WaitForSeconds(0.2f);
         }
+
         this.gameObject.SetActive(false);
         StopCoroutine(DespawnBlinking());
     }
@@ -67,7 +60,6 @@ public class Shootable : Interactable
 
     IEnumerator Falling()
     {
-
         for (float i = gameObject.transform.position.y; i > controller.player.transform.position.y; i -= 0.1f)
         {
             gameObject.transform.position += new Vector3(0, -0.1f, 0);
@@ -76,9 +68,7 @@ public class Shootable : Interactable
 
         fallPosition = this.gameObject.transform.position;
         fallItem.GetComponent<Item>().FallItemSpawn(fallItem, fallPosition);
-
         this.gameObject.SetActive(false);
-
         StopCoroutine(Falling());
     }
 }
