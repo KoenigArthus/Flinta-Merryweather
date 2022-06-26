@@ -7,6 +7,9 @@ public class Shootable : Interactable
     [SerializeField] private ScrShootable target;
     [SerializeField] private GameObject fallItem;
 
+    public Vector2 fallPosition;
+    
+
 
     private void Start()
     {
@@ -32,11 +35,8 @@ public class Shootable : Interactable
         }
         else if (target.falls && !target.despawns)
         {
-            this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
 
 
-            fallItem.SetActive(true);
             StartCoroutine(Falling());
             
         }
@@ -46,6 +46,7 @@ public class Shootable : Interactable
 
     IEnumerator DespawnBlinking()
     {
+        this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
         for (int i = 0; i < 3; i++)
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
@@ -66,12 +67,15 @@ public class Shootable : Interactable
     IEnumerator Falling()
     {
 
-        for (float i = fallItem.transform.position.y; i > controller.player.transform.position.y; i -= 0.1f)
+        for (float i = gameObject.transform.position.y; i > controller.player.transform.position.y; i -= 0.1f)
         {
-            fallItem.transform.position += new Vector3(0, -0.1f, 0);
+            gameObject.transform.position += new Vector3(0, -0.1f, 0);
             yield return new WaitForSeconds(0.01f);
         }
-       
+
+        fallPosition = this.gameObject.transform.position;
+        controller.itemScript.FallItemSpawn(fallItem, fallPosition);
+
         this.gameObject.SetActive(false);
 
         StopCoroutine(Falling());

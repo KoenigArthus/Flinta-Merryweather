@@ -10,7 +10,7 @@ public class FallConsequences : MonoBehaviour
         //layerAbfrage
         collision.gameObject.SetActive(false);
         StartCoroutine(DespawnBlinking());
-    }
+    } 
 
     IEnumerator DespawnBlinking()
     {

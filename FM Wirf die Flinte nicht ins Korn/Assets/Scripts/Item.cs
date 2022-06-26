@@ -29,7 +29,6 @@ public class Item : Interactable
 
     }
 
-
     //this function defines, what it should do when it is clicked on 
     public override void ReactToClick(Controller pcon)
     {
@@ -81,10 +80,15 @@ public class Item : Interactable
         }
     }
 
-
     //Viewing an Item
     private void View()
     {
        controller.monologueManager.StartMonologue(sentences);
+    }
+
+    public void FallItemSpawn(GameObject lgameObject, Vector2 lposition)
+    {
+        Instantiate(lgameObject, new Vector3(lposition.x, lposition.y, -2), Quaternion.identity);
+        Debug.Log(lgameObject.transform.position);
     }
 }
