@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3052350560022857264}
   - component: {fileID: 9166103688247294341}
   m_Layer: 5
-  m_Name: UIKokusnussPrefab 1
+  m_Name: Kokosnuss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

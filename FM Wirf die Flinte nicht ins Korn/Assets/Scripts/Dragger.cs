@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -30,7 +31,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
         }
         else
         {
-            eventData.pointerDrag = null;
+           // eventData.pointerDrag = null;
         }
         
     }
@@ -50,7 +51,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     //when releasing the drag the item either snaps back to its original pos or gets crafted
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("Drag ended");
+        Debug.Log("drag ended");
         if (Input.GetMouseButtonUp(0))
         {
             /*
@@ -60,13 +61,27 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
              *    if it crafts successfully this.gameObject will be destroyed (the result Item given into to inventory)
              *    if Craft is not successful it snaps back to its origin pos
              */
-             
+
+            List<RaycastResult> lraycastResults = new();
+            controller.raycaster.Raycast(controller.pointerEvent, lraycastResults);
             controller.hit = Physics2D.Raycast(controller.mousePos, Vector2.zero);
             if (controller.hit.collider != null)
             {
                 string lrecipe = this.name + controller.hit.collider.gameObject.name;
                 controller.craftingManager.Craft(lrecipe, gameObject);
                 rectTransform.anchoredPosition = pos;
+            }
+            else if (lraycastResults != null)
+            {
+                for (int i = 0; i < lraycastResults.Count; i++)
+                {
+                    if (lraycastResults[i].gameObject.GetComponent<Dragger>() != null && lraycastResults[i].gameObject.name != name)
+                    {
+                        string lrecipe = this.name + lraycastResults[i].gameObject.name;
+                        controller.craftingManager.Craft(lrecipe, gameObject, lraycastResults[i].gameObject);
+                        break;
+                    }
+                }
             }
             else
             {
