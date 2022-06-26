@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &9223197745429281579
+--- !u!1001 &6974380855910559548
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,8 +9,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3017048901970949573, guid: cd1c570c31c50ca4cb8acd19156d711a, type: 3}
       propertyPath: m_Name
-      value: Brot
+      value: Brille
       objectReference: {fileID: 0}
+    - target: {fileID: 3017048901970949574, guid: cd1c570c31c50ca4cb8acd19156d711a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 519c5a38c2797e9448198ec5daf4a3c1, type: 3}
+    - target: {fileID: 3017048901970949575, guid: cd1c570c31c50ca4cb8acd19156d711a, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
     - target: {fileID: 3017048901970949577, guid: cd1c570c31c50ca4cb8acd19156d711a, type: 3}
       propertyPath: m_RootOrder
       value: 0

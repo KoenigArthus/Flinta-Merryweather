@@ -15,6 +15,5 @@ MonoBehaviour:
   viewText: "Diese Kokosnuss k\xF6nnte ich gebrauchen."
   isViewable: 1
   canBePickedUp: 1
-  canBeCombined: 0
   sprite: {fileID: 21300000, guid: c502c23dae661c5438695d5f700ee274, type: 3}
-  UIObject: {fileID: 6124476509735389999, guid: 289516c6310eef84fa8355019b4e23a6, type: 3}
+  UIObject: {fileID: 782888271509456850, guid: 71b4692346f4ae643a70ab8e163fe9a0, type: 3}

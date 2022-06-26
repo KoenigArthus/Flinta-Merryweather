@@ -15,6 +15,5 @@ MonoBehaviour:
   viewText: "Sieht so aus, als w\xE4re da was vergraben!"
   isViewable: 1
   canBePickedUp: 1
-  canBeCombined: 0
   sprite: {fileID: 21300000, guid: 519c5a38c2797e9448198ec5daf4a3c1, type: 3}
-  UIObject: {fileID: 4593772141900149707, guid: 9a5aadce8c6e0e04bbb347deb4aa22f0, type: 3}
+  UIObject: {fileID: 9144525045083737953, guid: a515c0f713ed06146b3796468faa818d, type: 3}

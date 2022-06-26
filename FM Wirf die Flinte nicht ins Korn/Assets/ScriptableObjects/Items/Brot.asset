@@ -15,6 +15,5 @@ MonoBehaviour:
   viewText: Boah,| dieses Brot,| ist echt StandartBrot.png like.
   isViewable: 1
   canBePickedUp: 1
-  canBeCombined: 0
   sprite: {fileID: 21300000, guid: 5c22d2f2cebe9a14c8c3952bd7115b97, type: 3}
-  UIObject: {fileID: 6124476509735389999, guid: 6c3c439d714e45e41a583547c1f8fe97, type: 3}
+  UIObject: {fileID: 3777693441774014057, guid: 95393c964be7a8c488a7bd3bcb8efe4c, type: 3}
