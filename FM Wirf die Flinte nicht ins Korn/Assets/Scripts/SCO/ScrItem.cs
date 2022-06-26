@@ -9,7 +9,6 @@ public class ScrItem : ScriptableObject
     [Header("Interaction Variables")]
     public bool isViewable;
     public bool canBePickedUp;
-    public bool canBeCombined;
 
     [Header("Sprites")]
     public Sprite sprite;

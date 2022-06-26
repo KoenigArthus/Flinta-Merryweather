@@ -22,7 +22,6 @@ public class Item : Interactable
         this.gameObject.GetComponent<SpriteRenderer>().sprite = item.sprite;
         isViewable = item.isViewable;
         canBePickedUp = item.canBePickedUp;
-        canBeCombined = item.canBeCombined;
         UIObject = item.UIObject;
         sentences = item.viewText.Split('|');
 
