@@ -27,7 +27,17 @@ public class MonologueManager : MonoBehaviour
 
         foreach (SpriteRenderer child in controller.childRenderer)
         {
-            StartCoroutine(FadeIn(child));
+
+            if (child.gameObject.GetComponentInChildren<SpriteRenderer>().color == Color.cyan)
+            {
+                child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+
+            }
+            else
+            {
+                StartCoroutine(FadeIn(child));
+            }
+
         }
 
         controller.playerMovement.Stop();

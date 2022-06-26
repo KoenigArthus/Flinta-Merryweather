@@ -3,6 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Character", menuName = "Character")]
 public class ScrCharacter : ScriptableObject
 {
+    [Header("Description")]
+    [TextArea] public string viewText;
+
     [Header("Sprites")]
     public Sprite sprite;
 

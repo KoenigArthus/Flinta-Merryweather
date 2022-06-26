@@ -12,7 +12,7 @@ public class Controller : MonoBehaviour
 
     [HideInInspector] public IGameState currentGameState;
     [SerializeField] private string currentGameStateName;
- 
+
 
     //General Variables
     public SceneInfo sceneInfo;
@@ -21,6 +21,10 @@ public class Controller : MonoBehaviour
     [HideInInspector] public DialogueManager dialogueManager;
     [HideInInspector] public GameObject player; 
     [HideInInspector] public SpriteRenderer[] childRenderer;
+    [HideInInspector] public Item itemScript;
+
+    public Image shotgunFilter;
+    public string[] sceneSave;
     [HideInInspector] public PlayerMovement playerMovement;
     [HideInInspector] public Inventory inventory;
     [HideInInspector] public LineRenderer lineRenderer;
@@ -49,6 +53,7 @@ public class Controller : MonoBehaviour
         Cursor.SetCursor(cursor0, cursorHotspot, CursorMode.ForceSoftware);
         shotgunFilter.enabled = false;
 
+        itemScript = FindObjectOfType<Item>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         inventory = player.GetComponent<Inventory>();
