@@ -46,6 +46,7 @@ public class Item : Interactable
         //pressing the right mouse button will view the Item if it is !isViewable be a monologue will appear
         else if (Input.GetMouseButtonDown(0) && isViewable)
         {
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
             this.View();
         }
         else if (Input.GetMouseButtonDown(0) && !isViewable)

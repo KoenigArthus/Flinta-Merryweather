@@ -5,12 +5,14 @@ public class Character : Interactable
     [SerializeField] private ScrCharacter character;
 
     private TextAsset ink;
+    private string[] sentences;
 
 
     //Initializing the Character
     private void Start()
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = character.sprite;
+        sentences = character.viewText.Split('|');
     }
 
     public override void ReactToClick(Controller pcon)
@@ -42,5 +44,14 @@ public class Character : Interactable
             if (!controller.sceneInfo.characters.Contains(character)) { controller.sceneInfo.characters.Add(character); }
             DialogueManager.GetInstance().EnterDialogueMode(ink, this.gameObject);
         }
+        else if (Input.GetMouseButtonDown(0))
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+            this.View();
+        }
+    }
+    private void View()
+    {
+        controller.monologueManager.StartMonologue(sentences);
     }
 }
