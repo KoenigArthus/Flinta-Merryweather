@@ -19,7 +19,7 @@ public class Controller : MonoBehaviour
 
 
     //General Variables
-    [HideInInspector] public GameObject player;
+    public GameObject player;
     [HideInInspector] public PlayerMovement playerMovement;
     [HideInInspector] public Inventory inventory;
     [HideInInspector] public Animator animator;

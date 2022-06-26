@@ -796,7 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e045fe5f11e584cbd807e0a31e103c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcon: {fileID: 0}
+  controller: {fileID: 0}
   changesCursorInShotgunState: 0
   item: {fileID: 11400000, guid: 15b3cb99e4ae054438620b173f28b9bb, type: 2}
 --- !u!58 &347321356
@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ec73620318a194ea3d1d2908e8595c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcon: {fileID: 0}
+  controller: {fileID: 0}
   changesCursorInShotgunState: 0
   character: {fileID: 11400000, guid: 90eb329e696039c4fb7bd661d73c096e, type: 2}
 --- !u!212 &596474439
@@ -1896,7 +1896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684726184}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.94, y: -1.67, z: -1}
+  m_LocalPosition: {x: -0.64, y: -1.67, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2522,7 +2522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ec73620318a194ea3d1d2908e8595c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcon: {fileID: 0}
+  controller: {fileID: 0}
   changesCursorInShotgunState: 0
   character: {fileID: 11400000, guid: 4c39b89ceff7a054c9af2b11965994d2, type: 2}
 --- !u!61 &850709110
@@ -2808,7 +2808,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e045fe5f11e584cbd807e0a31e103c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcon: {fileID: 0}
+  controller: {fileID: 0}
   changesCursorInShotgunState: 0
   item: {fileID: 11400000, guid: eccfd16516864064181512a58fd115a7, type: 2}
 --- !u!212 &1056191020
@@ -3009,7 +3009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e045fe5f11e584cbd807e0a31e103c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcon: {fileID: 0}
+  controller: {fileID: 0}
   changesCursorInShotgunState: 0
   item: {fileID: 11400000, guid: 77248118d0f25af43b64dd691f0bb972, type: 2}
 --- !u!212 &1172426231
@@ -3368,7 +3368,7 @@ MonoBehaviour:
   isTalking: 0
   isDragging: 0
   currentGameStateName: 
-  player: {fileID: 0}
+  player: {fileID: 684726184}
   playerMovement: {fileID: 0}
   inventory: {fileID: 0}
   animator: {fileID: 0}
@@ -3420,12 +3420,12 @@ MonoBehaviour:
   recipes:
   - Brot(Clone)Kokosnuss(Clone)
   - idgaf
-  - Brot(Clone)pirate6
+  - Brille(Clone)pirate6
   - Kokosnuss(Clone)Brot(Clone)
   results:
   - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
   - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
-  - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
+  - {fileID: 11400000, guid: 77248118d0f25af43b64dd691f0bb972, type: 2}
   - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
 --- !u!1 &1248216503
 GameObject:
@@ -4102,7 +4102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518941511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.942776, y: 0.015930057, z: -11}
+  m_LocalPosition: {x: -0.6427768, y: 0.018180013, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4336,7 +4336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617263285}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.002776146, y: -1.68593, z: 0}
+  m_LocalPosition: {x: 0.0027768016, y: -1.68818, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4540,7 +4540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a09df3e787b444f899c1bb21a8db9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcon: {fileID: 0}
+  controller: {fileID: 0}
   changesCursorInShotgunState: 0
   spawnpointForNextScene: {x: -0.65, y: -1.89, z: 0}
   scene: Prototype Scene (1)
@@ -5239,7 +5239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e045fe5f11e584cbd807e0a31e103c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pcon: {fileID: 0}
+  controller: {fileID: 0}
   changesCursorInShotgunState: 0
   item: {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
 --- !u!212 &2043811417

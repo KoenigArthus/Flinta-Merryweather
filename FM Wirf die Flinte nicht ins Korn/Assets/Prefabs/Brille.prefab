@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4711602122643947220}
   - component: {fileID: 8311949524364963606}
   m_Layer: 5
-  m_Name: UIBrillePrefab
+  m_Name: Brille
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

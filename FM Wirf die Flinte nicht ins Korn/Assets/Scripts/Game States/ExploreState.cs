@@ -36,7 +36,8 @@ public class ExploreState : IGameState
             pcon.hit = Physics2D.Raycast(pcon.mousePos, Vector2.zero);
             if (pcon.hit.collider != null && pcon.IsInReach() && pcon.hit.collider.gameObject.CompareTag("Interactable"))
             {
-                pcon.hit.collider.gameObject.SendMessage("ReactToClick", pcon);            }
+                pcon.hit.collider.gameObject.SendMessage("ReactToClick", pcon);            
+            }
             // if none of the above is true then the player moves to the mousePos
             else
             {

@@ -79,7 +79,7 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
                 string[] lsentence = new string[] { "Ich bin zu weit weg" };
                 controller.monologueManager.StartMonologue(lsentence);
             }
-            else if (lraycastResults != null && controller.hit.collider.gameObject == null)
+            else if (lraycastResults != null /*&& controller.hit.collider.gameObject == null*/)
             {
                 for (int i = 0; i < lraycastResults.Count; i++)
                 {
