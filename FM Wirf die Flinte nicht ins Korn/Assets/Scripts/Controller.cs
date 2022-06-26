@@ -21,10 +21,6 @@ public class Controller : MonoBehaviour
     [HideInInspector] public DialogueManager dialogueManager;
     [HideInInspector] public GameObject player; 
     [HideInInspector] public SpriteRenderer[] childRenderer;
-    [HideInInspector] public Item itemScript;
-
-    public Image shotgunFilter;
-    public string[] sceneSave;
     [HideInInspector] public PlayerMovement playerMovement;
     [HideInInspector] public Inventory inventory;
     [HideInInspector] public LineRenderer lineRenderer;
@@ -52,8 +48,6 @@ public class Controller : MonoBehaviour
         cursorHotspot = new Vector2(cursor0.width / 2, cursor0.height / 2);
         Cursor.SetCursor(cursor0, cursorHotspot, CursorMode.ForceSoftware);
         shotgunFilter.enabled = false;
-
-        itemScript = FindObjectOfType<Item>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = player.GetComponent<PlayerMovement>();
         inventory = player.GetComponent<Inventory>();

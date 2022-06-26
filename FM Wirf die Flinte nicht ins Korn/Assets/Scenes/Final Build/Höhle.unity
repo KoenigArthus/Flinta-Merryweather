@@ -1304,7 +1304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &589444393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1599,6 +1599,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3612180442286349124, guid: a6dcadcbc76c9654f8d78cc4a4624921, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 11400000, guid: 68873b827d7de2c48976a4b18591b8b3, type: 2}
+    - target: {fileID: 3612180442286349124, guid: a6dcadcbc76c9654f8d78cc4a4624921, type: 3}
       propertyPath: fallItem
       value: 
       objectReference: {fileID: 3385030320714714646, guid: 908b02abf143a4f4995e115be497ffe7, type: 3}
@@ -1606,6 +1610,18 @@ PrefabInstance:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1509765104}
+    - target: {fileID: 6411898054130658963, guid: a6dcadcbc76c9654f8d78cc4a4624921, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411898054130658963, guid: a6dcadcbc76c9654f8d78cc4a4624921, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411898054130658963, guid: a6dcadcbc76c9654f8d78cc4a4624921, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8130306757000586931, guid: a6dcadcbc76c9654f8d78cc4a4624921, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2806,15 +2822,15 @@ MonoBehaviour:
   dialogueManager: {fileID: 0}
   player: {fileID: 0}
   childRenderer: []
-  itemScript: {fileID: 0}
-  shotgunFilter: {fileID: 1730661890}
-  sceneSave: []
   playerMovement: {fileID: 0}
   inventory: {fileID: 0}
   lineRenderer: {fileID: 0}
+  animator: {fileID: 0}
   mousePos: {x: 0, y: 0}
   cursorHotspot: {x: 0, y: 0}
   filterColor: {r: 0, g: 0, b: 0, a: 0}
+  shotgunFilter: {fileID: 1730661890}
+  sceneSave: []
   talkingFilterParent: {fileID: 2054162968}
   cursor0: {fileID: 2800000, guid: 2b0965b5c18122245979e0bde28d99d1, type: 3}
   cursor1: {fileID: 2800000, guid: 22e9a340f62752042ae8cedf0bf754f3, type: 3}

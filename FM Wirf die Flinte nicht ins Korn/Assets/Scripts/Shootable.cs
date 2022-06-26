@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Shootable : Interactable
 {
@@ -8,12 +9,12 @@ public class Shootable : Interactable
     [SerializeField] private GameObject fallItem;
 
     public Vector2 fallPosition;
-    
 
 
     private void Start()
     {
         changesCursorInShotgunState = true;
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = target.sprite;
     }
 
     public override void ReactToClick(Controller pcon)
@@ -74,7 +75,7 @@ public class Shootable : Interactable
         }
 
         fallPosition = this.gameObject.transform.position;
-        controller.itemScript.FallItemSpawn(fallItem, fallPosition);
+        fallItem.GetComponent<Item>().FallItemSpawn(fallItem, fallPosition);
 
         this.gameObject.SetActive(false);
 
