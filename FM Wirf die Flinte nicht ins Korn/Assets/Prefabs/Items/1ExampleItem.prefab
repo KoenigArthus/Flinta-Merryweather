@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3017048901970949577}
   - component: {fileID: 3017048901970949574}
   - component: {fileID: 3017048901970949575}
-  - component: {fileID: 3017048901970949572}
+  - component: {fileID: -4250271278052336658}
   m_Layer: 0
   m_Name: 1ExampleItem
   m_TagString: Interactable
@@ -101,8 +101,8 @@ MonoBehaviour:
   controller: {fileID: 0}
   changesCursorInShotgunState: 0
   item: {fileID: 11400000, guid: 77248118d0f25af43b64dd691f0bb972, type: 2}
---- !u!58 &3017048901970949572
-CircleCollider2D:
+--- !u!60 &-4250271278052336658
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,5 +115,21 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.375, y: 0.46875}
+      - {x: -0.5, y: 0.1875}
+      - {x: -0.5, y: -0.4375}
+      - {x: 0.0625, y: -0.4375}
+      - {x: 0.5, y: -0.09375}
+      - {x: 0.5, y: 0.375}
+      - {x: 0.46875, y: 0.46875}

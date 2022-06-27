@@ -71,6 +71,9 @@ public class Controller : MonoBehaviour
         monologueManager = gameObject.GetComponent<MonologueManager>();
         craftingManager = gameObject.GetComponent<CraftingManager>();
 
+
+        //Start Button Stuff:
+
         //setup inital state
         shotgunFilter.enabled = false;
         lineRenderer.enabled = false;
@@ -82,11 +85,13 @@ public class Controller : MonoBehaviour
         inventory.content = sceneInfo.content;
         sceneSave = sceneInfo.sceneSave;
 
-
         //resets the arrays on sceneInfo (still needs Regina bool)
         sceneInfo.isFull = new bool[13];
         sceneInfo.content = new ScrItem[13];
         sceneInfo.sceneSave = new string[13];
+      //  sceneInfo.Regina = false;
+
+        //End Start Button Stuff
 
 
         for (int i = 0; i < inventory.isFull.Length; i++)

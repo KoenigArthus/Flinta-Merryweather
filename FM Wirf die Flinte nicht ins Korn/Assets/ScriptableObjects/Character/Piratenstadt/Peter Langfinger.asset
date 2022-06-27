@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50a109d2b819ef4596114d6b2213352, type: 3}
   m_Name: Peter Langfinger
   m_EditorClassIdentifier: 
+  viewText: "Der sieht alt und griesgr\xE4mig aus"
   sprite: {fileID: 21300000, guid: 093328fe1a18d6d4db97d9ba963802d0, type: 3}
   ink: {fileID: 4900000, guid: cf58a34d60527ad4ebb2da5712207fdc, type: 3}
   inkR: {fileID: 4900000, guid: c21d102ecb0bbf046906a859f0b722e8, type: 3}

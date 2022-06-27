@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
-  m_Name: Kokosnuss
+  m_Name: Glasauge
   m_EditorClassIdentifier: 
-  viewText: "Diese Kokosnuss k\xF6nnte ich gebrauchen."
+  viewText: "Hm, da gl\xE4nzt etwas"
   isViewable: 1
   canBePickedUp: 1
-  sprite: {fileID: 21300000, guid: 6e659d7a646da6f42a241a671e752c98, type: 3}
-  UIObject: {fileID: 782888271509456850, guid: 71b4692346f4ae643a70ab8e163fe9a0, type: 3}
+  sprite: {fileID: 0}
+  UIObject: {fileID: 2568964527714050963, guid: e64c489e3bf247b49ad6828419a376e6, type: 3}

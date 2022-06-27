@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50a109d2b819ef4596114d6b2213352, type: 3}
   m_Name: Luis
   m_EditorClassIdentifier: 
+  viewText: Der kann ja kaum noch aufrecht stehen
   sprite: {fileID: 21300000, guid: 5abcdf300dc0b1248a213bbb24f2b85f, type: 3}
   ink: {fileID: 4900000, guid: db5b344d3ebdd24439ff85a50ef886e5, type: 3}
   inkR: {fileID: 4900000, guid: 68cae589169158d4fb0c65873d5f97f4, type: 3}

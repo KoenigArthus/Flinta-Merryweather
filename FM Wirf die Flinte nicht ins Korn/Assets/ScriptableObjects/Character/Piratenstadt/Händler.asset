@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50a109d2b819ef4596114d6b2213352, type: 3}
   m_Name: "H\xE4ndler"
   m_EditorClassIdentifier: 
+  viewText: Sie hat einen irren Blick drauf
   sprite: {fileID: 21300000, guid: b0fb17b9e74d5e74d96c94a4dd2c1e13, type: 3}
   ink: {fileID: 4900000, guid: f2c7021e7cc71f54e888e9f0b158553c, type: 3}
   inkR: {fileID: 4900000, guid: f2c7021e7cc71f54e888e9f0b158553c, type: 3}

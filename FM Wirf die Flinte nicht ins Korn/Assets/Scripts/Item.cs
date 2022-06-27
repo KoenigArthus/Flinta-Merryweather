@@ -86,9 +86,10 @@ public class Item : Interactable
         controller.monologueManager.StartMonologue(sentences);
     }
 
-    public void FallItemSpawn(GameObject lgameObject, Vector2 lposition)
+    public void FallItemSpawn(GameObject pgameObject, Vector2 pposition)
     {
-        Instantiate(lgameObject, new Vector3(lposition.x, lposition.y, -2), Quaternion.identity);
-        Debug.Log(lgameObject.transform.position);
+         
+        Instantiate(pgameObject, pposition, Quaternion.identity);
+        Debug.Log(pgameObject.transform.position);
     }
 }
