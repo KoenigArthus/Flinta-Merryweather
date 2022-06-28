@@ -27,7 +27,6 @@ public class Shootable : Interactable
 
     public void BeingShot()
     {
-
         if (target.despawns && !target.falls)
         {
             StartCoroutine(DespawnBlinking());
@@ -60,6 +59,7 @@ public class Shootable : Interactable
 
     IEnumerator Falling()
     {
+        yield return new WaitForSeconds(0.9f);
         for (float i = gameObject.transform.position.y; i > controller.player.transform.position.y; i -= 0.1f)
         {
             gameObject.transform.position += new Vector3(0, -0.1f, 0);
@@ -71,4 +71,5 @@ public class Shootable : Interactable
         this.gameObject.SetActive(false);
         StopCoroutine(Falling());
     }
+
 }

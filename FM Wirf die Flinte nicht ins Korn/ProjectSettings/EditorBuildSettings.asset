@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Prototype Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
-    path: Assets/Scenes/Prototype Scene (1).unity
+    path: 
     guid: d54c58de929e02c498c74b1e4855fb38
+  - enabled: 1
+    path: Assets/Scenes/Final Build/Piratenstadt.unity
+    guid: 81e8175708fa1504a8fa1981aab19424
+  - enabled: 1
+    path: Assets/Scenes/Final Build/Strand.unity
+    guid: a2a20bf56faa7194ba83fcd5bfa6a878
+  - enabled: 1
+    path: Assets/Scenes/Final Build/Taverne.unity
+    guid: 95971754171f89247ab8cbb7859d581c
+  - enabled: 1
+    path: "Assets/Scenes/Final Build/H\xF6hle.unity"
+    guid: deb3e34bf475f0d4c9f8ec1513417989
   m_configObjects: {}

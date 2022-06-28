@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
   m_Name: Glasauge
   m_EditorClassIdentifier: 
-  viewText: "Hm, da gl\xE4nzt etwas"
+  viewText: Hm, da glaenzt etwas
   isViewable: 1
   canBePickedUp: 1
   sprite: {fileID: 0}

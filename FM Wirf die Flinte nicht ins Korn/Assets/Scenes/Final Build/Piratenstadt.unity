@@ -3311,11 +3311,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.3887794, y: 0.5021089}
-      - {x: -0.37760597, y: 0.14127293}
-      - {x: -0.3823368, y: -0.4421705}
-      - {x: -0.02617395, y: -0.6637826}
-      - {x: -0.03590226, y: 0.37553555}
+    - - {x: -0.025508642, y: 0.39216286}
+      - {x: -0.3959146, y: 0.5211363}
+      - {x: -0.3965208, y: -0.4448408}
+      - {x: -0.02561748, y: -0.6669531}
 --- !u!114 &1652647840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3342,7 +3341,7 @@ PrefabInstance:
     - target: {fileID: 264837367773691384, guid: e2e5615c90664d34fb1c51bafb953f44, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: bbe926378d44f03499e900e08450b96e, type: 3}
+      objectReference: {fileID: 21300000, guid: 6e659d7a646da6f42a241a671e752c98, type: 3}
     - target: {fileID: 2797016952117204499, guid: e2e5615c90664d34fb1c51bafb953f44, type: 3}
       propertyPath: m_Name
       value: Kokosnuss
@@ -3390,6 +3389,14 @@ PrefabInstance:
     - target: {fileID: 3135597754389493208, guid: e2e5615c90664d34fb1c51bafb953f44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649550105251662639, guid: e2e5615c90664d34fb1c51bafb953f44, type: 3}
+      propertyPath: m_Radius
+      value: 0.18194272
+      objectReference: {fileID: 0}
+    - target: {fileID: 6649550105251662639, guid: e2e5615c90664d34fb1c51bafb953f44, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.0022881776
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2e5615c90664d34fb1c51bafb953f44, type: 3}
@@ -4100,6 +4107,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 542010215}
     m_Modifications:
+    - target: {fileID: 3482958614403361588, guid: 9f0eead686301da45b3bc4114ee2a530, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3482958614403361588, guid: 9f0eead686301da45b3bc4114ee2a530, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3482958614403361591, guid: 9f0eead686301da45b3bc4114ee2a530, type: 3}
       propertyPath: m_Name
       value: Glasauge
@@ -4110,11 +4125,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3482958614403361595, guid: 9f0eead686301da45b3bc4114ee2a530, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.935548
+      value: -6.227
       objectReference: {fileID: 0}
     - target: {fileID: 3482958614403361595, guid: 9f0eead686301da45b3bc4114ee2a530, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7807951
+      value: -1.836
       objectReference: {fileID: 0}
     - target: {fileID: 3482958614403361595, guid: 9f0eead686301da45b3bc4114ee2a530, type: 3}
       propertyPath: m_LocalPosition.z

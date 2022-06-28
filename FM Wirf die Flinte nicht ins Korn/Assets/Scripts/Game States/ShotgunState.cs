@@ -17,11 +17,12 @@ public class ShotgunState : IGameState
         }
 
         //when holding right mouse button
-        if (Input.GetKey(KeyCode.Mouse1))    
+        if (Input.GetMouseButton(1))    
         {
             //line renderer pos gets updated
             pcon.lineRenderer.SetPosition(1, new Vector3(pcon.mousePos.x, pcon.mousePos.y, -3));
-            if (pcon.mousePos.x < pcon.transform.position.x)
+            //rotating when facing another direction
+            if (pcon.mousePos.x < pcon.player.transform.position.x)
             {
                 pcon.player.transform.rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
             }
