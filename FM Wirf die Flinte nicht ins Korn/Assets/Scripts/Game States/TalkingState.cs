@@ -37,6 +37,14 @@ public class TalkingState : IGameState
                
         }
 
+        //Pause Menue
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pcon.oldState = this;
+            return pcon.pauseState;
+        }
+
+        //stay
         return pcon.talkingState;
     }
 }

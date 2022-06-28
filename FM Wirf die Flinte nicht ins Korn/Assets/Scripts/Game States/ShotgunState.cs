@@ -68,9 +68,17 @@ public class ShotgunState : IGameState
             Cursor.SetCursor(pcon.cursor0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f),CursorMode.ForceSoftware);
             return pcon.exploreState;
         }
-        else
+
+        /* Pause Menue
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            return pcon.shotgunState;
+            pcon.oldState = this;
+            return pcon.pauseState;
         }
+        */
+
+
+        //stay
+        return pcon.shotgunState;
     }
 }

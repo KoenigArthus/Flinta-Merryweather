@@ -13,8 +13,10 @@ public class Controller : MonoBehaviour
     [HideInInspector] public ShotgunState shotgunState = new ShotgunState();
     [HideInInspector] public TalkingState talkingState = new TalkingState();
     [HideInInspector] public DraggingState draggingState = new DraggingState();
+    [HideInInspector] public PauseState pauseState = new PauseState();
     [HideInInspector] public bool isDragging;
     [HideInInspector] public IGameState currentGameState;
+    [HideInInspector] public IGameState oldState;
     [SerializeField] private string currentGameStateName;
 
 
@@ -36,6 +38,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public RaycastHit2D hit;
     [HideInInspector] public PointerEventData pointerEvent;
     [HideInInspector] public GraphicRaycaster raycaster;
+    [HideInInspector] public GameObject pauseMenue;
     public SceneInfo sceneInfo;
     public string[] sceneSave;
     public float reachRadius = 2f;
@@ -62,10 +65,11 @@ public class Controller : MonoBehaviour
 
         //classes that controller holds
         player = GameObject.FindGameObjectWithTag("Player");
+        shotgunFilter = GameObject.Find("ShotgunFilter").GetComponent<Image>();
+        pauseMenue = GameObject.Find("Pause Menue");
         playerMovement = player.GetComponent<PlayerMovement>();
         inventory = player.GetComponent<Inventory>();
         animator = player.GetComponent<Animator>();
-        shotgunFilter = GameObject.Find("ShotgunFilter").GetComponent<Image>();
         lineRenderer = gameObject.GetComponent<LineRenderer>();
         dialogueManager = gameObject.GetComponent<DialogueManager>();
         monologueManager = gameObject.GetComponent<MonologueManager>();
@@ -73,6 +77,7 @@ public class Controller : MonoBehaviour
 
         //seting up variables
         shotgunFilter.enabled = false;
+        pauseMenue.SetActive(false);
         lineRenderer.enabled = false;
         currentGameState = exploreState;
 

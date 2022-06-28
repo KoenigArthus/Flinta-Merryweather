@@ -73,9 +73,17 @@ public class ExploreState : IGameState
             Cursor.SetCursor(pcon.crossair0, pcon.cursorHotspot,CursorMode.ForceSoftware);
             return pcon.shotgunState;
         }
-        else
+        
+
+        //Pause Menue
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            return pcon.exploreState;
+            pcon.oldState = this;
+            return pcon.pauseState;
         }
+
+        //stay
+        return pcon.exploreState;
+
     }
 }
