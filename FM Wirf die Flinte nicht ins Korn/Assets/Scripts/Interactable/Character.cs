@@ -19,7 +19,7 @@ public class Character : Interactable
     {
 
         //checks what .json file has to be used and assigns it to the variable "ink"
-        if (!pcon.sceneInfo.characters.Contains(character)  && pcon.sceneInfo.Regina == false)      
+        if (!pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == false)      
         {
             ink = character.ink;
         }
@@ -35,7 +35,7 @@ public class Character : Interactable
         {
             ink = character.ink2R;
         } 
-        else if (character.itemRecieved == true)
+        else if (ink == character.inkIR)
         {
             ink = character.inkI;
         }
@@ -63,7 +63,7 @@ public class Character : Interactable
     {
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
         ink = character.inkIR;
-        character.itemRecieved = true;
+       // character.itemRecieved = true;
         pcon.dialogueManager.EnterDialogueMode(ink, this.gameObject);
     }
 

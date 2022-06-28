@@ -17,7 +17,7 @@ public class SceneInfo : ScriptableObject
     public ScrItem[] content;
 
     //SceneItems
-    public string[] sceneSave = new string[13+2];
+    public string[] sceneSave = new string[15];
 
     //Spawnpoint
     public Vector3 spawnpoint;

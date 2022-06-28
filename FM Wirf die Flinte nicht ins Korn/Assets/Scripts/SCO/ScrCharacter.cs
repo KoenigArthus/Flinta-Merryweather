@@ -17,8 +17,8 @@ public class ScrCharacter : ScriptableObject
     public TextAsset inkIR;
     public TextAsset inkI;
 
-    [Header("Bools")]
-    public bool itemRecieved = false;
+  /*  [Header("Bools")]
+    public bool itemRecieved = false; */
 
 
 
