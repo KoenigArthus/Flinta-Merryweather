@@ -177,6 +177,10 @@ public class DialogueManager : MonoBehaviour
                     {
                         controller.sceneInfo.Regina = true;
                     }
+                    if (tagValue == "flinte")
+                    {
+                        controller.sceneInfo.Flintendialog = true;  
+                    }
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);

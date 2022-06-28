@@ -14,11 +14,14 @@ public class ScrCharacter : ScriptableObject
     public TextAsset inkR;
     public TextAsset ink2;
     public TextAsset ink2R;
+    public TextAsset inkIR;
     public TextAsset inkI;
 
+    [Header("Bools")]
+    public bool itemRecieved = false;
 
 
- 
+
 
 
 

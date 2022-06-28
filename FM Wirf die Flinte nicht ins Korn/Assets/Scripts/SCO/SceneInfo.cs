@@ -7,7 +7,8 @@ public class SceneInfo : ScriptableObject
 {
 
     //Characters
-    public bool Regina = false; 
+    public bool Regina = false;
+    public bool Flintendialog = false;
     public List<ScrCharacter> characters = new();
 
 

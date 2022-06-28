@@ -40,6 +40,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public GraphicRaycaster raycaster;
     [HideInInspector] public GameObject pauseMenue;
     [HideInInspector] public GameObject controllsMenue;
+
     public SceneInfo sceneInfo;
     public string[] sceneSave;
     public float reachRadius = 2f;
@@ -65,6 +66,7 @@ public class Controller : MonoBehaviour
         Cursor.SetCursor(cursor0, cursorHotspot, CursorMode.ForceSoftware);
 
         //classes that controller holds
+        
         player = GameObject.FindGameObjectWithTag("Player");
         shotgunFilter = GameObject.Find("ShotgunFilter").GetComponent<Image>();
         pauseMenue = GameObject.Find("Pause Menue");
@@ -121,6 +123,7 @@ public class Controller : MonoBehaviour
     }
     private void Start()
     {
+
         for (int a = 0; a < sceneSave.Length; a++)
         {
             if (GameObject.Find(sceneSave[a]))

@@ -12,6 +12,10 @@ public class Shootable : Interactable
 
     private void Start()
     {
+        if (target.hasFallen == true)
+        {
+            this.gameObject.SetActive(false);
+        }
         changesCursorInShotgunState = true;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = target.sprite;
     }
@@ -68,7 +72,9 @@ public class Shootable : Interactable
 
         fallPosition = this.gameObject.transform.position;
         fallItem.GetComponent<Item>().FallItemSpawn(fallItem, fallPosition);
+        target.hasFallen = true;
         this.gameObject.SetActive(false);
+        
         StopCoroutine(Falling());
     }
 

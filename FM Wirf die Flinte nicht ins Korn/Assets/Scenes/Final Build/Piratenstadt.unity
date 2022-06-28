@@ -258,10 +258,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
-  - 
-  - 
-  - 
-  results: []
+  - EspressoRumPeterLangfinger
+  - "KokosnussH\xE4ndler"
+  results:
+  - {fileID: 11400000, guid: 77248118d0f25af43b64dd691f0bb972, type: 2}
+  - {fileID: 11400000, guid: 11a8c0430c7f7ee45a21128c4d9e45bf, type: 2}
 --- !u!114 &23644138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1067,58 +1068,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c33e7aecd4c2d9438c8c4fddba5a01a, type: 3}
---- !u!1 &326473611
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 326473613}
-  - component: {fileID: 326473612}
-  m_Layer: 0
-  m_Name: Force Camera Ratios
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &326473612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326473611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e188ee899633d0b49870a5ae38b7359d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ratio: {x: 480, y: 270}
-  forceRatioOnAwake: 1
-  listenForWindowChanges: 1
-  createCameraForLetterBoxRendering: 1
-  findCamerasAutomatically: 1
-  letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
-  cameras: []
-  letterBoxCamera: {fileID: 0}
---- !u!4 &326473613
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326473611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &328168782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,7 +2281,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3003955862137101561, guid: b4c286881bb47d44989cbf23ac257392, type: 3}
       propertyPath: m_Name
-      value: Peter Langfinger
+      value: PeterLangfinger
       objectReference: {fileID: 0}
     - target: {fileID: 3003955862137101567, guid: b4c286881bb47d44989cbf23ac257392, type: 3}
       propertyPath: m_RootOrder
@@ -4243,7 +4192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
   changesCursorInShotgunState: 0
-  spawnpointForNextScene: {x: -5.17, y: -1.59, z: 0}
+  spawnpointForNextScene: {x: -5, y: -1.6, z: 0}
   spawnRotation: {x: 0, y: 0, z: 0, w: 0}
   scene: Taverne
 --- !u!1001 &1737095736
