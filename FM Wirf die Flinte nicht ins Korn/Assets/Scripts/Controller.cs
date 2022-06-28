@@ -71,27 +71,34 @@ public class Controller : MonoBehaviour
         monologueManager = gameObject.GetComponent<MonologueManager>();
         craftingManager = gameObject.GetComponent<CraftingManager>();
 
-
-        //Start Button Stuff:
-
-        //setup inital state
+        //seting up variables
         shotgunFilter.enabled = false;
         lineRenderer.enabled = false;
-        player.transform.position = sceneInfo.spawnpoint;
         currentGameState = exploreState;
 
-        //sets inventory arrays to SceneInfo Arrays
+        //seting up variables from the Scene info
+        player.transform.position = sceneInfo.spawnpoint;
         inventory.isFull = sceneInfo.isFull;
         inventory.content = sceneInfo.content;
         sceneSave = sceneInfo.sceneSave;
 
+
+
+        ///Start Button Stuff:
+        
         //resets the arrays on sceneInfo (still needs Regina bool)
         sceneInfo.isFull = new bool[13];
         sceneInfo.content = new ScrItem[13];
         sceneInfo.sceneSave = new string[13];
-      //  sceneInfo.Regina = false;
+        sceneInfo.Regina = false;
 
-        //End Start Button Stuff
+        //Set Spawnpoint
+        sceneInfo.spawnpoint = new Vector3(-7.19f, -2f, 0f);
+
+        //things that should be commented out when testing certain things
+        sceneInfo.characters = new();
+
+        ///End Start Button Stuff
 
 
         for (int i = 0; i < inventory.isFull.Length; i++)
