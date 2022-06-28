@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class SceneDoor : Interactable
 {
     public Vector3 spawnpointForNextScene;
+    public Quaternion spawnRotation;
 
     [SerializeField] private string scene;
 
@@ -18,10 +19,9 @@ public class SceneDoor : Interactable
         //saves inventory arrays to SceneInfo-SCO
         controller.sceneInfo.isFull = controller.inventory.isFull;
         controller.sceneInfo.content = controller.inventory.content;
-
         controller.sceneInfo.sceneSave = controller.sceneSave;
-
         controller.sceneInfo.spawnpoint = spawnpointForNextScene;
+        controller.sceneInfo.spawnpointRotation = spawnRotation;
 
         SceneManager.LoadScene(Scene);
     } 

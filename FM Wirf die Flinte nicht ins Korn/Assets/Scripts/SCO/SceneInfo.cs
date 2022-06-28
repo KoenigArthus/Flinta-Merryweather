@@ -20,6 +20,7 @@ public class SceneInfo : ScriptableObject
 
     //Spawnpoint
     public Vector3 spawnpoint;
+    public Quaternion spawnpointRotation;
 
 
 

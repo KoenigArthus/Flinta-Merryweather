@@ -86,6 +86,7 @@ public class Controller : MonoBehaviour
 
         //seting up variables from the Scene info
         player.transform.position = sceneInfo.spawnpoint;
+        player.transform.rotation = sceneInfo.spawnpointRotation;
         inventory.isFull = sceneInfo.isFull;
         inventory.content = sceneInfo.content;
         sceneSave = sceneInfo.sceneSave;
@@ -101,7 +102,7 @@ public class Controller : MonoBehaviour
         sceneInfo.Regina = false;
 
         //Set Spawnpoint
-        sceneInfo.spawnpoint = new Vector3(-7.19f, -2f, 0f);
+        //sceneInfo.spawnpoint = new Vector3(-7.19f, -2f, 0f);
 
         //things that should be commented out when testing certain things
         sceneInfo.characters = new();
