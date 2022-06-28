@@ -11,16 +11,18 @@ public class PauseState : IGameState
         if (!started)
         this.StartState(pcon);
 
-
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!pcon.controllsMenue.activeInHierarchy)
         {
-            started = false;
-            pcon.pauseMenue.SetActive(false);
-            if (pcon.oldState == pcon.talkingState)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Cursor.SetCursor(pcon.cursor1, pcon.cursorHotspot, CursorMode.ForceSoftware);
+                started = false;
+                pcon.pauseMenue.SetActive(false);
+                if (pcon.oldState == pcon.talkingState)
+                {
+                    Cursor.SetCursor(pcon.cursor1, pcon.cursorHotspot, CursorMode.ForceSoftware);
+                }
+                return pcon.oldState;
             }
-            return pcon.oldState;
         }
 
         //stay

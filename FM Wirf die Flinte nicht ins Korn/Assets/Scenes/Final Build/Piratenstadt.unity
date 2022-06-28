@@ -208,6 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 23644142}
+  - component: {fileID: 23644144}
   - component: {fileID: 23644141}
   - component: {fileID: 23644143}
   - component: {fileID: 23644140}
@@ -454,6 +455,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd86a2855e2838e49a89cbe76e26326d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &23644144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23644135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e188ee899633d0b49870a5ae38b7359d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ratio: {x: 480, y: 270}
+  forceRatioOnAwake: 1
+  listenForWindowChanges: 1
+  createCameraForLetterBoxRendering: 1
+  findCamerasAutomatically: 1
+  letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
+  cameras: []
+  letterBoxCamera: {fileID: 0}
 --- !u!1 &29054227
 GameObject:
   m_ObjectHideFlags: 0
