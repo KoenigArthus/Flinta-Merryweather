@@ -12,7 +12,7 @@ public class StartGame : MonoBehaviour
         //resets sceneInfo
         sceneInfo.isFull = new bool[13];
         sceneInfo.content = new ScrItem[13];
-        sceneInfo.sceneSave = new string[13];
+        sceneInfo.sceneSave = new string[13+1];
         sceneInfo.characters = new();
         sceneInfo.Regina = false;
 

@@ -12,10 +12,6 @@ public class Shootable : Interactable
 
     private void Start()
     {
-        if (target.hasFallen == true)
-        {
-            this.gameObject.SetActive(false);
-        }
         changesCursorInShotgunState = true;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = target.sprite;
     }
@@ -24,11 +20,11 @@ public class Shootable : Interactable
     {
         if (Input.GetMouseButtonDown(0))
         {
-            BeingShot();
+            BeingShot(pcon);
         }
     }
 
-    public void BeingShot()
+    public void BeingShot(Controller pcon)
     {
         if (target.despawns && !target.falls)
         {
@@ -37,6 +33,22 @@ public class Shootable : Interactable
         else if (target.falls && !target.despawns)
         {
             StartCoroutine(Falling());
+            ///adding the shootable to the sceneSave
+            string[] lsave = pcon.sceneInfo.sceneSave;
+            pcon.sceneInfo.sceneSave = new string[lsave.Length+1];
+            for(int i = 0; i < lsave.Length; i++)
+            {
+                pcon.sceneInfo.sceneSave[i] = lsave[i];
+            }
+            for(int j = 0; j < lsave.Length; j++)
+            {
+                if(pcon.sceneInfo.sceneSave[j] != null)
+                {
+                    pcon.sceneInfo.sceneSave[j] = this.name;
+                    break;
+                }
+            }
+            
         }
 
     }

@@ -19,7 +19,7 @@ public class SceneDoor : Interactable
         //saves inventory arrays to SceneInfo-SCO
         controller.sceneInfo.isFull = controller.inventory.isFull;
         controller.sceneInfo.content = controller.inventory.content;
-     //   controller.sceneInfo.sceneSave = controller.sceneSave;
+        controller.sceneInfo.sceneSave = controller.sceneSave;
         controller.sceneInfo.spawnpoint = spawnpointForNextScene;
         controller.sceneInfo.spawnpointRotation = spawnRotation;
 
