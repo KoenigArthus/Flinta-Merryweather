@@ -258,15 +258,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
-  - Brot(Clone)Kokosnuss(Clone)
-  - idgaf
-  - Brille(Clone)pirate6
-  - Kokosnuss(Clone)Brot(Clone)
+  - EspressoRumPeterLangfinger
+  - "KokosnussH\xE4ndler"
   results:
-  - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
-  - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
   - {fileID: 11400000, guid: 77248118d0f25af43b64dd691f0bb972, type: 2}
-  - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
+  - {fileID: 11400000, guid: 11a8c0430c7f7ee45a21128c4d9e45bf, type: 2}
 --- !u!114 &23644138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2285,7 +2281,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3003955862137101561, guid: b4c286881bb47d44989cbf23ac257392, type: 3}
       propertyPath: m_Name
-      value: Peter Langfinger
+      value: PeterLangfinger
       objectReference: {fileID: 0}
     - target: {fileID: 3003955862137101567, guid: b4c286881bb47d44989cbf23ac257392, type: 3}
       propertyPath: m_RootOrder

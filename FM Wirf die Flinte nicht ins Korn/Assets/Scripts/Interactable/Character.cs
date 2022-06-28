@@ -34,6 +34,10 @@ public class Character : Interactable
         else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true)
         {
             ink = character.ink2R;
+        } 
+        else if (character.itemRecieved == true)
+        {
+            ink = character.inkI;
         }
 
 
@@ -57,8 +61,9 @@ public class Character : Interactable
 
     public void ReactToClick(Controller pcon,GameObject pgivenItem)
     {
-        Debug.Log(pgivenItem.name);
-        // put in here what dialogue should be started when givven the pgivenItem
+        ink = character.inkIR;
+        character.itemRecieved = true;
+        pcon.dialogueManager.EnterDialogueMode(ink, this.gameObject);
     }
 
 }
