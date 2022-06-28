@@ -100,6 +100,7 @@ public class Controller : MonoBehaviour
         sceneInfo.content = new ScrItem[13];
         sceneInfo.sceneSave = new string[13];
         sceneInfo.Regina = false;
+        // Scrcharacter.itemRecieved = false;
 
         //Set Spawnpoint
         //sceneInfo.spawnpoint = new Vector3(-7.19f, -2f, 0f);

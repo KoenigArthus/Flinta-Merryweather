@@ -61,6 +61,7 @@ public class Character : Interactable
 
     public void ReactToClick(Controller pcon,GameObject pgivenItem)
     {
+        this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
         ink = character.inkIR;
         character.itemRecieved = true;
         pcon.dialogueManager.EnterDialogueMode(ink, this.gameObject);
