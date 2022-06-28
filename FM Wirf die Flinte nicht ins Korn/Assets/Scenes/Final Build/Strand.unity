@@ -776,7 +776,6 @@ MonoBehaviour:
   - Brot(Clone)Kokosnuss(Clone)
   - idgaf
   - Brille(Clone)pirate6
-  - Kokosnuss(Clone)Brot(Clone)
   results:
   - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
   - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}

@@ -93,7 +93,7 @@ public class Controller : MonoBehaviour
 
 
 
-        ///Start Button Stuff:
+        /*///Start Button Stuff:
         
         //resets the arrays on sceneInfo (still needs Regina bool)
         sceneInfo.isFull = new bool[13];
@@ -107,9 +107,9 @@ public class Controller : MonoBehaviour
         //things that should be commented out when testing certain things
         sceneInfo.characters = new();
 
-        ///End Start Button Stuff
+        ///End Start Button Stuff*/
 
-
+        //loading invendory
         for (int i = 0; i < inventory.isFull.Length; i++)
         {
             if (inventory.isFull[i] == true)

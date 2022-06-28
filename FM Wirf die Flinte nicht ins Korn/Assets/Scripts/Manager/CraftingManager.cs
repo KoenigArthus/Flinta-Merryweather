@@ -19,7 +19,7 @@ public class CraftingManager : MonoBehaviour
         Debug.Log(precipe);
         for (int r = 0; r < recipes.Length; r++)
         {
-            if(recipes[r] == precipe)
+            if (recipes[r] == precipe)
             {
                 //instantiating local variables
                 string[] lslotNameParts = pdragElement.transform.parent.name.Split('(', ')');

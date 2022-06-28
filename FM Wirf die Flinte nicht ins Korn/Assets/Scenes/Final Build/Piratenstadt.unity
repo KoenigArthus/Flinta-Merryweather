@@ -258,15 +258,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
-  - Brot(Clone)Kokosnuss(Clone)
-  - idgaf
-  - Brille(Clone)pirate6
-  - Kokosnuss(Clone)Brot(Clone)
-  results:
-  - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
-  - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
-  - {fileID: 11400000, guid: 77248118d0f25af43b64dd691f0bb972, type: 2}
-  - {fileID: 11400000, guid: d9deadaa5df90084189fdc312c472966, type: 2}
+  - 
+  - 
+  - 
+  results: []
 --- !u!114 &23644138
 MonoBehaviour:
   m_ObjectHideFlags: 0
