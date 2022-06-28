@@ -5268,5 +5268,5 @@ MonoBehaviour:
   controller: {fileID: 0}
   changesCursorInShotgunState: 0
   spawnpointForNextScene: {x: -5.19, y: -1.67, z: 0}
-  spawnRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  spawnRotation: {x: 0, y: 0, z: 0, w: 1}
   scene: "H\xF6hle"
