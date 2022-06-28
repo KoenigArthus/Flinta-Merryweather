@@ -70,7 +70,9 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
             controller.hit = Physics2D.Raycast(controller.mousePos, Vector2.zero);
             if (controller.hit.collider != null && controller.IsInReach())
             {
-                string lrecipe = this.name + controller.hit.collider.gameObject.name;
+                string[] lnameElements = this.name.Split('(');
+                string lparsedName = lnameElements[0];
+                string lrecipe = lparsedName + controller.hit.collider.gameObject.name;
                 controller.craftingManager.Craft(lrecipe, gameObject, controller.hit.collider.gameObject);
                 rectTransform.anchoredPosition = pos;
             }
@@ -85,7 +87,12 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
                 {
                     if (lraycastResults[i].gameObject.name != name && lraycastResults[i].gameObject.GetComponent<Dragger>() != null)
                     {
-                        string lrecipe = this.name + lraycastResults[i].gameObject.name;
+                        string[] lnameElements = this.name.Split('(');
+                        string parsedName = lnameElements[0];
+                        lnameElements = lraycastResults[i].gameObject.name.Split('(');
+                        string lparsedRaycastResultName = lnameElements[0];
+
+                        string lrecipe = parsedName + lparsedRaycastResultName;
                         controller.craftingManager.Craft(lrecipe, gameObject, lraycastResults[i].gameObject);
                         break;
                     }

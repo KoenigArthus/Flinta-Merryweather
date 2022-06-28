@@ -8,12 +8,24 @@ public class ButtonReactions : MonoBehaviour
 
     private void Start()
     {
-        controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
+        controller = this.gameObject.GetComponent<Controller>();
     }
 
     public void Arrivederci()
     {
        Application.Quit();
+    }
+
+    public void ShowControlls()
+    {
+        controller.pauseMenue.SetActive(false);
+        controller.controllsMenue.SetActive(true);
+    }
+
+    public void BackToPauseMenue()
+    {
+        controller.controllsMenue.SetActive(false);
+        controller.pauseMenue.SetActive(true);
     }
 
 }

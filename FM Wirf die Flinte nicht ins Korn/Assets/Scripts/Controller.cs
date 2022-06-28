@@ -39,6 +39,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public PointerEventData pointerEvent;
     [HideInInspector] public GraphicRaycaster raycaster;
     [HideInInspector] public GameObject pauseMenue;
+    [HideInInspector] public GameObject controllsMenue;
     public SceneInfo sceneInfo;
     public string[] sceneSave;
     public float reachRadius = 2f;
@@ -67,6 +68,7 @@ public class Controller : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         shotgunFilter = GameObject.Find("ShotgunFilter").GetComponent<Image>();
         pauseMenue = GameObject.Find("Pause Menue");
+        controllsMenue = GameObject.Find("Controlls Menue");
         playerMovement = player.GetComponent<PlayerMovement>();
         inventory = player.GetComponent<Inventory>();
         animator = player.GetComponent<Animator>();
@@ -78,6 +80,7 @@ public class Controller : MonoBehaviour
         //seting up variables
         shotgunFilter.enabled = false;
         pauseMenue.SetActive(false);
+        controllsMenue.SetActive(false);
         lineRenderer.enabled = false;
         currentGameState = exploreState;
 
