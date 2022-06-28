@@ -42,6 +42,7 @@ public class Shootable : Interactable
     IEnumerator DespawnBlinking()
     {
         this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        yield return new WaitForSeconds(0.9f);
         for (int i = 0; i < 3; i++)
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
