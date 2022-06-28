@@ -8,7 +8,6 @@ public class ScrShootable : ScriptableObject
     [Header("Interaction Variables")]
     public bool falls;
     public bool despawns;
-    public bool hasFallen;
 
     [Header("Sprites")]
     public Sprite sprite;
