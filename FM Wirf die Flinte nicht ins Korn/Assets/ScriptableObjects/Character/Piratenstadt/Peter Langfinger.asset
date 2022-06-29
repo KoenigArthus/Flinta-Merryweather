@@ -20,4 +20,5 @@ MonoBehaviour:
   ink2R: {fileID: 4900000, guid: 011ecb5cee8114a4e8fced2aea38b5f4, type: 3}
   inkIR: {fileID: 4900000, guid: 4b22e64551b61a74697b10aa1749146a, type: 3}
   inkI: {fileID: 4900000, guid: 5ea46bb3abcdec449925d55b55d55dd3, type: 3}
+  inkF: {fileID: 0}
   itemRecieved: 0

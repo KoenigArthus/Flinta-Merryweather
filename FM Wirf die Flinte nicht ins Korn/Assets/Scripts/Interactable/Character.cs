@@ -14,7 +14,7 @@ public class Character : Interactable
         sentences = character.viewText.Split('|');
         if (!controller.currentSceneWasVisited)
         {
-            character.itemRecieved = false;
+            //character.itemRecieved = false;
         }
     }
 
@@ -98,16 +98,8 @@ public class Character : Interactable
             pcon.sceneInfo.Flintendialog = true;
         }
 
-
-        if (!character.itemRecieved)
-        {
             ink = character.inkIR;
             character.itemRecieved = true;
-        }
-        else
-        {
-            ink = character.inkI;
-        }
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
             pcon.dialogueManager.EnterDialogueMode(ink, this.gameObject);
     }
