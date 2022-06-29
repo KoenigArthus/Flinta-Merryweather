@@ -92,13 +92,6 @@ public class Shootable : Interactable
             {
                 pcon.sceneInfo.toInstantiateItem[i] = this.fallItem;
                 pcon.sceneInfo.itemsSpawnPos[i] = this.fallPosition;
-                break;
-            }
-        }
-        for (int i = 0; i < pcon.sceneInfo.sceneItemLaysIn.Length; i++)
-        {
-            if(pcon.sceneInfo.sceneItemLaysIn[i] == null)
-            {
                 pcon.sceneInfo.sceneItemLaysIn[i] = SceneManager.GetActiveScene().name;
                 break;
             }

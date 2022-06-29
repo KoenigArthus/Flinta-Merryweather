@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -42,6 +40,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public GraphicRaycaster raycaster;
     [HideInInspector] public GameObject pauseMenue;
     [HideInInspector] public GameObject controllsMenue;
+    public bool currentSceneWasVisited;
 
     public SceneInfo sceneInfo;
     public float reachRadius = 2f;
@@ -142,7 +141,14 @@ public class Controller : MonoBehaviour
             }
         }
 
-
+        if (!Array.Exists(sceneInfo.visitedScenes, element => element == SceneManager.GetActiveScene().name))
+        {
+            currentSceneWasVisited = false;
+        }
+        else
+        {
+            currentSceneWasVisited = true;
+        }
     }
 
     //Managing the MousePos & Game State

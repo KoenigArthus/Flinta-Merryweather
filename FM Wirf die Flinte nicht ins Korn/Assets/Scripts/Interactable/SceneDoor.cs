@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,19 @@ public class SceneDoor : Interactable
 
     public override void ReactToClick(Controller pcon)
     {
+        //if this scene is not in the visitedScenes array it gets added
+        if (!Array.Exists(pcon.sceneInfo.visitedScenes, element => element == SceneManager.GetActiveScene().name))
+        {
+            for (int i = 0; i < pcon.sceneInfo.visitedScenes.Length; i++)
+            {
+                if (pcon.sceneInfo.visitedScenes[i] == null)
+                {
+                    pcon.sceneInfo.visitedScenes[i] = SceneManager.GetActiveScene().name;
+                    break;
+                }
+            }
+        }
+
         ChangeToScene(scene);
     }
   

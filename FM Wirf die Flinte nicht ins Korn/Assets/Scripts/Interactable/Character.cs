@@ -17,9 +17,13 @@ public class Character : Interactable
 
     public override void ReactToClick(Controller pcon)
     {
+        if (!pcon.currentSceneWasVisited)
+        {
+            ink = character.ink;
+        }
 
         //checks what .json file has to be used and assigns it to the variable "ink"
-        if (!pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == false)      
+        if (!pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == false)       
         {
             ink = character.ink;
         }
@@ -31,7 +35,7 @@ public class Character : Interactable
         {
             ink = character.ink2;
         }
-        else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true)
+        else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true && ink != character.inkIR)
         {
             ink = character.ink2R;
         } 
@@ -62,6 +66,7 @@ public class Character : Interactable
         controller.monologueManager.StartMonologue(sentences);
     }
 
+    // das overload React to Click
     public void ReactToClick(Controller pcon,GameObject pgivenItem)
     {
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
