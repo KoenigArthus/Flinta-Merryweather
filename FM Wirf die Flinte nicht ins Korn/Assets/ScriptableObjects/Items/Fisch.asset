@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
-  m_Name: Brille
+  m_Name: Fisch
   m_EditorClassIdentifier: 
-  viewText: "Sieht so aus, als w\xE4re da was vergraben!"
+  viewText: Stinkt
   isViewable: 1
-  canBePickedUp: 1
-  sprite: {fileID: 0}
-  UIObject: {fileID: 9144525045083737953, guid: a515c0f713ed06146b3796468faa818d, type: 3}
+  canBePickedUp: 0
+  sprite: {fileID: 21300000, guid: 2624331d2b6aa4e488fd8f065fd831e1, type: 3}
+  UIObject: {fileID: 8722614612057295233, guid: 378589aab0d024748a6ea8d15bdf1a3b, type: 3}

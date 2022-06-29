@@ -79,6 +79,9 @@ public class Character : Interactable
             pcon.sceneInfo.tavernenScore += 2;
         }
 
+
+
+
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
         ink = character.inkIR;
        // character.itemRecieved = true;

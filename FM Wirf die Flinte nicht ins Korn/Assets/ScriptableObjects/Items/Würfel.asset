@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
-  m_Name: Brille
+  m_Name: "W\xFCrfel"
   m_EditorClassIdentifier: 
-  viewText: "Sieht so aus, als w\xE4re da was vergraben!"
+  viewText: "Ein normaler W\xFCrfel"
   isViewable: 1
-  canBePickedUp: 1
+  canBePickedUp: 0
   sprite: {fileID: 0}
-  UIObject: {fileID: 9144525045083737953, guid: a515c0f713ed06146b3796468faa818d, type: 3}
+  UIObject: {fileID: 192900718251564480, guid: a875f6bada08d5247a7aca4271ecf6b8, type: 3}

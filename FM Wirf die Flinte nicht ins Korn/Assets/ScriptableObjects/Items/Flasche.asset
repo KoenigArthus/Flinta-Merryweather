@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
-  m_Name: Brille
+  m_Name: Flasche
   m_EditorClassIdentifier: 
-  viewText: "Sieht so aus, als w\xE4re da was vergraben!"
+  viewText: 'Eine Glasflasche
+
+'
   isViewable: 1
   canBePickedUp: 1
-  sprite: {fileID: 0}
-  UIObject: {fileID: 9144525045083737953, guid: a515c0f713ed06146b3796468faa818d, type: 3}
+  sprite: {fileID: 21300000, guid: 7b36c264aec08a845b9aceb5f9902583, type: 3}
+  UIObject: {fileID: 8638539317222964681, guid: 52b99366e25921e4ebde67f043593fac, type: 3}
