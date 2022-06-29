@@ -13,15 +13,11 @@ public class Character : Interactable
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = character.sprite;
         sentences = character.viewText.Split('|');
+
     }
 
     public override void ReactToClick(Controller pcon)
     {
-        if (!pcon.currentSceneWasVisited)
-        {
-            ink = character.ink;
-        }
-
         //checks what .json file has to be used and assigns it to the variable "ink"
         if (!pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == false)       
         {
@@ -35,10 +31,14 @@ public class Character : Interactable
         {
             ink = character.ink2;
         }
-        else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true && ink != character.inkIR)
+        else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true && !pcon.sceneInfo.Flintendialog)
         {
             ink = character.ink2R;
-        } 
+        }
+        else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true && pcon.sceneInfo.Flintendialog)
+        {
+            ink = character.inkF;
+        }
         else if (ink == character.inkIR)
         {
             ink = character.inkI;
