@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipes:
-  - EspressoRumPeterLangfinger
+  - ERumPeterLangfinger
   - "KokosnussH\xE4ndler"
   - "Kokosnuss2H\xE4ndler"
   - RumBohnenpulver
