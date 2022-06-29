@@ -98,11 +98,4 @@ public class Shootable : Interactable
         }
         StopCoroutine(Falling(pcon));
     }
-
-    private void SpawnItem(Controller pcon)
-    {
-       
-    }
-
-
 }

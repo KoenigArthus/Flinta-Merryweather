@@ -2,18 +2,20 @@ using UnityEngine;
 
 public class Character : Interactable
 {
-    [SerializeField] private ScrCharacter character;
+    public ScrCharacter character;
 
     private TextAsset ink;
     private string[] sentences;
-
 
     //Initializing the Character
     private void Start()
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = character.sprite;
         sentences = character.viewText.Split('|');
-
+        if (!controller.currentSceneWasVisited)
+        {
+            character.itemRecieved = false;
+        }
     }
 
     public override void ReactToClick(Controller pcon)
@@ -69,10 +71,18 @@ public class Character : Interactable
     // das overload React to Click
     public void ReactToClick(Controller pcon,GameObject pgivenItem)
     {
-        this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
-        ink = character.inkIR;
-       // character.itemRecieved = true;
-        pcon.dialogueManager.EnterDialogueMode(ink, this.gameObject);
+        if (!character.itemRecieved)
+        {
+            ink = character.inkIR;
+            character.itemRecieved = true;
+        }
+        else
+        {
+            ink = character.inkI;
+        }
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+            pcon.dialogueManager.EnterDialogueMode(ink, this.gameObject);
+        
     }
 
 }
