@@ -5,6 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SceneInfo", menuName = "SceneInfo")]
 public class SceneInfo : ScriptableObject
 {
+    //triggert Tavernenschlägerei
+    [Header("Tavernenschlägerei")]
+    public int tavernenScore = 0;
+
     [Header("Spawnpoint")]
     //Spawnpoint
     public Vector3 spawnpoint;

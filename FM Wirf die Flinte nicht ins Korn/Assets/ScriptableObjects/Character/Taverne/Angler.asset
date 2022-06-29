@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c50a109d2b819ef4596114d6b2213352, type: 3}
+  m_Name: Angler
+  m_EditorClassIdentifier: 
+  viewText: Harr, der hat schon bessere Tage gesehen
+  sprite: {fileID: 21300000, guid: 4bb8c7119f7368849b238fea859c9829, type: 3}
+  ink: {fileID: 4900000, guid: 53b438ad28fc2214c9a02610e4eb167b, type: 3}
+  inkR: {fileID: 4900000, guid: 53b438ad28fc2214c9a02610e4eb167b, type: 3}
+  ink2: {fileID: 4900000, guid: 49064e96cdc0ee54a8739248216cd487, type: 3}
+  ink2R: {fileID: 4900000, guid: 49064e96cdc0ee54a8739248216cd487, type: 3}
+  inkIR: {fileID: 4900000, guid: bc1aa378b35f70b4e8bdee0711dbf340, type: 3}
+  inkI: {fileID: 4900000, guid: 468457a51ea5d1b479a77bc6950b63fd, type: 3}

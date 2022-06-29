@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
     private const string SPEAKER_TAG = "speaker";
     private const string LAYOUT_TAG = "layout";
     private const string STATE_TAG = "state";
+    private const string Item_TAG = "item";
 
 
     //checks if only one DialogueManager is in the scene + deactivates the UI-Assets that are only supposed to be active in DialogueMode
@@ -60,6 +61,7 @@ public class DialogueManager : MonoBehaviour
         choicesText = new Text[choices.Length];
 
         buttonPopUp = choicespanel.GetComponent<Animator>();
+        
 
         int index = 0;
         foreach (GameObject choice in choices)
@@ -168,10 +170,10 @@ public class DialogueManager : MonoBehaviour
             {
                 case SPEAKER_TAG:
                     ChangeSpeechTextToSpeakerPos(tagValue);
-                    break;   
+                    break;
                 case LAYOUT_TAG:
                     Debug.Log(tagValue);
-                       break; 
+                    break;
                 case STATE_TAG:
                     if (tagValue == "regina")
                     {
@@ -179,8 +181,14 @@ public class DialogueManager : MonoBehaviour
                     }
                     if (tagValue == "flinte")
                     {
-                        controller.sceneInfo.Flintendialog = true;  
+                        controller.sceneInfo.Flintendialog = true;
                     }
+                    if (tagValue == "dart")
+                    {
+                        //Dart-Animation
+                    }
+                    break;
+                case Item_TAG:
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);

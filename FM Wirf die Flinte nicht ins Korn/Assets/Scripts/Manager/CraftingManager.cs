@@ -83,7 +83,7 @@ public class CraftingManager : MonoBehaviour
                 }
                 else
                 {
-                    //when the pcombineElement has a NoReturn class
+                    RemoveFromInventoryAndDestroy(pdragElement);
                 }
 
                 //giving a Character an Item

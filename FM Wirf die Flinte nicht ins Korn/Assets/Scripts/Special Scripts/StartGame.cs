@@ -15,6 +15,8 @@ public class StartGame : MonoBehaviour
         sceneInfo.sceneSave = new string[13+1];
         sceneInfo.characters = new();
         sceneInfo.Regina = false;
+        sceneInfo.tavernenScore = 0;
+        sceneInfo.Flintendialog = false;
 
         //Set Spawnpoint
         sceneInfo.spawnpoint = new Vector3(-7.19f, -2f, 0f);

@@ -25,9 +25,6 @@ Womit kann ich helfen?
 + [Dartscheibe] #speaker:f
     -> DART
 
-+ [Kronleuchter] #speaker:f
-    -> KRONLEUCHTER
-
 + [Tschuess] #speaker:f
     -> BYE
   
@@ -70,7 +67,6 @@ Aber nicht heute #speaker:c
 Natuerlich #speaker:f
 
 -> CHOICES
-
 
 == KRONLEUCHTER ==
 

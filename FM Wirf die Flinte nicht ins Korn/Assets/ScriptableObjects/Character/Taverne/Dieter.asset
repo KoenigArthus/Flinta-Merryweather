@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50a109d2b819ef4596114d6b2213352, type: 3}
   m_Name: Dieter
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: c46376634a84bb141aa2d33cc38b2c9a, type: 3}
+  viewText: Was ein Wicht
+  sprite: {fileID: 21300000, guid: fc8636bddbe75764f9771fa29f5227c3, type: 3}
   ink: {fileID: 4900000, guid: 7fe4c09746f6ff745a5c9da8962b2278, type: 3}
+  inkR: {fileID: 4900000, guid: ddd7dd689a3546f45a71b95cef70fc18, type: 3}
+  ink2: {fileID: 4900000, guid: a1816cf4246cee04390a3858c7488fde, type: 3}
+  ink2R: {fileID: 4900000, guid: 0af94de9a4cafb44a91a77076cf28931, type: 3}
+  inkIR: {fileID: 4900000, guid: ed3a81141675b7a4785ab2310fe8a05d, type: 3}
+  inkI: {fileID: 4900000, guid: 080f858a881256742af58fe48819846d, type: 3}

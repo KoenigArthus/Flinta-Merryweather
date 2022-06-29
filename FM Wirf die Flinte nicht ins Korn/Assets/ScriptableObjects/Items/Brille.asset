@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
   m_Name: Brille
   m_EditorClassIdentifier: 
-  viewText: "Sieht so aus, als w\xE4re da was vergraben!"
+  viewText: "Das gl\xE4nzt!"
   isViewable: 1
   canBePickedUp: 1
-  sprite: {fileID: 21300000, guid: 519c5a38c2797e9448198ec5daf4a3c1, type: 3}
+  sprite: {fileID: 0}
   UIObject: {fileID: 9144525045083737953, guid: a515c0f713ed06146b3796468faa818d, type: 3}

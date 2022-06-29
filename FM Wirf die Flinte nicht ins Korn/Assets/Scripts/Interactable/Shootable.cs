@@ -27,6 +27,11 @@ public class Shootable : Interactable
 
     public void BeingShot(Controller pcon)
     {
+ 
+        if (target.name == "Bierkrug")
+        {
+            pcon.sceneInfo.tavernenScore += 1;
+        }
         if (target.despawns && target.falls)
         {
             Debug.LogError("A Shootable target can only have one true value for despawns or falls");

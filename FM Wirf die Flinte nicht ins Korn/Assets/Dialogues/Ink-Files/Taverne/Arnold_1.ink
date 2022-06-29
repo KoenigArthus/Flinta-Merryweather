@@ -7,7 +7,7 @@ Worauf denn? #speaker:f
 PSSST, hab ich gesagt #speaker:c
 Wir spielen Grogkippen!
 
-Ist das ein Wuerfelspiel? #speaker:rfelspiel
+Ist das ein Wuerfelspiel? #speaker:f
 
 ... #speaker:c
 

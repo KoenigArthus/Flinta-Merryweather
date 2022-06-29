@@ -21,7 +21,11 @@ public class Character : Interactable
     public override void ReactToClick(Controller pcon)
     {
         //checks what .json file has to be used and assigns it to the variable "ink"
-        if (!pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == false)       
+        if (ink == character.itemRecieved)
+        {
+            ink = character.inkI;
+        }
+        else if (!pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == false)       
         {
             ink = character.ink;
         }
@@ -33,17 +37,26 @@ public class Character : Interactable
         {
             ink = character.ink2;
         }
-        else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true && !pcon.sceneInfo.Flintendialog)
+        else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true)
         {
             ink = character.ink2R;
         }
-        else if (pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == true && pcon.sceneInfo.Flintendialog)
+        else if (pcon.sceneInfo.characters.Contains(character) && character.name == "Regina" && pcon.sceneInfo.Flintendialog)
         {
             ink = character.inkF;
         }
-        else if (ink == character.inkIR)
+
+        if (character.name == "Regina" && pcon.sceneInfo.Flintendialog && OneOrBothItemsWereFound("Fischbrot", "Riechsalz") == 0)
         {
-            ink = character.inkI;
+
+        }
+        if (character.name == "Regina" && pcon.sceneInfo.Flintendialog && OneOrBothItemsWereFound("Fischbrot", "Riechsalz") == 1)
+        {
+
+        }
+        if (character.name == "Regina" && pcon.sceneInfo.Flintendialog && OneOrBothItemsWereFound("Fischbrot", "Riechsalz") == 2)
+        {
+
         }
 
 
@@ -71,6 +84,21 @@ public class Character : Interactable
     // das overload React to Click
     public void ReactToClick(Controller pcon,GameObject pgivenItem)
     {
+        //increases score for Tavernenschl�gerei-Ending
+        if (character.name == "Bertold")
+        {
+            pcon.sceneInfo.tavernenScore += 2;
+        }
+        if (character.name == "Dieter")
+        {
+            pcon.sceneInfo.tavernenScore += 2;
+        }
+        if (character.name == "PeterLangfinger")
+        {
+            pcon.sceneInfo.Flintendialog = true;
+        }
+
+
         if (!character.itemRecieved)
         {
             ink = character.inkIR;
@@ -82,7 +110,20 @@ public class Character : Interactable
         }
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
             pcon.dialogueManager.EnterDialogueMode(ink, this.gameObject);
-        
     }
+    
+    private int OneOrBothItemsWereFound(string psearchitem0, string psearchitem1)
+    {
+        int lreturnValue = 0;
+        for (int i = 0; i < controller.inventory.content.Length; i++)
+        {
+            if(controller.inventory.content[i] != null && controller.inventory.content[i].name == psearchitem0 || controller.inventory.content[i].name == psearchitem1)
+            {
+                lreturnValue++;
+            }
+        }
+        return lreturnValue;
+    }
+
 
 }

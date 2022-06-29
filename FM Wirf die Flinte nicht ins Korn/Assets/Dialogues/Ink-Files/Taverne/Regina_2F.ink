@@ -1,3 +1,5 @@
+INCLUDE RuleSpeak.ink
+
 Regina? #speaker:f
 
 Oui? #speaker:c
@@ -81,7 +83,7 @@ Sacre Bleu. Dir zeig ischs! #speaker:c
 > Ohne die Items wird der Dialog deutlich schwerer!
 
 + [FLINTENDIALOG anfangen?] #state:flintendialog
-    -> END
+    --> START
     
 + [Lieber nochmal vorbereiten]
     Gute Entscheidung

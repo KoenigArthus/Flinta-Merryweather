@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50a109d2b819ef4596114d6b2213352, type: 3}
   m_Name: Arnold
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: c46376634a84bb141aa2d33cc38b2c9a, type: 3}
+  viewText: "Tr\xE4gt der da Kashmir?"
+  sprite: {fileID: 21300000, guid: db4de94fa9a81e649b353dceff2ac9d4, type: 3}
   ink: {fileID: 4900000, guid: aeb362987c59dc74c939aeeea5d9ebcf, type: 3}
+  inkR: {fileID: 4900000, guid: ef6c12da3371b724681725f4ae1ab654, type: 3}
+  ink2: {fileID: 4900000, guid: aeb362987c59dc74c939aeeea5d9ebcf, type: 3}
+  ink2R: {fileID: 4900000, guid: ef6c12da3371b724681725f4ae1ab654, type: 3}
+  inkIR: {fileID: 0}
+  inkI: {fileID: 4900000, guid: ef6c12da3371b724681725f4ae1ab654, type: 3}

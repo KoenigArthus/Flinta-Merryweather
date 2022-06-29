@@ -21,9 +21,6 @@ Womit kann ich helfen?
 + [Dartscheibe] #speaker:f
     -> DART
 
-+ [Kronleuchter] #speaker:f
-    -> KRONLEUCHTER
-
 + [Tschuess] #speaker:f
     -> BYE
   

@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50a109d2b819ef4596114d6b2213352, type: 3}
   m_Name: Bartender
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: c46376634a84bb141aa2d33cc38b2c9a, type: 3}
+  viewText: Oh, der gute alte Frank
+  sprite: {fileID: 21300000, guid: 2ec7044cb189cc44abc06ae2f2a15b39, type: 3}
   ink: {fileID: 4900000, guid: be1687070ddcb674ba1700fe4e679954, type: 3}
+  inkR: {fileID: 4900000, guid: f002b66301738eb4fa97e358d2a9d72d, type: 3}
+  ink2: {fileID: 4900000, guid: 5d4583c9cd78e0744aeab7301a3ea019, type: 3}
+  ink2R: {fileID: 4900000, guid: c173ab0ad6320c24bbfb968169574d32, type: 3}
+  inkIR: {fileID: 0}
+  inkI: {fileID: 0}

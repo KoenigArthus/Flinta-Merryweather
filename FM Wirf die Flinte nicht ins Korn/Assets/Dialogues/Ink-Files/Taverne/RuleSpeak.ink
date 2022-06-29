@@ -20,11 +20,13 @@ VAR rounds_lost = 0
 
 
 
-okay, lass trinkon!
+
 
 -> START
 
 === START ===
+
+okay, lass trinkon! #speaker:c
 
 Die Regaln sind einfasch: #speaker:c
 
