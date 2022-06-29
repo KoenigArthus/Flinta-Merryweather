@@ -21,9 +21,26 @@ public class Character : Interactable
     public override void ReactToClick(Controller pcon)
     {
         //checks what .json file has to be used and assigns it to the variable "ink"
-        if (ink == character.itemRecieved)
+        if (ink == character.itemRecieved && character.name != "Regina")
         {
             ink = character.inkI;
+        }
+        else if (pcon.sceneInfo.characters.Contains(character) && character.name == "Regina" && pcon.sceneInfo.Flintendialog && character.itemRecieved == false)
+        {
+            ink = character.inkF;
+            character.itemRecieved = true;
+        }
+        else if (character.name == "Regina" && pcon.sceneInfo.Flintendialog && OneOrBothItemsWereFound("Fischbrot", "Riechsalz") == 0 && character.itemRecieved == true)
+        {
+            ink = character.inkRule0;
+        }
+        else if (character.name == "Regina" && pcon.sceneInfo.Flintendialog && OneOrBothItemsWereFound("Fischbrot", "Riechsalz") == 1 && character.itemRecieved == true)
+        {
+            ink = character.inkRule1;
+        }
+        else if (character.name == "Regina" && pcon.sceneInfo.Flintendialog && OneOrBothItemsWereFound("Fischbrot", "Riechsalz") == 2 && character.itemRecieved == true)
+        {
+            ink = character.inkRule2;
         }
         else if (!pcon.sceneInfo.characters.Contains(character) && pcon.sceneInfo.Regina == false)       
         {
@@ -41,23 +58,7 @@ public class Character : Interactable
         {
             ink = character.ink2R;
         }
-        else if (pcon.sceneInfo.characters.Contains(character) && character.name == "Regina" && pcon.sceneInfo.Flintendialog)
-        {
-            ink = character.inkF;
-        }
 
-        if (character.name == "Regina" && pcon.sceneInfo.Flintendialog && OneOrBothItemsWereFound("Fischbrot", "Riechsalz") == 0)
-        {
-
-        }
-        if (character.name == "Regina" && pcon.sceneInfo.Flintendialog && OneOrBothItemsWereFound("Fischbrot", "Riechsalz") == 1)
-        {
-
-        }
-        if (character.name == "Regina" && pcon.sceneInfo.Flintendialog && OneOrBothItemsWereFound("Fischbrot", "Riechsalz") == 2)
-        {
-
-        }
 
 
         //pressing the right mouse button will start a Dialogue
@@ -109,10 +110,10 @@ public class Character : Interactable
         int lreturnValue = 0;
         for (int i = 0; i < controller.inventory.content.Length; i++)
         {
-            if(controller.inventory.content[i] != null && controller.inventory.content[i].name == psearchitem0 || controller.inventory.content[i].name == psearchitem1)
+            if(controller.inventory.content[i] != null && (controller.inventory.content[i].name == psearchitem0 || controller.inventory.content[i].name == psearchitem1))
             {
                 lreturnValue++;
-            }
+            } 
         }
         return lreturnValue;
     }

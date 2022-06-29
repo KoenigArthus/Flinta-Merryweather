@@ -20,3 +20,8 @@ MonoBehaviour:
   ink2R: {fileID: 4900000, guid: 49064e96cdc0ee54a8739248216cd487, type: 3}
   inkIR: {fileID: 4900000, guid: bc1aa378b35f70b4e8bdee0711dbf340, type: 3}
   inkI: {fileID: 4900000, guid: 468457a51ea5d1b479a77bc6950b63fd, type: 3}
+  inkF: {fileID: 0}
+  inkRule0: {fileID: 0}
+  inkRule1: {fileID: 0}
+  inkRule2: {fileID: 0}
+  itemRecieved: 0
