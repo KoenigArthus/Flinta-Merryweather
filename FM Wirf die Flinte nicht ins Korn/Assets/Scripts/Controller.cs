@@ -93,23 +93,6 @@ public class Controller : MonoBehaviour
         inventory.content = sceneInfo.content;
 
 
-
-        /*///Start Button Stuff:
-        
-        //resets the arrays on sceneInfo (still needs Regina bool)
-        sceneInfo.isFull = new bool[13];
-        sceneInfo.content = new ScrItem[13];
-        sceneInfo.sceneSave = new string[13];
-        sceneInfo.Regina = false;
-
-        //Set Spawnpoint
-        //sceneInfo.spawnpoint = new Vector3(-7.19f, -2f, 0f);
-
-        //things that should be commented out when testing certain things
-        sceneInfo.characters = new();
-
-        ///End Start Button Stuff*/
-
         //loading invendory
         for (int i = 0; i < inventory.isFull.Length; i++)
         {
@@ -166,8 +149,6 @@ public class Controller : MonoBehaviour
         Gizmos.DrawWireSphere(player.transform.position, reachRadius);
     }
 
-
-
     //Checking if the Interactable of hit is in reach of the player
     public bool IsInReach()
     {
@@ -198,7 +179,7 @@ public class Controller : MonoBehaviour
 
 
     #endregion
-    /*
+    /* Code By Jonathan Buss & Andreas Betz
     ⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠛⠛⠋⠉⠈⠉⠉⠉⠉⠛⠻⢿⣿⣿⣿⣿⣿⣿⣿
     ⣿⣿⣿⣿⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢿⣿⣿⣿⣿
     ⣿⣿⣿⣿⡏⣀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣤⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿

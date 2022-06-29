@@ -17,7 +17,7 @@ public class CraftingManager : MonoBehaviour
 
 
     // if the given item combination matches the recipe...
-    // ... the pdragItem gets removed and the matching results Item put into the Inventory
+    // ... the pdragItem gets removed if needed and if needed the matching results Item put into the Inventory
     public void Craft(string precipe, GameObject pdragElement, GameObject pcombineElement)
     {
         Debug.Log(precipe);
