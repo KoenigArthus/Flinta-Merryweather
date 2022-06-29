@@ -158,6 +158,12 @@ public class Controller : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         currentGameState = currentGameState.RunState(this);
         currentGameStateName = currentGameState.ToString();
+
+        if (sceneInfo.tavernenScore >= 5)
+        {
+            //Tavernenschlägerei Ende
+        }
+
     }
 
     // Debug Method to See the reachRadius

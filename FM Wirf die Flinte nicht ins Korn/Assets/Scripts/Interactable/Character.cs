@@ -69,6 +69,16 @@ public class Character : Interactable
     // das overload React to Click
     public void ReactToClick(Controller pcon,GameObject pgivenItem)
     {
+        //increases score for Tavernenschlägerei-Ending
+        if (character.name == "Bertold")
+        {
+            pcon.sceneInfo.tavernenScore += 2;
+        }
+        if (character.name == "Dieter")
+        {
+            pcon.sceneInfo.tavernenScore += 2;
+        }
+
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
         ink = character.inkIR;
        // character.itemRecieved = true;

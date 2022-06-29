@@ -8,7 +8,7 @@ Es muss ja, ne? #speaker:f
 Wahre Worte #speaker:c
 Weißt du was? Du bist meine fuenfzigste Kundin heute
 Das muss gefeiert werden
-Hier nimm: #item:bleikugeln
+Hier ich leg es auf die Theke für dich: #item:bleikugeln
 
 oehm, danke? #speaker:f
 
@@ -24,9 +24,6 @@ Womit kann ich helfen?
     
 + [Dartscheibe] #speaker:f
     -> DART
-
-+ [Kronleuchter] #speaker:f
-    -> KRONLEUCHTER
 
 + [Tschuess] #speaker:f
     -> BYE

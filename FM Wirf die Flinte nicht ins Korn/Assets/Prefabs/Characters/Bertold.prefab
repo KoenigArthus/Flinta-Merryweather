@@ -51,9 +51,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1958768881942782459, guid: 69ed08b679991564480d1005c9f2933c, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d77d923952a94e4fb415a30041b0c1a, type: 2}
     - target: {fileID: 1958768881942782460, guid: 69ed08b679991564480d1005c9f2933c, type: 3}
       propertyPath: m_Name
-      value: 1ExampleCharacter
+      value: Bertold
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ed08b679991564480d1005c9f2933c, type: 3}
