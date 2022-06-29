@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewText: Ein Angelhaken
   isViewable: 1
-  canBePickedUp: 1
+  canBePickedUp: 0
   sprite: {fileID: 0}
   UIObject: {fileID: 6230180113013497215, guid: b7542c708a2910848a598d09d16bd0b4, type: 3}

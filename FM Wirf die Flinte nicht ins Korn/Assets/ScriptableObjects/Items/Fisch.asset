@@ -15,5 +15,5 @@ MonoBehaviour:
   viewText: Stinkt
   isViewable: 1
   canBePickedUp: 0
-  sprite: {fileID: 21300000, guid: 2624331d2b6aa4e488fd8f065fd831e1, type: 3}
+  sprite: {fileID: 0}
   UIObject: {fileID: 8722614612057295233, guid: 378589aab0d024748a6ea8d15bdf1a3b, type: 3}

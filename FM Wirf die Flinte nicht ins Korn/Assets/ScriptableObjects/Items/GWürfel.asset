@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
-  m_Name: Brille
+  m_Name: "GW\xFCrfel"
   m_EditorClassIdentifier: 
-  viewText: "Das gl\xE4nzt!"
+  viewText: "Ein gezinkter W\xFCrfel!"
   isViewable: 1
-  canBePickedUp: 1
+  canBePickedUp: 0
   sprite: {fileID: 0}
-  UIObject: {fileID: 9144525045083737953, guid: a515c0f713ed06146b3796468faa818d, type: 3}
+  UIObject: {fileID: 3343324650782749715, guid: 417e9f2b9b7b6f54290009adfa819322, type: 3}

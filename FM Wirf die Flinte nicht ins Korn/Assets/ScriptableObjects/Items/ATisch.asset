@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
-  m_Name: PowerRum
+  m_Name: ATisch
   m_EditorClassIdentifier: 
-  viewText: 
-  isViewable: 0
+  viewText: "Was f\xFCr ein seltsamer Tisch"
+  isViewable: 1
   canBePickedUp: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: b55274eb19eb7454fb794a6f4084c31f, type: 3}
   UIObject: {fileID: 0}

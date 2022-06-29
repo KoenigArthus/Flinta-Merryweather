@@ -976,22 +976,26 @@ MonoBehaviour:
   - "M\xFCnzeKlaus"
   - HakenAngler
   - WasserPflanze
+  - RumBohnenpulver
+  - BohnenpulverRum
+  - BrotFisch
   - FischBrot
   - "W\xFCrfelRapier"
   - "RapierW\xFCrfel"
-  - RumBohne
-  - Bohne Rum
-  - FischBrot
+  - "BleikugelnBlankoW\xFCrfel"
+  - "BlankoW\xFCrfelBleikugeln"
   results:
   - {fileID: 11400000, guid: 77248118d0f25af43b64dd691f0bb972, type: 2}
   - {fileID: 11400000, guid: 7fe83dc519ea86b42a3cac3d23996f91, type: 2}
   - {fileID: 0}
+  - {fileID: 11400000, guid: 76d0a67d04258cd43ac988d6a403c2f3, type: 2}
+  - {fileID: 11400000, guid: 76d0a67d04258cd43ac988d6a403c2f3, type: 2}
+  - {fileID: 11400000, guid: c22804917e0dc7749945b878185830b7, type: 2}
   - {fileID: 11400000, guid: c22804917e0dc7749945b878185830b7, type: 2}
   - {fileID: 11400000, guid: f2e3302721ff43d4b883009595ac8e9b, type: 2}
   - {fileID: 11400000, guid: f2e3302721ff43d4b883009595ac8e9b, type: 2}
-  - {fileID: 11400000, guid: 08f20f986e825a944bb16ac056be04de, type: 2}
-  - {fileID: 11400000, guid: 08f20f986e825a944bb16ac056be04de, type: 2}
-  - {fileID: 11400000, guid: c22804917e0dc7749945b878185830b7, type: 2}
+  - {fileID: 11400000, guid: 68ca44c3bfb325141b15aae3f50c9031, type: 2}
+  - {fileID: 11400000, guid: 68ca44c3bfb325141b15aae3f50c9031, type: 2}
 --- !u!114 &230058436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3225,7 +3229,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 230058436}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -3441,7 +3445,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 230058436}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -3692,11 +3696,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2723860179009336567, guid: e0b7917b9233e604586a29a4f398bc60, type: 3}
   m_PrefabInstance: {fileID: 1049061786}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1152215505 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5266765777769372405, guid: 547fe75502744824193cfc14347d4fe0, type: 3}
-  m_PrefabInstance: {fileID: 1995270881}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1204835751
 GameObject:
@@ -3996,7 +3995,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 230058436}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -4711,7 +4710,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 230058436}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -5309,7 +5308,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1908458809}
-  - {fileID: 1152215505}
+  - {fileID: 1995270882}
   - {fileID: 1142723045}
   m_Father: {fileID: 1494704859}
   m_RootOrder: 2
@@ -5369,8 +5368,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brille
       objectReference: {fileID: 0}
+    - target: {fileID: 6074487508945146279, guid: 547fe75502744824193cfc14347d4fe0, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074487508945146279, guid: 547fe75502744824193cfc14347d4fe0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074487508945146279, guid: 547fe75502744824193cfc14347d4fe0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 547fe75502744824193cfc14347d4fe0, type: 3}
+--- !u!4 &1995270882 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6074487508945146279, guid: 547fe75502744824193cfc14347d4fe0, type: 3}
+  m_PrefabInstance: {fileID: 1995270881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2021800817
 GameObject:
   m_ObjectHideFlags: 0

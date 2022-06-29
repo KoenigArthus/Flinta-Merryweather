@@ -189,11 +189,6 @@ public class DialogueManager : MonoBehaviour
                     }
                     break;
                 case Item_TAG:
-                    if (tagValue == "bleikugeln")                        
-                    {                     
-                       GameObject.Find("Bleikugeln").GetComponent<SpriteRenderer>().enabled = true;
-                       GameObject.Find("Bleikugeln").GetComponent<CircleCollider2D>().enabled = true;
-                    }
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
   m_Name: Fischbrot
   m_EditorClassIdentifier: 
-  viewText: 
-  isViewable: 0
+  viewText: "Ein Fischbr\xF6tchen!"
+  isViewable: 1
   canBePickedUp: 0
   sprite: {fileID: 0}
-  UIObject: {fileID: 0}
+  UIObject: {fileID: 1482653062664969873, guid: 97e6b5e41de235947afa2b1ff10be560, type: 3}
