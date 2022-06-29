@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
@@ -42,7 +44,6 @@ public class Controller : MonoBehaviour
     [HideInInspector] public GameObject controllsMenue;
 
     public SceneInfo sceneInfo;
-    public string[] sceneSave;
     public float reachRadius = 2f;
     public Texture2D cursor0;
     public Texture2D cursor1;
@@ -91,7 +92,6 @@ public class Controller : MonoBehaviour
         player.transform.rotation = sceneInfo.spawnpointRotation;
         inventory.isFull = sceneInfo.isFull;
         inventory.content = sceneInfo.content;
-        sceneSave = sceneInfo.sceneSave;
 
 
 
@@ -123,14 +123,26 @@ public class Controller : MonoBehaviour
     }
     private void Start()
     {
-
-        for (int a = 0; a < sceneSave.Length; a++)
+        Debug.Log(SceneManager.GetActiveScene().name);
+        for(int i = 0; i < sceneInfo.toInstantiateItem.Length; i++)
         {
-            if (GameObject.Find(sceneSave[a]))
+            if(sceneInfo.toInstantiateItem[i] != null && 
+                !Array.Exists(sceneInfo.sceneSave, element => element == sceneInfo.toInstantiateItem[i].name) &&
+                sceneInfo.sceneItemLaysIn[i] == SceneManager.GetActiveScene().name)
             {
-                GameObject.Find(sceneSave[a]).gameObject.SetActive(false);
+                Instantiate(sceneInfo.toInstantiateItem[i], sceneInfo.itemsSpawnPos[i], Quaternion.identity );
             }
         }
+
+        for (int a = 0; a < sceneInfo.sceneSave.Length; a++)
+        {
+            if (GameObject.Find(sceneInfo.sceneSave[a]))
+            {
+                GameObject.Find(sceneInfo.sceneSave[a]).gameObject.SetActive(false);
+            }
+        }
+
+
     }
 
     //Managing the MousePos & Game State
@@ -162,25 +174,20 @@ public class Controller : MonoBehaviour
     {
         ///Start Button Stuff:
 
-        //resets the arrays on sceneInfo 
+        //resets sceneInfo
         sceneInfo.isFull = new bool[13];
         sceneInfo.content = new ScrItem[13];
         sceneInfo.sceneSave = new string[15];
+        sceneInfo.characters = new();
         sceneInfo.Regina = false;
         sceneInfo.Flintendialog = false;
 
-        inventory.isFull = new bool[13];
-        inventory.content = new ScrItem[13];
-
-        //ScrCharacter.itemRecieved = false;
-
         //Set Spawnpoint
         sceneInfo.spawnpoint = new Vector3(-7.19f, -2f, 0f);
-
-        //things that should be commented out when testing certain things
-        sceneInfo.characters = new();
+        sceneInfo.spawnpointRotation = Quaternion.identity;
 
         ///End Start Button Stuff
+        
     }
 
 

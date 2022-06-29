@@ -45,7 +45,10 @@ public class Character : Interactable
         if (Input.GetMouseButtonDown(1))
         {
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
-            if (!pcon.sceneInfo.characters.Contains(character)) { pcon.sceneInfo.characters.Add(character); }
+            if (!pcon.sceneInfo.characters.Contains(character)) 
+            { 
+                pcon.sceneInfo.characters.Add(character); 
+            }
             DialogueManager.GetInstance().EnterDialogueMode(ink, this.gameObject);
         }
         else if (Input.GetMouseButtonDown(0))

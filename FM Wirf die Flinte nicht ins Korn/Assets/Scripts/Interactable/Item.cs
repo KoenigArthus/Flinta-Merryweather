@@ -1,9 +1,10 @@
+using Ink.Parsed;
 using UnityEngine;
 
 public class Item : Interactable
 {
 
-    [SerializeField] private ScrItem item;
+    public ScrItem item;
 
     private string[] sentences;
 
@@ -68,7 +69,16 @@ public class Item : Interactable
                 item.UIObject.GetComponent<Dragger>().scrItem = item;
                 Instantiate(UIObject, controller.inventory.slots[i].transform, false);
                 controller.inventory.content[i] = item;
-                controller.sceneSave[i] = item.name;
+                //fills the sceneInfo with the Item
+                for (int j = 0; j < controller.sceneInfo.sceneSave.Length; j++)
+                {
+                    if (controller.sceneInfo.sceneSave[j] == null)
+                    {
+                        controller.sceneInfo.sceneSave[j] = item.name;
+                        break;
+                    }
+
+                }
                 gameObject.SetActive(false);
                 Cursor.SetCursor(controller.cursor0, controller.cursorHotspot, CursorMode.ForceSoftware);
                 break;
@@ -84,12 +94,5 @@ public class Item : Interactable
     private void View()
     {
         controller.monologueManager.StartMonologue(sentences);
-    }
-
-    public void FallItemSpawn(GameObject pgameObject, Vector2 pposition)
-    {
-         
-        Instantiate(pgameObject, pposition, Quaternion.identity);
-        Debug.Log(pgameObject.transform.position);
     }
 }

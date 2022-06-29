@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5554168129303629182, guid: 6b2f83f4a7f35d542a4206ad645dd896, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e659d7a646da6f42a241a671e752c98, type: 3}
     - target: {fileID: -2868502464512850091, guid: 6b2f83f4a7f35d542a4206ad645dd896, type: 3}
       propertyPath: target
       value: 
@@ -17,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 7511857133027959887, guid: 7a4083d7447c0c349a68c0c9a6253d59, type: 3}
     - target: {fileID: 1699622552916777321, guid: 6b2f83f4a7f35d542a4206ad645dd896, type: 3}
       propertyPath: m_Name
-      value: Kokosnuss
+      value: KokosnussS
       objectReference: {fileID: 0}
     - target: {fileID: 1928847027153418914, guid: 6b2f83f4a7f35d542a4206ad645dd896, type: 3}
       propertyPath: m_RootOrder
