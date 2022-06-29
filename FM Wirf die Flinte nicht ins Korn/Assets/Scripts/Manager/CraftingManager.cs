@@ -6,6 +6,10 @@ public class CraftingManager : MonoBehaviour
     public string[] recipes;
     public ScrItem[] results;
 
+    private string[] slotNameParts;
+    private int slotIndex = new();
+
+
     private void Start()
     {
         controller = gameObject.GetComponent<Controller>();
@@ -21,75 +25,65 @@ public class CraftingManager : MonoBehaviour
         {
             if (recipes[r] == precipe)
             {
-                //instantiating local variables
-                string[] lslotNameParts = pdragElement.transform.parent.name.Split('(', ')');
-                int lslotInt = new();
-
                 ///Start of Section for Special Combines
 
-                //if the combine element is an UIItem then it will be removed from the inventory & destroyed
+                //if the pcombineElement is an UIItem then it & pdragElement will be removed from the inventory &destroyed
                 if (pcombineElement.GetComponent<Dragger>() != null)
                 {
-                    lslotNameParts = pcombineElement.transform.parent.name.Split('(', ')');
-                    lslotInt = int.Parse(lslotNameParts[1]);
-                    controller.inventory.isFull[lslotInt] = false;
-                    controller.inventory.content[lslotInt] = null;
-                    Destroy(pcombineElement);
+                    //removes pdragElement
+                    RemoveFromInventoryAndDestroy(pdragElement);
+                    //removes pcombineElement
+                    RemoveFromInventoryAndDestroy(pcombineElement);
                 }
 
                 /*giving a Character an Item - has been moved down since 
                  * pcombineElement.GetComponent<Character>().character.itemRecieved
-                 * is needed to determin what if pdragElement should be given instead
-                 * thus when talking with a chracter the new item first gets added then the bool itemRecieved set to true
+                 * is needed to determine if results[r] should be given before changing itemRecieved to true
                  */
 
                 //combining an Item on Scene
                 if (pcombineElement.GetComponent<Item>() != null)
                 {
+                    //removes pdragElement
+                    RemoveFromInventoryAndDestroy(pdragElement);
                     Debug.Log(precipe);
                     //insert here
                 }
 
                 ///End of Section for Special Combines
 
-                //removes the pdragItem item from the inventory & destroys it
-                lslotNameParts = pdragElement.transform.parent.name.Split('(', ')');
-                lslotInt = int.Parse(lslotNameParts[1]);
-                controller.inventory.isFull[lslotInt] = false;
-                controller.inventory.content[lslotInt] = null;
-                Destroy(pdragElement);
-
                 //fills inventory with results Item
                 if (pcombineElement.GetComponent<NoReturn>() == null)
                 {
-                    for (int i = 0; i < controller.inventory.slots.Length; i++)
+                    //when pcombineElement is a character & has not recieved the results[r] item
+                    if (pcombineElement.GetComponent<Character>() != null && !pcombineElement.GetComponent<Character>().character.itemRecieved)
                     {
-                        if (controller.inventory.isFull[i] == false)
+                        //removes pdragElement
+                        RemoveFromInventoryAndDestroy(pdragElement);
+                        //adds result Item
+                        AddThisResultsItemAt(r, slotIndex);
+                    }
+                    //when the pcombineElement is not a Character
+                    else if(pcombineElement.GetComponent<Character>() == null)
+                    {
+                        for (int i = 0; i < controller.inventory.slots.Length; i++)
                         {
-                            //for pontentially reseting
-                            ScrItem lscrItem = results[r];
-                            //returning the pdragElement when a character already recieved the correct Item
-                            if (pcombineElement.GetComponent<Character>() != null && pcombineElement.GetComponent<Character>().character.itemRecieved)
+                            if (controller.inventory.isFull[i] == false)
                             {
-                                results[r] = pdragElement.GetComponent<Dragger>().scrItem;
+                                //adds result Item
+                                AddThisResultsItemAt(r, i);
+                                break;
                             }
-                            results[r].UIObject.GetComponent<Dragger>().scrItem = results[r];
-                            Instantiate(results[r].UIObject, controller.inventory.slots[i].transform, false);
-                            controller.inventory.isFull[i] = true;
-                            controller.inventory.content[i] = results[r];
-                            //reseting results[r] to avoid reseting it somethere else
-                            results[r] = lscrItem;
-                            break;
-                        }
-                        if (i == controller.inventory.slots.Length - 1)
-                        {
-                            Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
+                            if (i == controller.inventory.slots.Length - 1)
+                            {
+                                Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
+                            }
                         }
                     }
                 }
                 else
                 {
-                    //nichts
+                    //when the pcombineElement has a NoReturn class
                 }
 
                 //giving a Character an Item
@@ -102,4 +96,22 @@ public class CraftingManager : MonoBehaviour
             }
         }
     }
+
+    private void RemoveFromInventoryAndDestroy(GameObject premoveElement)
+    {
+        slotNameParts = premoveElement.transform.parent.name.Split('(', ')');
+        slotIndex = int.Parse(slotNameParts[1]);
+        controller.inventory.isFull[slotIndex] = false;
+        controller.inventory.content[slotIndex] = null;
+        Destroy(premoveElement);
+    }
+
+    private void AddThisResultsItemAt(int resultsIndex, int inventoryIndex)
+    {
+        results[resultsIndex].UIObject.GetComponent<Dragger>().scrItem = results[resultsIndex];
+        Instantiate(results[resultsIndex].UIObject, controller.inventory.slots[inventoryIndex].transform, false);
+        controller.inventory.isFull[inventoryIndex] = true;
+        controller.inventory.content[inventoryIndex] = results[resultsIndex];
+    }
+
 }
