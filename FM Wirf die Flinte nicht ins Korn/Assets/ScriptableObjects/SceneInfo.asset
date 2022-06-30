@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8df1cba802d61b4fbd49fdd91ead850, type: 3}
   m_Name: SceneInfo
   m_EditorClassIdentifier: 
-  Regina: 0
+  tavernenScore: 8
+  spawnpoint: {x: -5, y: -1.6, z: 0}
+  spawnpointRotation: {x: 0, y: 0, z: 0, w: 0}
+  Regina: 1
   Flintendialog: 0
   characters:
-  - {fileID: 11400000, guid: 32ee5eeaee760964db4b3bcc01263c46, type: 2}
-  - {fileID: 11400000, guid: 329e4f22807fb364fbd103d0097dc739, type: 2}
-  isFull: 01010000000000000000000000
+  - {fileID: 11400000, guid: 90eb329e696039c4fb7bd661d73c096e, type: 2}
+  isFull: 00000000000000000000000000
   content:
-  - {fileID: 11400000, guid: d32605ea7c455f34e9d7ebba836aad1c, type: 2}
-  - {fileID: 11400000, guid: 15b3cb99e4ae054438620b173f28b9bb, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -46,5 +48,29 @@ MonoBehaviour:
   - 
   - 
   - 
-  spawnpoint: {x: 3.11, y: -2, z: 0}
-  spawnpointRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+  - 
+  toInstantiateItem:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemsSpawnPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  sceneItemLaysIn:
+  - 
+  - 
+  - 
+  - 
+  - 
+  visitedScenes:
+  - Piratenstadt
+  - 
+  - 
+  - 
+  - 
+  - 

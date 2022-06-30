@@ -454,7 +454,7 @@ Jetzt bin ich dran!
 ~Ycounter = 0
 ~roundCount = 0
 
-{rounds_won == 5: -> STOP}
+{rounds_won == 5: -> STOPW}
 
 -> CHOICES_R1
 
@@ -468,14 +468,20 @@ Also, von vorn.
 ~Ycounter = 0
 ~roundCount = 0
 
-{rounds_lost == 5: -> STOP}
+{rounds_lost == 5: -> STOPL}
 
 -> ROUND_1R
 
+=== STOPW ===
 
+Haha, du hast verloren Regina! #speaker:f 
+#state:flintew
 
-=== STOP ===
+->END
 
-{rounds_won == 5: gewonnen! | verloren!}
+=== STOPL ===
+
+Heu heu, due hast vaerloraen Flinta. #speaker:c
+#state:flintel
 
 ->END

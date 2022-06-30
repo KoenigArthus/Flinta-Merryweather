@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Controller : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public GameObject controllsMenue;
     public bool currentSceneWasVisited;
 
+    private bool endFix = false;
     public SceneInfo sceneInfo;
     public float reachRadius = 2f;
     public Texture2D cursor0;
@@ -66,7 +68,7 @@ public class Controller : MonoBehaviour
         Cursor.SetCursor(cursor0, cursorHotspot, CursorMode.ForceSoftware);
 
         //classes that controller holds
-        
+
         player = GameObject.FindGameObjectWithTag("Player");
         shotgunFilter = GameObject.Find("ShotgunFilter").GetComponent<Image>();
         pauseMenue = GameObject.Find("Pause Menue");
@@ -145,6 +147,13 @@ public class Controller : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         currentGameState = currentGameState.RunState(this);
         currentGameStateName = currentGameState.ToString();
+
+        if (sceneInfo.tavernenScore >= 8 && sceneInfo.Regina)
+        {
+            ItsEnding();
+
+        }
+
     }
 
     // Debug Method to See the reachRadius
@@ -161,25 +170,62 @@ public class Controller : MonoBehaviour
         return (player.transform.position - hit.collider.gameObject.transform.position).sqrMagnitude <= reachRadius * reachRadius;
     }
 
-    public void StartButton()
+    public void ItsEnding()
     {
-        ///Start Button Stuff:
-
-        //resets sceneInfo
-        sceneInfo.isFull = new bool[13];
-        sceneInfo.content = new ScrItem[13];
-        sceneInfo.sceneSave = new string[15];
-        sceneInfo.characters = new();
-        sceneInfo.Regina = false;
-        sceneInfo.Flintendialog = false;
-
-        //Set Spawnpoint
-        sceneInfo.spawnpoint = new Vector3(-7.19f, -2f, 0f);
-        sceneInfo.spawnpointRotation = Quaternion.identity;
-
-        ///End Start Button Stuff
         
+        if (!endFix)
+        {
+            endFix = true;
+            dialogueManager.ExitDialogueMode();
+
+            foreach (SpriteRenderer child in childRenderer)
+            {
+                StartCoroutine(EndFade(child));
+
+            }
+
+        }
+
     }
+
+     public IEnumerator EndFade(SpriteRenderer child)
+     {
+        player.GetComponent<SpriteRenderer>().enabled = false;
+        child.color = Color.Lerp( Color.white, Color.black, 0.1f);
+
+        yield return new WaitForSeconds(0.05f);
+        child.color = Color.Lerp(Color.white, Color.black, 0.2f);
+
+        yield return new WaitForSeconds(0.05f);
+        child.color = Color.Lerp(Color.white, Color.black, 0.3f);
+
+        yield return new WaitForSeconds(0.05f);
+        child.color = Color.Lerp(Color.white, Color.black, 0.4f);
+
+        yield return new WaitForSeconds(0.05f);
+        child.color = Color.Lerp(Color.white, Color.black, 0.5f);
+
+        yield return new WaitForSeconds(0.05f);
+        child.color = Color.Lerp(Color.white, Color.black, 0.6f);
+
+        yield return new WaitForSeconds(0.05f);
+        child.color = Color.Lerp(Color.white, Color.black, 0.7f);
+
+        yield return new WaitForSeconds(0.05f);
+        child.color = Color.Lerp(Color.white, Color.black, 0.8f);
+
+        yield return new WaitForSeconds(0.05f);
+        child.color = Color.Lerp(Color.white, Color.black, 0.9f);
+
+        yield return new WaitForSeconds(0.05f);
+        child.color = Color.Lerp(Color.white, Color.black, 1f);
+
+        yield return new WaitForSeconds(0.05f);
+
+        EndGame.TS = true;
+        SceneManager.LoadScene("End");
+        yield return null; 
+     }
 
 
     #endregion

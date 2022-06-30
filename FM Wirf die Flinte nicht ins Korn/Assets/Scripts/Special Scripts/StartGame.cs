@@ -9,8 +9,13 @@ public class StartGame : MonoBehaviour
     {
         ///Start Button Stuff:
 
-        //resets sceneInfo
-        sceneInfo.isFull = new bool[13];
+        //resets Ending-Logic
+        EndGame.flintew = false;
+        EndGame.flintel = false;
+        EndGame.TS = false;
+
+    //resets sceneInfo
+    sceneInfo.isFull = new bool[13];
         sceneInfo.content = new ScrItem[13];
         sceneInfo.sceneSave = new string[13+1];
         sceneInfo.characters = new();
