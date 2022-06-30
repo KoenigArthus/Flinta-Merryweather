@@ -58,13 +58,16 @@ public class Shootable : Interactable
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             yield return new WaitForSeconds(0.2f);
         }
-        //Adding the shootable to the sceneSave
+        ///Adding the shootable to the sceneSave
+        //lengthen Scene Save by 1
         string[] lsave = pcon.sceneInfo.sceneSave;
         pcon.sceneInfo.sceneSave = new string[lsave.Length + 1];
+        //restoring Scene Save
         for (int i = 0; i < lsave.Length; i++)
         {
             pcon.sceneInfo.sceneSave[i] = lsave[i];
         }
+        //adding Item
         for (int j = 0; j < lsave.Length; j++)
         {
             if (pcon.sceneInfo.sceneSave[j] == null)
@@ -73,7 +76,8 @@ public class Shootable : Interactable
                 break;
             }
         }
-       
+        /// End Adding the shootable to the sceneSave
+
         //Palmenblätter adds to trueConditions in the plant
         if (gameObject.name == "Palmenblätter")
         {
@@ -87,6 +91,26 @@ public class Shootable : Interactable
 
     IEnumerator Falling(Controller pcon)
     {
+        ///Adding the shootable to the sceneSave
+        //lengthen Scene Save by 1
+        string[] lsave = pcon.sceneInfo.sceneSave;
+        pcon.sceneInfo.sceneSave = new string[lsave.Length + 1];
+        //restoring Scene Save
+        for (int i = 0; i < lsave.Length; i++)
+        {
+            pcon.sceneInfo.sceneSave[i] = lsave[i];
+        }
+        //adding Item
+        for (int j = 0; j < lsave.Length; j++)
+        {
+            if (pcon.sceneInfo.sceneSave[j] == null)
+            {
+                pcon.sceneInfo.sceneSave[j] = name;
+                break;
+            }
+        }
+        /// End Adding the shootable to the sceneSave
+        Debug.Log("added shootable" + name);
         yield return new WaitForSeconds(0.9f);
         for (float i = gameObject.transform.position.y; i > controller.player.transform.position.y; i -= 0.1f)
         {
@@ -96,21 +120,6 @@ public class Shootable : Interactable
         // Instantiating the new Item & seting some variables
         fallPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0.1f);
         Instantiate(fallItem, fallPosition, Quaternion.identity);
-        //Adding the shootable to the sceneSave
-        string[] lsave = pcon.sceneInfo.sceneSave;
-        pcon.sceneInfo.sceneSave = new string[lsave.Length + 1];
-        for (int i = 0; i < lsave.Length; i++)
-        {
-            pcon.sceneInfo.sceneSave[i] = lsave[i];
-        }
-        for (int j = 0; j < lsave.Length; j++)
-        {
-            if (pcon.sceneInfo.sceneSave[j] == null)
-            {
-                pcon.sceneInfo.sceneSave[j] = this.name;
-               break;
-            }
-        }
         //Adding fallItem to the Instantiate Spawn
         for (int i = 0; i < pcon.sceneInfo.toInstantiateItem.Length; i++)
         {
