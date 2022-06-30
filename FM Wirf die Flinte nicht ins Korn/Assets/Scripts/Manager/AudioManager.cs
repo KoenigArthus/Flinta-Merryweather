@@ -57,7 +57,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("The Sound called" + name + "wasn't found !");
             return;
         }
-        s.audioSource.Stop();
+        s.audioSource.Pause();
     }
 
 

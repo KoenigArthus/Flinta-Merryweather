@@ -235,6 +235,17 @@ public class Controller : MonoBehaviour
         yield return null; 
      }
 
+    public IEnumerator WaitShoot()
+    {
+        yield return new WaitForSeconds(0.5f);
+        //Audio
+        audioManager.Play("Shotgunshot");
+
+        StopCoroutine(WaitShoot());
+    }
+
+
+
 
     #endregion
     /* Code By Jonathan Buss & Andreas Betz

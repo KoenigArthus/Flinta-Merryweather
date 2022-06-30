@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float MinimumXBoundary, MaximumXBoundary;
     //if the character moves: isMoving = true
     [HideInInspector] public bool isMoving;
+    [HideInInspector] Controller controller;
     //goal position after moving
     private Vector3 targetPos;
     private Animator animator;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     //setting up the current position of the player_Character so that it wont skip to 0,0 when later called in the Update function
     private void Awake()
     {
+        controller = controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
         targetPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         animator = GetComponent<Animator>();
     }
@@ -68,8 +70,31 @@ public class PlayerMovement : MonoBehaviour
                 targetPos.x = MaximumXBoundary;
             }
 
+            //Audio
+            if (!isMoving)
+            {
+
+                if (controller.currentScene == "Piratenstadt")
+                {
+                    controller.audioManager.Play("Walk on Cobblestone");
+                }
+                else if (controller.currentScene == "Strand")
+                {
+                    controller.audioManager.Play("Walk on Sand");
+                }
+                else if (controller.currentScene == "Höhle")
+                {
+                    controller.audioManager.Play("Walk on Stone");
+                }
+                else if (controller.currentScene == "Taverne")
+                {
+                    controller.audioManager.Play("Walk on Wood");
+                }
+            }
+
             isMoving = true;
             animator.SetBool("isMoving", isMoving);
+
         }
     }
 
@@ -77,6 +102,24 @@ public class PlayerMovement : MonoBehaviour
     {
         isMoving = false;
         animator.SetBool("isMoving", isMoving);
+
+        //Audio
+        if (controller.currentScene == "Piratenstadt")
+        {
+            controller.audioManager.Stop("Walk on Cobblestone");
+        }
+        else if (controller.currentScene == "Strand")
+        {
+            controller.audioManager.Stop("Walk on Sand");
+        }
+        else if (controller.currentScene == "Höhle")
+        {
+            controller.audioManager.Stop("Walk on Stone");
+        }
+        else if (controller.currentScene == "Taverne")
+        {
+            controller.audioManager.Stop("Walk on Wood");
+        }
     }
 
 

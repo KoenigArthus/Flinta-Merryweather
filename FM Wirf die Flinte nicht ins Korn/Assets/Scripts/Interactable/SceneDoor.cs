@@ -39,6 +39,8 @@ public class SceneDoor : Interactable
         controller.sceneInfo.spawnpoint = spawnpointForNextScene;
         controller.sceneInfo.spawnpointRotation = spawnRotation;
 
+        controller.playerMovement.Stop();
+
         SceneManager.LoadScene(Scene);
     } 
 

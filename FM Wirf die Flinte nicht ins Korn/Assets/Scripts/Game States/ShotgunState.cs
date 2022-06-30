@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class ShotgunState : IGameState
 {
@@ -43,14 +45,21 @@ public class ShotgunState : IGameState
                     pcon.lineRenderer.enabled = false;
                     pcon.shotgunFilter.enabled = false;
                     Cursor.SetCursor(pcon.cursor0, pcon.cursorHotspot, CursorMode.ForceSoftware);
+
+                    //Audio
+                    pcon.StartCoroutine(pcon.WaitShoot());
+
                     return pcon.exploreState;
                 }
                 else
                 {
                     pcon.animator.SetBool("didHitSomething", false);
+
+                    //Audio
+                    pcon.StartCoroutine(pcon.WaitShoot());
+
                     return pcon.shotgunState;
                 }
-
             }
         }
         else if (Input.GetMouseButtonDown(2))
@@ -58,6 +67,10 @@ public class ShotgunState : IGameState
             pcon.lineRenderer.enabled = false;
             pcon.shotgunFilter.enabled = false;
             Cursor.SetCursor(pcon.cursor0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+
+            //Audio
+            pcon.audioManager.Play("Shotgunback");
+
             return pcon.exploreState;
         }
 

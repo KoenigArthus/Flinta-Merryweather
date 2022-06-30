@@ -711,6 +711,60 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     audioSource: {fileID: 0}
+  - name: Item kombinieren
+    clip: {fileID: 8300000, guid: c255802e7681f154999777c3433ff0fa, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Rucksack0
+    clip: {fileID: 8300000, guid: 572beb76ee82ceb4e80fd3b90e2fed56, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Shotgunload
+    clip: {fileID: 8300000, guid: 4cb11f7bf4442514183c2fed166549c5, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Shotgunshot
+    clip: {fileID: 8300000, guid: 6d0dd10d1890c3e4490fc786bb3d2fc1, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Shotgunback
+    clip: {fileID: 8300000, guid: 59c47f27f950100438308ef880b698d3, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Walk on Stone
+    clip: {fileID: 8300000, guid: c06ff93873fc1ae4aa1cd7efb1b0be10, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
+    audioSource: {fileID: 0}
+  - name: Walk on Wood
+    clip: {fileID: 8300000, guid: f0f8710df141e704dbb651485d509e7e, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 1
+    audioSource: {fileID: 0}
+  - name: Walk on Sand
+    clip: {fileID: 8300000, guid: 81ab79f29e8bc9a49a78a823b7a8c56d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    audioSource: {fileID: 0}
+  - name: Walk on Cobblestone
+    clip: {fileID: 8300000, guid: ac8a49524085c6547b7f1e45c55123fc, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 1
+    audioSource: {fileID: 0}
 --- !u!1 &542010214
 GameObject:
   m_ObjectHideFlags: 0

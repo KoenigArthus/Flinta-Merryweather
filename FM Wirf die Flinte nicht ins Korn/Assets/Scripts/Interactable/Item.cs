@@ -88,6 +88,9 @@ public class Item : Interactable
                 Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
             }
         }
+
+        //Audio
+        controller.audioManager.Play("Rucksack0");
     }
 
     //Viewing an Item

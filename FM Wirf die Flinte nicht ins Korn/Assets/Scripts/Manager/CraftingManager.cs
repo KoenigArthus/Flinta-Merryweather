@@ -33,12 +33,19 @@ public class CraftingManager : MonoBehaviour
                     RemoveFromInventoryAndDestroy(pdragElement);
                     //removes pcombineElement
                     RemoveFromInventoryAndDestroy(pcombineElement);
+
+                    //Audio
+                    controller.audioManager.Play("Item kombinieren");
                 }
 
                 //giving a Character an Item
                 if (pcombineElement.GetComponent<Character>() != null)
                 {
                     RemoveFromInventoryAndDestroy(pdragElement);
+
+                    //Audio
+                    controller.audioManager.Play("Rucksack0");
+
                     controller.isDragging = false;
                     if (pcombineElement.name != "Dieter")
                     {
@@ -52,7 +59,9 @@ public class CraftingManager : MonoBehaviour
                 {
                     //removes pdragElement
                     RemoveFromInventoryAndDestroy(pdragElement);
-                    //insert here
+
+                    //Audio
+                    controller.audioManager.Play("Item kombinieren");
                 }
                 ///End of Section for Special Combines
 

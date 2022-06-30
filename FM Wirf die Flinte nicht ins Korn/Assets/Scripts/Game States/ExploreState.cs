@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -71,6 +72,10 @@ public class ExploreState : IGameState
             pcon.shotgunFilter.enabled = true;
             pcon.lineRenderer.SetPosition(0, new Vector3 (pcon.player.transform.position.x, pcon.player.transform.position.y, -3));
             Cursor.SetCursor(pcon.crossair0, pcon.cursorHotspot,CursorMode.ForceSoftware);
+
+            //Audio
+            pcon.audioManager.Play("Shotgunload");
+
             return pcon.shotgunState;
         }
         
@@ -86,4 +91,6 @@ public class ExploreState : IGameState
         return pcon.exploreState;
 
     }
+
+
 }
