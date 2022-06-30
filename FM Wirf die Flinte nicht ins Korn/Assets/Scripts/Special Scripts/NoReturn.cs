@@ -7,7 +7,7 @@ public class NoReturn : MonoBehaviour
 {
    // This class is only here to indicate that no item should be returned when crafting with this.gameObject
    public Animator animator;
-   public GameObject dart;
+   public GameObject endGameObject;
    public Vector3 finalDartPos;
 
     private void Start()
@@ -58,12 +58,12 @@ public class NoReturn : MonoBehaviour
             }
         }
         ///End of adding the shootable to the sceneSave
-        //Adding dart to the Instantiate Spawn
+        //Adding endGameObject to the Instantiate Spawn
         for (int i = 0; i < pcon.sceneInfo.toInstantiateItem.Length; i++)
         {
             if (pcon.sceneInfo.toInstantiateItem[i] == null)
             {
-                pcon.sceneInfo.toInstantiateItem[i] = this.dart;
+                pcon.sceneInfo.toInstantiateItem[i] = this.endGameObject;
                 pcon.sceneInfo.itemsSpawnPos[i] = this.finalDartPos;
                 pcon.sceneInfo.sceneItemLaysIn[i] = SceneManager.GetActiveScene().name;
                 break;

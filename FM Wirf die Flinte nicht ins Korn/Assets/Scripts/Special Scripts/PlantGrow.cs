@@ -29,8 +29,7 @@ public class PlantGrow : MonoBehaviour
     {
         if (plant.conditionsTrue == 2)
         {
-            //gameObject.GetComponent<NoReturn>().AnimateAction();
-            Debug.Log("Pflanze Waaaaaaaaaachseeeee !!!!");
+            gameObject.GetComponent<NoReturn>().AnimateAction();
         }
     }
 
