@@ -7,7 +7,8 @@ using UnityEngine.TextCore.Text;
 
 public class PlantGrow : MonoBehaviour
 {
-    [SerializeField ]private ScrPlant plant;
+    [SerializeField] private ScrPlant plant;
+    private bool didThisOnce;
     private Controller controller;
 
     private void Start()
@@ -27,8 +28,9 @@ public class PlantGrow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (plant.conditionsTrue == 2)
+        if (plant.conditionsTrue == 2 && !didThisOnce)
         {
+            didThisOnce = true;
             gameObject.GetComponent<NoReturn>().AnimateAction();
         }
     }

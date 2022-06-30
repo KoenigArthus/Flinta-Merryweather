@@ -49,15 +49,7 @@ public class Shootable : Interactable
 
     IEnumerator DespawnBlinking(Controller pcon)
     {
-        this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        yield return new WaitForSeconds(0.9f);
-        for (int i = 0; i < 3; i++)
-        {
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-            yield return new WaitForSeconds(0.2f);
-            this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            yield return new WaitForSeconds(0.2f);
-        }
+        
         ///Adding the shootable to the sceneSave
         //lengthen Scene Save by 1
         string[] lsave = pcon.sceneInfo.sceneSave;
@@ -83,6 +75,17 @@ public class Shootable : Interactable
         {
             GameObject lplant = GameObject.Find("Pflanze");
             lplant.GetComponent<PlantGrow>().AddTrueCondition();
+        }
+
+        //Blinking Part
+        this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+        yield return new WaitForSeconds(0.9f);
+        for (int i = 0; i < 3; i++)
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(0.2f);
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(0.2f);
         }
 
         this.gameObject.SetActive(false);

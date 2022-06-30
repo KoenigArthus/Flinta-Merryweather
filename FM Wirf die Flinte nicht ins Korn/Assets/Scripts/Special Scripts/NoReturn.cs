@@ -23,15 +23,18 @@ public class NoReturn : MonoBehaviour
     public void AnimateAction()
     {
         Controller lcontroller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
+
         if (gameObject.name == "Dieter")
         {
+            Debug.Log("Ïmma do Dieter");
             animator.enabled = true;
             StartCoroutine(DoDartDieter(lcontroller));
         }
 
-        if (gameObject.GetComponent<Item>() != null)
+        if (gameObject.name == "Pflanze")
         {
-
+            //animator.enabled = true;
+            DoPlant(lcontroller);
         }
 
     }
@@ -72,6 +75,23 @@ public class NoReturn : MonoBehaviour
         // starting dialogue
         gameObject.GetComponent<Character>().ReactToClick(pcon, gameObject);
         StopCoroutine(DoDartDieter(pcon));
+    }
+    private void DoPlant(Controller pcon)
+    {
+        //Intantiating endGameObject (PlantFruit)
+        Vector3 linstantiatePosition = new Vector3(this.transform.position.x, this.transform.position.y, -0.1f);
+        Instantiate(endGameObject, linstantiatePosition, Quaternion.identity);
+        //Adding endGameObject to the Instantiate Spawn
+        for (int i = 0; i < pcon.sceneInfo.toInstantiateItem.Length; i++)
+        {
+            if (pcon.sceneInfo.toInstantiateItem[i] == null)
+            {
+                pcon.sceneInfo.toInstantiateItem[i] = this.endGameObject;
+                pcon.sceneInfo.itemsSpawnPos[i] = this.finalDartPos;
+                pcon.sceneInfo.sceneItemLaysIn[i] = SceneManager.GetActiveScene().name;
+                break;
+            }
+        }
     }
 
 
