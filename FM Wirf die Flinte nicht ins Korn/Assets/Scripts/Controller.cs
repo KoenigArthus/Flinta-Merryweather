@@ -32,6 +32,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public DialogueManager dialogueManager;
     [HideInInspector] public MonologueManager monologueManager;
     [HideInInspector] public CraftingManager craftingManager;
+    [HideInInspector] public AudioManager audioManager;
     [HideInInspector] public GameObject talkingFilterParent;
     [HideInInspector] public Color filterColor;
     [HideInInspector] public Vector2 mousePos;
@@ -42,6 +43,7 @@ public class Controller : MonoBehaviour
     [HideInInspector] public GameObject pauseMenue;
     [HideInInspector] public GameObject controllsMenue;
     public bool currentSceneWasVisited;
+    public string currentScene;
 
     private bool endFix = false;
     public SceneInfo sceneInfo;
@@ -56,8 +58,9 @@ public class Controller : MonoBehaviour
     //Intitializing
     private void Awake()
     {
+        currentScene = SceneManager.GetActiveScene().name;
         //updating currentSceneWasVisited
-        if (Array.Exists(sceneInfo.visitedScenes, element => element == SceneManager.GetActiveScene().name))
+        if (Array.Exists(sceneInfo.visitedScenes, element => element == currentScene))
         {
             currentSceneWasVisited = true;
         }
@@ -78,7 +81,6 @@ public class Controller : MonoBehaviour
         Cursor.SetCursor(cursor0, cursorHotspot, CursorMode.ForceSoftware);
 
         //classes that controller holds
-
         player = GameObject.FindGameObjectWithTag("Player");
         shotgunFilter = GameObject.Find("ShotgunFilter").GetComponent<Image>();
         pauseMenue = GameObject.Find("Pause Menue");
@@ -90,6 +92,10 @@ public class Controller : MonoBehaviour
         dialogueManager = gameObject.GetComponent<DialogueManager>();
         monologueManager = gameObject.GetComponent<MonologueManager>();
         craftingManager = gameObject.GetComponent<CraftingManager>();
+        audioManager = FindObjectOfType<AudioManager>();
+
+        //Audio
+        audioManager.Play(SceneManager.GetActiveScene().name);
 
         //seting up variables
         shotgunFilter.enabled = false;

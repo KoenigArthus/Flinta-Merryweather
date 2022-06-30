@@ -681,10 +681,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: 
-    clip: {fileID: 0}
-    volume: 1
+  - name: Start
+    clip: {fileID: 8300000, guid: 7a8a9fa68d29e9b41a74235600ac88a0, type: 3}
+    volume: 0.616
     pitch: 1
+    loop: 1
+    audioSource: {fileID: 0}
+  - name: Piratenstadt
+    clip: {fileID: 8300000, guid: 7a8a9fa68d29e9b41a74235600ac88a0, type: 3}
+    volume: 0.616
+    pitch: 1
+    loop: 1
+    audioSource: {fileID: 0}
+  - name: "H\xF6hle"
+    clip: {fileID: 8300000, guid: b65fa551c9852204ca343df1ef1a1d4a, type: 3}
+    volume: 0.616
+    pitch: 1
+    loop: 1
+    audioSource: {fileID: 0}
+  - name: Strand
+    clip: {fileID: 8300000, guid: ed0447d43f4230444bca85c64e23ee91, type: 3}
+    volume: 0.616
+    pitch: 1
+    loop: 1
+    audioSource: {fileID: 0}
+  - name: Taverne
+    clip: {fileID: 8300000, guid: d39ba8aed4408194e96968f1f32369c8, type: 3}
+    volume: 0.616
+    pitch: 1
+    loop: 1
     audioSource: {fileID: 0}
 --- !u!1 &542010214
 GameObject:

@@ -24,6 +24,9 @@ public class SceneDoor : Interactable
             }
         }
 
+        //Audio
+        pcon.audioManager.Stop(pcon.currentScene);
+
         ChangeToScene(scene);
     }
   
