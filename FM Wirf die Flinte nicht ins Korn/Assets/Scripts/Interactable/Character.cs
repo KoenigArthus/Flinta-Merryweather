@@ -97,7 +97,7 @@ public class Character : Interactable
         {
             pcon.sceneInfo.tavernenScore += 2;
         }
-        if (character.name == "PeterLangfinger")
+        if (character.name == "Peter Langfinger")
         {
             pcon.sceneInfo.Flintendialog = true;
         }

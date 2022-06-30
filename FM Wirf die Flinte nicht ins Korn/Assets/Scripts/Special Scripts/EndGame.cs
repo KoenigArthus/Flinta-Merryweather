@@ -28,11 +28,11 @@ public class EndGame : MonoBehaviour
     {
         EndAnimator.Play("End");
         
-        if (flintew && !flintel && !TS)
+        if (flintew)
         {
             sentence = ending.Ending1.Split('|');
         }
-        else if (flintel && !TS)
+        else if (flintel)
         {
             sentence = ending.Ending2.Split('|');
         }
