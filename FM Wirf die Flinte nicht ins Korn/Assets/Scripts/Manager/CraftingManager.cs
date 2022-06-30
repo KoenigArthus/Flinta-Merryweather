@@ -40,7 +40,7 @@ public class CraftingManager : MonoBehaviour
                 {
                     RemoveFromInventoryAndDestroy(pdragElement);
                     controller.isDragging = false;
-                    if (pcombineElement.GetComponent<NoReturn>() != null)
+                    if (pcombineElement.GetComponent<NoReturn>() == null)
                     {
                         pcombineElement.GetComponent<Character>().ReactToClick(controller, pdragElement);
                     }
