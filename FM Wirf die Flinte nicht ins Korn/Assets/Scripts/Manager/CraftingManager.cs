@@ -40,7 +40,11 @@ public class CraftingManager : MonoBehaviour
                 {
                     RemoveFromInventoryAndDestroy(pdragElement);
                     controller.isDragging = false;
-                    pcombineElement.GetComponent<Character>().ReactToClick(controller, pdragElement);
+                    if (pcombineElement.GetComponent<NoReturn>() != null)
+                    {
+                        pcombineElement.GetComponent<Character>().ReactToClick(controller, pdragElement);
+                    }
+                       
                 }
 
                 //combining an Item on Scene
@@ -61,7 +65,11 @@ public class CraftingManager : MonoBehaviour
                 }
                 else
                 {
-                    //insert
+                    if(pcombineElement.name == "Dieter" || 
+                        pcombineElement.name == "Pflanze")
+                    {
+                         pcombineElement.GetComponent<NoReturn>().AnimateAction();
+                    }
                 }
                 break;
             }
