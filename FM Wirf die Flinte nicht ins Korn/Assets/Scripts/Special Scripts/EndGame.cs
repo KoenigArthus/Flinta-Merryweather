@@ -10,10 +10,11 @@ public class EndGame : MonoBehaviour
     public static bool flintel = false;
     public static bool TS = false;
 
+    public bool coroutineIsPlaying = false;
+    string currentText;
+
     public Animator EndAnimator;
     public Text dialogueText;
-    public GameObject continueButton;
-    public GameObject EndButton;
 
     public ScrEnding ending;
     private string[] sentence;
@@ -49,28 +50,49 @@ public class EndGame : MonoBehaviour
 
     }
 
-    public void ContinueButton()
-    {
-        DisplayNextSentence();
-    }
+
 
 
     public void DisplayNextSentence()
     {
+        
         if (sentences.Count == 0)
         {
-            continueButton.SetActive(false);
-            EndButton.SetActive(true);
+            Application.Quit();
             return;
         }
-        string lsentence = sentences.Dequeue();
+        if (coroutineIsPlaying)
+        {
+            StopAllCoroutines();
+            dialogueText.text = currentText;
+            coroutineIsPlaying = false;
 
-        dialogueText.text = lsentence;
+        }
+        else
+        {
+            string lsentence = sentences.Dequeue();
+            currentText = lsentence;
+            StartCoroutine(TypeSentence(lsentence));
+
+        }
+
+        
     }
 
-    public void Enditall()
+    IEnumerator TypeSentence(string lsentence)
     {
-        Application.Quit();
+        coroutineIsPlaying = true;
+
+        dialogueText.text = "";
+
+        foreach (char letter in lsentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(0.03f);
+        }
+        coroutineIsPlaying = false;
+
     }
+
 
 }
