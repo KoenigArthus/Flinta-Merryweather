@@ -51,7 +51,6 @@ public class Dragger : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragH
     //when releasing the drag the item either snaps back to its original pos or gets crafted
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("drag ended");
         if (Input.GetMouseButtonUp(1))
         {
             rectTransform.anchoredPosition = pos;

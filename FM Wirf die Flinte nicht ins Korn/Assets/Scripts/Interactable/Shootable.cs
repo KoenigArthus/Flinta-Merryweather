@@ -73,6 +73,14 @@ public class Shootable : Interactable
                 break;
             }
         }
+       
+        //Palmenblätter adds to trueConditions in the plant
+        if (gameObject.name == "Palmenblätter")
+        {
+            GameObject lplant = GameObject.Find("Pflanze");
+            lplant.GetComponent<PlantGrow>().AddTrueCondition();
+        }
+
         this.gameObject.SetActive(false);
         StopCoroutine(DespawnBlinking(pcon));
     }

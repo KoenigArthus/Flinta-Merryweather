@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Character : Interactable
 {
@@ -15,7 +16,6 @@ public class Character : Interactable
         sentences = character.viewText.Split('|');
         if (controller.currentSceneWasVisited == false)
         {
-            Debug.Log(controller.currentSceneWasVisited);
             character.itemRecieved = false;
         }
         

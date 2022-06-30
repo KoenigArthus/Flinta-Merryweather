@@ -65,3 +65,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd1c570c31c50ca4cb8acd19156d711a, type: 3}
+--- !u!1 &2723860179009336571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3017048901970949573, guid: cd1c570c31c50ca4cb8acd19156d711a, type: 3}
+  m_PrefabInstance: {fileID: 870230036196294974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3624098799516307172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723860179009336571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505838c36422fa449a6f0f41e31ec386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant: {fileID: 11400000, guid: 0095606634bf574489c593b18f9945e2, type: 2}
+--- !u!114 &3980218501429948528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723860179009336571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96dfc340bdaef3d479f435d1a53be4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  dart: {fileID: 0}
+  finalDartPos: {x: 0, y: 0, z: 0}

@@ -52,7 +52,6 @@ public class CraftingManager : MonoBehaviour
                 {
                     //removes pdragElement
                     RemoveFromInventoryAndDestroy(pdragElement);
-                    Debug.Log(precipe);
                     //insert here
                 }
                 ///End of Section for Special Combines
@@ -65,10 +64,14 @@ public class CraftingManager : MonoBehaviour
                 }
                 else
                 {
-                    if(pcombineElement.name == "Dieter" || 
-                        pcombineElement.name == "Pflanze")
+                    if(pcombineElement.name == "Dieter")
                     {
                          pcombineElement.GetComponent<NoReturn>().AnimateAction();
+                    }
+
+                    if (pcombineElement.name == "Pflanze")
+                    {
+                        pcombineElement.GetComponent<PlantGrow>().AddTrueCondition();
                     }
                 }
                 break;

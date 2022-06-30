@@ -54,6 +54,16 @@ public class Controller : MonoBehaviour
     //Intitializing
     private void Awake()
     {
+        //updating currentSceneWasVisited
+        if (Array.Exists(sceneInfo.visitedScenes, element => element == SceneManager.GetActiveScene().name))
+        {
+            currentSceneWasVisited = true;
+        }
+        else
+        {
+            currentSceneWasVisited = false;
+        }
+        Debug.Log(currentSceneWasVisited);
         //for talkingFilter
         talkingFilterParent = GameObject.Find("Environment");
         childRenderer = talkingFilterParent.GetComponentsInChildren<SpriteRenderer>();
@@ -102,15 +112,7 @@ public class Controller : MonoBehaviour
             }
         }
 
-        //updating currentSceneWasVisited
-        if (Array.Exists(sceneInfo.visitedScenes, element => element == SceneManager.GetActiveScene().name))
-        {
-            currentSceneWasVisited = true;
-        }
-        else
-        {
-            currentSceneWasVisited = false;
-        }
+        
 
 
     }

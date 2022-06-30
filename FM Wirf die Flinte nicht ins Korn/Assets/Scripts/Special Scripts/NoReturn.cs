@@ -22,10 +22,10 @@ public class NoReturn : MonoBehaviour
 
     public void AnimateAction()
     {
-        animator.enabled = true;
         Controller lcontroller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
         if (gameObject.name == "Dieter")
         {
+            animator.enabled = true;
             StartCoroutine(DoDartDieter(lcontroller));
         }
 
