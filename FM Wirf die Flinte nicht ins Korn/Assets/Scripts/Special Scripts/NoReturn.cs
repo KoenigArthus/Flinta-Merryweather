@@ -53,7 +53,7 @@ public class NoReturn : MonoBehaviour
         {
             if (pcon.sceneInfo.sceneSave[j] == null)
             {
-                pcon.sceneInfo.sceneSave[j] = dart.name;
+                pcon.sceneInfo.sceneSave[j] = "Dart";
                 break;
             }
         }
