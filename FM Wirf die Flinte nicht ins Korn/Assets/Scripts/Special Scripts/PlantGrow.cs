@@ -2,30 +2,24 @@ using UnityEngine;
 
 public class PlantGrow : MonoBehaviour
 {
-    [SerializeField] private ScrPlant plant;
-    [SerializeField] private bool didThisOnce;
     private Controller controller;
 
     private void Start()
     {
         controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<Controller>();
-        if (controller.currentSceneWasVisited == false)
-        {
-            Debug.Log("äaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            plant.conditionsTrue = 0;
-        }
     }
 
     public void AddTrueCondition()
     {
-        plant.conditionsTrue++;
+        Debug.Log("imma ad one");
+        controller.sceneInfo.plantScore++;
     }
 
     private void FixedUpdate()
     {
-        if (plant.conditionsTrue == 2 && !didThisOnce)
+        if (controller.sceneInfo.plantScore == 2 && controller.sceneInfo.plantHasGrown == false)
         {
-            didThisOnce = true;
+            controller.sceneInfo.plantHasGrown = true;
             gameObject.GetComponent<NoReturn>().AnimateAction();
         }
     }

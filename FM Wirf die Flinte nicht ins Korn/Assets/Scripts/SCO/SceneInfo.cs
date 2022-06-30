@@ -6,8 +6,10 @@ using UnityEngine;
 public class SceneInfo : ScriptableObject
 {
     //triggert Tavernenschlägerei
-    [Header("Tavernenschlägerei")]
-    public int tavernenScore = 0;
+    [Header("World Score")]
+    public int tavernenScore;
+    public int plantScore;
+    public bool plantHasGrown;
 
     [Header("Spawnpoint")]
     //Spawnpoint

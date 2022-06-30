@@ -14,8 +14,11 @@ public class StartGame : MonoBehaviour
         EndGame.flintel = false;
         EndGame.TS = false;
 
-    //resets sceneInfo
-    sceneInfo.isFull = new bool[13];
+       //resets sceneInfo
+        sceneInfo.tavernenScore = 0;
+        sceneInfo.plantScore = 0;
+        sceneInfo.plantHasGrown = false;
+        sceneInfo.isFull = new bool[13];
         sceneInfo.content = new ScrItem[13];
         sceneInfo.sceneSave = new string[13+1];
         sceneInfo.characters = new();

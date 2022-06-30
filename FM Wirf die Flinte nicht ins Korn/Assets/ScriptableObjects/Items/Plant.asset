@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 510e994ec3c6d334282ecd2fbe380719, type: 3}
   m_Name: Plant
   m_EditorClassIdentifier: 
-  conditionsTrue: 0
+  conditionsTrue: 2

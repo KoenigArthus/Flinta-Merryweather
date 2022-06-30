@@ -40,7 +40,7 @@ public class CraftingManager : MonoBehaviour
                 {
                     RemoveFromInventoryAndDestroy(pdragElement);
                     controller.isDragging = false;
-                    if (pcombineElement.GetComponent<NoReturn>() == null)
+                    if (pcombineElement.name != "Dieter")
                     {
                         pcombineElement.GetComponent<Character>().ReactToClick(controller, pdragElement);
                     }
@@ -68,8 +68,7 @@ public class CraftingManager : MonoBehaviour
                     {
                          pcombineElement.GetComponent<NoReturn>().AnimateAction();
                     }
-
-                    if (pcombineElement.name == "Pflanze")
+                    else if (pcombineElement.name == "Pflanze")
                     {
                         pcombineElement.GetComponent<PlantGrow>().AddTrueCondition();
                     }
