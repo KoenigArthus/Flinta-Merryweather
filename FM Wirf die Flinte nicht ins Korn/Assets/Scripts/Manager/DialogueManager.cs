@@ -3,6 +3,7 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -82,9 +83,9 @@ public class DialogueManager : MonoBehaviour
         foreach (SpriteRenderer child in controller.childRenderer)
         {
   
-            if (child.gameObject.GetComponentInChildren<SpriteRenderer>().color == Color.cyan)
+            if (child.color == Color.cyan)
             {
-                child.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                child.color = Color.white;
             }
             else
             {
@@ -110,7 +111,7 @@ public class DialogueManager : MonoBehaviour
 
 
     //Ends the DialogueMode (deactivates UI-elements + sets dialogueIsPlaying bool to false)
-    private void ExitDialogueMode()
+    public void ExitDialogueMode()
     {
         foreach (SpriteRenderer child in controller.childRenderer)
         {
@@ -179,9 +180,24 @@ public class DialogueManager : MonoBehaviour
                     {
                         controller.sceneInfo.Regina = true;
                     }
-                    if (tagValue == "flinte")
+                    if (tagValue == "flintew")
                     {
-                        controller.sceneInfo.Flintendialog = true;
+                        EndGame.flintew = true;
+                        foreach (SpriteRenderer child in controller.childRenderer)
+                        {
+                            StartCoroutine(controller.EndFade(child));
+
+                        }
+                    } 
+                    if (tagValue == "flintel")
+                    {
+                        EndGame.flintel = true;
+                        foreach (SpriteRenderer child in controller.childRenderer)
+                        {
+                            StartCoroutine(controller.EndFade(child));
+
+                        }
+                        
                     }
                     if (tagValue == "dart")
                     {
