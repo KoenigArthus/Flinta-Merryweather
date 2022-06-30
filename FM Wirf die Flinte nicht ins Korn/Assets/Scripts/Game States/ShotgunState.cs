@@ -53,6 +53,13 @@ public class ShotgunState : IGameState
 
             }
         }
+        else if (Input.GetMouseButtonDown(2))
+        {
+            pcon.lineRenderer.enabled = false;
+            pcon.shotgunFilter.enabled = false;
+            Cursor.SetCursor(pcon.cursor0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f), CursorMode.ForceSoftware);
+            return pcon.exploreState;
+        }
 
         //resetting line renderer and aiming animation when letting go left mouse button
         if (Input.GetMouseButtonUp(1))
@@ -61,13 +68,7 @@ public class ShotgunState : IGameState
             pcon.animator.SetBool("isAiming", false);
         }
 
-        if (Input.GetMouseButtonDown(2))
-        {
-            pcon.lineRenderer.enabled = false;
-            pcon.shotgunFilter.enabled = false;
-            Cursor.SetCursor(pcon.cursor0, new Vector2(0, 0) + new Vector2(8.5f, 8.5f),CursorMode.ForceSoftware);
-            return pcon.exploreState;
-        }
+       
 
         /* Pause Menue
         if (Input.GetKeyDown(KeyCode.Escape))
