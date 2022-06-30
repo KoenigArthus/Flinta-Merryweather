@@ -3735,6 +3735,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  endGameObject: {fileID: 0}
+  finalDartPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1339729241
 GameObject:
   m_ObjectHideFlags: 0

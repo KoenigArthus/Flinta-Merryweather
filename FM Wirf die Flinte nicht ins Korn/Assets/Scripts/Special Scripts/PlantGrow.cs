@@ -1,14 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.TextCore.Text;
 
 public class PlantGrow : MonoBehaviour
 {
     [SerializeField] private ScrPlant plant;
-    private bool didThisOnce;
+    [SerializeField] private bool didThisOnce;
     private Controller controller;
 
     private void Start()
