@@ -102,6 +102,17 @@ public class Controller : MonoBehaviour
             }
         }
 
+        //updating currentSceneWasVisited
+        if (Array.Exists(sceneInfo.visitedScenes, element => element == SceneManager.GetActiveScene().name))
+        {
+            currentSceneWasVisited = true;
+        }
+        else
+        {
+            currentSceneWasVisited = false;
+        }
+
+
     }
     private void Start()
     {
@@ -124,14 +135,7 @@ public class Controller : MonoBehaviour
             }
         }
 
-        if (!Array.Exists(sceneInfo.visitedScenes, element => element == SceneManager.GetActiveScene().name))
-        {
-            currentSceneWasVisited = false;
-        }
-        else
-        {
-            currentSceneWasVisited = true;
-        }
+
     }
 
     //Managing the MousePos & Game State

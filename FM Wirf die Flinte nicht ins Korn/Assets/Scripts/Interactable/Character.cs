@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Character : Interactable
@@ -12,16 +13,18 @@ public class Character : Interactable
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = character.sprite;
         sentences = character.viewText.Split('|');
-        if (!controller.currentSceneWasVisited)
+        if (controller.currentSceneWasVisited == false)
         {
-            //character.itemRecieved = false;
+            Debug.Log(controller.currentSceneWasVisited);
+            character.itemRecieved = false;
         }
+        
     }
 
     public override void ReactToClick(Controller pcon)
     {
         //checks what .json file has to be used and assigns it to the variable "ink"
-        if (ink == character.itemRecieved && character.name != "Regina")
+        if (character.itemRecieved && character.name != "Regina")
         {
             ink = character.inkI;
         }

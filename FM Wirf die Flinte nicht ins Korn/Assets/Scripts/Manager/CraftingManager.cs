@@ -41,6 +41,14 @@ public class CraftingManager : MonoBehaviour
                  * is needed to determine if results[r] should be given before changing itemRecieved to true
                  */
 
+                //giving a Character an Item
+                if (pcombineElement.GetComponent<Character>() != null)
+                {
+                    RemoveFromInventoryAndDestroy(pdragElement);
+                    controller.isDragging = false;
+                    pcombineElement.GetComponent<Character>().ReactToClick(controller, pdragElement);
+                }
+
                 //combining an Item on Scene
                 if (pcombineElement.GetComponent<Item>() != null)
                 {
@@ -52,46 +60,17 @@ public class CraftingManager : MonoBehaviour
 
                 ///End of Section for Special Combines
 
-                //fills inventory with results Item
+                //fills inventory with results Item except no return
                 if (pcombineElement.GetComponent<NoReturn>() == null)
                 {
-                    //when pcombineElement is a character & has not recieved the results[r] item
-                    if (pcombineElement.GetComponent<Character>() != null && !pcombineElement.GetComponent<Character>().character.itemRecieved)
-                    {
-                        //removes pdragElement
-                        RemoveFromInventoryAndDestroy(pdragElement);
-                        //adds result Item
-                        AddThisResultsItemAt(r, slotIndex);
-                    }
-                    //when the pcombineElement is not a Character
-                    else if(pcombineElement.GetComponent<Character>() == null)
-                    {
-                        for (int i = 0; i < controller.inventory.slots.Length; i++)
-                        {
-                            if (controller.inventory.isFull[i] == false)
-                            {
-                                //adds result Item
-                                AddThisResultsItemAt(r, i);
-                                break;
-                            }
-                            if (i == controller.inventory.slots.Length - 1)
-                            {
-                                Debug.Log("Inventory is full"); //insert the text that flinta should say when the inventory is full here
-                            }
-                        }
-                    }
+                    //fills inventory with results Item
+                    AddThisResultsItemAt(r, slotIndex);
                 }
                 else
                 {
-                    RemoveFromInventoryAndDestroy(pdragElement);
+                    //insert
                 }
 
-                //giving a Character an Item
-                if (pcombineElement.GetComponent<Character>() != null)
-                {
-                    controller.isDragging = false;
-                    pcombineElement.GetComponent<Character>().ReactToClick(controller, pdragElement);
-                }
                 break;
             }
         }
