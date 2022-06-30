@@ -26,7 +26,6 @@ public class CraftingManager : MonoBehaviour
             if (recipes[r] == precipe)
             {
                 ///Start of Section for Special Combines
-
                 //if the pcombineElement is an UIItem then it & pdragElement will be removed from the inventory &destroyed
                 if (pcombineElement.GetComponent<Dragger>() != null)
                 {
@@ -35,11 +34,6 @@ public class CraftingManager : MonoBehaviour
                     //removes pcombineElement
                     RemoveFromInventoryAndDestroy(pcombineElement);
                 }
-
-                /*giving a Character an Item - has been moved down since 
-                 * pcombineElement.GetComponent<Character>().character.itemRecieved
-                 * is needed to determine if results[r] should be given before changing itemRecieved to true
-                 */
 
                 //giving a Character an Item
                 if (pcombineElement.GetComponent<Character>() != null)
@@ -57,7 +51,6 @@ public class CraftingManager : MonoBehaviour
                     Debug.Log(precipe);
                     //insert here
                 }
-
                 ///End of Section for Special Combines
 
                 //fills inventory with results Item except no return
@@ -70,7 +63,6 @@ public class CraftingManager : MonoBehaviour
                 {
                     //insert
                 }
-
                 break;
             }
         }

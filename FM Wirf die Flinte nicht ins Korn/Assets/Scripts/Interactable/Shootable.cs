@@ -38,7 +38,7 @@ public class Shootable : Interactable
         }
         else if (target.despawns && !target.falls)
         {
-            StartCoroutine(DespawnBlinking());
+            StartCoroutine(DespawnBlinking(pcon));
         }
         else if (target.falls && !target.despawns)
         {
@@ -47,7 +47,7 @@ public class Shootable : Interactable
         }
     }
 
-    IEnumerator DespawnBlinking()
+    IEnumerator DespawnBlinking(Controller pcon)
     {
         this.gameObject.GetComponent<CircleCollider2D>().enabled = false;
         yield return new WaitForSeconds(0.9f);
@@ -58,8 +58,23 @@ public class Shootable : Interactable
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             yield return new WaitForSeconds(0.2f);
         }
+        //Adding the shootable to the sceneSave
+        string[] lsave = pcon.sceneInfo.sceneSave;
+        pcon.sceneInfo.sceneSave = new string[lsave.Length + 1];
+        for (int i = 0; i < lsave.Length; i++)
+        {
+            pcon.sceneInfo.sceneSave[i] = lsave[i];
+        }
+        for (int j = 0; j < lsave.Length; j++)
+        {
+            if (pcon.sceneInfo.sceneSave[j] == null)
+            {
+                pcon.sceneInfo.sceneSave[j] = this.name;
+                break;
+            }
+        }
         this.gameObject.SetActive(false);
-        StopCoroutine(DespawnBlinking());
+        StopCoroutine(DespawnBlinking(pcon));
     }
 
     IEnumerator Falling(Controller pcon)
@@ -73,15 +88,13 @@ public class Shootable : Interactable
         // Instantiating the new Item & seting some variables
         fallPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0.1f);
         Instantiate(fallItem, fallPosition, Quaternion.identity);
-        this.gameObject.SetActive(false);
-        ///adding the shootable to the sceneSave
+        //Adding the shootable to the sceneSave
         string[] lsave = pcon.sceneInfo.sceneSave;
         pcon.sceneInfo.sceneSave = new string[lsave.Length + 1];
         for (int i = 0; i < lsave.Length; i++)
         {
             pcon.sceneInfo.sceneSave[i] = lsave[i];
         }
-
         for (int j = 0; j < lsave.Length; j++)
         {
             if (pcon.sceneInfo.sceneSave[j] == null)
@@ -90,7 +103,7 @@ public class Shootable : Interactable
                break;
             }
         }
-        // adding fallItem to the Instantiate Spawn
+        //Adding fallItem to the Instantiate Spawn
         for (int i = 0; i < pcon.sceneInfo.toInstantiateItem.Length; i++)
         {
             if (pcon.sceneInfo.toInstantiateItem[i] == null)
@@ -101,6 +114,7 @@ public class Shootable : Interactable
                 break;
             }
         }
+        this.gameObject.SetActive(false);
         StopCoroutine(Falling(pcon));
     }
 }
