@@ -278,7 +278,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 23644142}
-  - component: {fileID: 23644144}
   - component: {fileID: 23644141}
   - component: {fileID: 23644143}
   - component: {fileID: 23644140}
@@ -543,26 +542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd86a2855e2838e49a89cbe76e26326d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &23644144
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23644135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e188ee899633d0b49870a5ae38b7359d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ratio: {x: 480, y: 270}
-  forceRatioOnAwake: 1
-  listenForWindowChanges: 1
-  createCameraForLetterBoxRendering: 1
-  findCamerasAutomatically: 1
-  letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
-  cameras: []
-  letterBoxCamera: {fileID: 0}
 --- !u!1 &29054227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +1001,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Linke Maustaste
+  m_Text: Linke Maustaste                                               Linke Maustaste                                          
+    Rechte Maustaste                                               Rechte Maustaste                                          
+    Mausrad Taste                                               Rechte Maustaste                                   
+    Linke Maustaste                                              jede Taste
 --- !u!222 &236569098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1483,7 +1465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.50980395}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3260,8 +3242,8 @@ MonoBehaviour:
   m_UpscaleRT: 1
   m_PixelSnapping: 1
   m_CropFrameX: 1
-  m_CropFrameY: 0
-  m_StretchFill: 0
+  m_CropFrameY: 1
+  m_StretchFill: 1
 --- !u!81 &1178046137
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3789,7 +3771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.41960785}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5132,7 +5114,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gehen
+  m_Text: 'Gehen                                           Anschauen                                          
+    Aufheben                                Items ziehen                                           
+    Flintenmodus                                       Zielen            Schiessen
+    (& zielen)                         Text weiter                                   '
 --- !u!222 &1884590909
 CanvasRenderer:
   m_ObjectHideFlags: 0
