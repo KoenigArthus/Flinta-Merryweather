@@ -61,3 +61,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ed08b679991564480d1005c9f2933c, type: 3}
+--- !u!1 &8813759480123489490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1958768881942782460, guid: 69ed08b679991564480d1005c9f2933c, type: 3}
+  m_PrefabInstance: {fileID: 7025107887935724846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1908428030814609579
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8813759480123489490}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00b7f962032c5c745b5abcc4f6434fe9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8015235842386090567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8813759480123489490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96dfc340bdaef3d479f435d1a53be4b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1908428030814609579}
+  endGameObject: {fileID: 6733039188589647588, guid: 71e9a24a132a99845a420b0f8e45d222, type: 3}
+  finalDartPos: {x: 6.132366, y: -2.5489287, z: 0}

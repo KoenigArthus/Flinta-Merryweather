@@ -2903,51 +2903,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 759275344}
   m_CullTransparentMesh: 1
---- !u!1 &770297423 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8813759480123489490, guid: e7d1114b51891f84592c69787e8ba405, type: 3}
-  m_PrefabInstance: {fileID: 1889851635}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &770297424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8813759480123489492, guid: e7d1114b51891f84592c69787e8ba405, type: 3}
   m_PrefabInstance: {fileID: 1889851635}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &770297425
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770297423}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 00b7f962032c5c745b5abcc4f6434fe9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &770297426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770297423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96dfc340bdaef3d479f435d1a53be4b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 770297425}
-  dart: {fileID: 6733039188589647588, guid: 71e9a24a132a99845a420b0f8e45d222, type: 3}
-  finalDartPos: {x: 6.132366, y: -2.5489287, z: 0}
 --- !u!1 &791526842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4629,7 +4589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  dart: {fileID: 0}
+  endGameObject: {fileID: 0}
   finalDartPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1526082461
 GameObject:
