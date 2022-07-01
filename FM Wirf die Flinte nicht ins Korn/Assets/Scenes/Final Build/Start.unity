@@ -714,7 +714,7 @@ MonoBehaviour:
     audioSource: {fileID: 0}
   - name: Item kombinieren
     clip: {fileID: 8300000, guid: c255802e7681f154999777c3433ff0fa, type: 3}
-    volume: 0.7
+    volume: 0.6
     pitch: 1
     loop: 0
     audioSource: {fileID: 0}
