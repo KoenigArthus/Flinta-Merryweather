@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Credits : MonoBehaviour
 {
+    public Animator animator;
+
+
+
+
+
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.Escape))
@@ -12,4 +18,5 @@ public class Credits : MonoBehaviour
             SceneManager.LoadScene("Start");
         }
     }
+
 }
