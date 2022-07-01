@@ -68,7 +68,6 @@ public class Controller : MonoBehaviour
         {
             currentSceneWasVisited = false;
         }
-        Debug.Log(currentSceneWasVisited);
         //for talkingFilter
         talkingFilterParent = GameObject.Find("Environment");
         childRenderer = talkingFilterParent.GetComponentsInChildren<SpriteRenderer>();
@@ -94,8 +93,6 @@ public class Controller : MonoBehaviour
         craftingManager = gameObject.GetComponent<CraftingManager>();
         audioManager = FindObjectOfType<AudioManager>();
 
-        //Audio
-        audioManager.Play(SceneManager.GetActiveScene().name);
 
         //seting up variables
         shotgunFilter.enabled = false;
@@ -126,7 +123,6 @@ public class Controller : MonoBehaviour
     }
     private void Start()
     {
-        Debug.Log(SceneManager.GetActiveScene().name);
         for(int i = 0; i < sceneInfo.toInstantiateItem.Length; i++)
         {
             if(sceneInfo.toInstantiateItem[i] != null && 
@@ -145,6 +141,9 @@ public class Controller : MonoBehaviour
             }
         }
 
+        // Audio
+        //audioManager.Play(currentScene);
+        StartCoroutine(audioManager.FadeTrack(this));
 
     }
 
@@ -244,7 +243,7 @@ public class Controller : MonoBehaviour
         StopCoroutine(WaitShoot());
     }
 
-
+    
 
 
     #endregion

@@ -45,9 +45,10 @@ public class StartGame : MonoBehaviour
 
         //visited Scenes
         sceneInfo.visitedScenes = new string[6];
+        sceneInfo.previousScene = "Start";
         ///End Start Button Stuff
 
-        //Audio
+    //Audio
         audioManager.Play("Write Book");
 
         SceneManager.LoadScene("Piratenstadt");

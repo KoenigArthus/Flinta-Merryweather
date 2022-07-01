@@ -25,7 +25,7 @@ public class SceneDoor : Interactable
         }
 
         //Audio
-        pcon.audioManager.Stop(pcon.currentScene);
+        //pcon.audioManager.Stop(pcon.currentScene);
 
         if((pcon.currentScene == "Piratenstadt" && scene == "Taverne")||(pcon.currentScene == "Taverne" && scene == "Piratenstadt"))
         {
@@ -43,7 +43,7 @@ public class SceneDoor : Interactable
         controller.sceneInfo.content = controller.inventory.content;
         controller.sceneInfo.spawnpoint = spawnpointForNextScene;
         controller.sceneInfo.spawnpointRotation = spawnRotation;
-
+        controller.sceneInfo.previousScene = controller.currentScene;
         controller.playerMovement.Stop();
 
         SceneManager.LoadScene(Scene);

@@ -38,4 +38,5 @@ public class SceneInfo : ScriptableObject
     [Header("Visited Scenes")]
     //For visiting a Scene for a first time
     public string[] visitedScenes = new string[6];
+    public string previousScene;
 }
