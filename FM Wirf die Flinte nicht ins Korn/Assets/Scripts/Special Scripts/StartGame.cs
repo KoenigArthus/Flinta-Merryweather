@@ -4,6 +4,14 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
     public SceneInfo sceneInfo;
+    private AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
+
 
     public void StartTheGame()
     {
@@ -38,6 +46,9 @@ public class StartGame : MonoBehaviour
         //visited Scenes
         sceneInfo.visitedScenes = new string[6];
         ///End Start Button Stuff
+
+        //Audio
+        audioManager.Play("Write Book");
 
         SceneManager.LoadScene("Piratenstadt");
     }

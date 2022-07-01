@@ -765,6 +765,30 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     audioSource: {fileID: 0}
+  - name: Open Book
+    clip: {fileID: 8300000, guid: 1d2141fc1aba57a4a97033db9b88a848, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Write Book
+    clip: {fileID: 8300000, guid: 8973ddc8cec2e7a4fae96b2bd8054b1a, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Close Book
+    clip: {fileID: 8300000, guid: 82ce87409fea6784dbe9d5aca843e480, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - name: Go Book
+    clip: {fileID: 8300000, guid: 83cf09a5f67edd947a0c838c43f2cc9a, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
 --- !u!1 &542010214
 GameObject:
   m_ObjectHideFlags: 0

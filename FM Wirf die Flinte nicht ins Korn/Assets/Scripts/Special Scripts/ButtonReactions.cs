@@ -13,17 +13,28 @@ public class ButtonReactions : MonoBehaviour
 
     public void Arrivederci()
     {
-       Application.Quit();
+        //Audio
+        controller.audioManager.Play("Close Book");
+
+        Application.Quit();
     }
 
     public void ShowControlls()
     {
+
+        //Audio
+        controller.audioManager.Play("Go Book");
+
         controller.pauseMenue.SetActive(false);
         controller.controllsMenue.SetActive(true);
     }
 
     public void BackToPauseMenue()
     {
+
+        //Audio
+        controller.audioManager.Play("Write Book");
+
         controller.controllsMenue.SetActive(false);
         controller.pauseMenue.SetActive(true);
     }

@@ -21,6 +21,10 @@ public class PauseState : IGameState
                 {
                     Cursor.SetCursor(pcon.cursor1, pcon.cursorHotspot, CursorMode.ForceSoftware);
                 }
+
+                //Audio
+                pcon.audioManager.Play("Close Book");
+
                 return pcon.oldState;
             }
         }
@@ -35,6 +39,11 @@ public class PauseState : IGameState
         pcon.playerMovement.Stop();
         pcon.pauseMenue.SetActive(true);
         started = true;
+
+        //Audio
+        pcon.audioManager.Play("Open Book");
+
+
     }
 
 
