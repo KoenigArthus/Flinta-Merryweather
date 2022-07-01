@@ -27,6 +27,11 @@ public class SceneDoor : Interactable
         //Audio
         pcon.audioManager.Stop(pcon.currentScene);
 
+        if((pcon.currentScene == "Piratenstadt" && scene == "Taverne")||(pcon.currentScene == "Taverne" && scene == "Piratenstadt"))
+        {
+            pcon.audioManager.Play("Doorbell");
+        }
+
         ChangeToScene(scene);
     }
   

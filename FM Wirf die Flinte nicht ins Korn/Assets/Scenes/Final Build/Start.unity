@@ -789,6 +789,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     audioSource: {fileID: 0}
+  - name: Doorbell
+    clip: {fileID: 8300000, guid: ae92d233a2f84cf4c96e9f6011e6cc58, type: 3}
+    volume: 0.9
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
 --- !u!1 &542010214
 GameObject:
   m_ObjectHideFlags: 0
