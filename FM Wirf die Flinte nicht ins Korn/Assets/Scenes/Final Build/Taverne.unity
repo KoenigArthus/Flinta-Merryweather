@@ -1030,6 +1030,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 0}
   monologueManager: {fileID: 0}
   craftingManager: {fileID: 0}
+  audioManager: {fileID: 0}
   talkingFilterParent: {fileID: 0}
   filterColor: {r: 0, g: 0, b: 0, a: 0}
   mousePos: {x: 0, y: 0}
@@ -1038,6 +1039,7 @@ MonoBehaviour:
   pauseMenue: {fileID: 0}
   controllsMenue: {fileID: 0}
   currentSceneWasVisited: 0
+  currentScene: 
   sceneInfo: {fileID: 11400000, guid: cd46953648d93d645815b5e13a08acad, type: 2}
   reachRadius: 2
   cursor0: {fileID: 2800000, guid: 2b0965b5c18122245979e0bde28d99d1, type: 3}
@@ -1490,7 +1492,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393773581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.5}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1499,8 +1501,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 15}
-  m_SizeDelta: {x: 160, y: 36}
+  m_AnchoredPosition: {x: 98.289734, y: 3.16}
+  m_SizeDelta: {x: 141.7103, y: 53.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393773583
 MonoBehaviour:

@@ -74,9 +74,9 @@ public class AudioManager : MonoBehaviour
         while (timeElapsed < timeToFade)
         {
             Array.Find(sounds, sound => sound.name == pcon.currentScene).volume = 
-                Mathf.Lerp(0, 1, timeElapsed / timeToFade);
+                Mathf.Lerp(0, 0.8f, timeElapsed / timeToFade);
             Array.Find(sounds, sound => sound.name == pcon.sceneInfo.previousScene).volume =
-                Mathf.Lerp(1, 0, timeElapsed / timeToFade);
+                Mathf.Lerp(0.8f, 0, timeElapsed / timeToFade);
             timeElapsed += Time.deltaTime;
             yield return null;
         }

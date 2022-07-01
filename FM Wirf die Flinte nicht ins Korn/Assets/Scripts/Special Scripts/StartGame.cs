@@ -54,4 +54,11 @@ public class StartGame : MonoBehaviour
         SceneManager.LoadScene("Piratenstadt");
     }
 
+    public void StartCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+
+
 }
