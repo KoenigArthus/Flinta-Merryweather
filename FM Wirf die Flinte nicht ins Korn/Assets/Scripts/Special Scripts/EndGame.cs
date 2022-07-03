@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
@@ -46,11 +47,15 @@ public class EndGame : MonoBehaviour
             sentences.Enqueue(lsentence);
         }
         DisplayNextSentence();
-
-
     }
 
-
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2))
+        {
+            this.DisplayNextSentence();
+        }
+    }
 
 
     public void DisplayNextSentence()
@@ -58,7 +63,7 @@ public class EndGame : MonoBehaviour
         
         if (sentences.Count == 0)
         {
-            Application.Quit();
+            SceneManager.LoadScene("Start");
             return;
         }
         if (coroutineIsPlaying)
@@ -66,17 +71,13 @@ public class EndGame : MonoBehaviour
             StopAllCoroutines();
             dialogueText.text = currentText;
             coroutineIsPlaying = false;
-
         }
         else
         {
             string lsentence = sentences.Dequeue();
             currentText = lsentence;
             StartCoroutine(TypeSentence(lsentence));
-
         }
-
-        
     }
 
     IEnumerator TypeSentence(string lsentence)
