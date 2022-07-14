@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
   m_Name: Brot
   m_EditorClassIdentifier: 
-  viewText: Boah,| dieses Brot,| ist echt StandartBrot.png like.
+  viewText: Diesem Brot fehlt Wuerze
   isViewable: 1
   canBePickedUp: 1
   sprite: {fileID: 21300000, guid: 5c22d2f2cebe9a14c8c3952bd7115b97, type: 3}

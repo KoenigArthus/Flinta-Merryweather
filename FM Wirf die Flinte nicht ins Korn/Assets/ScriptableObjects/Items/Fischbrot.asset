@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56608e2cb266c8248a3913365ca49572, type: 3}
   m_Name: Fischbrot
   m_EditorClassIdentifier: 
-  viewText: "Ein Fischbr\xF6tchen!"
+  viewText: Ein Fischbroetchen!
   isViewable: 1
   canBePickedUp: 0
   sprite: {fileID: 0}
