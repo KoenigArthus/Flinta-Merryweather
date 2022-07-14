@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
     public SceneInfo sceneInfo;
+    public GameObject startButton;
     private AudioManager audioManager;
 
     private void Awake()
@@ -59,6 +60,14 @@ public class StartGame : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
+    public void BackToStartMenue()
+    {
+        //Audio
+        audioManager.Play("Write Book");
+
+       // controller.controllsMenue.SetActive(false);
+        //controller.pauseMenue.SetActive(true);
+    }
 
 
 }

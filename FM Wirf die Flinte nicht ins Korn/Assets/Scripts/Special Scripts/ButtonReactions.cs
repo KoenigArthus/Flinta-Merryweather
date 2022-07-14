@@ -21,7 +21,6 @@ public class ButtonReactions : MonoBehaviour
 
     public void ShowControlls()
     {
-
         //Audio
         controller.audioManager.Play("Go Book");
 
@@ -31,13 +30,10 @@ public class ButtonReactions : MonoBehaviour
 
     public void BackToPauseMenue()
     {
-
         //Audio
         controller.audioManager.Play("Write Book");
 
         controller.controllsMenue.SetActive(false);
         controller.pauseMenue.SetActive(true);
     }
-
-
 }

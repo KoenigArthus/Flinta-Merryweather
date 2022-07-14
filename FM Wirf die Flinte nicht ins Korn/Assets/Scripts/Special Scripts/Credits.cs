@@ -8,9 +8,6 @@ public class Credits : MonoBehaviour
     public Animator animator;
 
 
-
-
-
     private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.Escape))
